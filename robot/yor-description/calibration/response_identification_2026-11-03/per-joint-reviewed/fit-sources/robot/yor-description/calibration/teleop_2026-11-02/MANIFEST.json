@@ -1,0 +1,386 @@
+{
+  "format_version": 1,
+  "source_session": "2026-11-02--15-13-15",
+  "source_uncompressed_sha256": {
+    "capture-audit-2026-11-02--17-47-51.json": "d4edbe092edbfeb2ef98488bc4b56d0ef449c057dbefdb5950383166f7f8d5bd",
+    "frames.jsonl": "c0b462729f86b2286d81aa7d48539018c8f8ced8993cb07eeac6149d4a7ada38",
+    "handoff.json": "9e90231fd86f3c333eabceaa1d686c42a54acf2055da3b2b55bb2ecc52666976",
+    "metadata.json": "b1808e36a2bcfa6f831f1b7b4cc8a24b04851550e7f0de31a1147739fc488f12",
+    "packets.jsonl": "9f3347fc5abceac4f4675f3eadf3318c8d04b9d001620432feb97c9d481408a7",
+    "sim-baseline/robot/yor-description/scene-sophia.mjcf": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+    "sim-baseline/robot/yor-description/sophia-ik.mjcf": "85c35eb3bc0cee0c24a25972f796a33c33857eaeb76da90a03447c9447fb307f",
+    "sim-baseline/robot/yor-description/sophia.json": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+    "sim-baseline/robot/yor-description/sophia.mjcf": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+    "sim-baseline/robot/yor_mujoco.py": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+    "sim-baseline/scripts/listen_sophia_episodes.py": "f26917c4ba2484efe132913eb996e2b77bfd6202ba52c1c90139a6fe0fb43a29",
+    "status.json": "2199401715640e2bd731f1a7491ebddb67de9ac24ed687751be0d75162beeb1f",
+    "summary.json": "2199401715640e2bd731f1a7491ebddb67de9ac24ed687751be0d75162beeb1f"
+  },
+  "importer_sha256": "036537b799b1f620ca714329d1d2b0a2f2b6cb9987f1b90fbc8990b1e44e6e19",
+  "files": {
+    "README.md": {
+      "sha256": "c1fe367af9245aba797f0227d7d327eecb3e043733fec330a377a0a4a6281583",
+      "bytes": 755
+    },
+    "episode-events.jsonl": {
+      "sha256": "b717b637995ac9200b8778cae86e80f8abe7a43a1974fd94d15b87440b425872",
+      "bytes": 71828
+    },
+    "native-replay/episode_000000.npz": {
+      "sha256": "8687cae6c49066f06b1e0c2ca71385a8cc37cb937ab87cf26ac6f38cde9271fe",
+      "bytes": 168874
+    },
+    "native-replay/episode_000001.npz": {
+      "sha256": "b9eb494aeb45a79bab95c0770f7d0f124e9ffcb47b435d466c9d14b26129cb84",
+      "bytes": 320578
+    },
+    "native-replay/episode_000002.npz": {
+      "sha256": "79d3afad57764d6e7aae4647d5c6adf208a200bfb01481c4bb007f05b34ba394",
+      "bytes": 39313
+    },
+    "native-replay/episode_000003.npz": {
+      "sha256": "bc8ea35de18bc744f6945095d731433962fc6c8b7d3636980e4869e9ebe1a6e2",
+      "bytes": 114095
+    },
+    "native-replay/episode_000004.npz": {
+      "sha256": "9aec6a4280438974bd383d39c897c7db76be7dc994bc6e842794672e8f88a1e1",
+      "bytes": 16713
+    },
+    "native-replay/episode_000005.npz": {
+      "sha256": "b09664090ae5b3f74a8313395ba6301d42b456ccbf332a115f91923fe47b00c7",
+      "bytes": 154115
+    },
+    "native-replay/episode_000006.npz": {
+      "sha256": "4196864d3b291ee249e7e272117d57cde0e1f85dcdb4495d86f46dcbe85bdb11",
+      "bytes": 47024
+    },
+    "native-replay/episode_000007.npz": {
+      "sha256": "72dc8170c364c745fb08d9c636262b8f4b655b885fd9196e1f776662e2d3a0d9",
+      "bytes": 59670
+    },
+    "native-replay/episode_000008.npz": {
+      "sha256": "5310ca41662e6cff3918863acdf1b9a96b78e145ec1a6d9f7794727aca230014",
+      "bytes": 52650
+    },
+    "native-replay/episode_000009.npz": {
+      "sha256": "110726d6cc4171fa2aee3976dcef9add056bebfe9085c14238ae928c454a0527",
+      "bytes": 315885
+    },
+    "native-replay/episode_000010.npz": {
+      "sha256": "8fd0908826082566f450a6191d314e096ece61c5f1effbc354534ebf25b60fb5",
+      "bytes": 71702
+    },
+    "native-replay/episode_000011.npz": {
+      "sha256": "7ce2a254fbe1066848cfda93b7ec4755394dd4ef70424507af47f62c9523fb26",
+      "bytes": 29213
+    },
+    "native-replay/episode_000012.npz": {
+      "sha256": "13415b7d2b5880ef1692469bd0f8501f8017f6cc1a513174cced49cbdf060289",
+      "bytes": 21064
+    },
+    "native-replay/episode_000013.npz": {
+      "sha256": "12bb78182e420c983017a0ed51e24026d6396ab64ece5545d6099cf6afc5e2fa",
+      "bytes": 232391
+    },
+    "native-replay/episode_000014.npz": {
+      "sha256": "b8411e831f6bfdf8f08c740b0835e45164bab3aaf8a15de10d4c8a088db3fa74",
+      "bytes": 106332
+    },
+    "native-replay/episode_000015.npz": {
+      "sha256": "27312b909854c0ae161b7669ec47d9033e2d5708cd9885c7195f0abf96c357c7",
+      "bytes": 1040192
+    },
+    "native-replay/episode_000016.npz": {
+      "sha256": "b2340ee398bf2721903044899eaa865241ef53980beaae37b3e76711c047ae0e",
+      "bytes": 28539
+    },
+    "native-replay/episode_000017.npz": {
+      "sha256": "d67a00c6a41ec58709ba3c5f8859e0b7cf1bfbfddabd2846f6ad6d91cfa2a22f",
+      "bytes": 76622
+    },
+    "native-replay/episode_000018.npz": {
+      "sha256": "9b48bf27709fa2f6fc8a13a1403d78433a5a137b6b0b475604ee8da45e0dee76",
+      "bytes": 117886
+    },
+    "native-replay/episode_000019.npz": {
+      "sha256": "149c8e53462c0e2c27f6bbd4fe287f3eca3f1ac7f58b89ba6501e78d7f924adf",
+      "bytes": 46530
+    },
+    "native-replay/episode_000020.npz": {
+      "sha256": "bddc9390424717598c69f4e5d27781d09baa0c71787abe9fb2c6ff15f5807c2a",
+      "bytes": 111152
+    },
+    "native-replay/episode_000021.npz": {
+      "sha256": "3b9cac3517bcfac3541b827fbbede8cb96fcfcd6a7bdddac8d05667f2838874a",
+      "bytes": 49652
+    },
+    "native-replay/episode_000022.npz": {
+      "sha256": "5f2c66a8867c7c32eebd6df52b0fc323356f8a601e0f0ac423b557b656308956",
+      "bytes": 76122
+    },
+    "native-replay/episode_000023.npz": {
+      "sha256": "b029a88f440ce037e6b363331dd7bce8e62b77f4930378ddcdc9550cc817eea9",
+      "bytes": 105922
+    },
+    "native-replay/episode_000024.npz": {
+      "sha256": "e8ed9260d2ff15d7ad7efe76f82aaa48b3e63ddefd6dc247f4c3e9e66adeff47",
+      "bytes": 46496
+    },
+    "native-replay/episode_000025.npz": {
+      "sha256": "849bf6eab68e90cf7c2c4b046f18f3d49489e2b9d33ac1ce131999e2c8c13e78",
+      "bytes": 144509
+    },
+    "native-replay/episode_000026.npz": {
+      "sha256": "7b205473e7a5da022841d310df916f78e023a5e06915971be17e4e89463ed733",
+      "bytes": 69957
+    },
+    "native-replay/episode_000027.npz": {
+      "sha256": "9170103d0c726e1c5d75734219658e7efea28bb30dac5c018126cca73071696e",
+      "bytes": 77964
+    },
+    "native-replay/episode_000028.npz": {
+      "sha256": "7f47e4612276a73dac9f64ad7305f1d2f0dc10cd1197aa34082cc24a017e8556",
+      "bytes": 102961
+    },
+    "native-replay/episode_000029.npz": {
+      "sha256": "4c33a52ec520cef28518627dd8d66025da38f03a0e8930d9fb2dc61c6e7b423c",
+      "bytes": 43885
+    },
+    "native-replay/episode_000030.npz": {
+      "sha256": "c249cd8d33f2bbecf93805d400a7381f92b70f9ffeee192c4279c24fb2decd76",
+      "bytes": 113175
+    },
+    "native-replay/episode_000031.npz": {
+      "sha256": "d7d8f9c17f9ac5668c54752ac421fa0fd184c24c1057224046ca6772440c9a96",
+      "bytes": 50895
+    },
+    "native-replay/episode_000032.npz": {
+      "sha256": "3b301126e85d11a1b2e1c3ecda803ffb103c639b4ba63aa83904ef230dfc4a0b",
+      "bytes": 67443
+    },
+    "native-replay/episode_000033.npz": {
+      "sha256": "1277e4472305ac332834a59e516f44629cf1ad96c589c7cf87fdf1bd9d254de3",
+      "bytes": 108416
+    },
+    "native-replay/episode_000034.npz": {
+      "sha256": "095e6076a0d1879b6814486d36492a31f9b98f692c2d7ebdaf5c19caf3e0c46e",
+      "bytes": 38098
+    },
+    "native-replay/episode_000035.npz": {
+      "sha256": "773fce6803ad0f0363615c437f419ec73e1831f196695706dd347daeca9db90a",
+      "bytes": 101040
+    },
+    "native-replay/episode_000036.npz": {
+      "sha256": "3acda9d4b762f1c0cae3d99c166c00dac8fdf757d406b6fa0f1c614e5447dbd4",
+      "bytes": 57505
+    },
+    "native-replay/episode_000037.npz": {
+      "sha256": "85a51fe72af6132f6c6bfddfcb965a4da521c1745f5666cd875f86c777b93ddc",
+      "bytes": 70378
+    },
+    "native-replay/episode_000038.npz": {
+      "sha256": "5a69df0eccbc41069b132eae7d0f29866ea5a66a1011cfd9c1c130653d3503fe",
+      "bytes": 105753
+    },
+    "native-replay/episode_000039.npz": {
+      "sha256": "736ba46a6aa79635baf3e808a084fdce9c141a8959b13d83f618ccb9373bbca2",
+      "bytes": 28729
+    },
+    "native-replay/episode_000040.npz": {
+      "sha256": "a66b285ca6f1bcbec797a456a9ee804f66803398699f98de327422bb754d2cc7",
+      "bytes": 88243
+    },
+    "native-replay/episode_000041.npz": {
+      "sha256": "7ccde5a946ec765830ca864230c192593640b7bf2eda7118d2d075c3888bfca7",
+      "bytes": 62157
+    },
+    "native-replay/episode_000042.npz": {
+      "sha256": "ea43909adcb4b9d1d744de43bc86ca17c1f860091336c1a2554f08c9c6d355e5",
+      "bytes": 15551
+    },
+    "native-replay/episode_000043.npz": {
+      "sha256": "590d5983809999c1028ff8f5232d2796c85311990f4062d50997ed318f8265eb",
+      "bytes": 10343
+    },
+    "native-replay/episode_000044.npz": {
+      "sha256": "8604051d54c40403c6159f84335dad014acc9572eccf6574c144bc0e97f5ca91",
+      "bytes": 12012
+    },
+    "native-replay/episode_000045.npz": {
+      "sha256": "b5f4a0c94205e52f73169b4cd7c05010ddf0ebf114c4998121a96a7e0630d033",
+      "bytes": 11089
+    },
+    "native-replay/episode_000046.npz": {
+      "sha256": "a3c927c44e763c79359f647f177a7e4a1c63d3e4ef11bf00649234549f4a6653",
+      "bytes": 10460
+    },
+    "native-replay/episode_000047.npz": {
+      "sha256": "7aa262aae7755d7f5c166b044ad212c6d7b0da7055684c24b4f19e1f9bc22e05",
+      "bytes": 12191
+    },
+    "native-replay/episode_000048.npz": {
+      "sha256": "978c72d65976143d8f8f6cfd7fa5d8fd4028f6426d2d22551fbffe42e80084e2",
+      "bytes": 10231
+    },
+    "native-replay/episode_000049.npz": {
+      "sha256": "0496358aef537a270b9cc93cff7bf881d9c3158a786fe1f4a86671be46330781",
+      "bytes": 34442
+    },
+    "native-replay/episode_000050.npz": {
+      "sha256": "f793e5ca27d1782524bb1b204f5a0ca2cb9cbb7e0e32802eb14700ac5715a2b3",
+      "bytes": 81374
+    },
+    "native-replay/episode_000051.npz": {
+      "sha256": "77528fbecfebbf3bc44f704f3ba5fb8c778a4567562d1f7d33f502a2eefaca55",
+      "bytes": 36926
+    },
+    "native-replay/episode_000052.npz": {
+      "sha256": "41cbb9ccd8abed35348a6fc75986d3cf3fc9ca0ee3c0cf9681145f7e97d90d2c",
+      "bytes": 93808
+    },
+    "native-replay/episode_000053.npz": {
+      "sha256": "7f5b9cd54a1c80ba222eb8a5857d2e0781ebff40c5f772da83a3f168769c6705",
+      "bytes": 62798
+    },
+    "native-replay/episode_000054.npz": {
+      "sha256": "cbe7c4873aa9ff6068d400480b5f17c48098b5fc5ab3956ec3aa57ab333b9ff4",
+      "bytes": 38035
+    },
+    "native-replay/episode_000055.npz": {
+      "sha256": "b3ab51406347270c0ac481ab70261ef3ee70d5c035e941d048700b41923abef1",
+      "bytes": 83360
+    },
+    "native-replay/episode_000056.npz": {
+      "sha256": "9929acfa1d3412ab3faa4df80d3c73dfd8a960186d768a6f155fbd549abd0f2a",
+      "bytes": 38331
+    },
+    "native-replay/episode_000057.npz": {
+      "sha256": "35e5af1999043b6e560cde1928f1056804b983fb8444ca1fa52d816fb627403d",
+      "bytes": 155531
+    },
+    "native-replay/episode_000058.npz": {
+      "sha256": "140af3261fe6ce4839275bde2fe4f3e5b24c99b350c20c250ba2212875daa4b9",
+      "bytes": 67960
+    },
+    "native-replay/episode_000059.npz": {
+      "sha256": "2a603058ee56c8ad4b7f4964daca63ce882ca7120c18736209552d3b89808709",
+      "bytes": 32006
+    },
+    "native-replay/episode_000060.npz": {
+      "sha256": "53d4f4a0d3fd607349acbf164af990244cc1147f18c20ae15ba6db13f4d86ace",
+      "bytes": 81276
+    },
+    "native-replay/episode_000061.npz": {
+      "sha256": "259ec573fbaf55bead88b0fbc9d73239cf20f6daa17c5e3758fbd6eece8b3304",
+      "bytes": 30402
+    },
+    "native-replay/episode_000062.npz": {
+      "sha256": "b0c26a188977b14695809847d963d734041ad5372fece827fe9534853c30b4f2",
+      "bytes": 104608
+    },
+    "native-replay/episode_000063.npz": {
+      "sha256": "f47611a35bf80eae3afa6133dd66b6c67be408696d83b4538759f47ff87c901d",
+      "bytes": 56741
+    },
+    "native-replay/episode_000064.npz": {
+      "sha256": "c05a4fed57eefdcd82a450a4380a00e45d2198011e6c9f3abcc5ff24a654861a",
+      "bytes": 30592
+    },
+    "native-replay/episode_000065.npz": {
+      "sha256": "6c30c08ec091a6188fd7d126afce69387dfccf0419b6a6773a318b500b779ce0",
+      "bytes": 77254
+    },
+    "native-replay/episode_000066.npz": {
+      "sha256": "c3381f15a848d35e6f20c3ac733b99183859b7945f62b5052cb1197a52b6feb3",
+      "bytes": 30615
+    },
+    "native-replay/episode_000067.npz": {
+      "sha256": "7a940665ef4c46ca2563a3f4951998d2e5b725c333ee1e78adf9c5bb0f697233",
+      "bytes": 98761
+    },
+    "native-replay/episode_000068.npz": {
+      "sha256": "e5f754cab7c69bc110e31da6e4ef1b4a2e7984509f8669df1f77eb033ec7d929",
+      "bytes": 69657
+    },
+    "native-replay/episode_000069.npz": {
+      "sha256": "89d8ad09021945c44a287e2d4da926813160e8f09bbc5f5b909a420bd5f10812",
+      "bytes": 32018
+    },
+    "native-replay/episode_000070.npz": {
+      "sha256": "61d087c6fc11d30c79147c6a377c0995019fe4b219528d6aa737ab04280a1c8a",
+      "bytes": 102895
+    },
+    "native-replay/episode_000071.npz": {
+      "sha256": "a2005815780d3d1ea6597092ee51763862f8bdaeb1d75fc9b17b5a704f551a01",
+      "bytes": 36131
+    },
+    "native-replay/episode_000072.npz": {
+      "sha256": "9443405453664bda366bca82e80140b00cc80f1a548f8fb1636ff2371ea8d057",
+      "bytes": 85842
+    },
+    "native-replay/episode_000073.npz": {
+      "sha256": "33c2468df894e37cf61d9040d81d399de049e5c893fe7512a66eadac91110e12",
+      "bytes": 73740
+    },
+    "native-replay/episode_000074.npz": {
+      "sha256": "742158c21a3078b06f9ab2caed1210acf9302311d99ea76b81bbe7de26de906a",
+      "bytes": 11159
+    },
+    "source/capture-audit-2026-11-02--17-47-51.json": {
+      "sha256": "d4edbe092edbfeb2ef98488bc4b56d0ef449c057dbefdb5950383166f7f8d5bd",
+      "bytes": 3228
+    },
+    "source/frames.jsonl.gz": {
+      "sha256": "547b26b3b4bfb12422851827b96b47abe5acaa51ce95262045a766ab3dbdc3a0",
+      "bytes": 9156573
+    },
+    "source/handoff.json": {
+      "sha256": "9e90231fd86f3c333eabceaa1d686c42a54acf2055da3b2b55bb2ecc52666976",
+      "bytes": 426
+    },
+    "source/metadata.json": {
+      "sha256": "b1808e36a2bcfa6f831f1b7b4cc8a24b04851550e7f0de31a1147739fc488f12",
+      "bytes": 1272
+    },
+    "source/packets.jsonl.gz": {
+      "sha256": "0d514f48aae00fa0bcf7503552191353b9e78446e18433af2a271c9be00ef7f0",
+      "bytes": 18137193
+    },
+    "source/sim-baseline/robot/yor-description/scene-sophia.mjcf": {
+      "sha256": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+      "bytes": 747
+    },
+    "source/sim-baseline/robot/yor-description/sophia-ik.mjcf": {
+      "sha256": "85c35eb3bc0cee0c24a25972f796a33c33857eaeb76da90a03447c9447fb307f",
+      "bytes": 15872
+    },
+    "source/sim-baseline/robot/yor-description/sophia.json": {
+      "sha256": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+      "bytes": 13431
+    },
+    "source/sim-baseline/robot/yor-description/sophia.mjcf": {
+      "sha256": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+      "bytes": 118474
+    },
+    "source/sim-baseline/robot/yor_mujoco.py": {
+      "sha256": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+      "bytes": 50830
+    },
+    "source/sim-baseline/scripts/listen_sophia_episodes.py": {
+      "sha256": "f26917c4ba2484efe132913eb996e2b77bfd6202ba52c1c90139a6fe0fb43a29",
+      "bytes": 13197
+    },
+    "source/status.json": {
+      "sha256": "2199401715640e2bd731f1a7491ebddb67de9ac24ed687751be0d75162beeb1f",
+      "bytes": 84044
+    },
+    "source/summary.json": {
+      "sha256": "2199401715640e2bd731f1a7491ebddb67de9ac24ed687751be0d75162beeb1f",
+      "bytes": 84044
+    },
+    "summary.json": {
+      "sha256": "21d3c9f94306e6b6fc55cd0966738f3f2b7e5c7f190124e02ea2edad8ea9dd46",
+      "bytes": 714481
+    }
+  }
+}

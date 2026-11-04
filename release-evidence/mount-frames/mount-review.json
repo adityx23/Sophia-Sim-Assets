@@ -1,0 +1,816 @@
+{
+  "review_status": "completed_with_accepted_assembly_estimates",
+  "checks_passed": true,
+  "checks": {
+    "stock_source_to_sophia_mounts_match": true,
+    "left_right_local_mounts_agree": true,
+    "legacy_camera_compositions_agree": true,
+    "shared_stock_mesh_is_unused_in_legacy_camera_assembly": true,
+    "compiled_mounts_remain_rigid_across_20_joint_lift_poses": true
+  },
+  "user_confirmed_mounts_unchanged": true,
+  "hardware_extrinsics_measured": false,
+  "physical_geometry_changed": false,
+  "required_measurements": [],
+  "required_robot_sessions": [],
+  "model_inventory": [
+    {
+      "path": "robot/yor-description/robot.mjcf",
+      "arm_joint_counts": {
+        "left": 6,
+        "right": 6
+      },
+      "cameras": [
+        "front_camera",
+        "side_camera",
+        "left_arm_egocentric",
+        "right_arm_egocentric"
+      ],
+      "gripper_base_mesh_referenced_by_geom": false
+    },
+    {
+      "path": "robot/yor-description/arm-upright.mjcf",
+      "arm_joint_counts": {
+        "left": 6,
+        "right": 6
+      },
+      "cameras": [
+        "front_camera",
+        "side_camera",
+        "left_arm_egocentric"
+      ],
+      "gripper_base_mesh_referenced_by_geom": false
+    },
+    {
+      "path": "robot/yor-description/yor-full.mjcf",
+      "arm_joint_counts": {
+        "left": 7,
+        "right": 7
+      },
+      "cameras": [
+        "head_zed_left",
+        "head_zed_right"
+      ],
+      "gripper_base_mesh_referenced_by_geom": false
+    },
+    {
+      "path": "robot/yor-description/yor-full-agx.mjcf",
+      "arm_joint_counts": {
+        "left": 7,
+        "right": 7
+      },
+      "cameras": [
+        "head_zed_left",
+        "head_zed_right"
+      ],
+      "gripper_base_mesh_referenced_by_geom": false
+    },
+    {
+      "path": "robot/yor-description/sophia.mjcf",
+      "arm_joint_counts": {
+        "left": 7,
+        "right": 7
+      },
+      "cameras": [
+        "left_wrist",
+        "right_wrist",
+        "head_zed_left",
+        "head_zed_right"
+      ],
+      "gripper_base_mesh_referenced_by_geom": false
+    }
+  ],
+  "mesh_evidence": [
+    {
+      "path": "robot/yor-description/assets_nero/gripper_base.stl",
+      "sha256": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+      "triangles": 12988,
+      "bounds_m": [
+        [
+          -0.03999999910593033,
+          -0.07249999791383743,
+          -1.2727396297073684e-17
+        ],
+        [
+          0.030500000342726707,
+          0.07249999791383743,
+          0.06300000101327896
+        ]
+      ]
+    },
+    {
+      "path": "robot/yor-description/meshes/piper/gripper_base.stl",
+      "sha256": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+      "triangles": 12988,
+      "bounds_m": [
+        [
+          -0.03999999910593033,
+          -0.07249999791383743,
+          -1.2727396297073684e-17
+        ],
+        [
+          0.030500000342726707,
+          0.07249999791383743,
+          0.06300000101327896
+        ]
+      ]
+    },
+    {
+      "path": "robot/yor-description/meshes/piper/gripper_body.stl",
+      "sha256": "3b6682ff65cf448441c542fa922af5990bd14f7cbfd7e942971d280eed81c28c",
+      "triangles": 37342,
+      "bounds_m": [
+        [
+          -0.13879400634765626,
+          -0.06424199676513671,
+          0.0
+        ],
+        [
+          0.07319999694824218,
+          0.1,
+          0.15709199523925782
+        ]
+      ]
+    },
+    {
+      "path": "robot/yor-description/meshes/piper/iphone.stl",
+      "sha256": "6d7f9f1df55227fb047aee10bd16d5fc3c03431543262a613516c539d699a59f",
+      "triangles": 7266,
+      "bounds_m": [
+        [
+          -0.03176600074768066,
+          -0.06023600006103516,
+          0.043594001770019535
+        ],
+        [
+          0.11490000152587891,
+          -0.0318390007019043,
+          0.11411100006103515
+        ]
+      ]
+    },
+    {
+      "path": "robot/yor-description/assets_nero/left_gripper/L_Camera_Mount.stl",
+      "sha256": "26e3dea2249a19c9f4b4a97baaed5a4cfac05bf752088b255b7e546b4cbe2f6e",
+      "triangles": 7652,
+      "bounds_m": [
+        [
+          -0.04899999871850014,
+          0.1704999953508377,
+          -0.003000000026077032
+        ],
+        [
+          0.005473832134157419,
+          0.22550000250339508,
+          0.09022797644138336
+        ]
+      ]
+    },
+    {
+      "path": "robot/yor-description/assets_nero/right_gripper/R_Camera_Mount.stl",
+      "sha256": "71e51d1941d8459701243cd9358c3e5f35097d3e6c4920b3f159031a1d24fd54",
+      "triangles": 7652,
+      "bounds_m": [
+        [
+          -0.04899999871850014,
+          -0.025499999523162842,
+          -0.003000000026077032
+        ],
+        [
+          0.005473832134157419,
+          0.029500000178813934,
+          0.09022797644138336
+        ]
+      ]
+    }
+  ],
+  "legacy_camera_frames": [
+    {
+      "source": "robot.mjcf",
+      "side": "left",
+      "chain": [
+        "left_arm_link6",
+        "left_arm_gripper_base",
+        "left_arm_iphone_body",
+        "left_arm_camera_body",
+        "left_arm_egocentric"
+      ],
+      "T_link6_gripper": [
+        [
+          0.0007963267107331638,
+          -5.798799956717112e-17,
+          -0.9999996829318347,
+          0.027499999999999993
+        ],
+        [
+          -0.0015926524115072531,
+          -0.9999987317275395,
+          -1.2682720583110024e-06,
+          0.01875
+        ],
+        [
+          -0.9999984146597763,
+          0.0015926529164867855,
+          -0.0007963257007739534,
+          0.07979999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_gripper_optical": [
+        [
+          -0.0007963267107870052,
+          0.9659255200245184,
+          -0.2588189630400625,
+          0.02849998858554603
+        ],
+        [
+          -0.9999996829318346,
+          -0.0007691925360610935,
+          0.00020610451906934995,
+          0.014971332238413541
+        ],
+        [
+          1.9992631581484916e-13,
+          0.25881904510334247,
+          0.965925826288848,
+          0.11700000000000003
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "source": "robot.mjcf",
+      "side": "right",
+      "chain": [
+        "right_arm_link6",
+        "right_arm_gripper_base",
+        "right_arm_iphone_body",
+        "right_arm_camera_body",
+        "right_arm_egocentric"
+      ],
+      "T_link6_gripper": [
+        [
+          0.0007963267107330744,
+          -8.00702375980422e-17,
+          -0.9999996829318346,
+          0.02750000000000002
+        ],
+        [
+          -0.0015926524115073026,
+          -0.9999987317275395,
+          -1.2682720583603097e-06,
+          0.01875000000000002
+        ],
+        [
+          -0.9999984146597765,
+          0.001592652916486846,
+          -0.000796325700773909,
+          0.07979999999999997
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_gripper_optical": [
+        [
+          -0.0007963267107868455,
+          0.9659255200245183,
+          -0.2588189630400624,
+          0.028499988585546036
+        ],
+        [
+          -0.9999996829318346,
+          -0.0007691925360608944,
+          0.00020610451906914002,
+          0.014971332238413492
+        ],
+        [
+          1.9992823829615218e-13,
+          0.25881904510334247,
+          0.9659258262888482,
+          0.11699999999999997
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "source": "arm-upright.mjcf",
+      "side": "left",
+      "chain": [
+        "left_arm_link6",
+        "left_arm_gripper_base",
+        "left_arm_iphone_body",
+        "left_arm_camera_body",
+        "left_arm_egocentric"
+      ],
+      "T_link6_gripper": [
+        [
+          0.0007963267107331638,
+          -5.798799956717112e-17,
+          -0.9999996829318347,
+          0.027499999999999993
+        ],
+        [
+          -0.0015926524115072531,
+          -0.9999987317275395,
+          -1.2682720583110024e-06,
+          0.01875
+        ],
+        [
+          -0.9999984146597763,
+          0.0015926529164867855,
+          -0.0007963257007739534,
+          0.07979999999999998
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_gripper_optical": [
+        [
+          -0.0007963267107870052,
+          0.9659255200245184,
+          -0.2588189630400625,
+          0.02849998858554603
+        ],
+        [
+          -0.9999996829318346,
+          -0.0007691925360610935,
+          0.00020610451906934995,
+          0.014971332238413541
+        ],
+        [
+          1.9992631581484916e-13,
+          0.25881904510334247,
+          0.965925826288848,
+          0.11700000000000003
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "adopted_current_frames": [
+    {
+      "side": "left",
+      "T_link7_end_effector": [
+        [
+          1.0,
+          -0.0,
+          -0.0,
+          2.198195780899198e-19
+        ],
+        [
+          9.64268172354472e-22,
+          1.0,
+          0.0,
+          0.03300000000000005
+        ],
+        [
+          -3.2452001019405387e-22,
+          -3.3651214914702814e-23,
+          1.0,
+          -0.02350000000000004
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_end_effector_gripper": [
+        [
+          0.9999999999999998,
+          4.718726955800623e-21,
+          4.423142079502467e-21,
+          -2.0553458891832282e-19
+        ],
+        [
+          -3.458842777546119e-21,
+          2.368202645596383e-17,
+          0.9999999999999998,
+          0.011999999999999936
+        ],
+        [
+          -1.1577569106686708e-20,
+          -0.9999999999999998,
+          -4.1440081263514835e-19,
+          1.1102230243879197e-16
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_link7_gripper": [
+        [
+          0.9999999999999998,
+          4.718726955800623e-21,
+          4.423142079502467e-21,
+          1.3896028493170256e-20
+        ],
+        [
+          -3.458842777546119e-21,
+          2.368202645596383e-17,
+          0.9999999999999998,
+          0.044999999999999984
+        ],
+        [
+          -1.1577569106686708e-20,
+          -0.9999999999999998,
+          -4.1440081263514835e-19,
+          -0.02349999999999993
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_link7_grasp": [
+        [
+          0.9999999999999998,
+          4.718726955800623e-21,
+          4.423142079502467e-21,
+          -2.2454149421079393e-19
+        ],
+        [
+          -3.458842777546119e-21,
+          2.368202645596383e-17,
+          0.9999999999999998,
+          0.1649999999999999
+        ],
+        [
+          -1.1577569106686708e-20,
+          -0.9999999999999998,
+          -4.1440081263514835e-19,
+          -0.02350000000000004
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_gripper_grasp": [
+        [
+          1.0,
+          -0.0,
+          -0.0,
+          -2.4689525263900774e-19
+        ],
+        [
+          1.4131737969039118e-21,
+          1.0,
+          0.0,
+          7.880694426140118e-17
+        ],
+        [
+          -3.4588892234359704e-21,
+          -3.7816853560232044e-22,
+          1.0,
+          0.11999999999999987
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_gripper_optical": [
+        [
+          -2.313291758106943e-16,
+          0.9848077530122081,
+          0.1736481776669303,
+          -0.042
+        ],
+        [
+          -1.0000000000000002,
+          -2.727101669922279e-16,
+          4.349710238122107e-17,
+          8.59599017833761e-17
+        ],
+        [
+          1.1104538234709932e-16,
+          -0.17364817766693033,
+          0.9848077530122079,
+          0.051999999999999984
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_link7_optical": [
+        [
+          -2.3133271565789615e-16,
+          0.9848077530122079,
+          0.17364817766693028,
+          -0.04199999999999999
+        ],
+        [
+          8.736297772491935e-17,
+          -0.1736481776669303,
+          0.9848077530122077,
+          0.09699999999999998
+        ],
+        [
+          1.0,
+          2.7277194104604755e-16,
+          -4.390673315848494e-17,
+          -0.02350000000000004
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "finger_opening_axes_in_gripper": [
+        [
+          6.083769209465415e-21,
+          -0.9999999999909984,
+          -4.242642374164909e-06
+        ],
+        [
+          7.346403971516779e-06,
+          0.9999999999640147,
+          -4.242642374355668e-06
+        ]
+      ]
+    },
+    {
+      "side": "right",
+      "T_link7_end_effector": [
+        [
+          0.9999999999999999,
+          -0.0,
+          -0.0,
+          -2.180496615244397e-18
+        ],
+        [
+          4.381422429687385e-18,
+          1.0,
+          -0.0,
+          0.032999999999999925
+        ],
+        [
+          2.957919669165973e-18,
+          1.3878196238301163e-18,
+          1.0,
+          -0.023499999999999976
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_end_effector_gripper": [
+        [
+          0.9999999999999994,
+          1.6188707679648273e-17,
+          7.536636379884056e-18,
+          1.6944399309085491e-19
+        ],
+        [
+          1.5994388847246866e-17,
+          1.5858758318957837e-16,
+          0.9999999999999999,
+          0.012000000000000002
+        ],
+        [
+          1.240257879616559e-17,
+          -0.9999999999999996,
+          1.2202621863431737e-16,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_link7_gripper": [
+        [
+          0.9999999999999994,
+          1.6188707679648273e-17,
+          7.536636379884056e-18,
+          -1.6942963250445415e-18
+        ],
+        [
+          1.5994388847246866e-17,
+          1.5858758318957837e-16,
+          0.9999999999999999,
+          0.04499999999999993
+        ],
+        [
+          1.240257879616559e-17,
+          -0.9999999999999996,
+          1.2202621863431737e-16,
+          -0.023499999999999976
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_link7_grasp": [
+        [
+          0.9999999999999994,
+          1.6188707679648273e-17,
+          7.536636379884056e-18,
+          -1.973441243186126e-18
+        ],
+        [
+          1.5994388847246866e-17,
+          1.5858758318957837e-16,
+          0.9999999999999999,
+          0.16499999999999995
+        ],
+        [
+          1.240257879616559e-17,
+          -0.9999999999999996,
+          1.2202621863431737e-16,
+          -0.023500000000000087
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_gripper_grasp": [
+        [
+          0.9999999999999999,
+          -0.0,
+          -0.0,
+          1.5976801890546167e-18
+        ],
+        [
+          -9.484366346288633e-19,
+          1.0,
+          -0.0,
+          7.61030047504801e-17
+        ],
+        [
+          3.0505500210388016e-18,
+          2.2621950779602046e-18,
+          1.0,
+          0.12000000000000008
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_gripper_optical": [
+        [
+          -3.7889816175496913e-16,
+          0.984807753012208,
+          0.17364817766693022,
+          -0.041999999999999996
+        ],
+        [
+          -1.0,
+          -3.7908765533526164e-16,
+          -1.8076746479075592e-17,
+          1.4011911854413873e-17
+        ],
+        [
+          1.1547401926691452e-17,
+          -0.1736481776669302,
+          0.984807753012208,
+          0.05200000000000004
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_link7_optical": [
+        [
+          -3.942896631302303e-16,
+          0.9848077530122076,
+          0.17364817766693014,
+          -0.04199999999999998
+        ],
+        [
+          -1.4468850950416743e-16,
+          -0.17364817766693014,
+          0.9848077530122078,
+          0.09699999999999993
+        ],
+        [
+          0.9999999999999996,
+          3.7027863406341693e-16,
+          1.3017744821701478e-16,
+          -0.023499999999999976
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "finger_opening_axes_in_gripper": [
+        [
+          -4.587016230184335e-18,
+          -0.9999999999909999,
+          -4.242642374197178e-06
+        ],
+        [
+          7.346403971517398e-06,
+          0.9999999999640148,
+          -4.242642374181018e-06
+        ]
+      ]
+    }
+  ],
+  "maximum_source_mount_matrix_error": 6.661338147750939e-16,
+  "maximum_rigid_mount_matrix_error": 6.661338147750939e-16,
+  "decisions": {
+    "gripper": "Retain the stock AgileX assembly from yor-full-agx.mjcf. Its link7-to-palm and grasp transforms are preserved in Sophia. make_agx_variant.py explicitly labels the installed adapter offset as an estimate; source inheritance does not make it a hardware measurement.",
+    "legacy_camera": "Do not transplant the Piper/iPhone camera transform. It is attached to a different 37342-triangle gripper_body mesh on a six-joint arm. The shared 12988-triangle stock housing is declared but unused in that camera assembly, so its matching filename is not a frame bridge.",
+    "custom_camera_mounts": "L/R_Camera_Mount meshes belong to the custom articulated gripper assembly in yor-full.mjcf; that model defines no wrist optical camera. Retain these as alternative-assembly evidence.",
+    "wrist": {
+      "configuration": {
+        "parent_body_pattern": "{side}_gripper_base",
+        "position_m": [
+          -0.042,
+          0.0,
+          0.052
+        ],
+        "toe_in_deg": 10.0,
+        "basis": "User confirms cameras above the grippers. Rotate the previous palm-side mounting by 180 degrees around the finger/approach axis: negative palm X, with upright image axes and toe-in toward the grasp center. Retain photo-estimated offset magnitudes and measured per-camera intrinsics.",
+        "mount_status": "user_confirmed_upper_side_with_estimated_offsets",
+        "position_uncertainty_m": 0.015,
+        "orientation_uncertainty_deg": 10.0,
+        "mount_roll_deg": 180.0
+      },
+      "interpretation": "Upper-side placement is user confirmed. Offset magnitudes and toe-in remain photo estimates; supplied per-camera intrinsics are retained. Camera, lens and visible board use the same mount orientation."
+    },
+    "completion": "Frame/source reconciliation is complete. No supported numeric mounting correction was found; remaining uncertainty is an accepted simulation assumption, not a request for further measurements."
+  },
+  "source_sha256": {
+    "robot/yor-description/robot.mjcf": "144741496349160081b876579dda17112e94e818d5c5d477dec4a7c5829a09f0",
+    "robot/yor-description/arm-upright.mjcf": "484dfec466d4ad1dc717c98939f6cc7546f4fe1c579bc2becb29ab836864c2f7",
+    "robot/yor-description/yor-full.mjcf": "d5e05b9a470c7ab41ad2b339f12d94e0ba8c9bfe436b1d05c0862df34abbed03",
+    "robot/yor-description/yor-full-agx.mjcf": "ffba3d58ab1fc4f2e7fa45bcedd4b511ac6df55a9db7e2aae346b5cfe044d798",
+    "robot/yor-description/sophia.mjcf": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+    "robot/yor-description/make_agx_variant.py": "466a32a0ccf5570fe9e6d3176208d40c496b2f442db94821e65f5076de77fb07",
+    "robot/yor-description/sophia.json": "82d0445a604bdc6bd64c52f1283c2c300ac22f6862c78e50000d83a769e8ecba",
+    "robot/yor-description/calibration/camera_intrinsics_2026-10-30.json": "d05b06874439686818dec0977e293862bb79e38939ec440c9ab94c2a2a3a4b47",
+    "robot/yor-description/assets_nero/gripper_base.stl": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+    "robot/yor-description/meshes/piper/gripper_base.stl": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+    "robot/yor-description/meshes/piper/gripper_body.stl": "3b6682ff65cf448441c542fa922af5990bd14f7cbfd7e942971d280eed81c28c",
+    "robot/yor-description/meshes/piper/iphone.stl": "6d7f9f1df55227fb047aee10bd16d5fc3c03431543262a613516c539d699a59f",
+    "robot/yor-description/assets_nero/left_gripper/L_Camera_Mount.stl": "26e3dea2249a19c9f4b4a97baaed5a4cfac05bf752088b255b7e546b4cbe2f6e",
+    "robot/yor-description/assets_nero/right_gripper/R_Camera_Mount.stl": "71e51d1941d8459701243cd9358c3e5f35097d3e6c4920b3f159031a1d24fd54",
+    "scripts/review_sophia_mounts.py": "20c7cc8096e3eb63d19fe06d6fa44ccd9ce12c76a30150d150ace3826f91dbfa"
+  }
+}

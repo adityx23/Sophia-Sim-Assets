@@ -1,0 +1,90 @@
+{
+  "status": "completed_and_enabled_locally",
+  "steps_1_through_5_complete": true,
+  "profile": {
+    "enabled": true,
+    "source": "calibration/base_alignment_2026-11-04.json",
+    "sha256": "a8961c0c4b742f39f2adceb8f58065e403385bc4f0f9da019b79a9d180d499e5",
+    "status": "validated_stereo_base_geometry_with_recording_scoped_height_alignment"
+  },
+  "head_arm_source_hashes_unchanged": {
+    "robot/yor-description/calibration/image_frame_alignment_2026-11-04.json": true,
+    "robot/yor-description/calibration/spinal_assembly_2026-11-04.json": true
+  },
+  "other_configuration_unchanged": true,
+  "joystick_sha256": "fac0c2c672483b62499434453b577f3f067c32f08aa81a9ddc8051a0bceaf018",
+  "hardware_configuration_modified": false,
+  "frame_translation_chassis_m": [
+    0.1628805306040458,
+    0.044997090661677966,
+    0.0
+  ],
+  "validation": {
+    "n": 9,
+    "episodes": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "before": {
+      "rmse_m": 0.1826152043025349,
+      "rmse_px": 174.60071563121966,
+      "max_m": 0.19918335791843683
+    },
+    "geometry_only": {
+      "rmse_m": 0.0717001526057265,
+      "rmse_px": 16.700719070615527,
+      "max_m": 0.10513949491089972
+    },
+    "aligned": {
+      "rmse_m": 0.0117325098612719,
+      "rmse_px": 8.70615483113525,
+      "max_m": 0.015875573441064765
+    }
+  },
+  "compiled_pixel_validation": {
+    "left": {
+      "n": 9,
+      "rmse_px": 8.706154844656009
+    },
+    "right": {
+      "n": 9,
+      "rmse_px": 8.887850216657466
+    }
+  },
+  "collision_samples": 5119,
+  "new_penetrations_over_1mm": 0,
+  "regression_tests_passed": 36,
+  "video": {
+    "path": "/home/lairlab/projects/pi-atlas/sim/YOR/output/asset-review/base-calibration/episode-0-real-vs-sim-zed-base-corrected.mp4",
+    "sha256": "cd77b07c08cf8759a74b619da3948b4eafc00402a1e4ca7b01a6cd873450500e",
+    "frames": 1662,
+    "fps": 30,
+    "width": 1920,
+    "height": 640,
+    "duration_s": 55.4,
+    "measured_pose_replay": true,
+    "historical_lift_offset_m": -0.036130786085292896,
+    "limitations": "No real environment reconstruction; not a physical replay or dynamics validation.",
+    "canonical_model_sha256": "cd8c42360a47b0e0cebbded6f8757d43afa9a4078cb76e88e6b55bbf2f4b2c63",
+    "candidate_model_sha256": "b8d41d9babc717b74d5d292f1f2ec3261589376d7987fd98f32de24f44ae9d17",
+    "source_video_sha256": "243538adadc7b0537db482391e01354d1716fb7ae701397ca92fd8cb510fed59",
+    "alignment_sha256": "e63ccec0cd36b4ab67a9c38cd024f65b19c33e7a8168e0beed7a36cce6b56c23",
+    "base_profile_sha256": "a8961c0c4b742f39f2adceb8f58065e403385bc4f0f9da019b79a9d180d499e5",
+    "full_decode_check_passed": true
+  },
+  "remaining_limits": [
+    "Only three training frames and five accepted held-out frames; not an untouched final test set.",
+    "Static lift readings cannot identify encoder scale, speed or the cause of historical height offsets.",
+    "About 10mm residual rail-plane roll/edge uncertainty remains; no camera or chassis tilt fitted.",
+    "Electronics, rail section, hidden structure and antenna thickness remain approximations.",
+    "Discrete collision samples are not a continuous clearance proof."
+  ],
+  "recording_alignment": "Opt-in and bound to exact recording hashes; live lift mapping unchanged.",
+  "reproducible_scripts": [
+    "scripts/calibrate_sophia_base.py",
+    "scripts/fit_sophia_base.py",
+    "scripts/check_sophia_base.py"
+  ]
+}

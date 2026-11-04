@@ -1,0 +1,16 @@
+<mujoco model="scene-sophia">
+  <include file="sophia.mjcf" />
+  <statistic center="0 -0.21 0.85" extent="1.85" meansize="0.04" />
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0.15 0.15 0.15" />
+    <global azimuth="135" elevation="-15" offwidth="1600" offheight="1600" />
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.78 0.81 0.85" rgb2="0.92 0.93 0.94" width="512" height="3072" />
+    <material name="sophia_floor" rgba="0.55 0.56 0.57 1" reflectance="0" />
+  </asset>
+  <worldbody>
+    <light pos="1 0 3" dir="-0.3 0 -1" directional="true" diffuse="0.6 0.6 0.6" />
+    <geom name="floor" type="plane" size="0 0 .05" material="sophia_floor" condim="4" />
+  </worldbody>
+</mujoco>

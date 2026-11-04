@@ -1,0 +1,310 @@
+{
+  "evaluated_at_utc": "2026-11-04T20:23:32.677497+00:00",
+  "source_sha256": {
+    "scene-sophia.mjcf": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+    "sophia.mjcf": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+    "sophia-ik.mjcf": "53968309ee9ffea5d5ed304e3feb7baccf82ca77723b61814e713b3c8a1a18d3",
+    "sophia.json": "82d0445a604bdc6bd64c52f1283c2c300ac22f6862c78e50000d83a769e8ecba",
+    "evaluate_sophia.py": "af68fe2dca439ce8ec0c71312c332c07d2a70c67af17a21a37cb0e5db8374d58",
+    "../yor_mujoco.py": "8f347084b9d30905bd6c714b30ba84e24deb4e309dc50b53c42d910dd06e247e",
+    "../sim_collision.py": "648406bdff48aa7f711e6376488b12e5cfd7999bc65eea2ad7bc51a95f58816a"
+  },
+  "mujoco_version": "3.17.0",
+  "timestep_s": 0.005,
+  "checks": [
+    {
+      "name": "lowered: 60 s gravity hold",
+      "passed": true,
+      "drift_m": 0.0005319071818265393,
+      "max_tilt_deg": 0.001918027341749035,
+      "max_self_penetration_m": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "home: 60 s gravity hold",
+      "passed": true,
+      "drift_m": 0.0005319146459095325,
+      "max_tilt_deg": 0.0019735008767884673,
+      "max_self_penetration_m": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "reference: 60 s gravity hold",
+      "passed": true,
+      "drift_m": 0.0005334412591036794,
+      "max_tilt_deg": 0.0013231673680704993,
+      "max_self_penetration_m": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "raised: 60 s gravity hold",
+      "passed": true,
+      "drift_m": 0.0005319127240713775,
+      "max_tilt_deg": 0.0020056109738685914,
+      "max_self_penetration_m": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "neck: guard rejects colliding combinations in 475-pose sweep",
+      "passed": true,
+      "colliding_configurations": 0,
+      "worst": {
+        "depth_m": 0.0
+      },
+      "rejected_colliding_configurations": 0,
+      "penetration_tolerance_m": 0.0001
+    },
+    {
+      "name": "home-to-hanging at lift 0.0000 m: guard rejects interference",
+      "passed": true,
+      "samples": 101,
+      "colliding_configurations": 19,
+      "worst": {
+        "depth_m": 0.031158937769072494,
+        "geoms": [
+          "corner_post__1_1_collision",
+          "left_gripper_housing_0_collision"
+        ],
+        "bodies": [
+          "sophia_chassis",
+          "left_gripper_base"
+        ],
+        "path_fraction": 0.8
+      },
+      "guard_rejection": {
+        "reason": "self_collision",
+        "geoms": [
+          "left_gripper_housing_0_collision",
+          "corner_post__1_1_collision"
+        ],
+        "bodies": [
+          "left_gripper_base",
+          "sophia_chassis"
+        ],
+        "clearance_m": 0.004557792462333603,
+        "required_clearance_m": 0.005,
+        "path_fraction": 0.7038167938931298
+      },
+      "penetration_tolerance_m": 0.0001
+    },
+    {
+      "name": "home-to-hanging at lift 0.1000 m: guard rejects interference",
+      "passed": true,
+      "samples": 101,
+      "colliding_configurations": 33,
+      "worst": {
+        "depth_m": 0.025020106904801127,
+        "geoms": [
+          "upper_rail_x_1_collision",
+          "left_gripper_housing_0_collision"
+        ],
+        "bodies": [
+          "sophia_chassis",
+          "left_gripper_base"
+        ],
+        "path_fraction": 0.75
+      },
+      "guard_rejection": {
+        "reason": "self_collision",
+        "geoms": [
+          "left_finger_a_collision",
+          "upper_rail_x_1_collision"
+        ],
+        "bodies": [
+          "left_gripper_finger_a",
+          "sophia_chassis"
+        ],
+        "clearance_m": 0.004793633079100229,
+        "required_clearance_m": 0.005,
+        "path_fraction": 0.5938931297709924
+      },
+      "penetration_tolerance_m": 0.0001
+    },
+    {
+      "name": "home-to-hanging at lift 0.3000 m: guard allows clear path",
+      "passed": true,
+      "samples": 101,
+      "colliding_configurations": 0,
+      "worst": {
+        "depth_m": 0.0
+      },
+      "guard_rejection": null,
+      "penetration_tolerance_m": 0.0001
+    },
+    {
+      "name": "home-to-hanging at lift 0.5588 m: guard allows clear path",
+      "passed": true,
+      "samples": 101,
+      "colliding_configurations": 0,
+      "worst": {
+        "depth_m": 0.0
+      },
+      "guard_rejection": null,
+      "penetration_tolerance_m": 0.0001
+    },
+    {
+      "name": "30 s simultaneous arms, lift, neck and gripper motion",
+      "passed": true,
+      "max_arm_tracking_error_rad": 0.02213412496343037,
+      "max_lift_tracking_error_m": 0.004682802237868988,
+      "max_stage_coupling_error_m": 0.00013185278799190958,
+      "max_self_penetration_m": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "lowered: forward, strafe and yaw with stops",
+      "passed": true,
+      "displacements_xy_m_yaw_rad": [
+        [
+          0.3887087709206343,
+          9.115803252002495e-06,
+          -5.46969684629417e-05
+        ],
+        [
+          -0.008615993653945173,
+          0.34038423149390984,
+          0.015280855763619705
+        ],
+        [
+          0.0005450633051884107,
+          0.0008683248903634143,
+          0.6748340668038062
+        ]
+      ],
+      "max_tilt_deg": 0.10075691776349589,
+      "max_self_penetration_m": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "raised: forward, strafe and yaw with stops",
+      "passed": true,
+      "displacements_xy_m_yaw_rad": [
+        [
+          0.3940698232134584,
+          1.2720759005281826e-05,
+          0.0005541648854601178
+        ],
+        [
+          -0.011442356965941583,
+          0.3514952558794211,
+          0.0389737546998834
+        ],
+        [
+          0.0012852150531887448,
+          0.0011060720104456917,
+          0.6801037841822266
+        ]
+      ],
+      "max_tilt_deg": 0.0987790934226716,
+      "max_self_penetration_m": 0.0,
+      "warnings": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "home: left stereo RGB/depth render",
+      "passed": true,
+      "configured_baseline_m": 0.11999185180666566,
+      "rgb_std": 35.62832173270444,
+      "depth_min_max_m": [
+        1.9177584648132324,
+        92.50315856933594
+      ],
+      "camera_intrinsics_source": "Orin 2026-10-30; zed.rectified",
+      "camera_to_robot_extrinsics_still_unmeasured": true
+    },
+    {
+      "name": "home: right stereo RGB/depth render",
+      "passed": true,
+      "configured_baseline_m": 0.11999185180666566,
+      "rgb_std": 35.62489760457779,
+      "depth_min_max_m": [
+        1.9143835306167603,
+        92.50315856933594
+      ],
+      "camera_intrinsics_source": "Orin 2026-10-30; zed.rectified",
+      "camera_to_robot_extrinsics_still_unmeasured": true
+    },
+    {
+      "name": "raised: left stereo RGB/depth render",
+      "passed": true,
+      "configured_baseline_m": 0.11999185180666566,
+      "rgb_std": 35.98562570202542,
+      "depth_min_max_m": [
+        2.265298843383789,
+        92.50315856933594
+      ],
+      "camera_intrinsics_source": "Orin 2026-10-30; zed.rectified",
+      "camera_to_robot_extrinsics_still_unmeasured": true
+    },
+    {
+      "name": "raised: right stereo RGB/depth render",
+      "passed": true,
+      "configured_baseline_m": 0.11999185180666566,
+      "rgb_std": 35.98260854399657,
+      "depth_min_max_m": [
+        2.2619247436523438,
+        92.50315856933594
+      ],
+      "camera_intrinsics_source": "Orin 2026-10-30; zed.rectified",
+      "camera_to_robot_extrinsics_still_unmeasured": true
+    }
+  ],
+  "passed_count": 16,
+  "total_count": 16,
+  "passed": true
+}

@@ -1,0 +1,76 @@
+{
+  "dataset": "adityx23/Pi-Atlas_Sanity_Check_Dataset_1080p",
+  "revision": "ed7c9f2f1a78ceec46543229aacb0387120ea8f7",
+  "configuration_confirmed_by_user": true,
+  "axis_order": [
+    "pan",
+    "tilt"
+  ],
+  "neck_rate_limit_rad_s": [
+    1.0,
+    2.0
+  ],
+  "source": "Native robot commands and measured neck angles from 2026-10-26.",
+  "selection": "2 rad/s tilt candidate selected from episode 0, which contains measured tilt rates up to 108.82 deg/s; checked on separate episodes 1, 3, 8, 17. Pan unchanged.",
+  "validation_baseline_tilt_rmse_deg": 1.207157707755094,
+  "validation_updated_tilt_rmse_deg": 0.4409053327905764,
+  "trials": [
+    {
+      "episode": "episode_000000",
+      "split": "selection",
+      "samples": 1631,
+      "baseline_tilt_rmse_deg": 1.7256205035077539,
+      "candidate_tilt_rmse_deg": 0.6349144701330967,
+      "candidate_max_abs_tilt_deg": 4.482130341678548,
+      "guard_hold_steps": 0
+    },
+    {
+      "episode": "episode_000001",
+      "split": "validation",
+      "samples": 1893,
+      "baseline_tilt_rmse_deg": 1.4991836042718545,
+      "candidate_tilt_rmse_deg": 0.5033073357058027,
+      "candidate_max_abs_tilt_deg": 3.656519322990828,
+      "guard_hold_steps": 0
+    },
+    {
+      "episode": "episode_000003",
+      "split": "validation",
+      "samples": 1976,
+      "baseline_tilt_rmse_deg": 1.7082521216187512,
+      "candidate_tilt_rmse_deg": 0.48972677268736275,
+      "candidate_max_abs_tilt_deg": 4.939988837248744,
+      "guard_hold_steps": 0
+    },
+    {
+      "episode": "episode_000008",
+      "split": "validation",
+      "samples": 1268,
+      "baseline_tilt_rmse_deg": 0.2931601876339828,
+      "candidate_tilt_rmse_deg": 0.3067545202349118,
+      "candidate_max_abs_tilt_deg": 0.8713845391458547,
+      "guard_hold_steps": 0
+    },
+    {
+      "episode": "episode_000017",
+      "split": "validation",
+      "samples": 2034,
+      "baseline_tilt_rmse_deg": 0.39663546099714525,
+      "candidate_tilt_rmse_deg": 0.39742765002486835,
+      "candidate_max_abs_tilt_deg": 0.9674495137455406,
+      "guard_hold_steps": 0
+    }
+  ],
+  "limits": [
+    "Empirical simulation slew limit, not a certified maximum hardware rate.",
+    "No gains, physical joint limits, pan rate or robot settings changed.",
+    "Validated command envelope is approximately pan -11.2 to +17.3 deg and tilt -20 to +48.1 deg.",
+    "Two slow validation episodes have small RMSE increases; aggregate and fast-motion errors improve.",
+    "Neck-only replay at sim home for other subsystems; no independent physical lift scale."
+  ],
+  "source_reports_sha256": {
+    "dataset-audit.json": "2b9b2203e0f4aa87e2ed6e59337f0aebe215a6b6ba0d147f2e62651cf68859ab",
+    "neck-replay.json": "800f10f356e91be3bd2e59955ec21b3de2ef36169953bc1c47244c0fa1f40643",
+    "neck-candidate-2.json": "c811d83b617a02f5d8187c9b3c1eb0dedb9b1e3c97d20bf5f78f52c3db07e5b8"
+  }
+}

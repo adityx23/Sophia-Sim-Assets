@@ -1,0 +1,5 @@
+[REVIEW] gripper_provenance: Both finger meshes exactly match the pinned official AgileX stock-gripper meshes. The housing differs from the current vendor housing. Existing-asset frame review retains the supplied stock assembly; installed revision and physical mount precision remain accepted assumptions.
+[REVIEW] unreferenced_gripper_mesh: gripper.STL has no established assembly transform or unit declaration; it is not substituted into the model.
+[REVIEW] gripper_mount: The simulated palm is 12 mm along end-effector +Y; the configured grasp site is 132 mm along that axis. Existing-asset reconciliation confirms inheritance from the stock assembly, with unchanged hardware confirmed by the user. These remain accepted mounting estimates rather than measured extrinsics.
+[REVIEW] unmeasured_mass_distribution: Arm and finger inertials now use verified vendor CAD data. Chassis, lift, housing/accessory mass distribution, friction and actuator response still need physical validation; the complete robot has not been weighed.
+Integrity checks: True; hardware calibrated: False

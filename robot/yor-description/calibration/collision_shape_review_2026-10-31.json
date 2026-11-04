@@ -1,0 +1,198 @@
+{
+  "review_date": "2026-10-31",
+  "scope": "Three identified gripper/frame and camera/neck overlap cases, plus retained intermediate-path contact.",
+  "method": "Clip original CAD surface triangles against the implicated box with 0.1 mm inset; compare to separate connected-component convex-hull distances and collision sweeps.",
+  "source_housing_triangle_count": 12988,
+  "generated_housing_components": 5,
+  "component_triangle_counts": [
+    7566,
+    1544,
+    1930,
+    532,
+    1416
+  ],
+  "geometry_fix": "Replace one whole-assembly gripper housing hull with five exact connected STL component meshes per side. Preserve every original triangle, coordinate and body transform.",
+  "clearance_fix": "Disable mesh BVH midphase only on the separate guard query model: with inflated 5 mm margins the old query missed a 2.904 mm positive gripper/rail separation. Live physics options and margins are unchanged.",
+  "100mm_hanging_endpoint": {
+    "before_hull_penetration_mm": 18.824144283466794,
+    "after_minimum_gap_mm": 2.903812900611656,
+    "source_surface_crossings": 0,
+    "below_5mm_guard_margin": true,
+    "legacy_query_contacts_m": [],
+    "corrected_query_contacts_m": [
+      0.0029038128999426312
+    ]
+  },
+  "sweeps": [
+    {
+      "name": "arms-lowered",
+      "sampled": 101,
+      "before_colliding_samples": 3,
+      "after_colliding_samples": 3,
+      "after_source_surface_supported": 3
+    },
+    {
+      "name": "arms-100mm",
+      "sampled": 101,
+      "before_colliding_samples": 22,
+      "after_colliding_samples": 14,
+      "after_source_surface_supported": 14
+    },
+    {
+      "name": "neck",
+      "sampled": 475,
+      "before_colliding_samples": 11,
+      "after_colliding_samples": 11,
+      "after_source_surface_supported": 11
+    }
+  ],
+  "retained_intersections": [
+    {
+      "case": "lowered-transition",
+      "minimum_distance_m": -0.0024146184379647854,
+      "source_surface": {
+        "source_triangles": 12988,
+        "inset_m": 0.0001,
+        "crossing_triangles": 57,
+        "deepest_witnesses": [
+          {
+            "depth_inside_box_m": 0.0021473723405661914,
+            "point_in_box_frame_m": [
+              -0.007160002269911572,
+              0.007852627659433809,
+              -0.027398201422347657
+            ],
+            "clipped_triangle_area_m2": 4.658744715629458e-06
+          },
+          {
+            "depth_inside_box_m": 0.001946812063610236,
+            "point_in_box_frame_m": [
+              -0.008053187936389764,
+              0.007801786060185097,
+              -0.021462765131856493
+            ],
+            "clipped_triangle_area_m2": 4.6587364482445495e-06
+          },
+          {
+            "depth_inside_box_m": 0.0019222695525030996,
+            "point_in_box_frame_m": [
+              -0.006718992652133288,
+              0.0080777304474969,
+              -0.027315532399717363
+            ],
+            "clipped_triangle_area_m2": 4.658791070771087e-06
+          }
+        ]
+      }
+    },
+    {
+      "case": "100mm-transition",
+      "minimum_distance_m": -0.00727826617718388,
+      "source_surface": {
+        "source_triangles": 12988,
+        "inset_m": 0.0001,
+        "crossing_triangles": 388,
+        "deepest_witnesses": [
+          {
+            "depth_inside_box_m": 0.006390743543966158,
+            "point_in_box_frame_m": [
+              0.07825385989454271,
+              0.0036092564560338426,
+              -0.0034589553304473605
+            ],
+            "clipped_triangle_area_m2": 3.1819920439938282e-06
+          },
+          {
+            "depth_inside_box_m": 0.0063900533689100515,
+            "point_in_box_frame_m": [
+              0.08137659208700458,
+              0.0036099466310899487,
+              -0.0028941682186422097
+            ],
+            "clipped_triangle_area_m2": 1.7992227251187805e-07
+          },
+          {
+            "depth_inside_box_m": 0.00620199820879838,
+            "point_in_box_frame_m": [
+              0.08141149677222682,
+              0.00379800179120162,
+              -0.0027101616036682348
+            ],
+            "clipped_triangle_area_m2": 8.996066237635274e-08
+          }
+        ]
+      }
+    },
+    {
+      "case": "neck-extreme",
+      "minimum_distance_m": -0.011283601136765261,
+      "source_surface": {
+        "source_triangles": 1664,
+        "inset_m": 0.0001,
+        "crossing_triangles": 255,
+        "deepest_witnesses": [
+          {
+            "depth_inside_box_m": 0.010455966619228537,
+            "point_in_box_frame_m": [
+              -0.00413259921003262,
+              -0.01802349292623504,
+              -0.004444033380771462
+            ],
+            "clipped_triangle_area_m2": 1.6749339087606263e-06
+          },
+          {
+            "depth_inside_box_m": 0.009893253939177254,
+            "point_in_box_frame_m": [
+              -0.004001535722528507,
+              -0.01685376321671041,
+              -0.005006746060822746
+            ],
+            "clipped_triangle_area_m2": 2.645781839469051e-06
+          },
+          {
+            "depth_inside_box_m": 0.009779556123467776,
+            "point_in_box_frame_m": [
+              -0.0059829282374704125,
+              -0.019858554915166683,
+              -0.005120443876532225
+            ],
+            "clipped_triangle_area_m2": 1.0172157624382063e-05
+          }
+        ]
+      }
+    }
+  ],
+  "unchanged": [
+    "Visual mesh triangles",
+    "Mount transforms and camera extrinsics",
+    "Joint limits and kinematics",
+    "Body mass/COM/inertias",
+    "Actuator gains and force limits",
+    "Collision masks and body exclusions",
+    "5 mm clearance requirement",
+    "Lift and gripper mappings"
+  ],
+  "review_checks_passed": true,
+  "hardware_clearance_verified": false,
+  "limitations": [
+    "Surface crossing establishes intersection in the retained CAD model, not measured interference on the physical robot.",
+    "Per-component convex hulls remain an approximation of each connected part. No claim of complete concavity handling outside the reviewed poses.",
+    "Corrected 100 mm endpoint has only 2.904 mm clearance and remains restricted by the 5 mm guard; its approach path also has CAD-supported contact.",
+    "Legacy/current gripper and wrist-camera frame reconciliation remains separate work."
+  ],
+  "mujoco_reference": "https://mujoco.readthedocs.io/en/stable/computation/index.html#collision-detection",
+  "source_sha256": {
+    "robot/yor-description/assets_nero/gripper_base.stl": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+    "robot/yor-description/assets_nero/head/topbase2.stl": "75dc4dfa5bd5a6c6a298a65e30ea0e47266396efdd6988b69038f0776d73412f",
+    "robot/yor-description/sophia_collision_geometry.py": "dab3101c664ef71ce2ce83065474ea01eaf2fdb1b0fd17565119a3d340d69fb4",
+    "robot/sim_collision.py": "648406bdff48aa7f711e6376488b12e5cfd7999bc65eea2ad7bc51a95f58816a",
+    "scripts/review_sophia_collisions.py": "3276d814f5828b1c2c6ecade9ea5f526d719fcf07c09169f2721696d6b8e6b81",
+    "output/asset-review/collision-review/before/shape-review.json": "e35eb74c4f0e4b63ff9860417a31c861ce7f33f1512d8652db5a0dcbffe8f5b4",
+    "output/asset-review/collision-review/after/shape-review.json": "1fa78e5107bf9cc0344a0b8814956a6478293f516643fd2037d20b4954d002c9",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_0.stl": "48b445a81115cc92cf8498a02378c82913a37e50016f181e2d519c70ffe4633c",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_1.stl": "ddfc34bf357e351e42245549e080ce6bca878f0fa1e5f501386a19cd97c59427",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_2.stl": "da24cdc70f2f4fa210ac4d302604cdff61c87e590f2d2fd20c8baebccfd1bafa",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_3.stl": "1ee65dfc6597888f3a635f82e595db647f740a37c11907f7b81c1ec582f4d2b6",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_4.stl": "325c7b5d1c191ec7236be32148938696f233a560a39a9dd75784f27e7c530210"
+  }
+}

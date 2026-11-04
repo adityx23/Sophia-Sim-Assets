@@ -1,0 +1,60 @@
+{
+  "status": "captured_and_imported_not_parameter_fitted",
+  "recording_stopped": true,
+  "capture_directory": "teleop_2026-11-02",
+  "summary": "teleop_2026-11-02/summary.json",
+  "manifest": "teleop_2026-11-02/MANIFEST.json",
+  "manifest_sha256": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554",
+  "episodes": 75,
+  "frames": 115791,
+  "active_recording_seconds": 3892.841642856598,
+  "quality": {
+    "missing_sequences": 0,
+    "duplicate_sequences": 0,
+    "out_of_order_sequences": 0,
+    "invalid_sequences": 0,
+    "invalid_timestamps": 0,
+    "nonincreasing_timestamps": 0
+  },
+  "bad_packets": 0,
+  "task_counts": {
+    "receive the cube": 5,
+    "place the cube": 3,
+    "pick the cube": 4,
+    "give the cube": 4,
+    "go to living room": 12,
+    "go to kitchen fridge": 11,
+    "go to kitchen microwave": 11,
+    "go to workshop table": 14,
+    "go to workshop cabinet": 11
+  },
+  "gripper_command_missing_frames": {
+    "left": 84108,
+    "right": 84394
+  },
+  "gripper_feedback_provenance_unknown_frames": {
+    "left": 115791,
+    "right": 115791
+  },
+  "lift_observation": "Publisher height fixed at 0.6738 and command fixed at zero; no new lift speed or mapping evidence.",
+  "validation": {
+    "imported_files_verified": 91,
+    "uncompressed_source_hashes_verified": 13,
+    "episode_arrays_verified": 75,
+    "capture_baseline_matches_current_model_and_controller": true
+  },
+  "simulation_parameters_changed": false,
+  "hardware_calibrated": false,
+  "next_work": [
+    "Confirm deployed publisher command-hold and gripper-feedback semantics; preserve nulls until resolved.",
+    "Replay recorded commands against measured responses with native source timing.",
+    "Separate fit/validation runs and retain per-joint regression gates before adopting parameters.",
+    "Use independent video/pose/force evidence for claims telemetry cannot establish."
+  ],
+  "follow_up_identification": {
+    "date": "2026-11-03",
+    "record": "response_identification_2026-11-03.json",
+    "status": "source_semantics_resolved_left_arm_effective_gains_applied",
+    "note": "Original capture/import facts and raw provenance flags are retained; this later source review and fit supersede the original pending-work list."
+  }
+}

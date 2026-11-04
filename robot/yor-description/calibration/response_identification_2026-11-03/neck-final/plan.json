@@ -1,0 +1,118 @@
+{
+  "subsystem": "neck",
+  "arm_train": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "arm_validation": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "neck_train": [
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "neck_validation": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74
+  ],
+  "arm_preview_s": 0.06666666666666667,
+  "preview_basis": "Deployed WebXR bridge default; exact launch override/receipt timestamps not recorded.",
+  "gain_bounds": [
+    [
+      100,
+      2
+    ],
+    [
+      1500,
+      80
+    ]
+  ],
+  "neck_rate_bounds": [
+    0.3,
+    3.5
+  ],
+  "gate": "At least 10% pooled improvement, no joint/axis >10% worse, 75% episodes improve, no optimizer bound; independent old-data check before adoption.",
+  "mask": "After initialized first second, base stationary by command/encoders; arm additionally engaged and open-command/open-feedback settled >0.3s. Grasp/contact absence is not proven.",
+  "fixed": [
+    "masses",
+    "inertias",
+    "friction",
+    "force limits",
+    "joint offsets",
+    "clock alignment"
+  ],
+  "source_sha256": {
+    "scripts/identify_sophia_capture.py": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+    "robot/yor-description/sophia.mjcf": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+    "robot/yor-description/sophia.json": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+    "robot/yor_mujoco.py": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+    "robot/yor-description/calibration/teleop_2026-11-02/MANIFEST.json": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554"
+  }
+}

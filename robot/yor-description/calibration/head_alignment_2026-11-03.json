@@ -1,0 +1,368 @@
+{
+  "status": "dataset_fitted_provisional",
+  "dataset": "adityx23/Pi-Atlas_Sanity_Check_Dataset_1080p",
+  "revision": "ed7c9f2f1a78ceec46543229aacb0387120ea8f7",
+  "method": "Fit fixed tilt alignment and rigid neck-mount translation using measured joints, manual fingertip-pair image midpoints and rectified stereo correspondences. Retain yaw/roll and supplied lens intrinsics.",
+  "reference_head_neck_pos_m": [
+    0,
+    0,
+    0.12
+  ],
+  "head_neck_parent_offset_m": [
+    0.03738634690184291,
+    0.025855371865814405,
+    0.07051593489818407
+  ],
+  "head_tilt_fixed_rotation_quat_wxyz": [
+    0.996293407759306,
+    0.0,
+    -0.08602003054724729,
+    0.0
+  ],
+  "fitted_downward_alignment_deg": 9.86936632929089,
+  "training_episode": 0,
+  "training_pair_observations": 11,
+  "withheld_episode_0_pair_observations": 6,
+  "episode_0_validation": {
+    "n": 6,
+    "median_px": 11.682668398659589,
+    "rmse_px": 13.492502554405561,
+    "max_px": 18.77287561929747
+  },
+  "independent_episode_1_validation": {
+    "dataset_episode": 1,
+    "excluded_from_fitting": true,
+    "source_video_sha256": "301d28fcca1fdfc0c6a07325f0b26052794b46b34bdd331fea56984f736ca3d4",
+    "results": {
+      "baseline": {
+        "n": 8,
+        "rmse_px": 239.1611454891814,
+        "median_px": 244.25845554709676,
+        "max_px": 266.1637011668178,
+        "observations": [
+          {
+            "second": 2,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 202.29141329464147
+          },
+          {
+            "second": 46,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 216.41915738520024
+          },
+          {
+            "second": 48,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 214.77010258051067
+          },
+          {
+            "second": 54,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 250.68852760726645
+          },
+          {
+            "second": 56,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 265.74448949611707
+          },
+          {
+            "second": 56,
+            "landmark": "right_tip_pair_midpoint",
+            "error_px": 250.03729419756255
+          },
+          {
+            "second": 58,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 266.1637011668178
+          },
+          {
+            "second": 62,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 238.47961689663097
+          }
+        ]
+      },
+      "fitted": {
+        "n": 8,
+        "rmse_px": 25.049515761441903,
+        "median_px": 24.217424953259176,
+        "max_px": 34.79724780139476,
+        "observations": [
+          {
+            "second": 2,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 14.315370514761177
+          },
+          {
+            "second": 46,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 28.406983105815797
+          },
+          {
+            "second": 48,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 34.79724780139476
+          },
+          {
+            "second": 54,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 24.888655492866516
+          },
+          {
+            "second": 56,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 20.93953627796951
+          },
+          {
+            "second": 56,
+            "landmark": "right_tip_pair_midpoint",
+            "error_px": 23.546194413651836
+          },
+          {
+            "second": 58,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 26.142308408700167
+          },
+          {
+            "second": 62,
+            "landmark": "left_tip_pair_midpoint",
+            "error_px": 22.390579051937454
+          }
+        ]
+      }
+    }
+  },
+  "annotation_noise_sensitivity": {
+    "method": "100 refits with independent Gaussian 6px noise; sensitivity only, not a physical accuracy confidence interval",
+    "parameter_p05_p50_p95": [
+      [
+        -15.756676096405034,
+        0.0,
+        0.0,
+        -4.484332319343593,
+        2.299176677370477,
+        4.2267621170543395
+      ],
+      [
+        -10.377122403723257,
+        0.0,
+        0.0,
+        3.1123093326821154,
+        2.6110934493582656,
+        7.522674422650862
+      ],
+      [
+        -6.329921475882426,
+        0.0,
+        0.0,
+        8.560636419814175,
+        3.036925660230169,
+        10.881437106708388
+      ]
+    ]
+  },
+  "report": "output/asset-review/head-camera-fit/rigid-mount-pitch-stereo-fit-report.json",
+  "report_sha256": "069d7b464628b9eddb03b348e732bdc5b5c732d1b3c4a2c012c539524dfeb719",
+  "limitations": [
+    "Image alignment estimate conditional on arm/gripper kinematics, supplied intrinsics and source clocks. Not independently measured physical mount dimensions.",
+    "Arm-visible frames cover roughly 36-46 degrees of tilt in training. Accuracy at other neck angles remains unvalidated.",
+    "Yaw/roll retained because unrestricted rotation/translation is poorly identified. Translation and tilt remain correlated.",
+    "Fingertip-pair midpoints reduce jaw-gap mismatch influence; individual finger silhouettes and wrist mounts are not calibrated by this fit."
+  ],
+  "sources_sha256": {
+    "annotations.json": "131d935c44317b125fe0afc902460336646a9c935c91dc47a1d0525e4b81b824",
+    "episode-1-annotations.json": "c98d99ff175b2767d4eabeda49b316df4aff19cc71b129567ab0897dd514f302",
+    "kinematics.json": "ddc75b35e3d3f3650d25eb17d57c7548b85135fe2ac0138026bd78f42a8bb6c8",
+    "episode-1-kinematics.json": "d3a346c147f754ff3c65248cf65390e7281184d5ccaf74b3fed371ef61d75489",
+    "stereo-observations.json": "d35a38cc0aa452566519b19db625907b1020e56585c43f492fc05bd46d651980",
+    "real-zed-right-episode-0.mp4": "a89790e450de40275f89366dd352e43f12f210eaa011bea28c17a7c60b253c20"
+  },
+  "validation_fixtures": [
+    {
+      "episode": 0,
+      "second": 5,
+      "side": "left",
+      "measured": {
+        "left_joints": [
+          1.8359999656677246,
+          1.3819999694824219,
+          -1.7319999933242798,
+          1.5,
+          -0.10700000077486038,
+          -0.0949999988079071,
+          0.08900000154972076
+        ],
+        "right_joints": [
+          -1.6100000143051147,
+          1.3990000486373901,
+          1.5740000009536743,
+          1.3020000457763672,
+          -0.020999999716877937,
+          0.2770000100135803,
+          -0.12399999797344208
+        ],
+        "left_gripper": [
+          1.0
+        ],
+        "right_gripper": [
+          0.03698571428571428
+        ],
+        "neck_deg": [
+          0.0,
+          42.285714285714285
+        ],
+        "lift_height": [
+          0.59153
+        ]
+      },
+      "observed_native_pair_midpoint_px": [
+        572.0,
+        708.0
+      ],
+      "max_allowed_error_px": 40
+    },
+    {
+      "episode": 0,
+      "second": 48,
+      "side": "right",
+      "measured": {
+        "left_joints": [
+          1.8359999656677246,
+          1.3819999694824219,
+          -1.7309999465942383,
+          1.5,
+          -0.10700000077486038,
+          -0.0949999988079071,
+          0.08900000154972076
+        ],
+        "right_joints": [
+          -1.7519999742507935,
+          1.402999997138977,
+          1.8040000200271606,
+          1.6119999885559082,
+          0.14000000059604645,
+          0.16500000655651093,
+          0.0729999989271164
+        ],
+        "left_gripper": [
+          1.0
+        ],
+        "right_gripper": [
+          1.0
+        ],
+        "neck_deg": [
+          0.7032967032967034,
+          36.57142857142857
+        ],
+        "lift_height": [
+          0.59153
+        ]
+      },
+      "observed_native_pair_midpoint_px": [
+        1591.0,
+        739.0
+      ],
+      "max_allowed_error_px": 40
+    },
+    {
+      "episode": 1,
+      "second": 48,
+      "side": "left",
+      "measured": {
+        "left_joints": [
+          1.8359999656677246,
+          1.3819999694824219,
+          -1.7319999933242798,
+          1.4989999532699585,
+          -0.10700000077486038,
+          -0.0949999988079071,
+          0.08900000154972076
+        ],
+        "right_joints": [
+          -1.7669999599456787,
+          1.4800000190734863,
+          1.7359999418258667,
+          1.6690000295639038,
+          0.07400000095367432,
+          0.21199999749660492,
+          0.0689999982714653
+        ],
+        "left_gripper": [
+          1.0
+        ],
+        "right_gripper": [
+          0.05631428571428571
+        ],
+        "neck_deg": [
+          5.274725274725275,
+          42.46153846153846
+        ],
+        "lift_height": [
+          0.59153
+        ]
+      },
+      "observed_native_pair_midpoint_px": [
+        535.0,
+        761.0
+      ],
+      "max_allowed_error_px": 40
+    },
+    {
+      "episode": 1,
+      "second": 56,
+      "side": "right",
+      "measured": {
+        "left_joints": [
+          1.8359999656677246,
+          1.3819999694824219,
+          -1.7319999933242798,
+          1.4989999532699585,
+          -0.10700000077486038,
+          -0.0949999988079071,
+          0.08900000154972076
+        ],
+        "right_joints": [
+          -1.7569999694824219,
+          1.4390000104904175,
+          1.722000002861023,
+          1.6109999418258667,
+          0.03400000184774399,
+          0.1379999965429306,
+          0.061000000685453415
+        ],
+        "left_gripper": [
+          1.0
+        ],
+        "right_gripper": [
+          1.0
+        ],
+        "neck_deg": [
+          4.483516483516484,
+          31.384615384615383
+        ],
+        "lift_height": [
+          0.59153
+        ]
+      },
+      "observed_native_pair_midpoint_px": [
+        1495.0,
+        835.0
+      ],
+      "max_allowed_error_px": 40
+    }
+  ],
+  "activation_gate": {
+    "default_enabled": false,
+    "reason": "Candidate fails existing full-downward-neck clearance acceptance check; do not replace production geometry automatically.",
+    "failing_api_pose_deg": [
+      2.02,
+      72.527
+    ],
+    "geoms": [
+      "neck_fixed_bracket_collision",
+      "zed_housing_collision"
+    ],
+    "required_clearance_m": 0.005,
+    "candidate_scene": "output/asset-review/head-camera-fit/scene-dataset-fit.mjcf"
+  }
+}

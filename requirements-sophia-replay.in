@@ -1,0 +1,4 @@
+# Workstation-only replay, comparison plots and existing training utilities.
+-r requirements-sophia-training.in
+-c requirements-sophia-training.txt
+matplotlib==3.11.2

@@ -1,0 +1,37 @@
+{
+  "release_id": "sophia-sim-v1.0.0-2026-11-04",
+  "version": "1.0.0",
+  "status": "finalized",
+  "finalized_at_utc": "2026-11-04T20:25:35.016618+00:00",
+  "archive": "sophia-sim-v1.0.0.zip",
+  "archive_sha256": "0b9be52531a381883d85ffe6cfc62a8691c42044f8d533f4f0a7237900503ba1",
+  "archive_size_bytes": 73364760,
+  "entry_model": "robot/yor-description/scene-sophia.mjcf",
+  "companion_ik_model": "robot/yor-description/sophia-ik.mjcf",
+  "acceptance": "acceptance/acceptance.json",
+  "acceptance_check_groups_passed": 23,
+  "unit_tests_passed": 84,
+  "training_oracle": {
+    "successes": 3,
+    "episodes": 3
+  },
+  "archive_verified_files": 625,
+  "archive_portable_and_reproducible": true,
+  "reference_video": "episode-0-real-vs-sim-zed.mp4",
+  "hardware_modified": false,
+  "joystick_sha256": "fac0c2c672483b62499434453b577f3f067c32f08aa81a9ddc8051a0bceaf018",
+  "hardware_calibrated": false,
+  "scope": "Frozen local baseline for simulation training, real-to-sim measured-trajectory replay, and staged sim-to-real evaluation. Includes reviewed neck/arm frames, stereo-aligned base and upper-side wrist cameras. Hardware-calibrated dynamics and real policy transfer are not certified by simulation checks.",
+  "physics_assumptions": {
+    "frame_lift": "20 mm square rails/posts; middle section 82.55 x 50.8 mm with 430 mm modeled length; upper section 76.2 x 50.8 mm extends from local z=-430 mm to the shoulder plate underside at +101 mm. Middle travels half the carriage. Solid collision envelopes retain explicit source masses; stage internals and exact tube lengths remain unmeasured.",
+    "mounts": "Measured shoulder flange spacing and heights; supplied full spinal CAD with separate image-calibrated neck and effective right-arm reference. Stock gripper mounts retained. Hardware Home unchanged; head source inertials remain approximate.",
+    "mass": "Retain verified vendor arm/finger inertials and source chassis/lift/housing inertials; accessories are included in assembly mass rather than added again. Model total 42.0053061 kg is an engineering default.",
+    "contact": "Retain finger friction 2.0 and wheel friction 1.2; working grasp baseline is the tested two 25 g parcels. Force, slip, payload and tipping predictions are approximate.",
+    "left_response": "Left arm uses identified per-joint effective kp/kv, with retained masses/inertias/friction and the deployed bridge default 2/30 s interpolation. Development RMSE improves 34.4%; two later-episode test intervals improve 44.4%, every joint improves. Limited to the observed unloaded/open-gripper regime; this is not unique physical motor-parameter identification. Right arm retains kp500/kv20.",
+    "base": "Use source CAD module locations and four ideal simulated encoders. Hardware motor-3 reconstruction is not reproduced as a nominal simulation fault; body velocity from that dataset is not independent ground truth.",
+    "neck": "Use calibrated joint limits/home, CAD head mount and dataset-validated 1/2 rad/s pan/tilt slew limits. Keep the collision guard for bracket interference.",
+    "camera_timing": "Render all simulation cameras at the same physics timestamp. Recorded camera/robot synchronization is approximate; no artificial fitted timestamp offset is introduced.",
+    "gripper_response": "Right opening uses 6 normalized strokes/s after bounded identification on 3 episodes and pooled-error validation on 15 other episodes. Left opening and both closing directions retain 5 strokes/s as prior symmetry assumptions. Only 99 validation samples cover moving opening; improvement is aggregate and not uniform across episodes. Object-constrained closing and physical grip force are not identified."
+  },
+  "versioning": "Retain this archive unchanged; use a new release version for subsequent geometry, calibration or physics changes."
+}

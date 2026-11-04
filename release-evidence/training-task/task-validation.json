@@ -1,0 +1,135 @@
+{
+  "controller": "privileged simulation-only IK oracle through the policy action API",
+  "learned_policy": false,
+  "hardware_validated": false,
+  "episodes": [
+    {
+      "seed": 0,
+      "return": 11.148679290681661,
+      "stages": [
+        "approach",
+        "lower",
+        "grasp",
+        "lift",
+        "transfer",
+        "place",
+        "release",
+        "withdraw"
+      ],
+      "is_success": true,
+      "failure_reason": null,
+      "sim_time_s": 13.535000000000716,
+      "steps": 406,
+      "lifted": true,
+      "contract_sha256": "0a5854da89bdd444a396b729e9393d9bfcabd7377816d6e30beca296836ee25f",
+      "privileged_metrics": {
+        "object_position_m": [
+          0.4822080120072674,
+          0.27104231987012695,
+          0.7899573980933333
+        ],
+        "goal_error_m": 0.0006849571635206853,
+        "reach_error_m": 0.10470332473327103,
+        "object_speed_m_s": 1.5113573415564087e-08,
+        "finger_contacts": 0,
+        "table_supported": true,
+        "lifted_now": false,
+        "placed": true,
+        "failure": null,
+        "max_table_penetration_m": 0.0
+      },
+      "hardware_validated": false,
+      "command_status": "accepted",
+      "joint_limit_clipped": false,
+      "time_limit_reached": false
+    },
+    {
+      "seed": 1,
+      "return": 11.148089775782347,
+      "stages": [
+        "approach",
+        "lower",
+        "grasp",
+        "lift",
+        "transfer",
+        "place",
+        "release",
+        "withdraw"
+      ],
+      "is_success": true,
+      "failure_reason": null,
+      "sim_time_s": 13.700000000000742,
+      "steps": 411,
+      "lifted": true,
+      "contract_sha256": "0a5854da89bdd444a396b729e9393d9bfcabd7377816d6e30beca296836ee25f",
+      "privileged_metrics": {
+        "object_position_m": [
+          0.4858296808356387,
+          0.30794957440471643,
+          0.7899573982138787
+        ],
+        "goal_error_m": 6.339842224911061e-05,
+        "reach_error_m": 0.10426441440498974,
+        "object_speed_m_s": 3.5353055433980557e-09,
+        "finger_contacts": 0,
+        "table_supported": true,
+        "lifted_now": false,
+        "placed": true,
+        "failure": null,
+        "max_table_penetration_m": 0.0
+      },
+      "hardware_validated": false,
+      "command_status": "accepted",
+      "joint_limit_clipped": false,
+      "time_limit_reached": false
+    },
+    {
+      "seed": 2,
+      "return": 11.133064943577198,
+      "stages": [
+        "approach",
+        "lower",
+        "grasp",
+        "lift",
+        "transfer",
+        "place",
+        "release",
+        "withdraw"
+      ],
+      "is_success": true,
+      "failure_reason": null,
+      "sim_time_s": 13.900000000000773,
+      "steps": 417,
+      "lifted": true,
+      "contract_sha256": "0a5854da89bdd444a396b729e9393d9bfcabd7377816d6e30beca296836ee25f",
+      "privileged_metrics": {
+        "object_position_m": [
+          0.5134943957046595,
+          0.27306688615789915,
+          0.789957398269242
+        ],
+        "goal_error_m": 0.0011081964216476893,
+        "reach_error_m": 0.10229069867830339,
+        "object_speed_m_s": 3.409877432074308e-10,
+        "finger_contacts": 0,
+        "table_supported": true,
+        "lifted_now": false,
+        "placed": true,
+        "failure": null,
+        "max_table_penetration_m": 0.0
+      },
+      "hardware_validated": false,
+      "command_status": "accepted",
+      "joint_limit_clipped": false,
+      "time_limit_reached": false
+    }
+  ],
+  "all_passed": true,
+  "source_sha256": {
+    "robot/sophia_policy.py": "129b8c4112f24ffad45dcea33a9cb2c9df4b7b78c37cf2d62163790a1df224cf",
+    "robot/sophia_env.py": "1ef6b616c80438c5fc8ba9993e4badd88e337d22081db71e61478d1f6ec3ff6d",
+    "robot/yor-description/sophia.mjcf": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+    "robot/yor-description/sophia.json": "82d0445a604bdc6bd64c52f1283c2c300ac22f6862c78e50000d83a769e8ecba",
+    "scripts/run_sophia_pick_place.py": "e5b01b1c102061d600baf511089de14bcc19e00130513de8ff75b5e7a0f019a2"
+  }
+}

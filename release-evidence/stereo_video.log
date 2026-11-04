@@ -1,0 +1,12 @@
+test_legacy_camera_keeps_fovy_projection (__main__.StereoVideoTests.test_legacy_camera_keeps_fovy_projection) ... ok
+test_non_native_aspect_preserves_calibrated_projection (__main__.StereoVideoTests.test_non_native_aspect_preserves_calibrated_projection) ... ok
+test_render_publish_decode_stereo_target (__main__.StereoVideoTests.test_render_publish_decode_stereo_target) ... ok
+test_separate_process_preserves_calibrated_stereo_projection (__main__.StereoVideoTests.test_separate_process_preserves_calibrated_stereo_projection) ... [YORMujoco] ZED stereo 320x240/eye @ 10 fps on inproc://sophia-stereo-a726c16dcded4684b71b80adb06a17ae
+[YORMujoco] ZED stereo 320x180/eye @ 10 fps on inproc://sophia-stereo-18866f37a24541b7af284d0106315406
+[YORMujoco] ZED stereo 320x180/eye @ 10 fps on ipc:///tmp/tmpswendor7/stereo
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.500s
+
+OK

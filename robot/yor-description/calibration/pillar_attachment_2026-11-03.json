@@ -1,0 +1,43 @@
+{
+  "status": "fixed",
+  "basis": "User correction and 2026-10-29 reference photos: pillar is rigidly attached to the arm mounting plate.",
+  "previous_gap_m": 0.101,
+  "current_max_gap_m": 1.1102230246251565e-16,
+  "upper_column_local_z_bounds_m": [
+    -0.43,
+    0.101
+  ],
+  "modeled_upper_envelope_length_m": 0.531,
+  "length_is_measured": false,
+  "minimum_telescoping_overlap_m": 0.05060000000000009,
+  "attachment_body": "Lift_Top",
+  "lift_positions_checked": 9,
+  "visual_and_collision_envelopes_match": true,
+  "unchanged_compiled_properties": [
+    "body_mass",
+    "body_inertia",
+    "body_ipos",
+    "body_iquat",
+    "body_pos",
+    "body_quat",
+    "jnt_range",
+    "actuator_gainprm",
+    "actuator_biasprm",
+    "actuator_forcerange"
+  ],
+  "mass_kg": 42.0053061,
+  "geometry_checks_passed": 24,
+  "before_sources_sha256": {
+    "robot/yor-description/sophia.json": "762879b690178b21853e6bb6c029d50c67109eb5850e008821794a8390fbc3cc",
+    "robot/yor-description/sophia.mjcf": "bc815b6a018231757f5cd8c0d0f8e2d469cbff400e74046a8068c33235060f6f",
+    "robot/yor-description/build_sophia.py": "459866f8300f90ffd2cce628201d117035fef8c73184ae4ebbc72510ef660537",
+    "robot/yor-description/validate_sophia.py": "887c19d4ec689fdd0116403400750be2ce2f5a52d918884853b038ac70e5dba0"
+  },
+  "after_sources_sha256": {
+    "robot/yor-description/build_sophia.py": "b0acda505886f946fb9ab30b72682aa0fca549860b3f6d8c50fbaa8fd6041860",
+    "robot/yor-description/validate_sophia.py": "c51055cf991ee0493cb17db18a39aa9a39f05823ab0100aa3159f84bd29c54fc",
+    "robot/yor-description/sophia.json": "72752c8828aa002ecb82cb9e21db0ea0ccec818adfc7725aa64ca69dd518e9da",
+    "robot/yor-description/sophia.mjcf": "ebb02b620aa7d53c83971b84164191ce61eadbea075f8b13abc21226539c64b6"
+  },
+  "acceptance_report": "output/asset-review/pillar-connection-fix/acceptance/acceptance.json"
+}

@@ -1,0 +1,9 @@
+{
+  "previous_session": "/home/lairlab/projects/pi-atlas/sim/YOR/output/live-sophia/2026-11-02--15-09-34",
+  "active_session": "/home/lairlab/projects/pi-atlas/sim/YOR/output/live-sophia/2026-11-02--15-13-15",
+  "new_pid": 3475459,
+  "duration_seconds": 18000,
+  "expected_stop_new_york": "2026-11-02T20:13:15.251685-05:00",
+  "previous_recordings_preserved": true,
+  "replacement_connected_before_old_stop_requested": true
+}

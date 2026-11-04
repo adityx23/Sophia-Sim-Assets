@@ -1,0 +1,68 @@
+{
+  "version": "sophia-single-arm-v1",
+  "side": "left",
+  "joint_order": [
+    "left_arm_joint1",
+    "left_arm_joint2",
+    "left_arm_joint3",
+    "left_arm_joint4",
+    "left_arm_joint5",
+    "left_arm_joint6",
+    "left_arm_joint7"
+  ],
+  "joint_limits_rad": [
+    [
+      -2.705261,
+      2.705261
+    ],
+    [
+      -1.74533,
+      1.74533
+    ],
+    [
+      -2.757621,
+      2.757621
+    ],
+    [
+      -1.012291,
+      2.146755
+    ],
+    [
+      -2.757621,
+      2.757621
+    ],
+    [
+      -0.733039,
+      0.959932
+    ],
+    [
+      -1.570797,
+      1.570797
+    ]
+  ],
+  "action": "7 increments in [-1,1] plus absolute opening in [0,1]",
+  "increment_reference": "previous dispatched target; reset from measured joints",
+  "joint_increment_scale_rad": 0.02,
+  "control_hz": 30.0,
+  "preview_time_s": 0.03333333333333333,
+  "gripper": "0=closed, 1=open; normalized driver coordinate, not meters",
+  "proprio_order": "measured joints[7], measured opening[1], previous target[7]",
+  "missing_gripper": "zero placeholder with gripper_valid=0; never command fallback",
+  "images": [
+    "head_zed_left",
+    "left_wrist"
+  ],
+  "image_shape_hwc": [
+    90,
+    160,
+    3
+  ],
+  "image_encoding": "uint8 RGB; aspect-preserving resize and centered black padding",
+  "coordinate_frames": "joint coordinates only; no Cartesian pose or world-state input",
+  "fixed_subsystems": [
+    "base",
+    "lift",
+    "neck",
+    "other_arm"
+  ]
+}

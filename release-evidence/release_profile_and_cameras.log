@@ -1,0 +1,8 @@
+test_four_camera_projection_depth_and_mounts (__main__.ReleaseTests.test_four_camera_projection_depth_and_mounts) ... ok
+test_mapping_endpoints_and_invalid_inputs (__main__.ReleaseTests.test_mapping_endpoints_and_invalid_inputs) ... ok
+test_rates_match_runtime_and_collision_prediction (__main__.ReleaseTests.test_rates_match_runtime_and_collision_prediction) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.064s
+
+OK

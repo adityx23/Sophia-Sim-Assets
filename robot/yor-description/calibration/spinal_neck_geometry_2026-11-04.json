@@ -1,0 +1,57 @@
+{
+  "source": "CAD Parts/SPINAL DESIGN.stl",
+  "source_sha256": "abce9493faff32b848605c3744614f8044bdbf7c3f8314841db210e57dccf48d",
+  "source_triangles": 1306687,
+  "selected_triangle_slice_start_inclusive": 76639,
+  "selected_triangle_slice_stop_exclusive": 89622,
+  "retained_triangles": 12983,
+  "selection": "Reviewed contiguous static lattice block, including disconnected surface patches",
+  "source_bounds_mm": [
+    [
+      -53.996849060058594,
+      -64.14784240722656,
+      -109.06756591796875
+    ],
+    [
+      36.003150939941406,
+      10.852157592773438,
+      -0.11756397783756256
+    ]
+  ],
+  "origin_in_source_mm": [
+    -8.996849060058594,
+    -26.647842407226562,
+    -109.06756591796875
+  ],
+  "rotation_source_to_neck": [
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      -1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "units_scale": 0.001,
+  "neck_extents_m": [
+    0.075,
+    0.09,
+    0.10895000194013119
+  ],
+  "asset": "sophia/spinal_neck_lattice.stl",
+  "asset_sha256": "92a7f1fbdec57b1876aa9514cd71c556e1eba35c495c4a570d935f5706a3b238",
+  "physical_alignment": "XY bounding-box centre on confirmed pillar centreline; base at neck Z=0",
+  "limitations": [
+    "STL is a tessellated export, not exact BRep or joint/mate definitions.",
+    "Bounds establish the static lattice envelope, not the pan/tilt encoder zero.",
+    "Physics retains explicit primitive collision proxies and approximate source inertials."
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "frames": 115791,
+  "missing_sequences": 0,
+  "duplicate_sequences": 0,
+  "out_of_order_sequences": 0,
+  "invalid_sequences": 0,
+  "invalid_timestamps": 0,
+  "nonincreasing_timestamps": 0,
+  "episode_count": 75,
+  "complete_episodes": 75,
+  "active_recording_seconds": 3892.841642856598,
+  "all_packets_including_signals": 116016,
+  "bad_packets": 0,
+  "running": true,
+  "tcp_connected": true,
+  "last_packet_age_s_at_status": 99.08863419201225,
+  "status_updated": "2026-11-02T17:47:49.791783-05:00",
+  "first_frame_local": "2026-11-02T16:35:05.162483-05:00",
+  "last_frame_local": "2026-11-02T17:46:10.633549-05:00",
+  "size_bytes": {
+    "frames.jsonl": 222606660,
+    "packets.jsonl": 311955032
+  },
+  "invalid_or_missing_fields": {
+    "left_gripper_measured_not_true": 115791,
+    "right_gripper_measured_not_true": 115791,
+    "left_gripper_cmd": 84108,
+    "right_gripper_cmd": 84394
+  },
+  "optional_nonnull_counts": {
+    "neck_deg": 115791,
+    "neck_cmd_deg": 115791,
+    "lift_height": 115791,
+    "lift_cmd": 115791
+  },
+  "decoded_frames_scanned": 115791,
+  "gripper_provenance_flags": {
+    "left": {
+      "absent": 115791
+    },
+    "right": {
+      "absent": 115791
+    }
+  },
+  "field_nonnull_counts": {
+    "timestamp": 115791,
+    "base_vel": 115791,
+    "cmd_vel": 115791,
+    "enc_vel": 115791,
+    "teleop_on": 115791,
+    "neck_deg": 115791,
+    "neck_cmd_deg": 115791,
+    "lift_height": 115791,
+    "lift_cmd": 115791,
+    "lift_homed": 115791,
+    "lift_ref": 115791,
+    "view_pitch_deg": 115791,
+    "left_ee": 115791,
+    "left_joints": 115791,
+    "left_joints_cmd": 115791,
+    "left_gripper": 115791,
+    "left_gripper_cmd": 31683,
+    "left_ee_target_error": 106853,
+    "left_ik_ok": 115791,
+    "right_ee": 115791,
+    "right_joints": 115791,
+    "right_joints_cmd": 115791,
+    "right_gripper": 115791,
+    "right_gripper_cmd": 31397,
+    "right_ee_target_error": 107296,
+    "right_ik_ok": 115791,
+    "episode_id": 115791,
+    "seq": 115791,
+    "active": 115791,
+    "left_ee_target": 8938,
+    "right_ee_target": 8495
+  },
+  "scalar_ranges_raw_units": {
+    "lift_height": [
+      0.6738,
+      0.6738
+    ],
+    "lift_cmd": [
+      0.0,
+      0.0
+    ],
+    "left_gripper": [
+      2.8571428571428567e-05,
+      1.0
+    ],
+    "right_gripper": [
+      0.0009142857142857142,
+      1.0
+    ],
+    "left_gripper_cmd": [
+      0.0,
+      1.0
+    ],
+    "right_gripper_cmd": [
+      0.0,
+      1.0
+    ]
+  },
+  "first_frame_keys": [
+    "active",
+    "base_pose",
+    "base_vel",
+    "cam_pose",
+    "cmd_vel",
+    "enc_vel",
+    "episode_id",
+    "left_ee",
+    "left_ee_target",
+    "left_ee_target_error",
+    "left_gripper",
+    "left_gripper_cmd",
+    "left_gripper_error",
+    "left_ik_ok",
+    "left_joints",
+    "left_joints_cmd",
+    "lift_cmd",
+    "lift_height",
+    "lift_height_error",
+    "lift_homed",
+    "lift_ref",
+    "neck_cmd_deg",
+    "neck_deg",
+    "right_ee",
+    "right_ee_target",
+    "right_ee_target_error",
+    "right_gripper",
+    "right_gripper_cmd",
+    "right_gripper_error",
+    "right_ik_ok",
+    "right_joints",
+    "right_joints_cmd",
+    "seq",
+    "teleop_on",
+    "timestamp",
+    "view_pitch_deg",
+    "zed_age_s",
+    "zed_timestamp"
+  ]
+}

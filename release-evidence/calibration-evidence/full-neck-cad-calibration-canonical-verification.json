@@ -1,0 +1,14 @@
+{
+  "canonical_vs_fit_projection_max_error_px": 6.821210263296962e-13,
+  "video": "/home/lairlab/projects/pi-atlas/sim/YOR/output/asset-review/full-neck-cad-calibration/episode-0-real-vs-sim-zed-calibrated.mp4",
+  "video_sha256": "6d36209e2a5326789e1ffbd7fb5bb24837734741641c1e035606a19d7e725975",
+  "hardware_home_deg": [
+    2.02,
+    -3.25
+  ],
+  "geometric_zero_hardware_deg": [
+    1.64296298,
+    -16.2589762
+  ],
+  "joystick_sha256": "fac0c2c672483b62499434453b577f3f067c32f08aa81a9ddc8051a0bceaf018"
+}

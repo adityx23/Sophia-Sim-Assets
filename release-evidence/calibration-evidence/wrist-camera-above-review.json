@@ -1,0 +1,77 @@
+{
+  "before": {
+    "left": {
+      "position_palm_m": [
+        0.042,
+        0.0,
+        0.052
+      ],
+      "lens_above_palm_world_m": -0.052262449850097314,
+      "image_up_world_z": -0.9945992644641801,
+      "optical_forward_palm": [
+        -0.17364817766693033,
+        -0.0,
+        0.9848077530122081
+      ]
+    },
+    "right": {
+      "position_palm_m": [
+        0.042,
+        0.0,
+        0.052
+      ],
+      "lens_above_palm_world_m": -0.045424967430818475,
+      "image_up_world_z": -0.9934408153012666,
+      "optical_forward_palm": [
+        -0.17364817766693033,
+        -0.0,
+        0.9848077530122081
+      ]
+    }
+  },
+  "above": {
+    "left": {
+      "position_palm_m": [
+        -0.042,
+        0.0,
+        0.052
+      ],
+      "lens_above_palm_world_m": 0.029302868946723293,
+      "image_up_world_z": 0.9179283147744236,
+      "optical_forward_palm": [
+        0.1736481776669303,
+        -4.163336342344337e-17,
+        0.9848077530122081
+      ]
+    },
+    "right": {
+      "position_palm_m": [
+        -0.042,
+        0.0,
+        0.052
+      ],
+      "lens_above_palm_world_m": 0.038296121190599,
+      "image_up_world_z": 0.9696348314843075,
+      "optical_forward_palm": [
+        0.1736481776669303,
+        -4.163336342344337e-17,
+        0.9848077530122081
+      ]
+    }
+  },
+  "head_arms_dynamics_collision_shapes_unchanged": true,
+  "configuration": {
+    "parent_body_pattern": "{side}_gripper_base",
+    "position_m": [
+      -0.042,
+      0.0,
+      0.052
+    ],
+    "toe_in_deg": 10.0,
+    "basis": "User confirms cameras above the grippers. Rotate the previous palm-side mounting by 180 degrees around the finger/approach axis: negative palm X, with upright image axes and toe-in toward the grasp center. Retain photo-estimated offset magnitudes and measured per-camera intrinsics.",
+    "mount_status": "user_confirmed_upper_side_with_estimated_offsets",
+    "position_uncertainty_m": 0.015,
+    "orientation_uncertainty_deg": 10.0,
+    "mount_roll_deg": 180.0
+  }
+}

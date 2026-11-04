@@ -1,0 +1,236 @@
+{
+  "description": "Sophia configuration photographed 2026-10-29, updated with user-confirmed tape measurements. SI units. Confirmed physical dimensions override CAD and protocol assumptions; photo estimates remain estimates.",
+  "hardware_identity": {
+    "grippers": "AgileX Nero stock grippers, user-confirmed",
+    "installed_revision_to_mesh_match": "Arm and finger meshes match official AgileX files at commit 680fa925cd00db7e2628563d2edc5540963045de. Housing differs; installed housing revision remains unverified.",
+    "mount_transform_measured": false,
+    "gripper_and_wrist_mounts_unchanged_user_confirmed": true,
+    "mount_frame_review_status": "completed_with_accepted_assembly_estimates"
+  },
+  "measured": {
+    "neck_mount_coaxial_with_pillar": true,
+    "head_lens_midpoint_forward_m": 0.0508,
+    "head_lens_midpoint_lateral_m": 0.0,
+    "arm_plate_front_edge_forward_m": 0.0508,
+    "shoulder_height_lowered_m": 0.8128,
+    "shoulder_height_raised_m": 1.3716,
+    "arm_flange_spacing_m": 0.2413,
+    "gripper_gap_open_m": 0.1016,
+    "gripper_gap_closed_m": 0.0,
+    "source": "User-confirmed measurements: shoulders at 32/54 inches from floor, arm flange centers 9.5 inches apart, jaw gaps 4/0 inches. Gripper measurements applied to both sides. User additionally measured the base 17 inches left-to-right by 7.5 inches front-to-back; frame bottom-to-top is 8 inches and floor-to-frame-bottom is 2.5 inches. Lower pillar is 3.5 inches left-to-right by 2 inches front-to-back; upper pillar is 3 inches left-to-right by 2 inches front-to-back.",
+    "base_frame_width_m": 0.4318,
+    "base_frame_depth_m": 0.1905,
+    "base_frame_height_m": 0.2032,
+    "base_frame_floor_clearance_m": 0.0635,
+    "pillar_lower_width_m": 0.0889,
+    "pillar_lower_depth_m": 0.0508,
+    "pillar_upper_width_m": 0.0762,
+    "pillar_upper_depth_m": 0.0508
+  },
+  "unresolved_readings": {
+    "lift_encoder_travel_m": 0.6726,
+    "source": "User-reported encoder stroke from Oct 23; 113.8 mm larger than the 558.8 mm physical height difference. Retained for comparison, not used as physical travel. Release uses an explicitly assumed affine mapping; this is not a measured reconciliation."
+  },
+  "cad": {
+    "base_length_m": 0.3429,
+    "base_width_m": 0.4445,
+    "base_center_y_m": -0.20955,
+    "base_origin_z_m": 0.104775,
+    "wheel_radius_m": 0.05077,
+    "shoulder_height_at_zero_lift_m": 0.671675
+  },
+  "source_mesh_extents": {
+    "description": "Bounding-box extents, not usable stroke or bare-component dimensions. XYZ is each source mesh frame.",
+    "base_profile_short_xyz_m": [
+      0.5427375,
+      0.4445,
+      0.3429
+    ],
+    "base_frame_note": "The MJCF rotates this mesh about Y by about 90 degrees: mesh X is vertical, mesh Z is fore/aft. The 543 mm bound includes the fixed lift structure.",
+    "Lift_Middle_xyz_m": [
+      0.108,
+      0.108,
+      0.208
+    ],
+    "Lift_Top_xyz_m": [
+      0.29464,
+      0.296054,
+      0.32047
+    ],
+    "Lift_Top_note": "Includes the mounting plate and shoulder structure; 320.47 mm is not a telescoping tube length.",
+    "gripper_STL_xyz_source_units": [
+      55.332895,
+      44.127892,
+      60.434063
+    ],
+    "gripper_STL_note": "Unreferenced, unitless STL with coordinates consistent with millimetres. Dimensions require unit and part-identity confirmation. Not the finger meshes used by the current model."
+  },
+  "spinal_neck_geometry": {
+    "enabled": true,
+    "source": "calibration/spinal_neck_geometry_2026-11-04.json",
+    "sha256": "fe9b9115ce95de834f163aecf7ced5b6c405940ddc22324e523eeab700fc4435"
+  },
+  "spinal_assembly": {
+    "enabled": true,
+    "source": "calibration/spinal_assembly_2026-11-04.json",
+    "sha256": "2d482ab76b757b18ced4d81cef330fedcecf80d846018017bd4bc60848d431ea",
+    "status": "full_CAD_frames_reviewed_and_dataset_validated"
+  },
+  "neck_reference": {
+    "geometric_zero_hardware_deg": [
+      1.642962976676157,
+      -16.25897619417872
+    ],
+    "status": "image_fitted_with_full_CAD_and_effective_arm_reference",
+    "note": "Independent of hardware Home; change only after constrained calibration and validation."
+  },
+  "head_alignment": {
+    "enabled": false,
+    "source": "calibration/head_alignment_2026-11-03.json",
+    "sha256": "6f6ac588e81fa3d539cf089fc7500d4c72ff4557794067b424303aea0ba9a05b",
+    "status": "superseded_nonconcentric_mount_fit"
+  },
+  "photo_estimates": {
+    "reference_lift_extension_m": 0.4,
+    "column_stage_length_m": 0.43,
+    "neck_tower_height_m": 0.13828,
+    "base_rail_cross_section_m": 0.02
+  },
+  "simulation": {
+    "home_lift_extension_m": 0.3,
+    "self_collision_margin_m": 0.005,
+    "reference_clearance_lift_m": 0.3,
+    "neck_rate_limit_rad_s": [
+      1.0,
+      2.0
+    ],
+    "lift_speed_mps": [
+      0.022008046387154326,
+      0.0255888195063931
+    ],
+    "gripper_speed_strokes_s": [
+      5.0,
+      5.0
+    ],
+    "gripper_opening_speed_strokes_s": [
+      5.0,
+      6.0
+    ],
+    "arm_position_kp": 500,
+    "arm_position_kv": 20,
+    "arm_gravity_compensation": 0,
+    "arm_position_gains": {
+      "left": {
+        "kp": [
+          354.6051455645112,
+          416.14514782470656,
+          295.37140410286844,
+          195.88591307922377,
+          308.05590350358926,
+          292.4034750265339,
+          134.77696449017006
+        ],
+        "kv": [
+          26.37459409917286,
+          28.67377195895922,
+          23.039092017478854,
+          14.219911648652623,
+          26.11755477141436,
+          27.33095715558574,
+          10.091766432274436
+        ]
+      }
+    }
+  },
+  "sources": {
+    "spinal_neck": "User-confirmed spinal assembly supplied as CAD Parts/SPINAL DESIGN.stl. The reviewed static lattice triangle block is imported at its original dimensions (unit conversion only), centred on the pillar and based on the existing neck mounting face. Its 108.950 mm height replaces the 138.280 mm photo estimate for the upper neck assembly height. The supplied camera model is not substituted for the optical calibration or motor zero. Collision proxies retain explicit posts and plates sized to the CAD envelope; inertials remain source approximations.",
+    "head_lens_mount": "User confirms the camera hangs 2 inches (50.8 mm) ahead of the pillar/neck centreline, centred left-to-right, with the lens plane aligned with the metal arm mounting plate front edge. Apply to the stereo pair midpoint at neutral pan/tilt geometry; individual lenses retain the supplied stereo baseline. Neutral pose is the reference assumption because this projection changes during tilt. Neck base remains concentric with the pillar. Arm plate rear extent is provisionally symmetric; only its front edge is confirmed. The unmeasured black neck mounting plate is provisionally bounded to the same fore/aft envelope instead of protruding beyond the metal plate.",
+    "neck_mount_centerline": "User confirmed that the neck mount and lift pillar share the same vertical centreline, with the arm mounting plate between them. Neck mount XY is fixed at the pillar centre. Previous image-fit candidates with forward or sideways whole-neck offsets violate this confirmed geometry and must not be promoted.",
+    "cad": "assets_nero/base_profile_short.stl, MK4_Colson_Hub_4_X_1_5.stl; robot.mjcf and yor-full-agx.mjcf transforms/inertials",
+    "arm_materials": "assets_nero/dae/*.dae, retaining their geometry, material assignments and modelled logos",
+    "lift_travel": "558.8 mm from confirmed raised minus lowered shoulder heights. Supersedes the provisional 416 mm simulation range. Encoder travel of 672.6 mm is recorded separately because its calibration/reference conflicts with the physical measurement.",
+    "shoulders": "Flange separation is now 241.3 mm, centered symmetrically on the existing column. Carriage height is adjusted to place the shoulder centers at 812.8 mm when lowered, with tyres on the floor. The original local fore/aft and vertical flange offsets are retained; absolute placement is also propagated into a dedicated Sophia IK model.",
+    "neck": "Supplied full spinal CAD: recovered pan and tilt axis lines, exact reviewed bracket/servo/camera part meshes, fixed user-confirmed lens overhang. Geometric zero is separately fitted from measured servo readings; hardware Home and travel remain unchanged. Source head masses/inertias are still approximations. See spinal_assembly_2026-11-04.json and image_frame_alignment_2026-11-04.json.",
+    "motion_guard": "Simulation-only sampled self-collision guard uses 5 mm clearance, 20 mrad/2 mm joint sampling, and a 50 ms velocity projection during control updates. The explicit reference-pose sequence uses a 300 mm lift waypoint. These are provisional simulation settings, not hardware calibration or a certified collision-free workspace.",
+    "photos": [
+      "PXL_20261029_204838902.RAW-01.jpg",
+      "PXL_20261029_204846866.RAW-01.jpg",
+      "PXL_20261029_204853362.RAW-01.jpg",
+      "PXL_20261029_204903315.RAW-01.jpg"
+    ],
+    "mass": "Arm base/link and finger masses, COMs and full inertia tensors use pinned official AgileX URDF data after byte-for-byte mesh/frame checks. Both link7 masses are corrected from 0.000001 to 0.001 kg. Chassis, lift, housing and accessories still require physical validation; firmware joint limits and gains are unchanged.",
+    "grippers": "Installed stock AgileX Nero grippers are user-confirmed. Both finger meshes exactly match the official vendor meshes; their inertials are updated from that source. Housing differs and is retained. Confirmed 0/101.6 mm jaw gaps remain; 70 mm protocol stroke remains metadata. Intermediate mapping and physical mount offsets are unmeasured.",
+    "cameras": "Supplied Orin head and wrist intrinsics are used. Head extrinsics retain CAD transforms; wrist mounts use the documented photo-based release assumptions. Raw wrist distortion is applied by the calibrated renderer; direct MJCF views are ideal pinhole images.",
+    "vendor": "vendor/agx_arm_urdf/provenance.json pins official repository commit, URDF hashes, mesh identity and MIT license.",
+    "motion": "Supplied motion summary plus native dataset replay. Lift speed now uses the explicitly assumed endpoint encoder scale; no physical robot configuration is changed.",
+    "dataset_neck_response": "calibration/neck_response_2026-10-26.json: user-confirmed matching hardware, native robot telemetry supports a 2 rad/s tilt command slew limit; pan stays 1 rad/s. Selected using episode 0 and checked on separate episodes 1, 3, 8, 17. Other robot/dynamics calibration gaps remain.",
+    "base_frame": "User-confirmed frame envelope and floor clearance replace CAD footprint/photo heights. Frame top is 266.7 mm above floor. Wheel/module positions and plate overhangs remain at source CAD positions; this measurement does not calibrate wheelbase/track or assembly inertia. Rail/post cross-sections and accessory mounts remain estimated.",
+    "pillar_sections": "User-confirmed lower 88.9 x 50.8 mm and upper 76.2 x 50.8 mm sections, width left-to-right. Middle section provisionally interpolated to 82.55 x 50.8 mm; actual middle section, tube wall thickness, stage lengths, overlaps and motion ratio remain unmeasured.",
+    "dataset_arm_gripper_response": "calibration/response_release_2026-10-30.json: 18 native episodes benchmark right arm and normalized gripper response. Retain arm kp500/kv20/no gravity compensation; improve gripper command slew from 2 to 5 strokes/s. Training episodes 0,2,4; validation the other 15. Fixed-base unloaded arm fixture; no claim of force identification.",
+    "collision_shape_review": "calibration/collision_shape_review_2026-10-31.json: exact connected-component partition of the gripper housing removes whole-assembly hull bridging. Source-CAD-supported post/rail/neck intersections retain restrictions. The separate guard query disables mesh BVH midphase so enlarged 5 mm margins do not miss the reproduced 2.9 mm gap. Mounts, masses, masks and hardware unchanged.",
+    "mount_frame_review": "calibration/mount_frame_review_2026-10-31.json: compiled stock-to-Sophia transforms agree; legacy Piper/iPhone and custom articulated-gripper camera mounts belong to different assemblies. Retain the stock source gripper transform and existing photo-estimated wrist extrinsics under the user's accepted-assumption scope. No numeric transform change or further measurement request.",
+    "dataset_system_identification": "calibration/response_sysid_2026-10-31.json: bounded effective-response fit on native episodes 0,2,4; validation on the other 15. Right opening rate 6 strokes/s reduces pooled moving-opening RMSE by about 23%; left opening and both closing rates remain 5. Common arm-gain candidate rejected because joint 1 worsened despite lower aggregate error. Timing ambiguity and sparse opening observations limit physical interpretation.",
+    "live_capture_response": "calibration/response_identification_2026-11-03.json: regularized per-joint left-arm effective gains fitted on cycle 51, checked on cycles 52/53 and reserved intervals of episode 15. Keep right-arm gains, neck rates and gripper rates unchanged. Source-reviewed nullable commands mean disabled grippers, not held commands. Masses, force limits, friction and hardware configuration unchanged.",
+    "pillar_attachment": "User-confirmed 2026-11-03 and reference photos: the upper pillar is rigidly attached to the underside of the arm mounting plate. Its upper surface is derived from the shoulder_bridge lower face (local z=0.101 m); retain the previous local lower endpoint -0.430 m to preserve telescoping overlap. The resulting 0.531 m outer envelope is a modeled assembly extent, not a new physical length measurement. Visual and collision shapes share this connection.",
+    "arm_reference": "Effective right-arm reference rotation fitted on episode0 training landmarks and validated on episodes0-holdout/1/3/8/17. Flange centres, joint readings, Home joint values and link lengths unchanged. It is not an independently measured bracket angle; mount rotation and joint-zero effects are partly indistinguishable. The sim-only hanging reference uses IK to preserve its prior EE target under the calibrated reference."
+  },
+  "release": {
+    "status": "finalized_simulation_baseline",
+    "basis": "User explicitly authorizes using existing evidence and assumptions, with no further physical measurements.",
+    "hardware_calibrated": false,
+    "blocking_measurements": [],
+    "lift_mapping": {
+      "encoder_lower_m": 0.0018,
+      "encoder_upper_m": 0.6744,
+      "physical_extension_per_encoder_m": 0.8308058281296461,
+      "basis": "Assume 672.6 mm encoder travel spans the measured 558.8 mm physical stroke; anchor upper endpoint at the 674.4 mm hard-stop reading in the supplied summary. Lower endpoint 1.8 mm is inferred, not measured."
+    },
+    "gripper_mapping": {
+      "normalized_closed": 0.0,
+      "normalized_open": 1.0,
+      "protocol_stroke_um": 70000,
+      "gap_open_m": 0.1016,
+      "basis": "Linear normalized opening to measured 0..101.6 mm gap. CAN inversion remains a driver concern; normalized feedback cannot establish force or object width under contact."
+    },
+    "assumptions": {
+      "frame_lift": "20 mm square rails/posts; middle section 82.55 x 50.8 mm with 430 mm modeled length; upper section 76.2 x 50.8 mm extends from local z=-430 mm to the shoulder plate underside at +101 mm. Middle travels half the carriage. Solid collision envelopes retain explicit source masses; stage internals and exact tube lengths remain unmeasured.",
+      "mounts": "Measured shoulder flange spacing and heights; supplied full spinal CAD with separate image-calibrated neck and effective right-arm reference. Stock gripper mounts retained. Hardware Home unchanged; head source inertials remain approximate.",
+      "mass": "Retain verified vendor arm/finger inertials and source chassis/lift/housing inertials; accessories are included in assembly mass rather than added again. Model total 42.0053061 kg is an engineering default.",
+      "contact": "Retain finger friction 2.0 and wheel friction 1.2; working grasp baseline is the tested two 25 g parcels. Force, slip, payload and tipping predictions are approximate.",
+      "left_response": "Left arm uses identified per-joint effective kp/kv, with retained masses/inertias/friction and the deployed bridge default 2/30 s interpolation. Development RMSE improves 34.4%; two later-episode test intervals improve 44.4%, every joint improves. Limited to the observed unloaded/open-gripper regime; this is not unique physical motor-parameter identification. Right arm retains kp500/kv20.",
+      "base": "Use source CAD module locations and four ideal simulated encoders. Hardware motor-3 reconstruction is not reproduced as a nominal simulation fault; body velocity from that dataset is not independent ground truth.",
+      "neck": "Use calibrated joint limits/home, CAD head mount and dataset-validated 1/2 rad/s pan/tilt slew limits. Keep the collision guard for bracket interference.",
+      "camera_timing": "Render all simulation cameras at the same physics timestamp. Recorded camera/robot synchronization is approximate; no artificial fitted timestamp offset is introduced.",
+      "gripper_response": "Right opening uses 6 normalized strokes/s after bounded identification on 3 episodes and pooled-error validation on 15 other episodes. Left opening and both closing directions retain 5 strokes/s as prior symmetry assumptions. Only 99 validation samples cover moving opening; improvement is aggregate and not uniform across episodes. Object-constrained closing and physical grip force are not identified."
+    },
+    "version": "1.0.0",
+    "id": "sophia-sim-v1.0.0-2026-11-04",
+    "scope": "Frozen local baseline for simulation training, real-to-sim measured-trajectory replay, and staged sim-to-real evaluation. Includes reviewed neck/arm frames, stereo-aligned base and upper-side wrist cameras. Hardware-calibrated dynamics and real policy transfer are not certified by simulation checks."
+  },
+  "wrist_cameras": {
+    "parent_body_pattern": "{side}_gripper_base",
+    "position_m": [
+      -0.042,
+      0.0,
+      0.052
+    ],
+    "toe_in_deg": 10.0,
+    "basis": "User confirms cameras above the grippers. Rotate the previous palm-side mounting by 180 degrees around the finger/approach axis: negative palm X, with upright image axes and toe-in toward the grasp center. Retain photo-estimated offset magnitudes and measured per-camera intrinsics.",
+    "mount_status": "user_confirmed_upper_side_with_estimated_offsets",
+    "position_uncertainty_m": 0.015,
+    "orientation_uncertainty_deg": 10.0,
+    "mount_roll_deg": 180.0
+  },
+  "arm_reference": {
+    "enabled": true,
+    "source": "calibration/image_frame_alignment_2026-11-04.json",
+    "sha256": "1b5fe28cb8a33110d60026f869402ce7c1a09d8bc7f51c5765633b7adcee33df",
+    "status": "effective_reference_validated_in_recorded_workspace"
+  },
+  "base_alignment": {
+    "enabled": true,
+    "source": "calibration/base_alignment_2026-11-04.json",
+    "sha256": "a8961c0c4b742f39f2adceb8f58065e403385bc4f0f9da019b79a9d180d499e5",
+    "status": "validated_stereo_base_geometry_with_recording_scoped_height_alignment"
+  }
+}

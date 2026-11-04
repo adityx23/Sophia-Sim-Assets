@@ -1,0 +1,14 @@
+{
+  "path": "/home/lairlab/projects/pi-atlas/sim/YOR/output/asset-review/wrist-camera-above/episode-0-real-vs-sim-zed-cameras-above.mp4",
+  "sha256": "b0985db6a5f342bbd79b7bf880636b664dd751ca51212f2abd197fdaa7e148c4",
+  "frames": 1662,
+  "fps": 30,
+  "width": 1920,
+  "height": 640,
+  "duration_s": 55.4,
+  "measured_pose_replay": true,
+  "historical_lift_offset_m": -0.036130786085292896,
+  "limitations": "No real environment reconstruction; not a physical replay or dynamics validation.",
+  "canonical_model_sha256": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+  "wrist_mount": "above gripper, with upright optical image axes"
+}

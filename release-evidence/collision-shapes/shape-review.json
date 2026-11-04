@@ -1,0 +1,2720 @@
+{
+  "method": "Inspect the identified gripper/frame and camera/neck collision poses.\n\nClip original CAD triangles against each box, inset by 0.1 mm, to find actual\nsurface crossings independently of MuJoCo's convex-hull collision result.\nAbsent surface crossings alone are not a general solid-containment test;\npositive distances to the source-preserving component hulls establish the\nspecific clear gripper/rail case. No claim of hardware clearance is made.\n",
+  "hardware_clearance_verified": false,
+  "cases": [
+    {
+      "case": "lowered-transition",
+      "lift_extension_m": 0.0,
+      "arm_path_fraction": 0.87,
+      "box": "corner_post_1_1_collision",
+      "source_mesh": "agx_gripper_base",
+      "collision_geoms": [
+        "left_gripper_housing_0_collision",
+        "left_gripper_housing_1_collision",
+        "left_gripper_housing_2_collision",
+        "left_gripper_housing_3_collision",
+        "left_gripper_housing_4_collision"
+      ],
+      "collider_distances_m": [
+        0.1346509422605964,
+        0.15317260054077056,
+        0.1464943990949361,
+        0.15496842659394597,
+        0.16535119671422538
+      ],
+      "minimum_distance_m": 0.1346509422605964,
+      "source_surface": {
+        "source_triangles": 12988,
+        "inset_m": 0.0001,
+        "crossing_triangles": 0,
+        "deepest_witnesses": []
+      },
+      "guard_margin_m": 0.005,
+      "guard_contacts_m": [],
+      "legacy_midphase_query_contacts_m": [],
+      "qpos": [
+        0.0,
+        0.0,
+        0.0976221416,
+        0.7071067811865476,
+        0.0,
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.6047138071,
+        1.5456418071,
+        -1.5922338071,
+        0.197743,
+        -0.014690000000000002,
+        -0.012402,
+        0.012649,
+        0.025,
+        0.025,
+        -1.7603992867,
+        1.4744339827,
+        1.6311700739,
+        0.54025312678,
+        0.024914194722,
+        0.0088704818433,
+        -0.15635956243000002,
+        0.025,
+        0.025,
+        -0.00658053746,
+        0.227049467,
+        0.0
+      ]
+    },
+    {
+      "case": "100mm-hanging-endpoint",
+      "lift_extension_m": 0.1,
+      "arm_path_fraction": 1.0,
+      "box": "upper_rail_x_1_collision",
+      "source_mesh": "agx_gripper_base",
+      "collision_geoms": [
+        "left_gripper_housing_0_collision",
+        "left_gripper_housing_1_collision",
+        "left_gripper_housing_2_collision",
+        "left_gripper_housing_3_collision",
+        "left_gripper_housing_4_collision"
+      ],
+      "collider_distances_m": [
+        0.022587803315315215,
+        0.03549730476978769,
+        0.03385461666188271,
+        0.03859184745743583,
+        0.06126652247638914
+      ],
+      "minimum_distance_m": 0.022587803315315215,
+      "source_surface": {
+        "source_triangles": 12988,
+        "inset_m": 0.0001,
+        "crossing_triangles": 0,
+        "deepest_witnesses": []
+      },
+      "guard_margin_m": 0.005,
+      "guard_contacts_m": [],
+      "legacy_midphase_query_contacts_m": [],
+      "qpos": [
+        0.0,
+        0.0,
+        0.0976221416,
+        0.7071067811865476,
+        0.0,
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1,
+        1.57079633,
+        1.57079633,
+        -1.57079633,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.025,
+        0.025,
+        -1.74863941,
+        1.49624021,
+        1.61442997,
+        0.392703594,
+        0.0287266606,
+        -0.00491094041,
+        -0.196115589,
+        0.025,
+        0.025,
+        -0.00658053746,
+        0.227049467,
+        0.05
+      ]
+    },
+    {
+      "case": "100mm-transition",
+      "lift_extension_m": 0.1,
+      "arm_path_fraction": 0.83,
+      "box": "upper_rail_x_1_collision",
+      "source_mesh": "agx_gripper_base",
+      "collision_geoms": [
+        "left_gripper_housing_0_collision",
+        "left_gripper_housing_1_collision",
+        "left_gripper_housing_2_collision",
+        "left_gripper_housing_3_collision",
+        "left_gripper_housing_4_collision"
+      ],
+      "collider_distances_m": [
+        -0.013406059712039418,
+        0.019131622532187195,
+        -0.008246864036078877,
+        0.025649015269749536,
+        0.006821246701386762
+      ],
+      "minimum_distance_m": -0.013406059712039418,
+      "source_surface": {
+        "source_triangles": 12988,
+        "inset_m": 0.0001,
+        "crossing_triangles": 827,
+        "deepest_witnesses": [
+          {
+            "depth_inside_box_m": 0.009593801557930864,
+            "point_in_box_frame_m": [
+              -0.07185744165653077,
+              0.00010747308960775589,
+              0.00040619844206913675
+            ],
+            "clipped_triangle_area_m2": 1.1045230951515958e-05
+          },
+          {
+            "depth_inside_box_m": 0.008941858032630562,
+            "point_in_box_frame_m": [
+              -0.07134427317523953,
+              -1.3010426069826053e-18,
+              -0.0010581419673694387
+            ],
+            "clipped_triangle_area_m2": 5.5801634454787904e-05
+          },
+          {
+            "depth_inside_box_m": 0.007531886082208181,
+            "point_in_box_frame_m": [
+              -0.0853625590704807,
+              0.002069734925299932,
+              -0.002468113917791819
+            ],
+            "clipped_triangle_area_m2": 2.695551829226931e-07
+          }
+        ]
+      },
+      "guard_margin_m": 0.005,
+      "guard_contacts_m": [
+        -0.013405979220782847,
+        -0.00827767363257389
+      ],
+      "legacy_midphase_query_contacts_m": [
+        -0.013405979220782847,
+        -0.00827767363257389
+      ],
+      "qpos": [
+        0.0,
+        0.0,
+        0.0976221416,
+        0.7071067811865476,
+        0.0,
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1,
+        1.6151499539,
+        1.5379019539,
+        -1.5988299539,
+        0.25858700000000007,
+        -0.019210000000000005,
+        -0.016218000000000003,
+        0.016541000000000004,
+        0.025,
+        0.025,
+        -1.7640177103,
+        1.4677243743000001,
+        1.6363208751,
+        0.5856529830200001,
+        0.023741128297999996,
+        0.013110919459700004,
+        -0.14412693887,
+        0.025,
+        0.025,
+        -0.00658053746,
+        0.227049467,
+        0.05
+      ]
+    },
+    {
+      "case": "neck-extreme",
+      "lift_extension_m": null,
+      "arm_path_fraction": null,
+      "box": "zed_housing_collision",
+      "source_mesh": "spinal_fixed_adapter",
+      "collision_geoms": [
+        "spinal_fixed_adapter_collision"
+      ],
+      "collider_distances_m": [
+        0.031146162921081674
+      ],
+      "minimum_distance_m": 0.031146162921081674,
+      "source_surface": null,
+      "guard_margin_m": 0.005,
+      "guard_contacts_m": [],
+      "legacy_midphase_query_contacts_m": [],
+      "qpos": [
+        0.0,
+        0.0,
+        0.0976221416,
+        0.7071067811865476,
+        0.0,
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.3,
+        1.8317,
+        1.3773,
+        -1.7357,
+        1.5211,
+        -0.113,
+        -0.0954,
+        0.0973,
+        0.025,
+        0.025,
+        -1.8391,
+        1.3285,
+        1.7432,
+        1.5277,
+        -0.0006,
+        0.1011,
+        0.1097,
+        0.025,
+        0.025,
+        2.21973461,
+        1.54961586,
+        0.15
+      ],
+      "api_pan_tilt_deg": [
+        -125.53846181211779,
+        72.52747244453545
+      ]
+    }
+  ],
+  "synthetic_margin_fixture": {
+    "production_geometry_changed": false,
+    "rail_chassis_xy_m": [
+      0,
+      0.2059
+    ],
+    "guard_contacts_m": [
+      0.0029038128999426312
+    ]
+  },
+  "checks": [
+    {
+      "name": "former hull bridge removed while retaining separated component surfaces",
+      "passed": true
+    },
+    {
+      "name": "synthetic positive gripper/rail gap below 5 mm is detected by the query guard",
+      "passed": true
+    },
+    {
+      "name": "reviewed cases are clear or have source-supported intersections",
+      "passed": true
+    },
+    {
+      "name": "all retained worst contacts in sampled configurations cross source surfaces",
+      "passed": true
+    },
+    {
+      "name": "query override leaves physics midphase and margins unchanged",
+      "passed": true
+    }
+  ],
+  "review_checks_passed": true,
+  "sweeps": [
+    {
+      "name": "arms-lowered",
+      "sampled": 101,
+      "colliding": 19,
+      "source_surface_crossings": 19,
+      "poses": [
+        {
+          "configuration": [
+            0.0,
+            0.72
+          ],
+          "penetration_m": 0.0018873340661290125,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 12,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0009815728988634264,
+                "point_in_box_frame_m": [
+                  0.008653932128283455,
+                  0.009018427101136574,
+                  -0.0262098632550135
+                ],
+                "clipped_triangle_area_m2": 8.545763209449784e-07
+              },
+              {
+                "depth_inside_box_m": 0.0007458769606605437,
+                "point_in_box_frame_m": [
+                  0.008292843514314833,
+                  0.009254123039339457,
+                  -0.026574748495117956
+                ],
+                "clipped_triangle_area_m2": 7.763272951884896e-07
+              },
+              {
+                "depth_inside_box_m": 0.0007458769606605437,
+                "point_in_box_frame_m": [
+                  0.00885835805777155,
+                  0.009254123039339457,
+                  -0.028303200170347726
+                ],
+                "clipped_triangle_area_m2": 6.371334651439631e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.73
+          ],
+          "penetration_m": 0.005832269043297336,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 50,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.002879125333838389,
+                "point_in_box_frame_m": [
+                  0.007092917231799867,
+                  0.007120874666161611,
+                  -0.005282834125986638
+                ],
+                "clipped_triangle_area_m2": 5.380412355042657e-06
+              },
+              {
+                "depth_inside_box_m": 0.002879125333838389,
+                "point_in_box_frame_m": [
+                  0.006983987116220912,
+                  0.007120874666161611,
+                  -0.004832292102127901
+                ],
+                "clipped_triangle_area_m2": 1.2139620717943957e-06
+              },
+              {
+                "depth_inside_box_m": 0.0025062182540278744,
+                "point_in_box_frame_m": [
+                  0.006980371704036545,
+                  0.007493781745972126,
+                  -0.004565972177702595
+                ],
+                "clipped_triangle_area_m2": 2.483223495601757e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.74
+          ],
+          "penetration_m": 0.009831730228073803,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 180,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.005252831004312821,
+                "point_in_box_frame_m": [
+                  0.004747168995687179,
+                  0.002475709316279552,
+                  -0.005600753910495501
+                ],
+                "clipped_triangle_area_m2": 2.6412818194045923e-06
+              },
+              {
+                "depth_inside_box_m": 0.0049578232665357415,
+                "point_in_box_frame_m": [
+                  0.00469505096211628,
+                  0.005042176733464259,
+                  -0.009443424845808679
+                ],
+                "clipped_triangle_area_m2": 5.582799178456093e-05
+              },
+              {
+                "depth_inside_box_m": 0.004924997289422931,
+                "point_in_box_frame_m": [
+                  0.004887090168541532,
+                  0.005075002710577069,
+                  -0.005262089116161664
+                ],
+                "clipped_triangle_area_m2": 1.199095994955297e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.75
+          ],
+          "penetration_m": 0.013846950786322889,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 301,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.008970095278505272,
+                "point_in_box_frame_m": [
+                  0.0010299047214947282,
+                  0.0009850424411094903,
+                  -0.007020232405324774
+                ],
+                "clipped_triangle_area_m2": 2.6412818194046397e-06
+              },
+              {
+                "depth_inside_box_m": 0.00844981471315239,
+                "point_in_box_frame_m": [
+                  0.0015501852868476113,
+                  0.0012369787038554742,
+                  -0.006648670424815099
+                ],
+                "clipped_triangle_area_m2": 5.603008677191638e-06
+              },
+              {
+                "depth_inside_box_m": 0.007648872170340357,
+                "point_in_box_frame_m": [
+                  0.0016056607039468963,
+                  0.0023511278296596424,
+                  -0.00658468302550659
+                ],
+                "clipped_triangle_area_m2": 2.248307684592575e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.76
+          ],
+          "penetration_m": 0.01787695212898016,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 466,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009748033406438116,
+                "point_in_box_frame_m": [
+                  8.072681194420028e-05,
+                  -0.0002519665935618842,
+                  -0.00999258650598051
+                ],
+                "clipped_triangle_area_m2": 1.1507231406103016e-06
+              },
+              {
+                "depth_inside_box_m": 0.00940642293817974,
+                "point_in_box_frame_m": [
+                  -0.00059357706182026,
+                  -0.000283811533300526,
+                  -0.008973871350933993
+                ],
+                "clipped_triangle_area_m2": 1.907531380319554e-06
+              },
+              {
+                "depth_inside_box_m": 0.009335515061402136,
+                "point_in_box_frame_m": [
+                  0.0006644849385978639,
+                  -0.0002749206742611612,
+                  -0.01046194708328393
+                ],
+                "clipped_triangle_area_m2": 1.0773379220807023e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.77
+          ],
+          "penetration_m": 0.02192075782270031,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 620,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009527508988393149,
+                "point_in_box_frame_m": [
+                  0.00030828719296890444,
+                  0.00047249101160685075,
+                  -0.011636074943418834
+                ],
+                "clipped_triangle_area_m2": 2.760768156543951e-06
+              },
+              {
+                "depth_inside_box_m": 0.009339683601710808,
+                "point_in_box_frame_m": [
+                  0.0006603163982891923,
+                  -0.0004765862883185717,
+                  -0.012098045037462623
+                ],
+                "clipped_triangle_area_m2": 8.937463648705673e-07
+              },
+              {
+                "depth_inside_box_m": 0.009111079621652859,
+                "point_in_box_frame_m": [
+                  -0.0008889203783471423,
+                  -0.00017206790690782467,
+                  -0.012352889438846293
+                ],
+                "clipped_triangle_area_m2": 3.1075217454401363e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.78
+          ],
+          "penetration_m": 0.025977393549517433,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 838,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.00975857868726963,
+                "point_in_box_frame_m": [
+                  0.0002414213127303704,
+                  -0.00015631505467655449,
+                  -0.010853182566668918
+                ],
+                "clipped_triangle_area_m2": 8.870201590808305e-07
+              },
+              {
+                "depth_inside_box_m": 0.009678274994603267,
+                "point_in_box_frame_m": [
+                  7.113664766288112e-05,
+                  0.0003217250053967337,
+                  -0.010288499113297503
+                ],
+                "clipped_triangle_area_m2": 2.6437250749825026e-07
+              },
+              {
+                "depth_inside_box_m": 0.00958991048946546,
+                "point_in_box_frame_m": [
+                  0.00027276050153850684,
+                  0.0004100895105345408,
+                  -0.00952177331428008
+                ],
+                "clipped_triangle_area_m2": 8.342050683067663e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.79
+          ],
+          "penetration_m": 0.03004588705837024,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 813,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009982473303120052,
+                "point_in_box_frame_m": [
+                  1.7526696879947596e-05,
+                  3.469446951953614e-18,
+                  -0.02438371310769407
+                ],
+                "clipped_triangle_area_m2": 3.9394184808856916e-06
+              },
+              {
+                "depth_inside_box_m": 0.009842651331712913,
+                "point_in_box_frame_m": [
+                  -0.00015734866828708702,
+                  0.0,
+                  -0.020575474567457515
+                ],
+                "clipped_triangle_area_m2": 4.616500601446318e-05
+              },
+              {
+                "depth_inside_box_m": 0.00976438729206639,
+                "point_in_box_frame_m": [
+                  0.0002356127079336114,
+                  -4.336808689942018e-19,
+                  -0.0219046313841873
+                ],
+                "clipped_triangle_area_m2": 8.772979331530967e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.8
+          ],
+          "penetration_m": 0.031158937769072494,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 914,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009994232191564907,
+                "point_in_box_frame_m": [
+                  5.767808435093284e-06,
+                  0.0,
+                  -0.01724415959088796
+                ],
+                "clipped_triangle_area_m2": 3.4445392074626814e-06
+              },
+              {
+                "depth_inside_box_m": 0.009984791069167812,
+                "point_in_box_frame_m": [
+                  1.5208930832187866e-05,
+                  8.673617379884035e-19,
+                  -0.017984653101128525
+                ],
+                "clipped_triangle_area_m2": 8.312550637245062e-06
+              },
+              {
+                "depth_inside_box_m": 0.009982723088772428,
+                "point_in_box_frame_m": [
+                  -1.7276911227572038e-05,
+                  0.0,
+                  -0.017621843615617555
+                ],
+                "clipped_triangle_area_m2": 6.129410125624332e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.81
+          ],
+          "penetration_m": 0.028011038588286064,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 793,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009970691300159127,
+                "point_in_box_frame_m": [
+                  2.9308699840873646e-05,
+                  8.673617379884035e-19,
+                  -0.016343675075690726
+                ],
+                "clipped_triangle_area_m2": 3.3304427754181006e-05
+              },
+              {
+                "depth_inside_box_m": 0.0092379985221478,
+                "point_in_box_frame_m": [
+                  -0.0007620014778522013,
+                  3.469446951953614e-18,
+                  -0.02741574928926258
+                ],
+                "clipped_triangle_area_m2": 4.0809367832976375e-06
+              },
+              {
+                "depth_inside_box_m": 0.009236605669880328,
+                "point_in_box_frame_m": [
+                  -0.0007633943301196715,
+                  3.469446951953614e-18,
+                  -0.027563205435688517
+                ],
+                "clipped_triangle_area_m2": 2.198225861403956e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.8200000000000001
+          ],
+          "penetration_m": 0.02487058968338186,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 559,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.00981771253623965,
+                "point_in_box_frame_m": [
+                  0.00018228746376035157,
+                  0.0,
+                  -0.016580407137979754
+                ],
+                "clipped_triangle_area_m2": 3.22694070883982e-05
+              },
+              {
+                "depth_inside_box_m": 0.009797606325915809,
+                "point_in_box_frame_m": [
+                  6.504556431967867e-05,
+                  0.00020239367408419115,
+                  -0.013067659723251983
+                ],
+                "clipped_triangle_area_m2": 5.220228938975709e-07
+              },
+              {
+                "depth_inside_box_m": 0.009790858520125442,
+                "point_in_box_frame_m": [
+                  -0.00020914147987455753,
+                  0.0001333078179689742,
+                  -0.013175592523662188
+                ],
+                "clipped_triangle_area_m2": 4.405158219729995e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.8300000000000001
+          ],
+          "penetration_m": 0.02173814613620549,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 236,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009851871998260282,
+                "point_in_box_frame_m": [
+                  -0.00014812800173971815,
+                  8.673617379884035e-19,
+                  -0.016983022104200624
+                ],
+                "clipped_triangle_area_m2": 9.34561969320801e-06
+              },
+              {
+                "depth_inside_box_m": 0.00979835198388268,
+                "point_in_box_frame_m": [
+                  0.00020164801611731974,
+                  -8.673617379884035e-19,
+                  -0.016900577134376163
+                ],
+                "clipped_triangle_area_m2": 4.888938928087355e-06
+              },
+              {
+                "depth_inside_box_m": 0.009654441406798142,
+                "point_in_box_frame_m": [
+                  0.0003455585932018578,
+                  -8.673617379884035e-19,
+                  -0.009021415000729003
+                ],
+                "clipped_triangle_area_m2": 7.884540561817148e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.84
+          ],
+          "penetration_m": 0.021821994073541646,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 667,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009213610616267064,
+                "point_in_box_frame_m": [
+                  -0.0007863893837329367,
+                  0.0,
+                  -0.03316497969224465
+                ],
+                "clipped_triangle_area_m2": 2.5894798316049893e-05
+              },
+              {
+                "depth_inside_box_m": 0.00918647947295638,
+                "point_in_box_frame_m": [
+                  0.0008135205270436201,
+                  -0.0006233238430441032,
+                  -0.05495645116094278
+                ],
+                "clipped_triangle_area_m2": 3.3012833169879954e-06
+              },
+              {
+                "depth_inside_box_m": 0.0089536641905136,
+                "point_in_box_frame_m": [
+                  -0.0010463358094863998,
+                  -0.0002778297202525224,
+                  -0.04705378977969258
+                ],
+                "clipped_triangle_area_m2": 3.0224848214316456e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.85
+          ],
+          "penetration_m": 0.018269054604907794,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 454,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009635970969921031,
+                "point_in_box_frame_m": [
+                  0.000154912567098454,
+                  0.0003640290300789691,
+                  -0.06673040593638341
+                ],
+                "clipped_triangle_area_m2": 1.1503863889147899e-06
+              },
+              {
+                "depth_inside_box_m": 0.009411553222029417,
+                "point_in_box_frame_m": [
+                  -0.0003522978811359944,
+                  -0.0005884467779705835,
+                  -0.0641292006393987
+                ],
+                "clipped_triangle_area_m2": 3.2229940459821455e-06
+              },
+              {
+                "depth_inside_box_m": 0.009312080223327362,
+                "point_in_box_frame_m": [
+                  0.0006879197766726384,
+                  -0.0006480924401828493,
+                  -0.06390925886698164
+                ],
+                "clipped_triangle_area_m2": 6.791903044227945e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.86
+          ],
+          "penetration_m": 0.014187430198492649,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 382,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009648572615715886,
+                "point_in_box_frame_m": [
+                  -0.0003068552208436623,
+                  -0.00035142738428411546,
+                  -0.05400768629294137
+                ],
+                "clipped_triangle_area_m2": 4.07921563469679e-06
+              },
+              {
+                "depth_inside_box_m": 0.009513222311369487,
+                "point_in_box_frame_m": [
+                  -0.0004867776886305123,
+                  0.0002845584249133298,
+                  -0.05569059911372337
+                ],
+                "clipped_triangle_area_m2": 3.0584488072087734e-05
+              },
+              {
+                "depth_inside_box_m": 0.009209383113182356,
+                "point_in_box_frame_m": [
+                  -0.00014486399887565787,
+                  -0.0007906168868176451,
+                  -0.05288378158714132
+                ],
+                "clipped_triangle_area_m2": 1.9175362493561913e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.87
+          ],
+          "penetration_m": 0.011606954965622352,
+          "geoms": [
+            "lower_rail_x_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 211,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.008891761928810476,
+                "point_in_box_frame_m": [
+                  -0.08063276708117978,
+                  0.0007127301453037086,
+                  -0.0011082380711895246
+                ],
+                "clipped_triangle_area_m2": 2.609624559878125e-06
+              },
+              {
+                "depth_inside_box_m": 0.008495882115900178,
+                "point_in_box_frame_m": [
+                  -0.08062390561324341,
+                  -0.0002156630442915499,
+                  0.0015041178840998213
+                ],
+                "clipped_triangle_area_m2": 5.289816551660375e-06
+              },
+              {
+                "depth_inside_box_m": 0.007988672897307023,
+                "point_in_box_frame_m": [
+                  -0.08062250578877739,
+                  0.0001317623907360714,
+                  -0.002011327102692978
+                ],
+                "clipped_triangle_area_m2": 2.700494178459221e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.88
+          ],
+          "penetration_m": 0.010042170574261546,
+          "geoms": [
+            "lower_rail_x_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 214,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.008237229413072212,
+                "point_in_box_frame_m": [
+                  -0.08544096131285261,
+                  -0.0017627705869277886,
+                  0.0003615036917238718
+                ],
+                "clipped_triangle_area_m2": 5.2898165516603445e-06
+              },
+              {
+                "depth_inside_box_m": 0.007876919914220371,
+                "point_in_box_frame_m": [
+                  -0.08546223242358153,
+                  -0.001266215948622083,
+                  0.002123080085779629
+                ],
+                "clipped_triangle_area_m2": 5.2898264021315675e-06
+              },
+              {
+                "depth_inside_box_m": 0.007748385994977328,
+                "point_in_box_frame_m": [
+                  -0.08548352412908222,
+                  -0.0008374596192735713,
+                  -0.0022516140050226723
+                ],
+                "clipped_triangle_area_m2": 2.609624559878104e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.89
+          ],
+          "penetration_m": 0.006836784374109529,
+          "geoms": [
+            "lower_rail_x_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 91,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.005011984336049935,
+                "point_in_box_frame_m": [
+                  -0.09023801566395007,
+                  -0.003808541676167522,
+                  0.004561781099187967
+                ],
+                "clipped_triangle_area_m2": 5.289979239813653e-06
+              },
+              {
+                "depth_inside_box_m": 0.004981276329644402,
+                "point_in_box_frame_m": [
+                  -0.0902687236703556,
+                  -0.0027974489411859414,
+                  0.001058716547339356
+                ],
+                "clipped_triangle_area_m2": 5.289826402131577e-06
+              },
+              {
+                "depth_inside_box_m": 0.004977386281672214,
+                "point_in_box_frame_m": [
+                  -0.09027261371832779,
+                  -0.0032961074536848912,
+                  -0.0007023896154197596
+                ],
+                "clipped_triangle_area_m2": 5.289816551660335e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.0,
+            0.9
+          ],
+          "penetration_m": 0.0023080458435848143,
+          "geoms": [
+            "lower_rail_y__1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 20,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0004144742982797236,
+                "point_in_box_frame_m": [
+                  -0.009585525701720277,
+                  0.19460261685410504,
+                  0.009283523349934415
+                ],
+                "clipped_triangle_area_m2": 3.1582213273284756e-06
+              },
+              {
+                "depth_inside_box_m": 0.0004115053006175373,
+                "point_in_box_frame_m": [
+                  -0.009588494699382463,
+                  0.1945304095358126,
+                  0.007785795573784086
+                ],
+                "clipped_triangle_area_m2": 4.342401170004079e-06
+              },
+              {
+                "depth_inside_box_m": 0.0003992306549429805,
+                "point_in_box_frame_m": [
+                  -0.00960076934505702,
+                  0.19484954130838958,
+                  0.005671987815419719
+                ],
+                "clipped_triangle_area_m2": 4.838350400709768e-06
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "arms-100mm",
+      "sampled": 101,
+      "colliding": 33,
+      "source_surface_crossings": 33,
+      "poses": [
+        {
+          "configuration": [
+            0.1,
+            0.62
+          ],
+          "penetration_m": 0.00011649740627220143,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 5,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.00010551746410568212,
+                "point_in_box_frame_m": [
+                  -0.013140577501211108,
+                  -0.008894015226131665,
+                  0.009894482535894318
+                ],
+                "clipped_triangle_area_m2": 1.995859896195506e-09
+              },
+              {
+                "depth_inside_box_m": 0.00010551746410568212,
+                "point_in_box_frame_m": [
+                  -0.013154112769158094,
+                  -0.008784871947727072,
+                  0.009894482535894318
+                ],
+                "clipped_triangle_area_m2": 3.4722243064863438e-09
+              },
+              {
+                "depth_inside_box_m": 0.00010551746410568212,
+                "point_in_box_frame_m": [
+                  -0.013180682213988182,
+                  -0.008570627116129234,
+                  0.009894482535894318
+                ],
+                "clipped_triangle_area_m2": 7.261438415246214e-09
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.63
+          ],
+          "penetration_m": 0.0024386086666956836,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 37,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.002271526697691926,
+                "point_in_box_frame_m": [
+                  -0.017234743719913435,
+                  -0.007728473302308074,
+                  0.007681027977587019
+                ],
+                "clipped_triangle_area_m2": 2.139978260372818e-06
+              },
+              {
+                "depth_inside_box_m": 0.0022081265940270293,
+                "point_in_box_frame_m": [
+                  -0.017603913615449246,
+                  -0.006656765063231427,
+                  0.007791873405972971
+                ],
+                "clipped_triangle_area_m2": 2.461277837647444e-06
+              },
+              {
+                "depth_inside_box_m": 0.002176244786036903,
+                "point_in_box_frame_m": [
+                  -0.016860381321171514,
+                  -0.006086665669250852,
+                  0.007823755213963097
+                ],
+                "clipped_triangle_area_m2": 4.3603846250673605e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.64
+          ],
+          "penetration_m": 0.004666979013306046,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 108,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0043290680161697315,
+                "point_in_box_frame_m": [
+                  -0.021108736637922204,
+                  -0.004011434530126386,
+                  0.005670931983830269
+                ],
+                "clipped_triangle_area_m2": 4.4980366541360404e-07
+              },
+              {
+                "depth_inside_box_m": 0.004325251847464451,
+                "point_in_box_frame_m": [
+                  -0.021401093951701654,
+                  -0.004451159436091858,
+                  0.00567474815253555
+                ],
+                "clipped_triangle_area_m2": 5.397637099759019e-07
+              },
+              {
+                "depth_inside_box_m": 0.004256782909548459,
+                "point_in_box_frame_m": [
+                  -0.02065166822667855,
+                  -0.003757052308030336,
+                  0.005743217090451541
+                ],
+                "clipped_triangle_area_m2": 4.186714980422958e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.65
+          ],
+          "penetration_m": 0.006831664652749285,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 254,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.005653468873295919,
+                "point_in_box_frame_m": [
+                  -0.023681210746487064,
+                  -0.003812593385706409,
+                  0.004346531126704081
+                ],
+                "clipped_triangle_area_m2": 5.397661105580366e-07
+              },
+              {
+                "depth_inside_box_m": 0.0055770564636869946,
+                "point_in_box_frame_m": [
+                  -0.024201085195200617,
+                  -0.004422943536313006,
+                  0.0038504562038281062
+                ],
+                "clipped_triangle_area_m2": 4.498052301955167e-07
+              },
+              {
+                "depth_inside_box_m": 0.005570928868271919,
+                "point_in_box_frame_m": [
+                  -0.02315965138020763,
+                  -0.003809472709695789,
+                  0.004429071131728081
+                ],
+                "clipped_triangle_area_m2": 4.498020424264628e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.66
+          ],
+          "penetration_m": 0.008931115810642794,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 442,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.005724017962715517,
+                "point_in_box_frame_m": [
+                  -0.023621279376003234,
+                  -0.0006390370485192896,
+                  0.004275982037284483
+                ],
+                "clipped_triangle_area_m2": 1.8964933156363682e-06
+              },
+              {
+                "depth_inside_box_m": 0.005685839947888695,
+                "point_in_box_frame_m": [
+                  -0.02373447019267317,
+                  0.0,
+                  0.004314160052111305
+                ],
+                "clipped_triangle_area_m2": 1.1320666780152188e-06
+              },
+              {
+                "depth_inside_box_m": 0.005670044778847243,
+                "point_in_box_frame_m": [
+                  -0.023782210174843738,
+                  1.734723475976807e-18,
+                  0.0043299552211527575
+                ],
+                "clipped_triangle_area_m2": 8.592252263776361e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.67
+          ],
+          "penetration_m": 0.010963874684716457,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 601,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.007857877277729481,
+                "point_in_box_frame_m": [
+                  -0.027411386069417724,
+                  -0.0009475627756403152,
+                  0.0021421227222705183
+                ],
+                "clipped_triangle_area_m2": 1.7886958821197813e-06
+              },
+              {
+                "depth_inside_box_m": 0.00781159271184284,
+                "point_in_box_frame_m": [
+                  -0.027545275221917263,
+                  -8.673617379884035e-19,
+                  0.0021884072881571603
+                ],
+                "clipped_triangle_area_m2": 1.2432605608452551e-06
+              },
+              {
+                "depth_inside_box_m": 0.007793525940083843,
+                "point_in_box_frame_m": [
+                  -0.027597460330850133,
+                  1.734723475976807e-18,
+                  0.0022064740599161575
+                ],
+                "clipped_triangle_area_m2": 9.436111565654383e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.68
+          ],
+          "penetration_m": 0.012928576305377474,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 701,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009854663221204084,
+                "point_in_box_frame_m": [
+                  -0.03143647961669237,
+                  1.3010426069826053e-18,
+                  0.00014533677879591567
+                ],
+                "clipped_triangle_area_m2": 1.028048880861031e-06
+              },
+              {
+                "depth_inside_box_m": 0.009833317790334107,
+                "point_in_box_frame_m": [
+                  -0.031495494312880505,
+                  0.0,
+                  0.00016668220966589427
+                ],
+                "clipped_triangle_area_m2": 1.457104991322855e-06
+              },
+              {
+                "depth_inside_box_m": 0.009407002077924222,
+                "point_in_box_frame_m": [
+                  -0.03172470668139955,
+                  -3.469446951953614e-18,
+                  0.0005929979220757786
+                ],
+                "clipped_triangle_area_m2": 1.8132863720880837e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.6900000000000001
+          ],
+          "penetration_m": 0.01482394928469127,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 850,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.00994846676090504,
+                "point_in_box_frame_m": [
+                  -0.03517662062512871,
+                  3.469446951953614e-18,
+                  -5.15332390949599e-05
+                ],
+                "clipped_triangle_area_m2": 3.1214945467873802e-06
+              },
+              {
+                "depth_inside_box_m": 0.009886482344235902,
+                "point_in_box_frame_m": [
+                  -0.034630677244106,
+                  -9.8448019098899e-06,
+                  0.00011351765576409863
+                ],
+                "clipped_triangle_area_m2": 1.2365041660957162e-06
+              },
+              {
+                "depth_inside_box_m": 0.00979468503004076,
+                "point_in_box_frame_m": [
+                  -0.03521577414087257,
+                  3.469446951953614e-18,
+                  0.00020531496995923907
+                ],
+                "clipped_triangle_area_m2": 8.527883461602226e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.7000000000000001
+          ],
+          "penetration_m": 0.01672542105691489,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 782,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009987876568804304,
+                "point_in_box_frame_m": [
+                  -0.033364090499560003,
+                  3.469446951953614e-18,
+                  1.2123431195697114e-05
+                ],
+                "clipped_triangle_area_m2": 3.308003335592073e-06
+              },
+              {
+                "depth_inside_box_m": 0.009957869675982564,
+                "point_in_box_frame_m": [
+                  -0.0339235512014724,
+                  3.469446951953614e-18,
+                  4.2130324017436584e-05
+                ],
+                "clipped_triangle_area_m2": 1.8882440468753556e-05
+              },
+              {
+                "depth_inside_box_m": 0.0098980408146183,
+                "point_in_box_frame_m": [
+                  -0.03441459414179959,
+                  3.469446951953614e-18,
+                  0.00010195918538169938
+                ],
+                "clipped_triangle_area_m2": 1.4839833552293485e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.71
+          ],
+          "penetration_m": 0.018513124899899515,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 736,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009784288742211348,
+                "point_in_box_frame_m": [
+                  -0.04122993235261856,
+                  -0.0002157112577886519,
+                  0.00018929416816863378
+                ],
+                "clipped_triangle_area_m2": 1.7091311496083118e-06
+              },
+              {
+                "depth_inside_box_m": 0.009655859758662354,
+                "point_in_box_frame_m": [
+                  -0.04086167684896815,
+                  -0.00019544851875230815,
+                  0.0003441402413376465
+                ],
+                "clipped_triangle_area_m2": 2.0708669930772112e-06
+              },
+              {
+                "depth_inside_box_m": 0.009577854225924444,
+                "point_in_box_frame_m": [
+                  -0.03778040209255937,
+                  3.469446951953614e-18,
+                  -0.00042214577407555557
+                ],
+                "clipped_triangle_area_m2": 5.882862963340276e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.72
+          ],
+          "penetration_m": 0.020236674699058554,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 887,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009956790251020538,
+                "point_in_box_frame_m": [
+                  -0.0436679791276868,
+                  0.0,
+                  4.3209748979462e-05
+                ],
+                "clipped_triangle_area_m2": 2.4516097682515536e-05
+              },
+              {
+                "depth_inside_box_m": 0.00937150655624909,
+                "point_in_box_frame_m": [
+                  -0.042505238756635866,
+                  0.0005260796595782137,
+                  -0.0006284934437509108
+                ],
+                "clipped_triangle_area_m2": 1.5185262311251823e-06
+              },
+              {
+                "depth_inside_box_m": 0.009334376644259018,
+                "point_in_box_frame_m": [
+                  -0.04241126753508821,
+                  0.0,
+                  -0.0006656233557409823
+                ],
+                "clipped_triangle_area_m2": 8.565819731212536e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.73
+          ],
+          "penetration_m": 0.021895833008531245,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 1002,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009986269171425952,
+                "point_in_box_frame_m": [
+                  -0.0538213781582472,
+                  -4.336808689942018e-19,
+                  1.3730828574048435e-05
+                ],
+                "clipped_triangle_area_m2": 2.854343762910277e-06
+              },
+              {
+                "depth_inside_box_m": 0.009962242635960145,
+                "point_in_box_frame_m": [
+                  -0.04820689729409772,
+                  0.0,
+                  3.775736403985501e-05
+                ],
+                "clipped_triangle_area_m2": 4.213840990499319e-05
+              },
+              {
+                "depth_inside_box_m": 0.009929661544459312,
+                "point_in_box_frame_m": [
+                  -0.05388456327185899,
+                  4.336808689942018e-19,
+                  7.033845554068891e-05
+                ],
+                "clipped_triangle_area_m2": 5.07518468289847e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.74
+          ],
+          "penetration_m": 0.02349037871459432,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 1021,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009964801772238435,
+                "point_in_box_frame_m": [
+                  -0.06977892926144351,
+                  3.5171113451984426e-05,
+                  -3.519822776156445e-05
+                ],
+                "clipped_triangle_area_m2": 6.262029173157936e-07
+              },
+              {
+                "depth_inside_box_m": 0.009904192276811002,
+                "point_in_box_frame_m": [
+                  -0.05253604372190883,
+                  0.0,
+                  9.580772318899853e-05
+                ],
+                "clipped_triangle_area_m2": 2.5926291129817384e-06
+              },
+              {
+                "depth_inside_box_m": 0.00986663027687154,
+                "point_in_box_frame_m": [
+                  -0.05251137639514561,
+                  0.0,
+                  -0.00013336972312845885
+                ],
+                "clipped_triangle_area_m2": 6.6284942576709864e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.75
+          ],
+          "penetration_m": 0.025020106904801127,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 955,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.00999749786256737,
+                "point_in_box_frame_m": [
+                  -0.055399777817313714,
+                  8.673617379884035e-19,
+                  2.5021374326310823e-06
+                ],
+                "clipped_triangle_area_m2": 6.525987155118278e-06
+              },
+              {
+                "depth_inside_box_m": 0.00983457432697515,
+                "point_in_box_frame_m": [
+                  -0.07804428977433508,
+                  0.0,
+                  0.00016542567302484936
+                ],
+                "clipped_triangle_area_m2": 7.887633273355343e-06
+              },
+              {
+                "depth_inside_box_m": 0.009833331165360245,
+                "point_in_box_frame_m": [
+                  -0.055161207056967504,
+                  0.0,
+                  0.0001666688346397556
+                ],
+                "clipped_triangle_area_m2": 5.0543896404806505e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.76
+          ],
+          "penetration_m": 0.02352387008573304,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 977,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009907824312754675,
+                "point_in_box_frame_m": [
+                  -0.054532360782629144,
+                  0.0,
+                  9.217568724532417e-05
+                ],
+                "clipped_triangle_area_m2": 4.59951335083426e-05
+              },
+              {
+                "depth_inside_box_m": 0.009469035799920046,
+                "point_in_box_frame_m": [
+                  -0.053239569469356006,
+                  -8.673617379884035e-19,
+                  0.0005309642000799544
+                ],
+                "clipped_triangle_area_m2": 8.102190751741962e-06
+              },
+              {
+                "depth_inside_box_m": 0.009360525109832107,
+                "point_in_box_frame_m": [
+                  -0.0815855285505337,
+                  -8.20516398615893e-05,
+                  -0.0006394748901678944
+                ],
+                "clipped_triangle_area_m2": 1.2178403648255528e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.77
+          ],
+          "penetration_m": 0.021964836854895853,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 1112,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009999403548792767,
+                "point_in_box_frame_m": [
+                  -0.05369876341250403,
+                  -4.336808689942018e-19,
+                  5.964512072327696e-07
+                ],
+                "clipped_triangle_area_m2": 4.09357561477989e-05
+              },
+              {
+                "depth_inside_box_m": 0.009977914356757035,
+                "point_in_box_frame_m": [
+                  -0.07045902918487529,
+                  -2.208564324296637e-05,
+                  -7.828675646877808e-06
+                ],
+                "clipped_triangle_area_m2": 2.8219149128065904e-06
+              },
+              {
+                "depth_inside_box_m": 0.0096627261623934,
+                "point_in_box_frame_m": [
+                  -0.05474088960986451,
+                  0.0,
+                  -0.00033727383760659906
+                ],
+                "clipped_triangle_area_m2": 2.471994803188239e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.78
+          ],
+          "penetration_m": 0.02044312639522832,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 1183,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009940420585806471,
+                "point_in_box_frame_m": [
+                  -0.05393606922651379,
+                  -8.673617379884035e-19,
+                  5.9579414193528576e-05
+                ],
+                "clipped_triangle_area_m2": 6.383908388877407e-07
+              },
+              {
+                "depth_inside_box_m": 0.009937536636230242,
+                "point_in_box_frame_m": [
+                  -0.054020667040424256,
+                  -8.673617379884035e-19,
+                  -6.246336376975836e-05
+                ],
+                "clipped_triangle_area_m2": 5.359798586901722e-06
+              },
+              {
+                "depth_inside_box_m": 0.009803972476854828,
+                "point_in_box_frame_m": [
+                  -0.05388251071482384,
+                  2.6020852139652106e-18,
+                  0.00019602752314517343
+                ],
+                "clipped_triangle_area_m2": 5.31632736046615e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.79
+          ],
+          "penetration_m": 0.020656605035006655,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 758,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009982473303120052,
+                "point_in_box_frame_m": [
+                  1.7526696879947596e-05,
+                  3.469446951953614e-18,
+                  0.0756162868923061
+                ],
+                "clipped_triangle_area_m2": 3.939418480885655e-06
+              },
+              {
+                "depth_inside_box_m": 0.009842651331712913,
+                "point_in_box_frame_m": [
+                  -0.00015734866828708702,
+                  0.0,
+                  0.07942452543254268
+                ],
+                "clipped_triangle_area_m2": 4.6165006014463324e-05
+              },
+              {
+                "depth_inside_box_m": 0.00976438729206639,
+                "point_in_box_frame_m": [
+                  0.0002356127079336114,
+                  -4.336808689942018e-19,
+                  0.07809536861581289
+                ],
+                "clipped_triangle_area_m2": 8.772979331531033e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.8
+          ],
+          "penetration_m": 0.02141160103399958,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 864,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009694147293371895,
+                "point_in_box_frame_m": [
+                  0.00030585270662810473,
+                  0.0,
+                  0.08082850603756055
+                ],
+                "clipped_triangle_area_m2": 4.025205423296545e-05
+              },
+              {
+                "depth_inside_box_m": 0.009584653101128535,
+                "point_in_box_frame_m": [
+                  1.5208930832187866e-05,
+                  8.673617379884035e-19,
+                  0.08201534689887147
+                ],
+                "clipped_triangle_area_m2": 8.312550637245027e-06
+              },
+              {
+                "depth_inside_box_m": 0.009221843615617564,
+                "point_in_box_frame_m": [
+                  -1.7276911227572038e-05,
+                  0.0,
+                  0.08237815638438244
+                ],
+                "clipped_triangle_area_m2": 6.129410125624401e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.81
+          ],
+          "penetration_m": 0.021509264015286533,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 761,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0092379985221478,
+                "point_in_box_frame_m": [
+                  -0.0007620014778522013,
+                  3.469446951953614e-18,
+                  0.07258425071073744
+                ],
+                "clipped_triangle_area_m2": 4.0809367832977044e-06
+              },
+              {
+                "depth_inside_box_m": 0.009236605669880328,
+                "point_in_box_frame_m": [
+                  -0.0007633943301196715,
+                  3.469446951953614e-18,
+                  0.0724367945643115
+                ],
+                "clipped_triangle_area_m2": 2.198225861403956e-06
+              },
+              {
+                "depth_inside_box_m": 0.009189089977289042,
+                "point_in_box_frame_m": [
+                  -0.0008109100227109575,
+                  0.0,
+                  0.07235500451396108
+                ],
+                "clipped_triangle_area_m2": 1.551791147585652e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.8200000000000001
+          ],
+          "penetration_m": 0.02165355030782503,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 555,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.008424594766216778,
+                "point_in_box_frame_m": [
+                  -0.0007937864083010323,
+                  0.0,
+                  0.08317540523378322
+                ],
+                "clipped_triangle_area_m2": 7.586764449713958e-06
+              },
+              {
+                "depth_inside_box_m": 0.008180407137979837,
+                "point_in_box_frame_m": [
+                  0.00018228746376035157,
+                  0.0,
+                  0.08341959286202016
+                ],
+                "clipped_triangle_area_m2": 3.226940708839821e-05
+              },
+              {
+                "depth_inside_box_m": 0.007967108880401596,
+                "point_in_box_frame_m": [
+                  -0.0020328911195984043,
+                  8.673617379884035e-19,
+                  0.0828654145480102
+                ],
+                "clipped_triangle_area_m2": 4.3009782802513004e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.8300000000000001
+          ],
+          "penetration_m": 0.021128700814158415,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 236,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0086938225513635,
+                "point_in_box_frame_m": [
+                  -0.0013061774486364992,
+                  0.0,
+                  0.08274401688291014
+                ],
+                "clipped_triangle_area_m2": 3.7782601515994124e-05
+              },
+              {
+                "depth_inside_box_m": 0.00858302210420063,
+                "point_in_box_frame_m": [
+                  -0.00014812800173971815,
+                  8.673617379884035e-19,
+                  0.08301697789579937
+                ],
+                "clipped_triangle_area_m2": 9.345619693208035e-06
+              },
+              {
+                "depth_inside_box_m": 0.008500577134376172,
+                "point_in_box_frame_m": [
+                  0.00020164801611731974,
+                  -8.673617379884035e-19,
+                  0.08309942286562383
+                ],
+                "clipped_triangle_area_m2": 4.8889389280873245e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.84
+          ],
+          "penetration_m": 0.021821994073541646,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 692,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009213610616267064,
+                "point_in_box_frame_m": [
+                  -0.0007863893837329367,
+                  0.0,
+                  0.06683502030775526
+                ],
+                "clipped_triangle_area_m2": 2.5894798316049862e-05
+              },
+              {
+                "depth_inside_box_m": 0.00918647947295638,
+                "point_in_box_frame_m": [
+                  0.0008135205270436201,
+                  -0.0006233238430441032,
+                  0.0450435488390571
+                ],
+                "clipped_triangle_area_m2": 3.3012833169879916e-06
+              },
+              {
+                "depth_inside_box_m": 0.0089536641905136,
+                "point_in_box_frame_m": [
+                  -0.0010463358094863998,
+                  -0.0002778297202525224,
+                  0.05294621022030732
+                ],
+                "clipped_triangle_area_m2": 3.022484821431655e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.85
+          ],
+          "penetration_m": 0.018269054604907794,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 483,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009635970969921031,
+                "point_in_box_frame_m": [
+                  0.000154912567098454,
+                  0.0003640290300789691,
+                  0.03326959406361667
+                ],
+                "clipped_triangle_area_m2": 1.150386388914783e-06
+              },
+              {
+                "depth_inside_box_m": 0.009411553222029417,
+                "point_in_box_frame_m": [
+                  -0.0003522978811359944,
+                  -0.0005884467779705835,
+                  0.035870799360601384
+                ],
+                "clipped_triangle_area_m2": 3.2229940459821557e-06
+              },
+              {
+                "depth_inside_box_m": 0.009312080223327362,
+                "point_in_box_frame_m": [
+                  0.0006879197766726384,
+                  -0.0006480924401828493,
+                  0.036090741133018446
+                ],
+                "clipped_triangle_area_m2": 6.791903044227965e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.86
+          ],
+          "penetration_m": 0.014187430198492649,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 414,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.009648572615715886,
+                "point_in_box_frame_m": [
+                  -0.0003068552208436623,
+                  -0.00035142738428411546,
+                  0.04599231370705853
+                ],
+                "clipped_triangle_area_m2": 4.079215634696881e-06
+              },
+              {
+                "depth_inside_box_m": 0.009513222311369487,
+                "point_in_box_frame_m": [
+                  -0.0004867776886305123,
+                  0.0002845584249133298,
+                  0.04430940088627653
+                ],
+                "clipped_triangle_area_m2": 3.058448807208768e-05
+              },
+              {
+                "depth_inside_box_m": 0.009209383113182356,
+                "point_in_box_frame_m": [
+                  -0.00014486399887565787,
+                  -0.0007906168868176451,
+                  0.047116218412858596
+                ],
+                "clipped_triangle_area_m2": 1.9175362493561896e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.87
+          ],
+          "penetration_m": 0.010092822587574837,
+          "geoms": [
+            "corner_post__1_1_collision",
+            "left_finger_a_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 2086,
+            "inset_m": 0.0001,
+            "crossing_triangles": 414,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.008726616136118474,
+                "point_in_box_frame_m": [
+                  -0.00012410728981480015,
+                  -0.0012733838638815265,
+                  0.06486429371484702
+                ],
+                "clipped_triangle_area_m2": 6.250011364922317e-06
+              },
+              {
+                "depth_inside_box_m": 0.00853870086687039,
+                "point_in_box_frame_m": [
+                  -0.0005638524051772521,
+                  -0.0014612991331296105,
+                  0.06545981156843554
+                ],
+                "clipped_triangle_area_m2": 4.242622935369359e-06
+              },
+              {
+                "depth_inside_box_m": 0.00811426427861278,
+                "point_in_box_frame_m": [
+                  -0.0018857357213872203,
+                  -0.0014122592922371246,
+                  0.05813538391379607
+                ],
+                "clipped_triangle_area_m2": 7.016289102085994e-05
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.88
+          ],
+          "penetration_m": 0.007352390134211096,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 155,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.005384095053814995,
+                "point_in_box_frame_m": [
+                  -0.08696433979172813,
+                  0.0043462244615246155,
+                  -0.004615904946185005
+                ],
+                "clipped_triangle_area_m2": 6.019601802060375e-06
+              },
+              {
+                "depth_inside_box_m": 0.004994547528810815,
+                "point_in_box_frame_m": [
+                  -0.08985783531153839,
+                  -0.0006269092453522913,
+                  -0.005005452471189185
+                ],
+                "clipped_triangle_area_m2": 9.178279549361862e-06
+              },
+              {
+                "depth_inside_box_m": 0.00499330895920244,
+                "point_in_box_frame_m": [
+                  -0.08999883430055906,
+                  0.0007992268922099843,
+                  -0.00500669104079756
+                ],
+                "clipped_triangle_area_m2": 1.5015600632062617e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.89
+          ],
+          "penetration_m": 0.006263405507938236,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 80,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.004347578218968259,
+                "point_in_box_frame_m": [
+                  -0.09057548524443444,
+                  0.0033087650018007258,
+                  -0.005652421781031741
+                ],
+                "clipped_triangle_area_m2": 6.462404501317486e-06
+              },
+              {
+                "depth_inside_box_m": 0.003691933377964085,
+                "point_in_box_frame_m": [
+                  -0.09155806662203592,
+                  0.0026219877701111997,
+                  -0.0056414978952029834
+                ],
+                "clipped_triangle_area_m2": 1.467321342324121e-05
+              },
+              {
+                "depth_inside_box_m": 0.003222576823806292,
+                "point_in_box_frame_m": [
+                  -0.09202742317619371,
+                  0.00629365647758894,
+                  -0.005998525049001523
+                ],
+                "clipped_triangle_area_m2": 1.0324434209508407e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.9
+          ],
+          "penetration_m": 0.00521579939677907,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 35,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0017499547183277703,
+                "point_in_box_frame_m": [
+                  -0.09325251710140167,
+                  0.00825004528167223,
+                  -0.0062532606911348074
+                ],
+                "clipped_triangle_area_m2": 3.793592922298608e-06
+              },
+              {
+                "depth_inside_box_m": 0.001708127863751848,
+                "point_in_box_frame_m": [
+                  -0.0920454905779043,
+                  0.008291872136248152,
+                  -0.00625580023071317
+                ],
+                "clipped_triangle_area_m2": 7.775812764605474e-07
+              },
+              {
+                "depth_inside_box_m": 0.0015123203372470612,
+                "point_in_box_frame_m": [
+                  -0.09373767966275294,
+                  0.0036034717921855646,
+                  -0.006567414538021333
+                ],
+                "clipped_triangle_area_m2": 4.629417824804024e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.91
+          ],
+          "penetration_m": 0.004209911618374325,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 26,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0013883775398153813,
+                "point_in_box_frame_m": [
+                  -0.09372954771780992,
+                  0.00857771074637934,
+                  -0.008611622460184619
+                ],
+                "clipped_triangle_area_m2": 4.064675375055849e-06
+              },
+              {
+                "depth_inside_box_m": 0.0011846387648703216,
+                "point_in_box_frame_m": [
+                  -0.09381679513382163,
+                  0.008815361235129679,
+                  -0.007129401583679847
+                ],
+                "clipped_triangle_area_m2": 7.068937202799228e-07
+              },
+              {
+                "depth_inside_box_m": 0.0009548270389348103,
+                "point_in_box_frame_m": [
+                  -0.09304596625210841,
+                  0.00904517296106519,
+                  -0.009005804073464766
+                ],
+                "clipped_triangle_area_m2": 1.3868026296253094e-07
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.92
+          ],
+          "penetration_m": 0.00324608084519633,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 25,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.001701010326748794,
+                "point_in_box_frame_m": [
+                  -0.09312244690508537,
+                  0.008298989673251206,
+                  -0.007570382543998096
+                ],
+                "clipped_triangle_area_m2": 1.0098521252277578e-06
+              },
+              {
+                "depth_inside_box_m": 0.0014417665322885107,
+                "point_in_box_frame_m": [
+                  -0.09135266930360654,
+                  0.00855823346771149,
+                  -0.0073746832152340215
+                ],
+                "clipped_triangle_area_m2": 8.996105932085907e-07
+              },
+              {
+                "depth_inside_box_m": 0.0013022736996657677,
+                "point_in_box_frame_m": [
+                  -0.09051506636620715,
+                  0.00860343357201564,
+                  -0.008697726300334233
+                ],
+                "clipped_triangle_area_m2": 4.972584125941157e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.93
+          ],
+          "penetration_m": 0.0023182956416896907,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 19,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.0017850751698634884,
+                "point_in_box_frame_m": [
+                  -0.09295052945673,
+                  0.008214924830136512,
+                  -0.008117650191070908
+                ],
+                "clipped_triangle_area_m2": 8.996092390786907e-07
+              },
+              {
+                "depth_inside_box_m": 0.0010848455177315808,
+                "point_in_box_frame_m": [
+                  -0.09251571595333562,
+                  0.00891515448226842,
+                  -0.007903070754856923
+                ],
+                "clipped_triangle_area_m2": 8.096480233425097e-07
+              },
+              {
+                "depth_inside_box_m": 0.0009272004395961802,
+                "point_in_box_frame_m": [
+                  -0.09233895312075563,
+                  0.008528113348963189,
+                  -0.00907279956040382
+                ],
+                "clipped_triangle_area_m2": 3.702150199591702e-06
+              }
+            ]
+          }
+        },
+        {
+          "configuration": [
+            0.1,
+            0.9400000000000001
+          ],
+          "penetration_m": 0.0004131542973822218,
+          "geoms": [
+            "upper_rail_x_1_collision",
+            "left_gripper_housing_0_collision"
+          ],
+          "source_surface": {
+            "source_triangles": 12988,
+            "inset_m": 0.0001,
+            "crossing_triangles": 3,
+            "deepest_witnesses": [
+              {
+                "depth_inside_box_m": 0.00022991110232926937,
+                "point_in_box_frame_m": [
+                  -0.09502008889767073,
+                  0.009382898850658475,
+                  -0.00947717096490018
+                ],
+                "clipped_triangle_area_m2": 9.029966667954138e-07
+              },
+              {
+                "depth_inside_box_m": 0.00018248135289086753,
+                "point_in_box_frame_m": [
+                  -0.09506751864710913,
+                  0.00962081141749997,
+                  -0.0089871572436937
+                ],
+                "clipped_triangle_area_m2": 1.209509606366962e-07
+              },
+              {
+                "depth_inside_box_m": 0.00013481027894240993,
+                "point_in_box_frame_m": [
+                  -0.09511518972105759,
+                  0.009828404345980138,
+                  -0.008896496330221932
+                ],
+                "clipped_triangle_area_m2": 1.4992285109367525e-08
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "neck",
+      "sampled": 475,
+      "colliding": 0,
+      "source_surface_crossings": 0,
+      "poses": []
+    }
+  ],
+  "query_midphase_disabled": true,
+  "physics_midphase_disabled": false,
+  "source_sha256": {
+    "scripts/review_sophia_collisions.py": "e5d91fc99d15a4871484ad18a7f8fb9386f23a392cfedd3b4e3ede855651617c",
+    "robot/yor-description/scene-sophia.mjcf": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+    "robot/yor-description/sophia.mjcf": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+    "robot/yor-description/assets_nero/gripper_base.stl": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+    "robot/yor-description/assets_nero/head/topbase2.stl": "75dc4dfa5bd5a6c6a298a65e30ea0e47266396efdd6988b69038f0776d73412f",
+    "robot/sim_collision.py": "648406bdff48aa7f711e6376488b12e5cfd7999bc65eea2ad7bc51a95f58816a",
+    "robot/yor-description/sophia_collision_geometry.py": "dab3101c664ef71ce2ce83065474ea01eaf2fdb1b0fd17565119a3d340d69fb4"
+  }
+}

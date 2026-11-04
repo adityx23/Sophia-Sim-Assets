@@ -1,0 +1,8 @@
+{
+  "robot/yor-description/calibration/teleop_2026-11-02/MANIFEST.json": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554",
+  "robot/yor-description/sophia.json": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+  "robot/yor-description/sophia.mjcf": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+  "robot/yor_mujoco.py": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+  "scripts/identify_sophia_capture.py": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+  "scripts/replay_sophia_dataset_arm.py": "c3fea45a84cae2933a30c02e87119c9d6644f901a75aea0f96385fc02e0f8ed8"
+}

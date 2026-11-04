@@ -1,0 +1,208 @@
+{
+ "generated": "2026-10-30",
+ "zed": {
+  "serial": 30496273,
+  "firmware": 1523,
+  "rectified": {
+   "left": {
+    "width": 1920,
+    "height": 1080,
+    "fx": 1072.8646240234375,
+    "fy": 1072.8646240234375,
+    "cx": 983.6908569335938,
+    "cy": 526.9380493164062,
+    "distortion": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "h_fov_deg": 83.62898254394531,
+    "v_fov_deg": 53.42910385131836
+   },
+   "right": {
+    "width": 1920,
+    "height": 1080,
+    "fx": 1072.8646240234375,
+    "fy": 1072.8646240234375,
+    "cx": 983.6908569335938,
+    "cy": 526.9380493164062,
+    "distortion": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "h_fov_deg": 83.62898254394531,
+    "v_fov_deg": 53.42910385131836
+   },
+   "T_left_right_m": [
+    0.11999185180664063,
+    0.0,
+    0.0
+   ],
+   "R_left_right": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ],
+   "baseline_m": 0.11999185180664063,
+   "note": "Use for recorded zed_*_color.mp4 / depth (they are rectified, no distortion). Values shift slightly per camera open (fx 1072.60-1072.86 seen); each dataset's meta/cameras.json is authoritative for that dataset."
+  },
+  "raw": {
+   "left": {
+    "width": 1920,
+    "height": 1080,
+    "fx": 1069.6500244140625,
+    "fy": 1069.6700439453125,
+    "cx": 946.8900146484375,
+    "cy": 513.2109985351562,
+    "distortion": [
+     -1.3572900295257568,
+     2.640779972076416,
+     0.0005272019770927727,
+     -0.0005162690067663789,
+     0.08750029653310776,
+     -1.2678799629211426,
+     2.493220090866089,
+     0.24945400655269623,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "h_fov_deg": 85.98351287841797,
+    "v_fov_deg": 54.452327728271484
+   },
+   "right": {
+    "width": 1920,
+    "height": 1080,
+    "fx": 1067.8299560546875,
+    "fy": 1067.949951171875,
+    "cx": 997.1900024414062,
+    "cy": 540.6959838867188,
+    "distortion": [
+     -1.284119963645935,
+     2.6471500396728516,
+     0.00046114501310512424,
+     -0.0006618269835598767,
+     0.030899599194526672,
+     -1.1945199966430664,
+     2.5053200721740723,
+     0.18699400126934052,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "h_fov_deg": 86.03511810302734,
+    "v_fov_deg": 54.5548095703125
+   },
+   "T_left_right_m": [
+    0.11998999786376953,
+    -0.00020242999494075775,
+    0.0006356629729270935
+   ],
+   "R_left_right": [
+    [
+     0.9999951124191284,
+     -0.002863781526684761,
+     -0.0012684044195339084
+    ],
+    [
+     0.002859196625649929,
+     0.9999894499778748,
+     -0.0036018684040755033
+    ],
+    [
+     0.001278705894947052,
+     0.003598224138841033,
+     0.9999927282333374
+    ]
+   ],
+   "baseline_m": 0.11999185180664063,
+   "note": "Factory calibration of the unrectified lenses. distortion = SDK disto [k1,k2,p1,p2,k3,k4,k5,k6,s1,s2,s3,s4] (OpenCV rational order). Not needed for recorded data."
+  },
+  "resolution": "HD1080 (1920x1080), as recorded"
+ },
+ "left_gripper": {
+  "camera": "Innomaker U20CAM-1080p-S1",
+  "usb_port": "1.4",
+  "device": "/dev/v4l/by-path/platform-3610000.usb-usb-0:1.4:1.0-video-index0",
+  "width": 1280,
+  "height": 720,
+  "format": "MJPEG 30 fps (as recorded)",
+  "calibrated": true,
+  "note": "Calibrated on raw recorded frames (1280x720, not rotated). Views saved in /home/ai4ce-orin/yor_ws/calibration/left_gripper_views.",
+  "calibrated_on": "2026-10-30 13:48",
+  "rms_px": 0.8457735723102856,
+  "views": 39,
+  "board": "ChArUco 7x5 squares, 30.0 mm squares, 22.12 mm markers, DICT_5X5_100, legacy=False",
+  "fx": 874.4463561741555,
+  "fy": 874.3331622662054,
+  "cx": 624.2566112728274,
+  "cy": 364.8001907052274,
+  "distortion_model": "opencv_plumb_bob [k1,k2,p1,p2,k3]",
+  "distortion": [
+   -0.44037641693131346,
+   0.21900105983690518,
+   -0.0004414989717650776,
+   -0.0005994606277914692,
+   -0.05767237553935196
+  ]
+ },
+ "right_gripper": {
+  "camera": "Innomaker U20CAM-720P",
+  "usb_port": "1.1",
+  "device": "/dev/v4l/by-path/platform-3610000.usb-usb-0:1.1:1.0-video-index0",
+  "width": 1280,
+  "height": 720,
+  "format": "MJPEG 30 fps (as recorded)",
+  "calibrated": true,
+  "note": "Calibrated on raw recorded frames (1280x720, not rotated). Views saved in /home/ai4ce-orin/yor_ws/calibration/right_gripper_views.",
+  "calibrated_on": "2026-10-30 13:42",
+  "rms_px": 0.7506145717188616,
+  "views": 38,
+  "board": "ChArUco 7x5 squares, 30.0 mm squares, 22.12 mm markers, DICT_5X5_100, legacy=False",
+  "fx": 1031.28405386946,
+  "fy": 1032.842388694353,
+  "cx": 594.4999160553948,
+  "cy": 381.1944637906051,
+  "distortion_model": "opencv_plumb_bob [k1,k2,p1,p2,k3]",
+  "distortion": [
+   -0.5403124928596907,
+   0.5991280702566784,
+   -0.002185543162373002,
+   0.002894020788779386,
+   -0.569615597602652
+  ]
+ }
+}

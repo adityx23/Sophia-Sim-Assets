@@ -1,0 +1,302 @@
+{
+  "source": "CAD Parts/SPINAL DESIGN.stl",
+  "source_sha256": "abce9493faff32b848605c3744614f8044bdbf7c3f8314841db210e57dccf48d",
+  "units_scale": 0.001,
+  "source_to_neck_rotation": [
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "mount_origin_source_mm": [
+    -8.996849060058594,
+    -26.647842407226562,
+    -109.06756591796875
+  ],
+  "pan_axis_source_mm": [
+    -9.096280804969131,
+    -37.09672209302815,
+    54.723683
+  ],
+  "tilt_axis_point_source_mm": [
+    -9.096280804969131,
+    -67.69672189387452,
+    105.23055481478463
+  ],
+  "tilt_axis_direction_source": [
+    0.9997806831874886,
+    0.0,
+    0.020942433601629562
+  ],
+  "axis_recovery": {
+    "pan": {
+      "inliers": 98,
+      "radial_rms_mm": 7.499832606255947e-07,
+      "radius_mm": 2.9999999586757036
+    },
+    "tilt": {
+      "inliers": 174,
+      "radial_rms_mm": 1.973989027212503e-06,
+      "radius_mm": 10.000000114572982
+    }
+  },
+  "pan_position_neck_m": [
+    -0.010448879685801587,
+    9.943174491053774e-05,
+    0.16379124891796876
+  ],
+  "tilt_position_pan_m": [
+    -0.030599999800846378,
+    0.0,
+    0.050506871814784624
+  ],
+  "tilt_axis_direction_local": [
+    0.0,
+    -0.9997806831874886,
+    0.020942433601629562
+  ],
+  "camera_midpoint_tilt_m": [
+    -0.011864496367844226,
+    0.0013906991950308693,
+    0.040431440119297404
+  ],
+  "camera_rotation_local": [
+    [
+      0.0,
+      0.0,
+      1.0
+    ],
+    [
+      0.9997806831874886,
+      0.020942433601629562,
+      0.0
+    ],
+    [
+      -0.020942433601629562,
+      0.9997806831874886,
+      0.0
+    ]
+  ],
+  "parts": [
+    {
+      "name": "fixed_adapter",
+      "body": "head_neck",
+      "asset": "sophia/spinal_fixed_adapter.stl",
+      "triangles": 3058,
+      "source_ranges": [
+        [
+          310517,
+          313575
+        ]
+      ],
+      "sha256": "af7bb91466bb8a0f224ea1b91c15a8b3ebd4a34df6f7f446b15e48a4c28db5df",
+      "local_bounds_m": [
+        [
+          -0.01803350830078125,
+          -0.032350112915039066,
+          0.10895000194013119
+        ],
+        [
+          0.03575112056732178,
+          0.032349998474121094,
+          0.16949124908447266
+        ]
+      ]
+    },
+    {
+      "name": "pan_servo",
+      "body": "head_neck",
+      "asset": "sophia/spinal_pan_servo.stl",
+      "triangles": 10783,
+      "source_ranges": [
+        [
+          372759,
+          383542
+        ]
+      ],
+      "sha256": "27da39dd12ba6b22ba451eda6938c1adc3cc6ada829f8b03584d3387418165e3",
+      "local_bounds_m": [
+        [
+          -0.020648880004882814,
+          -0.012300568342208863,
+          0.1241912488937378
+        ],
+        [
+          0.024751120805740358,
+          0.012499431610107423,
+          0.16379124832153322
+        ]
+      ]
+    },
+    {
+      "name": "pan_servo_support",
+      "body": "head_neck",
+      "asset": "sophia/spinal_pan_servo_support.stl",
+      "triangles": 8930,
+      "source_ranges": [
+        [
+          301587,
+          310517
+        ]
+      ],
+      "sha256": "bd2d5ce5c6047f3edd886db62afbdf270a4e9e4af42e8557170d2e387d874b0e",
+      "local_bounds_m": [
+        [
+          -0.024648880004882814,
+          -0.02225056838989258,
+          0.1355912494659424
+        ],
+        [
+          0.04055112075805664,
+          0.022449432373046876,
+          0.16699124908447266
+        ]
+      ]
+    },
+    {
+      "name": "pan_bracket",
+      "body": "head_pan",
+      "asset": "sophia/spinal_pan_bracket.stl",
+      "triangles": 10628,
+      "source_ranges": [
+        [
+          176723,
+          187351
+        ]
+      ],
+      "sha256": "d88dad274f91a6b04ed3c62885a87e16badc13ced9d0072995e29c51aa89c157",
+      "local_bounds_m": [
+        [
+          -0.04779999879320232,
+          -0.022999999753333392,
+          -0.04769999992886353
+        ],
+        [
+          0.012000000443858226,
+          0.022999998339317977,
+          0.03650000321826172
+        ]
+      ]
+    },
+    {
+      "name": "tilt_servo",
+      "body": "head_pan",
+      "asset": "sophia/spinal_tilt_servo.stl",
+      "triangles": 6937,
+      "source_ranges": [
+        [
+          132277,
+          139214
+        ]
+      ],
+      "sha256": "7c29b291e0ec3cc2cbdd7e129ea467e8e6d373e1b497ba99b82620e970721c8a",
+      "local_bounds_m": [
+        [
+          -0.04299999574144451,
+          -0.019654279462195695,
+          0.015011836409179687
+        ],
+        [
+          -0.018200000319081228,
+          0.01750309396614903,
+          0.06100501573046875
+        ]
+      ]
+    },
+    {
+      "name": "tilt_bearing",
+      "body": "head_tilt",
+      "asset": "sophia/spinal_tilt_bearing.stl",
+      "triangles": 1825,
+      "source_ranges": [
+        [
+          139214,
+          141039
+        ]
+      ],
+      "sha256": "3a4598d5abec5b4730482542295e139a6ee8b871209257f940bbb41cebaf5e1d",
+      "local_bounds_m": [
+        [
+          -0.009996294158371569,
+          0.011425604113243759,
+          -0.010386911626308063
+        ],
+        [
+          0.009999482971755385,
+          0.020287807711266218,
+          0.009653646235020063
+        ]
+      ]
+    },
+    {
+      "name": "tilt_bracket",
+      "body": "head_tilt",
+      "asset": "sophia/spinal_tilt_bracket.stl",
+      "triangles": 3052,
+      "source_ranges": [
+        [
+          224379,
+          227431
+        ]
+      ],
+      "sha256": "52ca236a9a677eccb23a2a573a91a6cf12c464d8b0c139ec345846e5c546815d",
+      "local_bounds_m": [
+        [
+          -0.014449876922043444,
+          -0.025252010098792375,
+          -0.010491625066249469
+        ],
+        [
+          0.015675142151442886,
+          0.02708275819649571,
+          0.025926427607090376
+        ]
+      ]
+    },
+    {
+      "name": "zed_camera",
+      "body": "head_tilt",
+      "asset": "sophia/spinal_zed_camera.stl",
+      "triangles": 74050,
+      "source_ranges": [
+        [
+          227431,
+          301481
+        ]
+      ],
+      "sha256": "74ccc3949ef19c267f175c9f3974fd5b4b9bb7d4ba4d8d06eb7d7655f3866658",
+      "local_bounds_m": [
+        [
+          -0.027381326812180164,
+          -0.08622337888846522,
+          0.022798894648106
+        ],
+        [
+          0.028594087463942885,
+          0.08899138093819493,
+          0.056193837885410686
+        ]
+      ]
+    }
+  ],
+  "notes": [
+    "Mount origin follows the symmetric lower lattice attachment bolt footprint.",
+    "Pan point height is an arbitrary datum along the recovered vertical axis.",
+    "STL has no mates or encoder reference; fitted servo reference remains separate.",
+    "Glass-front centre is a nominal optical origin, not a measured entrance pupil.",
+    "Camera XY is subsequently aligned to the user-confirmed neutral overhang/centring.",
+    "Small fasteners omitted; source masses and inertias remain approximations.",
+    "Separate physical part hulls avoid one convex hull around the complete neck."
+  ]
+}

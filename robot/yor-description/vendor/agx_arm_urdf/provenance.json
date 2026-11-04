@@ -1,0 +1,55 @@
+{
+  "repository": "https://github.com/agilexrobotics/agx_arm_urdf",
+  "commit": "680fa925cd00db7e2628563d2edc5540963045de",
+  "retrieved_date": "2026-10-30",
+  "files_sha256": {
+    "LICENSE": "247944c63de1573653722ba784f96123da267105b7b48577e0c8826a24b809f6",
+    "nero/urdf/nero_description.urdf": "40a01570071775a1c76acc4aa047f3db8d0c2e9daa7b1cabd750c62a90975477",
+    "nero/urdf/nero_with_gripper_description.xacro": "f9593d1abed73b6d9566427cb0a2e70d24d907bfacc8407f9be980a7cf806af4",
+    "agx_gripper/urdf/agx_gripper_description.urdf": "e8ca1a5dad852e4afc88a56430b3f9a005b719c1c4fe648203b2bee0cff3b4c5"
+  },
+  "identical_local_meshes": {
+    "base_link.STL": {
+      "upstream_path": "nero/meshes/base_link.stl",
+      "sha256": "540462fb56e52091daa3cd1ad3acc3c19a43f120b2f11bae5a69b32b08c738b6"
+    },
+    "Link1.STL": {
+      "upstream_path": "nero/meshes/link1.stl",
+      "sha256": "0e38bf33ce41f04d7e70e471768c00fa144ba4016a878b9a6d8303c319736e09"
+    },
+    "Link2.STL": {
+      "upstream_path": "nero/meshes/link2.stl",
+      "sha256": "fc9eb85db9fbd351c9f6e119f5fed33c6f0dd3bc3b11698a0f96aaeb2d36c721"
+    },
+    "Link3.STL": {
+      "upstream_path": "nero/meshes/link3.stl",
+      "sha256": "44c70f731ad5067d608ebebc9e59f3c231988f992dfac6cb01ee7a6bb4b053f1"
+    },
+    "Link4.STL": {
+      "upstream_path": "nero/meshes/link4.stl",
+      "sha256": "47242e9b5d8b06c912261756f24dddb1e7f54ac6e718232a25889115298b966d"
+    },
+    "Link5.STL": {
+      "upstream_path": "nero/meshes/link5.stl",
+      "sha256": "dc497f5a9bab2d0d314250134d4ec86617abea7205d122db41b765acdb86ae7e"
+    },
+    "Link6.STL": {
+      "upstream_path": "nero/meshes/link6.stl",
+      "sha256": "66417d30596e33c890f4f141781023bd3ea15709a502e7f59b30f6676f556022"
+    },
+    "Link7.STL": {
+      "upstream_path": "nero/meshes/link7.stl",
+      "sha256": "70a2f415358f9e46088673c92bfe78ca5b1072dd73b7ea24464ba3ebb4c3e647"
+    },
+    "gripper_link7.stl": {
+      "upstream_path": "agx_gripper/meshes/gripper_link1.stl",
+      "sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d"
+    },
+    "link8.stl": {
+      "upstream_path": "agx_gripper/meshes/gripper_link2.stl",
+      "sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606"
+    }
+  },
+  "gripper_housing_match": false,
+  "scope": "Arm meshes and both fingers match byte-for-byte. Stock housing differs; custom mounting and installed revisions remain unmeasured."
+}

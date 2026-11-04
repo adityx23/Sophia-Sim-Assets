@@ -1,0 +1,1256 @@
+{
+  "mujoco_version": "3.17.0",
+  "integrity_passed": true,
+  "hardware_calibrated": false,
+  "release_status": "finalized_simulation_baseline",
+  "blocking_measurements": [],
+  "accepted_assumptions": {
+    "frame_lift": "20 mm square rails/posts; middle section 82.55 x 50.8 mm with 430 mm modeled length; upper section 76.2 x 50.8 mm extends from local z=-430 mm to the shoulder plate underside at +101 mm. Middle travels half the carriage. Solid collision envelopes retain explicit source masses; stage internals and exact tube lengths remain unmeasured.",
+    "mounts": "Measured shoulder flange spacing and heights; supplied full spinal CAD with separate image-calibrated neck and effective right-arm reference. Stock gripper mounts retained. Hardware Home unchanged; head source inertials remain approximate.",
+    "mass": "Retain verified vendor arm/finger inertials and source chassis/lift/housing inertials; accessories are included in assembly mass rather than added again. Model total 42.0053061 kg is an engineering default.",
+    "contact": "Retain finger friction 2.0 and wheel friction 1.2; working grasp baseline is the tested two 25 g parcels. Force, slip, payload and tipping predictions are approximate.",
+    "left_response": "Left arm uses identified per-joint effective kp/kv, with retained masses/inertias/friction and the deployed bridge default 2/30 s interpolation. Development RMSE improves 34.4%; two later-episode test intervals improve 44.4%, every joint improves. Limited to the observed unloaded/open-gripper regime; this is not unique physical motor-parameter identification. Right arm retains kp500/kv20.",
+    "base": "Use source CAD module locations and four ideal simulated encoders. Hardware motor-3 reconstruction is not reproduced as a nominal simulation fault; body velocity from that dataset is not independent ground truth.",
+    "neck": "Use calibrated joint limits/home, CAD head mount and dataset-validated 1/2 rad/s pan/tilt slew limits. Keep the collision guard for bracket interference.",
+    "camera_timing": "Render all simulation cameras at the same physics timestamp. Recorded camera/robot synchronization is approximate; no artificial fitted timestamp offset is introduced.",
+    "gripper_response": "Right opening uses 6 normalized strokes/s after bounded identification on 3 episodes and pooled-error validation on 15 other episodes. Left opening and both closing directions retain 5 strokes/s as prior symmetry assumptions. Only 99 validation samples cover moving opening; improvement is aggregate and not uniform across episodes. Object-constrained closing and physical grip force are not identified."
+  },
+  "checks": [
+    {
+      "name": "left/right local gripper mounts agree",
+      "passed": true
+    },
+    {
+      "name": "arm and finger inertials match pinned vendor data in verified mesh frames",
+      "passed": true,
+      "bodies_checked": 20,
+      "max_error": 9.71445146547012e-17
+    },
+    {
+      "name": "positive finite masses and physically admissible principal inertias",
+      "passed": true
+    }
+  ],
+  "findings": [
+    {
+      "code": "gripper_provenance",
+      "severity": "accepted_assumption",
+      "detail": "Both finger meshes exactly match the pinned official AgileX stock-gripper meshes. The housing differs from the current vendor housing. Existing-asset frame review retains the supplied stock assembly; installed revision and physical mount precision remain accepted assumptions.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Compare the installed housing and adapter against the model; the user-confirmed Nero identity and finger source are already established."
+    },
+    {
+      "code": "unreferenced_gripper_mesh",
+      "severity": "accepted_assumption",
+      "detail": "gripper.STL has no established assembly transform or unit declaration; it is not substituted into the model.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Identify the part and its local mounting frame before any substitution."
+    },
+    {
+      "code": "gripper_mount",
+      "severity": "accepted_assumption",
+      "detail": "The simulated palm is 12 mm along end-effector +Y; the configured grasp site is 132 mm along that axis. Existing-asset reconciliation confirms inheritance from the stock assembly, with unchanged hardware confirmed by the user. These remain accepted mounting estimates rather than measured extrinsics.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Check adapter seating/orientation and flange-to-grasp distance on the installed assembly."
+    },
+    {
+      "code": "unmeasured_mass_distribution",
+      "severity": "accepted_assumption",
+      "detail": "Arm and finger inertials now use verified vendor CAD data. Chassis, lift, housing/accessory mass distribution, friction and actuator response still need physical validation; the complete robot has not been weighed.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Weigh assemblies and record motion/grasp response before dynamics calibration.",
+      "total_model_mass_kg": 42.0053061,
+      "arm_totals": {
+        "left": {
+          "arm_base_and_links_kg": 4.581212700000001,
+          "end_effector_adapter_kg": 0.05,
+          "gripper_assembly_kg": 0.5
+        },
+        "right": {
+          "arm_base_and_links_kg": 4.581212700000001,
+          "end_effector_adapter_kg": 0.05,
+          "gripper_assembly_kg": 0.5
+        }
+      }
+    }
+  ],
+  "gripper_sources": [
+    {
+      "path": "robot/yor-description/assets_nero/gripper_base.stl",
+      "sha256": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+      "raw_stl_bounds": {
+        "triangles": 12988,
+        "min": [
+          -0.03999999910593033,
+          -0.07249999791383743,
+          -1.2727396297073684e-17
+        ],
+        "max": [
+          0.030500000342726707,
+          0.07249999791383743,
+          0.06300000101327896
+        ],
+        "extent": [
+          0.07049999944865704,
+          0.14499999582767487,
+          0.06300000101327898
+        ]
+      },
+      "identical_files": [
+        "robot/arm/mujoco/assets/gripper_base.stl",
+        "robot/arm/urdf/assets/gripper_base.stl",
+        "robot/yor-description/meshes/piper/gripper_base.stl"
+      ],
+      "source_units": "m in mounted model",
+      "mounted": true
+    },
+    {
+      "path": "robot/yor-description/assets_nero/gripper_link7.stl",
+      "sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+      "raw_stl_bounds": {
+        "triangles": 2086,
+        "min": [
+          -0.02800000086426735,
+          -0.07649999856948853,
+          -6.383782507399936e-18
+        ],
+        "max": [
+          0.02800000086426735,
+          2.7755575615628914e-17,
+          0.026499999687075615
+        ],
+        "extent": [
+          0.0560000017285347,
+          0.07649999856948855,
+          0.026499999687075622
+        ]
+      },
+      "identical_files": [
+        "robot/arm/mujoco/assets/link7.stl",
+        "robot/arm/urdf/assets/link7.stl"
+      ],
+      "source_units": "m in mounted model",
+      "mounted": true
+    },
+    {
+      "path": "robot/yor-description/assets_nero/link8.stl",
+      "sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+      "raw_stl_bounds": {
+        "triangles": 2086,
+        "min": [
+          -0.02800000086426735,
+          -0.07649999856948853,
+          -5.421010862427522e-18
+        ],
+        "max": [
+          0.02800000086426735,
+          2.7755575615628914e-17,
+          0.026499999687075615
+        ],
+        "extent": [
+          0.0560000017285347,
+          0.07649999856948855,
+          0.026499999687075622
+        ]
+      },
+      "identical_files": [
+        "robot/arm/mujoco/assets/link8.stl",
+        "robot/arm/urdf/assets/link8.stl"
+      ],
+      "source_units": "m in mounted model",
+      "mounted": true
+    },
+    {
+      "path": "robot/yor-description/assets_nero/gripper.STL",
+      "sha256": "0e3ee1b32fbf5e6be25abb3578a2ed105235b0f5df1ddd10c474636b6605a2b0",
+      "raw_stl_bounds": {
+        "triangles": 13302,
+        "min": [
+          -60.22687530517578,
+          -17.169605255126953,
+          30.422025680541992
+        ],
+        "max": [
+          -4.893979549407959,
+          26.958284378051758,
+          90.85608673095703
+        ],
+        "extent": [
+          55.33289575576782,
+          44.12788963317871,
+          60.43406105041504
+        ]
+      },
+      "identical_files": [],
+      "source_units": "unknown; coordinates consistent with mm",
+      "mounted": false
+    }
+  ],
+  "gripper_mounts": [
+    {
+      "side": "left",
+      "reference_frame": "left_arm_end_effector",
+      "T_end_effector_gripper_base": [
+        [
+          0.9999999999999994,
+          7.270334919573431e-17,
+          -7.045259989434741e-17,
+          -2.0136491001468813e-17
+        ],
+        [
+          1.8013858401434275e-17,
+          1.376143324508622e-16,
+          0.9999999999999996,
+          0.012000000000000007
+        ],
+        [
+          6.788868720772092e-17,
+          -0.9999999999999996,
+          4.3727176159991144e-17,
+          7.111879802095464e-18
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "grasp_center_in_end_effector_m": [
+        -7.735139722180446e-17,
+        0.13199999999999995,
+        -2.8211130619913486e-18
+      ],
+      "measured_on_hardware": false
+    },
+    {
+      "side": "right",
+      "reference_frame": "right_arm_end_effector",
+      "T_end_effector_gripper_base": [
+        [
+          1.0000000000000007,
+          1.673992518787932e-17,
+          -1.5796790928307716e-16,
+          -7.008794981490029e-18
+        ],
+        [
+          1.5043647915968232e-17,
+          4.5413809525950124e-17,
+          1.0000000000000007,
+          0.012
+        ],
+        [
+          -3.215742896106267e-17,
+          -1.0000000000000009,
+          6.919511174000597e-17,
+          -4.627989221053705e-17
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "grasp_center_in_end_effector_m": [
+        -2.33203170411093e-17,
+        0.1320000000000001,
+        -6.536907522621487e-17
+      ],
+      "measured_on_hardware": false
+    }
+  ],
+  "body_inertias": [
+    {
+      "body": "base_profile_short",
+      "mass_kg": 20.612589,
+      "principal_inertia_kg_m2": [
+        0.321576,
+        0.4515,
+        0.487585
+      ],
+      "com_in_body_m": [
+        -0.104952,
+        -0.210077,
+        0.000819
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.1538009069157346,
+      "own_geometry_radius_bound_from_com_m": 0.0
+    },
+    {
+      "body": "Part_2",
+      "mass_kg": 0.671221,
+      "principal_inertia_kg_m2": [
+        0.000668,
+        0.000705,
+        0.000812
+      ],
+      "com_in_body_m": [
+        6e-06,
+        0.0,
+        -0.020456
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03478125487427768,
+      "own_geometry_radius_bound_from_com_m": 0.11105136470782143
+    },
+    {
+      "body": "MK4_Colson_Hub_4_X_1_5",
+      "mass_kg": 0.507297,
+      "principal_inertia_kg_m2": [
+        0.000352,
+        0.000352,
+        0.000615
+      ],
+      "com_in_body_m": [
+        0.0,
+        0.0,
+        0.0198
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03481820763812771,
+      "own_geometry_radius_bound_from_com_m": 0.07565853878019423
+    },
+    {
+      "body": "Part_2_2",
+      "mass_kg": 0.671221,
+      "principal_inertia_kg_m2": [
+        0.000668,
+        0.000705,
+        0.000812
+      ],
+      "com_in_body_m": [
+        6e-06,
+        0.0,
+        -0.020456
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03478125487427768,
+      "own_geometry_radius_bound_from_com_m": 0.11105136470782144
+    },
+    {
+      "body": "MK4_Colson_Hub_4_X_1_5_2",
+      "mass_kg": 0.507297,
+      "principal_inertia_kg_m2": [
+        0.000352,
+        0.000352,
+        0.000615
+      ],
+      "com_in_body_m": [
+        0.0,
+        0.0,
+        0.0198
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03481820763812771,
+      "own_geometry_radius_bound_from_com_m": 0.07565853878019423
+    },
+    {
+      "body": "Part_2_3",
+      "mass_kg": 0.671221,
+      "principal_inertia_kg_m2": [
+        0.000668,
+        0.000705,
+        0.000812
+      ],
+      "com_in_body_m": [
+        6e-06,
+        0.0,
+        -0.020456
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03478125487427768,
+      "own_geometry_radius_bound_from_com_m": 0.11105136470782143
+    },
+    {
+      "body": "MK4_Colson_Hub_4_X_1_5_3",
+      "mass_kg": 0.507297,
+      "principal_inertia_kg_m2": [
+        0.000352,
+        0.000352,
+        0.000615
+      ],
+      "com_in_body_m": [
+        0.0,
+        0.0,
+        0.0198
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03481820763812771,
+      "own_geometry_radius_bound_from_com_m": 0.07565853878019423
+    },
+    {
+      "body": "Part_2_4",
+      "mass_kg": 0.671221,
+      "principal_inertia_kg_m2": [
+        0.000668,
+        0.000705,
+        0.000812
+      ],
+      "com_in_body_m": [
+        6e-06,
+        0.0,
+        -0.020456
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03478125487427768,
+      "own_geometry_radius_bound_from_com_m": 0.11105136470782143
+    },
+    {
+      "body": "MK4_Colson_Hub_4_X_1_5_4",
+      "mass_kg": 0.507297,
+      "principal_inertia_kg_m2": [
+        0.000352,
+        0.000352,
+        0.000615
+      ],
+      "com_in_body_m": [
+        0.0,
+        0.0,
+        0.0198
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03481820763812771,
+      "own_geometry_radius_bound_from_com_m": 0.07565853878019423
+    },
+    {
+      "body": "Lift_Top",
+      "mass_kg": 4.43511,
+      "principal_inertia_kg_m2": [
+        0.040894,
+        0.042873,
+        0.045651
+      ],
+      "com_in_body_m": [
+        5e-06,
+        -4e-06,
+        -0.024234
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.10145488193634436,
+      "own_geometry_radius_bound_from_com_m": 0.4096857841264666
+    },
+    {
+      "body": "left_arm_base_link",
+      "mass_kg": 1.06458435,
+      "principal_inertia_kg_m2": [
+        0.0009086530634682587,
+        0.0010266423265759875,
+        0.0011440254867757516
+      ],
+      "com_in_body_m": [
+        -0.00319465997,
+        -5.467608e-05,
+        0.04321758463
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.0327814237059608,
+      "own_geometry_radius_bound_from_com_m": 0.10688768520983027
+    },
+    {
+      "body": "left_arm_link1",
+      "mass_kg": 0.76710504,
+      "principal_inertia_kg_m2": [
+        0.0005136190434467604,
+        0.000545022057985923,
+        0.000668361034187318
+      ],
+      "com_in_body_m": [
+        -0.00076810578,
+        -5.718031e-05,
+        -0.00686372765
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.029517402889299917,
+      "own_geometry_radius_bound_from_com_m": 0.0848706694461679
+    },
+    {
+      "body": "left_arm_link2",
+      "mass_kg": 0.69381908,
+      "principal_inertia_kg_m2": [
+        0.0006321619872287378,
+        0.0018222857339309745,
+        0.002011373076880288
+      ],
+      "com_in_body_m": [
+        0.00079686657,
+        -0.0789032593,
+        0.00111849422
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.05384224959224375,
+      "own_geometry_radius_bound_from_com_m": 0.18641112682226404
+    },
+    {
+      "body": "left_arm_link3",
+      "mass_kg": 0.67246544,
+      "principal_inertia_kg_m2": [
+        0.000288126063346605,
+        0.0033870299981712104,
+        0.003432304623652192
+      ],
+      "com_in_body_m": [
+        0.00014513363,
+        -0.00121378766,
+        -0.04861136795
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.07144271128871622,
+      "own_geometry_radius_bound_from_com_m": 0.16572181687068052
+    },
+    {
+      "body": "left_arm_link4",
+      "mass_kg": 0.48451414,
+      "principal_inertia_kg_m2": [
+        0.00023296022880330832,
+        0.00040345050270899294,
+        0.0005039721167376991
+      ],
+      "com_in_body_m": [
+        -0.00031334623,
+        -0.05675192422,
+        0.00076056133
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03225150803679025,
+      "own_geometry_radius_bound_from_com_m": 0.11607024515353277
+    },
+    {
+      "body": "left_arm_link5",
+      "mass_kg": 0.58368405,
+      "principal_inertia_kg_m2": [
+        0.00021492257182884273,
+        0.0008596772154045523,
+        0.0008971877750366056
+      ],
+      "com_in_body_m": [
+        0.00265591357,
+        0.00201195753,
+        -0.11620855434
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03920602032988112,
+      "own_geometry_radius_bound_from_com_m": 0.14095222176608246
+    },
+    {
+      "body": "left_arm_link6",
+      "mass_kg": 0.3140406,
+      "principal_inertia_kg_m2": [
+        4.6990384425863764e-05,
+        5.75589275048713e-05,
+        6.028567051926486e-05
+      ],
+      "com_in_body_m": [
+        9.501505e-05,
+        0.00107831174,
+        -0.0001911099
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.013855243049562626,
+      "own_geometry_radius_bound_from_com_m": 0.05169010578550294
+    },
+    {
+      "body": "left_arm_link7",
+      "mass_kg": 0.001,
+      "principal_inertia_kg_m2": [
+        1.1e-07,
+        1.1e-07,
+        2e-07
+      ],
+      "com_in_body_m": [
+        -0.00014,
+        -0.0001,
+        -0.00275
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.01414213562373095,
+      "own_geometry_radius_bound_from_com_m": 0.02032181129570156
+    },
+    {
+      "body": "left_arm_end_effector",
+      "mass_kg": 0.05,
+      "principal_inertia_kg_m2": [
+        2.479e-05,
+        2.697e-05,
+        4.311e-05
+      ],
+      "com_in_body_m": [
+        -0.01208,
+        -0.00025,
+        0.00032
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.02936324232778117,
+      "own_geometry_radius_bound_from_com_m": 0.06974333242410159
+    },
+    {
+      "body": "left_gripper_base",
+      "mass_kg": 0.45,
+      "principal_inertia_kg_m2": [
+        0.000394318,
+        0.000714469,
+        0.000929442
+      ],
+      "com_in_body_m": [
+        -0.000183807,
+        8.05033e-05,
+        0.0321437
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.04544696542858133,
+      "own_geometry_radius_bound_from_com_m": 0.10144010178118251
+    },
+    {
+      "body": "left_gripper_finger_a",
+      "mass_kg": 0.025,
+      "principal_inertia_kg_m2": [
+        5.079761725623947e-06,
+        1.0850910357125168e-05,
+        1.4522914303830933e-05
+      ],
+      "com_in_body_m": [
+        0.00065123185041968,
+        -0.049192986913199,
+        0.0097225876918402
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.024102210939107582,
+      "own_geometry_radius_bound_from_com_m": 0.06333775567644867
+    },
+    {
+      "body": "left_gripper_finger_b",
+      "mass_kg": 0.025,
+      "principal_inertia_kg_m2": [
+        5.079761725623947e-06,
+        1.0850910357125168e-05,
+        1.4522914303830933e-05
+      ],
+      "com_in_body_m": [
+        0.00065123185041968,
+        -0.049192986913199,
+        0.0097225876918402
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.024102210939107582,
+      "own_geometry_radius_bound_from_com_m": 0.06333775567644867
+    },
+    {
+      "body": "right_arm_base_link",
+      "mass_kg": 1.06458435,
+      "principal_inertia_kg_m2": [
+        0.0009086530634682587,
+        0.0010266423265759875,
+        0.0011440254867757516
+      ],
+      "com_in_body_m": [
+        -0.00319465997,
+        -5.467608e-05,
+        0.04321758463
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.0327814237059608,
+      "own_geometry_radius_bound_from_com_m": 0.10688768520983027
+    },
+    {
+      "body": "right_arm_link1",
+      "mass_kg": 0.76710504,
+      "principal_inertia_kg_m2": [
+        0.0005136190434467604,
+        0.000545022057985923,
+        0.000668361034187318
+      ],
+      "com_in_body_m": [
+        -0.00076810578,
+        -5.718031e-05,
+        -0.00686372765
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.029517402889299917,
+      "own_geometry_radius_bound_from_com_m": 0.0848706694461679
+    },
+    {
+      "body": "right_arm_link2",
+      "mass_kg": 0.69381908,
+      "principal_inertia_kg_m2": [
+        0.0006321619872287378,
+        0.0018222857339309745,
+        0.002011373076880288
+      ],
+      "com_in_body_m": [
+        0.00079686657,
+        -0.0789032593,
+        0.00111849422
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.05384224959224375,
+      "own_geometry_radius_bound_from_com_m": 0.18641112682226404
+    },
+    {
+      "body": "right_arm_link3",
+      "mass_kg": 0.67246544,
+      "principal_inertia_kg_m2": [
+        0.000288126063346605,
+        0.0033870299981712104,
+        0.003432304623652192
+      ],
+      "com_in_body_m": [
+        0.00014513363,
+        -0.00121378766,
+        -0.04861136795
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.07144271128871622,
+      "own_geometry_radius_bound_from_com_m": 0.16572181687068052
+    },
+    {
+      "body": "right_arm_link4",
+      "mass_kg": 0.48451414,
+      "principal_inertia_kg_m2": [
+        0.00023296022880330832,
+        0.00040345050270899294,
+        0.0005039721167376991
+      ],
+      "com_in_body_m": [
+        -0.00031334623,
+        -0.05675192422,
+        0.00076056133
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03225150803679025,
+      "own_geometry_radius_bound_from_com_m": 0.11607024515353277
+    },
+    {
+      "body": "right_arm_link5",
+      "mass_kg": 0.58368405,
+      "principal_inertia_kg_m2": [
+        0.00021492257182884273,
+        0.0008596772154045523,
+        0.0008971877750366056
+      ],
+      "com_in_body_m": [
+        0.00265591357,
+        0.00201195753,
+        -0.11620855434
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.03920602032988112,
+      "own_geometry_radius_bound_from_com_m": 0.14095222176608246
+    },
+    {
+      "body": "right_arm_link6",
+      "mass_kg": 0.3140406,
+      "principal_inertia_kg_m2": [
+        4.6990384425863764e-05,
+        5.75589275048713e-05,
+        6.028567051926486e-05
+      ],
+      "com_in_body_m": [
+        9.501505e-05,
+        0.00107831174,
+        -0.0001911099
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.013855243049562626,
+      "own_geometry_radius_bound_from_com_m": 0.05169010578550294
+    },
+    {
+      "body": "right_arm_link7",
+      "mass_kg": 0.001,
+      "principal_inertia_kg_m2": [
+        1.1e-07,
+        1.1e-07,
+        2e-07
+      ],
+      "com_in_body_m": [
+        -0.00014,
+        -0.0001,
+        -0.00275
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.01414213562373095,
+      "own_geometry_radius_bound_from_com_m": 0.02032181129570156
+    },
+    {
+      "body": "right_arm_end_effector",
+      "mass_kg": 0.05,
+      "principal_inertia_kg_m2": [
+        2.479e-05,
+        2.697e-05,
+        4.311e-05
+      ],
+      "com_in_body_m": [
+        -0.01208,
+        -0.00025,
+        0.00032
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.02936324232778117,
+      "own_geometry_radius_bound_from_com_m": 0.06974333242410159
+    },
+    {
+      "body": "right_gripper_base",
+      "mass_kg": 0.45,
+      "principal_inertia_kg_m2": [
+        0.000394318,
+        0.000714469,
+        0.000929442
+      ],
+      "com_in_body_m": [
+        -0.000183807,
+        8.05033e-05,
+        0.0321437
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.04544696542858133,
+      "own_geometry_radius_bound_from_com_m": 0.10144010178118251
+    },
+    {
+      "body": "right_gripper_finger_a",
+      "mass_kg": 0.025,
+      "principal_inertia_kg_m2": [
+        5.079761725623947e-06,
+        1.0850910357125168e-05,
+        1.4522914303830933e-05
+      ],
+      "com_in_body_m": [
+        0.00065123185041968,
+        -0.049192986913199,
+        0.0097225876918402
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.024102210939107582,
+      "own_geometry_radius_bound_from_com_m": 0.06333775567644867
+    },
+    {
+      "body": "right_gripper_finger_b",
+      "mass_kg": 0.025,
+      "principal_inertia_kg_m2": [
+        5.079761725623947e-06,
+        1.0850910357125168e-05,
+        1.4522914303830933e-05
+      ],
+      "com_in_body_m": [
+        0.00065123185041968,
+        -0.049192986913199,
+        0.0097225876918402
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.024102210939107582,
+      "own_geometry_radius_bound_from_com_m": 0.06333775567644867
+    },
+    {
+      "body": "head_neck",
+      "mass_kg": 0.0798987,
+      "principal_inertia_kg_m2": [
+        2.5197106535178733e-05,
+        0.00026928294923686134,
+        0.0002768087442279603
+      ],
+      "com_in_body_m": [
+        0.0365584,
+        -2.83082e-05,
+        0.164128
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.05885997129789977,
+      "own_geometry_radius_bound_from_com_m": 0.22296155517695335
+    },
+    {
+      "body": "head_pan",
+      "mass_kg": 0.2556,
+      "principal_inertia_kg_m2": [
+        5.897011177409482e-05,
+        7.725154172230945e-05,
+        8.945984650359598e-05
+      ],
+      "com_in_body_m": [
+        0.027751679685801587,
+        -0.0008743467449105378,
+        0.03933415302216242
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.01870827088392559,
+      "own_geometry_radius_bound_from_com_m": 0.14127518982391468
+    },
+    {
+      "body": "head_tilt",
+      "mass_kg": 0.18487,
+      "principal_inertia_kg_m2": [
+        4.685038984772228e-05,
+        0.00044486455934251605,
+        0.00046249645080976307
+      ],
+      "com_in_body_m": [
+        0.006986003632155777,
+        0.0013990391950308666,
+        0.03870444011929741
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.05001738491564475,
+      "own_geometry_radius_bound_from_com_m": 0.10004683856146455
+    },
+    {
+      "body": "sophia_middle_stage",
+      "mass_kg": 1.460741,
+      "principal_inertia_kg_m2": [
+        0.005051,
+        0.007792,
+        0.007792
+      ],
+      "com_in_body_m": [
+        0.0,
+        0.0,
+        -0.104
+      ],
+      "mathematically_valid": true,
+      "largest_radius_of_gyration_m": 0.07303614839318083,
+      "own_geometry_radius_bound_from_com_m": 0.4313946134210181
+    }
+  ],
+  "total_mass_kg": 42.0053061,
+  "arm_totals": {
+    "left": {
+      "arm_base_and_links_kg": 4.581212700000001,
+      "end_effector_adapter_kg": 0.05,
+      "gripper_assembly_kg": 0.5
+    },
+    "right": {
+      "arm_base_and_links_kg": 4.581212700000001,
+      "end_effector_adapter_kg": 0.05,
+      "gripper_assembly_kg": 0.5
+    }
+  },
+  "vendor_provenance": {
+    "repository": "https://github.com/agilexrobotics/agx_arm_urdf",
+    "commit": "680fa925cd00db7e2628563d2edc5540963045de",
+    "retrieved_date": "2026-10-30",
+    "files_sha256": {
+      "LICENSE": "247944c63de1573653722ba784f96123da267105b7b48577e0c8826a24b809f6",
+      "nero/urdf/nero_description.urdf": "40a01570071775a1c76acc4aa047f3db8d0c2e9daa7b1cabd750c62a90975477",
+      "nero/urdf/nero_with_gripper_description.xacro": "f9593d1abed73b6d9566427cb0a2e70d24d907bfacc8407f9be980a7cf806af4",
+      "agx_gripper/urdf/agx_gripper_description.urdf": "e8ca1a5dad852e4afc88a56430b3f9a005b719c1c4fe648203b2bee0cff3b4c5"
+    },
+    "identical_local_meshes": {
+      "base_link.STL": {
+        "upstream_path": "nero/meshes/base_link.stl",
+        "sha256": "540462fb56e52091daa3cd1ad3acc3c19a43f120b2f11bae5a69b32b08c738b6"
+      },
+      "Link1.STL": {
+        "upstream_path": "nero/meshes/link1.stl",
+        "sha256": "0e38bf33ce41f04d7e70e471768c00fa144ba4016a878b9a6d8303c319736e09"
+      },
+      "Link2.STL": {
+        "upstream_path": "nero/meshes/link2.stl",
+        "sha256": "fc9eb85db9fbd351c9f6e119f5fed33c6f0dd3bc3b11698a0f96aaeb2d36c721"
+      },
+      "Link3.STL": {
+        "upstream_path": "nero/meshes/link3.stl",
+        "sha256": "44c70f731ad5067d608ebebc9e59f3c231988f992dfac6cb01ee7a6bb4b053f1"
+      },
+      "Link4.STL": {
+        "upstream_path": "nero/meshes/link4.stl",
+        "sha256": "47242e9b5d8b06c912261756f24dddb1e7f54ac6e718232a25889115298b966d"
+      },
+      "Link5.STL": {
+        "upstream_path": "nero/meshes/link5.stl",
+        "sha256": "dc497f5a9bab2d0d314250134d4ec86617abea7205d122db41b765acdb86ae7e"
+      },
+      "Link6.STL": {
+        "upstream_path": "nero/meshes/link6.stl",
+        "sha256": "66417d30596e33c890f4f141781023bd3ea15709a502e7f59b30f6676f556022"
+      },
+      "Link7.STL": {
+        "upstream_path": "nero/meshes/link7.stl",
+        "sha256": "70a2f415358f9e46088673c92bfe78ca5b1072dd73b7ea24464ba3ebb4c3e647"
+      },
+      "gripper_link7.stl": {
+        "upstream_path": "agx_gripper/meshes/gripper_link1.stl",
+        "sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d"
+      },
+      "link8.stl": {
+        "upstream_path": "agx_gripper/meshes/gripper_link2.stl",
+        "sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606"
+      }
+    },
+    "gripper_housing_match": false,
+    "scope": "Arm meshes and both fingers match byte-for-byte. Stock housing differs; custom mounting and installed revisions remain unmeasured."
+  },
+  "resolved": [
+    "Both 1 mg link7 masses corrected to the vendor's 1 g value.",
+    "Both arms and fingers now use full vendor inertia tensors and COMs.",
+    "Head rectified intrinsics/baseline integrated; wrist cameras use measured lenses and accepted photo-based mounts.",
+    "Legacy/current mount-frame review completed; retain the stock source gripper and photo-estimated wrist transforms. No additional measurements are required for this release."
+  ],
+  "legacy_urdf_differences_superseded_by_vendor": [
+    {
+      "body": "left_arm_base_link",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 0.77,
+      "mjcf_mass_kg": 1.06458435,
+      "urdf_principal_inertia": [
+        0.0008793938122210314,
+        0.0026911717940235505,
+        0.0028261243937554156
+      ],
+      "mjcf_principal_inertia": [
+        0.0009086530634682587,
+        0.0010266423265759875,
+        0.0011440254867757516
+      ]
+    },
+    {
+      "body": "left_arm_link1",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 0.77,
+      "mjcf_mass_kg": 0.76710504,
+      "urdf_principal_inertia": [
+        0.00051509,
+        0.00054501,
+        0.0006669
+      ],
+      "mjcf_principal_inertia": [
+        0.0005136190434467604,
+        0.000545022057985923,
+        0.000668361034187318
+      ]
+    },
+    {
+      "body": "left_arm_link2",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 0.49,
+      "mjcf_mass_kg": 0.69381908,
+      "urdf_principal_inertia": [
+        0.00029435,
+        0.00040266,
+        0.00053808
+      ],
+      "mjcf_principal_inertia": [
+        0.0006321619872287378,
+        0.0018222857339309745,
+        0.002011373076880288
+      ]
+    },
+    {
+      "body": "left_arm_link3",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 0.67,
+      "mjcf_mass_kg": 0.67246544,
+      "urdf_principal_inertia": [
+        0.00026169,
+        0.0033924,
+        0.00342528
+      ],
+      "mjcf_principal_inertia": [
+        0.000288126063346605,
+        0.0033870299981712104,
+        0.003432304623652192
+      ]
+    },
+    {
+      "body": "left_arm_link4",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 0.41,
+      "mjcf_mass_kg": 0.48451414,
+      "urdf_principal_inertia": [
+        0.00013204,
+        0.0002393,
+        0.00031331
+      ],
+      "mjcf_principal_inertia": [
+        0.00023296022880330832,
+        0.00040345050270899294,
+        0.0005039721167376991
+      ]
+    },
+    {
+      "body": "left_arm_link5",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 0.56,
+      "mjcf_mass_kg": 0.58368405,
+      "urdf_principal_inertia": [
+        0.00021015,
+        0.00078548,
+        0.0008249
+      ],
+      "mjcf_principal_inertia": [
+        0.00021492257182884273,
+        0.0008596772154045523,
+        0.0008971877750366056
+      ]
+    },
+    {
+      "body": "left_arm_link6",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 0.3101,
+      "mjcf_mass_kg": 0.3140406,
+      "urdf_principal_inertia": [
+        7.176e-05,
+        7.906e-05,
+        8.181e-05
+      ],
+      "mjcf_principal_inertia": [
+        4.6990384425863764e-05,
+        5.75589275048713e-05,
+        6.028567051926486e-05
+      ]
+    },
+    {
+      "body": "left_arm_link7",
+      "urdf": "robot/yor-description/urdf/nero_left_arm.urdf",
+      "urdf_mass_kg": 1e-06,
+      "mjcf_mass_kg": 0.001,
+      "urdf_principal_inertia": [
+        1.1e-07,
+        1.1e-07,
+        2e-07
+      ],
+      "mjcf_principal_inertia": [
+        1.1e-07,
+        1.1e-07,
+        2e-07
+      ]
+    },
+    {
+      "body": "right_arm_base_link",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 0.77,
+      "mjcf_mass_kg": 1.06458435,
+      "urdf_principal_inertia": [
+        0.00051509,
+        0.00054501,
+        0.0006669
+      ],
+      "mjcf_principal_inertia": [
+        0.0009086530634682587,
+        0.0010266423265759875,
+        0.0011440254867757516
+      ]
+    },
+    {
+      "body": "right_arm_link1",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 0.77,
+      "mjcf_mass_kg": 0.76710504,
+      "urdf_principal_inertia": [
+        0.00051509,
+        0.00054501,
+        0.0006669
+      ],
+      "mjcf_principal_inertia": [
+        0.0005136190434467604,
+        0.000545022057985923,
+        0.000668361034187318
+      ]
+    },
+    {
+      "body": "right_arm_link2",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 0.49,
+      "mjcf_mass_kg": 0.69381908,
+      "urdf_principal_inertia": [
+        0.00029435,
+        0.00040266,
+        0.00053808
+      ],
+      "mjcf_principal_inertia": [
+        0.0006321619872287378,
+        0.0018222857339309745,
+        0.002011373076880288
+      ]
+    },
+    {
+      "body": "right_arm_link3",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 0.67,
+      "mjcf_mass_kg": 0.67246544,
+      "urdf_principal_inertia": [
+        0.00026169,
+        0.0033924,
+        0.00342528
+      ],
+      "mjcf_principal_inertia": [
+        0.000288126063346605,
+        0.0033870299981712104,
+        0.003432304623652192
+      ]
+    },
+    {
+      "body": "right_arm_link4",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 0.41,
+      "mjcf_mass_kg": 0.48451414,
+      "urdf_principal_inertia": [
+        0.00013204,
+        0.0002393,
+        0.00031331
+      ],
+      "mjcf_principal_inertia": [
+        0.00023296022880330832,
+        0.00040345050270899294,
+        0.0005039721167376991
+      ]
+    },
+    {
+      "body": "right_arm_link5",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 0.56,
+      "mjcf_mass_kg": 0.58368405,
+      "urdf_principal_inertia": [
+        0.00021015,
+        0.00078548,
+        0.0008249
+      ],
+      "mjcf_principal_inertia": [
+        0.00021492257182884273,
+        0.0008596772154045523,
+        0.0008971877750366056
+      ]
+    },
+    {
+      "body": "right_arm_link6",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 0.3101,
+      "mjcf_mass_kg": 0.3140406,
+      "urdf_principal_inertia": [
+        7.176e-05,
+        7.906e-05,
+        8.181e-05
+      ],
+      "mjcf_principal_inertia": [
+        4.6990384425863764e-05,
+        5.75589275048713e-05,
+        6.028567051926486e-05
+      ]
+    },
+    {
+      "body": "right_arm_link7",
+      "urdf": "robot/yor-description/urdf/nero_right_arm.urdf",
+      "urdf_mass_kg": 1e-06,
+      "mjcf_mass_kg": 0.001,
+      "urdf_principal_inertia": [
+        1.1e-07,
+        1.1e-07,
+        2e-07
+      ],
+      "mjcf_principal_inertia": [
+        1.1e-07,
+        1.1e-07,
+        2e-07
+      ]
+    }
+  ],
+  "sources_sha256": {
+    "robot/yor-description/sophia.mjcf": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+    "robot/yor-description/sophia.json": "82d0445a604bdc6bd64c52f1283c2c300ac22f6862c78e50000d83a769e8ecba",
+    "robot/yor-description/make_agx_variant.py": "466a32a0ccf5570fe9e6d3176208d40c496b2f442db94821e65f5076de77fb07",
+    "robot/yor-description/urdf/nero_left_arm.urdf": "fe591944bbfc4b9c8c7c6593a9416b7596b64d23c5ed41f43d47e482b3015916",
+    "robot/yor-description/urdf/nero_right_arm.urdf": "fe58345b1b23fb42a3087e408bc288b2e8e184b43ed1a38150965058a0093635",
+    "robot/yor-description/vendor/agx_arm_urdf/provenance.json": "7d5a2e5691dd22e3e83d50357ba30c66b7d597b5de9424be2f3affb7b1b2cbc0",
+    "robot/yor-description/calibration/camera_intrinsics_2026-10-30.json": "d05b06874439686818dec0977e293862bb79e38939ec440c9ab94c2a2a3a4b47"
+  }
+}

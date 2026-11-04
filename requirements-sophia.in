@@ -1,0 +1,10 @@
+# Standalone Sophia simulation and offline calibration tools, Python 3.11.
+# Compile to requirements-sophia.txt; do not install the hardware/ROS freeze.
+numpy==2.4.6
+mujoco==3.17.0
+mink==1.3.0
+qpsolvers[daqp]==4.13.0
+commlink==0.4.2
+loop-rate-limiters==1.2.0
+pillow==12.3.0
+opencv-python-headless>=4.10,<5

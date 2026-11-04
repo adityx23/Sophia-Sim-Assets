@@ -1,0 +1,1124 @@
+{
+  "gates": {
+    "enough_training_stereo_pairs": true,
+    "home_and_mount_constraints": true,
+    "analytical_vs_compiled_fk": true,
+    "left_validation_rmse_under_25px": true,
+    "stereo_validation_rmse_under_35px": true,
+    "stereo_point_validation_under_30mm": true,
+    "improvement_at_least_50_percent_each_episode": true,
+    "no_new_or_deeper_penetration_over_1mm": true,
+    "reviewed_visible_fingers_unobstructed_by_head_mount": true,
+    "fit_not_at_parameter_bounds": true
+  },
+  "accepted": true,
+  "promoted": true,
+  "named_reference_recomputed_with_ik": true,
+  "reference_ee_error_m": 4.124285169634649e-11,
+  "independent_wrist_features": {
+    "method": "Manually estimated wrist-joint centre and gripper proximal collar centre in real images; not used in fitting. Surface/axis-centre ambiguity means these are diagnostic checks, not precision metrology.",
+    "uncertainty_px": 20,
+    "observations": [
+      {
+        "second": "3",
+        "body": "right_arm_link6",
+        "model": "before_arm_reference",
+        "observed": [
+          1597,
+          802
+        ],
+        "predicted": [
+          1701.419517529012,
+          825.2992749837655
+        ],
+        "error_px": 106.98734437194315
+      },
+      {
+        "second": "3",
+        "body": "right_gripper_base",
+        "model": "before_arm_reference",
+        "observed": [
+          1545,
+          741
+        ],
+        "predicted": [
+          1668.7287138840702,
+          749.6624161778475
+        ],
+        "error_px": 124.03157700136019
+      },
+      {
+        "second": "3",
+        "body": "right_arm_link6",
+        "model": "after_arm_reference",
+        "observed": [
+          1597,
+          802
+        ],
+        "predicted": [
+          1608.6426982754592,
+          824.2051871501294
+        ],
+        "error_px": 25.07235049822121
+      },
+      {
+        "second": "3",
+        "body": "right_gripper_base",
+        "model": "after_arm_reference",
+        "observed": [
+          1545,
+          741
+        ],
+        "predicted": [
+          1575.4693458674446,
+          751.7243590989311
+        ],
+        "error_px": 32.301593082583295
+      },
+      {
+        "second": "46",
+        "body": "right_arm_link6",
+        "model": "before_arm_reference",
+        "observed": [
+          1303,
+          831
+        ],
+        "predicted": [
+          1362.371465365933,
+          835.9609864194665
+        ],
+        "error_px": 59.578370957523866
+      },
+      {
+        "second": "46",
+        "body": "right_gripper_base",
+        "model": "before_arm_reference",
+        "observed": [
+          1245,
+          784
+        ],
+        "predicted": [
+          1316.4085185570575,
+          782.1197305870483
+        ],
+        "error_px": 71.43326910886067
+      },
+      {
+        "second": "46",
+        "body": "right_arm_link6",
+        "model": "after_arm_reference",
+        "observed": [
+          1303,
+          831
+        ],
+        "predicted": [
+          1286.6767351740864,
+          849.4538248965973
+        ],
+        "error_px": 24.637220376722368
+      },
+      {
+        "second": "46",
+        "body": "right_gripper_base",
+        "model": "after_arm_reference",
+        "observed": [
+          1245,
+          784
+        ],
+        "predicted": [
+          1239.8368616237508,
+          796.8004608367366
+        ],
+        "error_px": 13.802528591715577
+      },
+      {
+        "second": "48",
+        "body": "right_arm_link6",
+        "model": "before_arm_reference",
+        "observed": [
+          1745,
+          1004
+        ],
+        "predicted": [
+          1832.5113173087843,
+          1038.2213431714954
+        ],
+        "error_px": 93.96451982306932
+      },
+      {
+        "second": "48",
+        "body": "right_gripper_base",
+        "model": "before_arm_reference",
+        "observed": [
+          1664,
+          933
+        ],
+        "predicted": [
+          1797.8868375484226,
+          950.7404135567176
+        ],
+        "error_px": 135.05705291424462
+      },
+      {
+        "second": "48",
+        "body": "right_arm_link6",
+        "model": "after_arm_reference",
+        "observed": [
+          1745,
+          1004
+        ],
+        "predicted": [
+          1728.3977240971408,
+          1034.645438667327
+        ],
+        "error_px": 34.85367234980496
+      },
+      {
+        "second": "48",
+        "body": "right_gripper_base",
+        "model": "after_arm_reference",
+        "observed": [
+          1664,
+          933
+        ],
+        "predicted": [
+          1693.9847015880177,
+          951.0420009092072
+        ],
+        "error_px": 34.99422989766038
+      }
+    ],
+    "rmse_px": {
+      "before_arm_reference": 102.10464950088985,
+      "after_arm_reference": 28.60330022040762
+    }
+  },
+  "thresholds_set_before_fitting": {
+    "left_rmse_px": 25,
+    "right_rmse_px": 35,
+    "stereo_point_rmse_m": 0.03,
+    "new_penetration_m": 0.001
+  },
+  "collision_poses": 3921,
+  "trajectory_poses": 2985,
+  "baseline_poses_with_penetrations": 0,
+  "baseline_penetration_examples": [],
+  "new_or_deeper_collision_count": 0,
+  "collision_examples": [],
+  "blocked_mount_rays": [],
+  "mount_segmentation_visibility": [
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 5.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 5.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 31.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 31.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 32.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 32.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 42.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 42.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 43.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 43.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 44.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 44.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 45.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 45.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 46.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 46.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 48.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 48.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 50.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 50.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 52.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 52.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 54.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 0,
+      "second": 54.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 2.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 2.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 48.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 48.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 54.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 54.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 56.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 56.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 58.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 58.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 62.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 1,
+      "second": 62.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 39.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 39.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 45.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 45.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 57.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 3,
+      "second": 57.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 8,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 8,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 8,
+      "second": 39.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 8,
+      "second": 39.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 17,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 17,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 17,
+      "second": 45.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 17,
+      "second": 45.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 17,
+      "second": 63.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "baseline",
+      "episode": 17,
+      "second": 63.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 5.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 5.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 31.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 31.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 32.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 32.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 42.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 42.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 43.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 43.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 44.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 44.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 45.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 45.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 46.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 46.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 48.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 48.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 50.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 50.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 52.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 52.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 54.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 0,
+      "second": 54.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 2.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 2.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 48.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 48.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 54.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 54.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 56.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 56.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 58.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 58.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 62.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 1,
+      "second": 62.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 39.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 39.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 45.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 45.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 57.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 3,
+      "second": 57.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 8,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 8,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 8,
+      "second": 39.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 8,
+      "second": 39.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 17,
+      "second": 3.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 17,
+      "second": 3.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 17,
+      "second": 45.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 17,
+      "second": 45.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 17,
+      "second": 63.0,
+      "eye": "left",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    },
+    {
+      "model": "candidate",
+      "episode": 17,
+      "second": 63.0,
+      "eye": "right",
+      "mount_fraction": 0.0,
+      "central_fraction": 0.0
+    }
+  ],
+  "visual_neck_angle_range_deg": [
+    [
+      -6.681318681318682,
+      29.802197802197803
+    ],
+    [
+      6.5054945054945055,
+      46.065934065934066
+    ]
+  ],
+  "coverage": "Both visible arms; five episodes; full hardware pan/tilt grid at both lift endpoints and four arm poses; native trajectories sampled at about 10Hz.",
+  "limitations": [
+    "Sparse landmarks and previously inspected development episodes are not a final untouched test set.",
+    "Sampled collision checks cannot prove clearance for all intermediate robot poses.",
+    "A camera mount change retains approximate tilt-body inertials; dynamic identification remains separate."
+  ],
+  "promoted_model_sha256": "d282ecd278136038e6811203a8c6bd8703ad693e4f4384aa51f682cc5bf9743d"
+}

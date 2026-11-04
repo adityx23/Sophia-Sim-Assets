@@ -1,0 +1,7 @@
+lowered-transition distance_mm 134.651 CAD crossings 0
+100mm-hanging-endpoint distance_mm 22.588 CAD crossings 0
+100mm-transition distance_mm -13.406 CAD crossings 827
+neck-extreme distance_mm 31.146 CAD crossings mesh/mesh clearance
+arms-lowered colliding 19 CAD supported 19
+arms-100mm colliding 33 CAD supported 33
+neck colliding 0 CAD supported 0

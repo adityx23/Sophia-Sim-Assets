@@ -1,0 +1,128 @@
+{
+  "accepted": true,
+  "promoted": true,
+  "gates": {
+    "locked_frames_and_dynamics": true,
+    "confirmed_dimensions": true,
+    "compiled_landmarks_match_fit": true,
+    "enough_heldout_landmarks": true,
+    "heldout_stereo_rmse_under_20mm": true,
+    "geometry_only_projection_improves_over_80_percent": true,
+    "arm_camera_relative_pose_unchanged": true,
+    "no_new_recorded_penetrations": true,
+    "unsafe_named_poses_guarded": true
+  },
+  "locked_arrays": {
+    "body_pos": true,
+    "body_quat": true,
+    "body_mass": true,
+    "body_inertia": true,
+    "cam_pos": true,
+    "cam_quat": true,
+    "cam_intrinsic": true,
+    "jnt_pos": true,
+    "jnt_axis": true,
+    "jnt_range": true,
+    "actuator_gainprm": true,
+    "neck_zero": true,
+    "wheel_geoms": true
+  },
+  "measured_frame_min_world_m": [
+    0.06763053060400004,
+    -0.38045290933800013,
+    0.0635
+  ],
+  "measured_frame_max_world_m": [
+    0.2581305306040001,
+    0.05134709066200007,
+    0.26669999960000007
+  ],
+  "collision_cases": 5119,
+  "named_cases": 1404,
+  "recorded_cases": 3715,
+  "new_named_contacts": 0,
+  "new_named_examples": [],
+  "new_recorded_contacts": 0,
+  "new_recorded_examples": [],
+  "baseline_contact_poses": 0,
+  "arm_camera_max_relative_error_m": 6.341404989338363e-16,
+  "metrics": {
+    "train": {
+      "n": 6,
+      "episodes": [
+        0,
+        3
+      ],
+      "before": {
+        "rmse_m": 0.18101630102215902,
+        "rmse_px": 172.07971725454848,
+        "max_m": 0.19978644933373904
+      },
+      "geometry_only": {
+        "rmse_m": 0.06485983163592914,
+        "rmse_px": 12.236868385505044,
+        "max_m": 0.10622776576493446
+      },
+      "aligned": {
+        "rmse_m": 0.007772125270246217,
+        "rmse_px": 3.049453080066737,
+        "max_m": 0.00888275027367035
+      }
+    },
+    "validation": {
+      "n": 9,
+      "episodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "before": {
+        "rmse_m": 0.1826152043025349,
+        "rmse_px": 174.60071563121966,
+        "max_m": 0.19918335791843683
+      },
+      "geometry_only": {
+        "rmse_m": 0.0717001526057265,
+        "rmse_px": 16.700719070615527,
+        "max_m": 0.10513949491089972
+      },
+      "aligned": {
+        "rmse_m": 0.0117325098612719,
+        "rmse_px": 8.70615483113525,
+        "max_m": 0.015875573441064765
+      }
+    }
+  },
+  "compiled_landmark_scores": {
+    "train": {
+      "left": {
+        "n": 6,
+        "rmse_px": 3.0494530699950997
+      },
+      "right": {
+        "n": 6,
+        "rmse_px": 3.0677931114067607
+      }
+    },
+    "validation": {
+      "left": {
+        "n": 9,
+        "rmse_px": 8.706154844656009
+      },
+      "right": {
+        "n": 9,
+        "rmse_px": 8.887850216657466
+      }
+    }
+  },
+  "hardware_modified": false,
+  "limitations": [
+    "Only three training frames and five accepted held-out frames; not an untouched final test set.",
+    "Static lift readings cannot identify encoder scale, speed or the cause of historical height offsets.",
+    "About 10mm residual rail-plane roll/edge uncertainty remains; no camera or chassis tilt fitted.",
+    "Electronics, rail section, hidden structure and antenna thickness remain approximations.",
+    "Discrete collision samples are not a continuous clearance proof."
+  ],
+  "canonical_model_sha256": "cd8c42360a47b0e0cebbded6f8757d43afa9a4078cb76e88e6b55bbf2f4b2c63"
+}

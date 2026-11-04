@@ -1,0 +1,4 @@
+# Optional Gymnasium interface; the existing simulation lock remains authoritative.
+-r requirements-sophia.in
+-c requirements-sophia.txt
+gymnasium==1.4.0

@@ -1,0 +1,218 @@
+{
+  "dataset": "adityx23/Pi-Atlas_Sanity_Check_Dataset_1080p",
+  "revision": "ed7c9f2f1a78ceec46543229aacb0387120ea8f7",
+  "training_episodes": [
+    0,
+    2,
+    4
+  ],
+  "validation_episodes": [
+    1,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "method": "Bounded nonlinear least squares of runtime-equivalent MuJoCo replay to native telemetry; three starting points; fixed inertia/force/friction; separate timing sensitivity. Opening rate via bounded scalar search. No hardware commands.",
+  "arm_fit": {
+    "kp": 275.2457215323088,
+    "kv": 10.639562072268896,
+    "interpolation_duration_s": 0.1,
+    "training_equal_episode_rmse_rad": 0.004541301944942591,
+    "local_log_parameter_jacobian_singular_values": [
+      0.017675967689536304,
+      0.006736119399642786
+    ],
+    "optimizer_success": true,
+    "message": "`xtol` termination condition is satisfied.",
+    "active_bounds": [
+      0,
+      0
+    ],
+    "starts": [
+      {
+        "kp": 275.30109298623205,
+        "kv": 10.643143926014634,
+        "squared_residual": 6.187027550400171e-05,
+        "nfev": 4
+      },
+      {
+        "kp": 275.2457215323088,
+        "kv": 10.639562072268896,
+        "squared_residual": 6.187027006541807e-05,
+        "nfev": 9
+      },
+      {
+        "kp": 275.2956101066563,
+        "kv": 10.642732583598981,
+        "squared_residual": 6.187027425340804e-05,
+        "nfev": 5
+      }
+    ]
+  },
+  "arm_validation": {
+    "baseline_rmse_rad": 0.005571049835850982,
+    "candidate_rmse_rad": 0.004486803917027916,
+    "joint_error_ratios": [
+      2.119905752465162,
+      0.9977657020467329,
+      0.9246318376588,
+      0.5535541773223948,
+      0.9434859530319765,
+      0.9025977818672245,
+      0.911149766911579
+    ],
+    "episodes_improved": 15,
+    "adopted": false,
+    "reason": "Joint 1 error more than doubled; violates the preregistered per-joint regression gate."
+  },
+  "timing_sensitivity": [
+    {
+      "kp": 276.5595816718022,
+      "kv": 29.137077786187668,
+      "interpolation_duration_s": 0.03333333333333333,
+      "training_equal_episode_rmse_rad": 0.0045689120978231555,
+      "local_log_parameter_jacobian_singular_values": [
+        0.03990905476693195,
+        0.007962787315691498
+      ],
+      "optimizer_success": true,
+      "message": "`gtol` termination condition is satisfied.",
+      "active_bounds": [
+        0,
+        0
+      ],
+      "starts": [
+        {
+          "kp": 276.56149367966293,
+          "kv": 29.137454961031967,
+          "squared_residual": 6.262487345366037e-05,
+          "nfev": 5
+        },
+        {
+          "kp": 276.5595816718022,
+          "kv": 29.137077786187668,
+          "squared_residual": 6.262487327290438e-05,
+          "nfev": 6
+        },
+        {
+          "kp": 276.5610140461576,
+          "kv": 29.137357136803875,
+          "squared_residual": 6.262487340288595e-05,
+          "nfev": 6
+        }
+      ]
+    },
+    {
+      "kp": 281.97742918053837,
+      "kv": 2.0000798687035233,
+      "interpolation_duration_s": 0.13333333333333333,
+      "training_equal_episode_rmse_rad": 0.00456662623532534,
+      "local_log_parameter_jacobian_singular_values": [
+        0.011868492115584826,
+        0.0017990453821746435
+      ],
+      "optimizer_success": true,
+      "message": "`gtol` termination condition is satisfied.",
+      "active_bounds": [
+        0,
+        0
+      ],
+      "starts": [
+        {
+          "kp": 281.97742918053837,
+          "kv": 2.0000798687035233,
+          "squared_residual": 6.256222551948505e-05,
+          "nfev": 9
+        },
+        {
+          "kp": 281.9774382101119,
+          "kv": 2.0000802545883882,
+          "squared_residual": 6.256222571272314e-05,
+          "nfev": 9
+        },
+        {
+          "kp": 281.9797700624743,
+          "kv": 2.0002024037906363,
+          "squared_residual": 6.25622868306977e-05,
+          "nfev": 9
+        }
+      ]
+    }
+  ],
+  "right_gripper_opening_adoption": {
+    "baseline_opening_rate_strokes_s": 5.0,
+    "fitted_opening_rate_strokes_s": 6.037912466865225,
+    "adopted_right_opening_rate_strokes_s": 6.0,
+    "left_opening_and_both_closing_rates_strokes_s": 5.0,
+    "baseline_validation_rmse": 0.10749527261845121,
+    "adopted_validation_rmse": 0.0820155656172741,
+    "validation_samples": 99,
+    "episodes_improved": 9,
+    "episodes_worsened": 6,
+    "episode_bootstrap_rmse_ratio_95pct": [
+      0.6039272209392555,
+      1.0246392092715115
+    ],
+    "interpretation": "Improves pooled error in the existing validation set; sparse transitions and episode variation do not establish uniform improvement on future recordings. No physical force/friction calibration claim.",
+    "relative_rmse_reduction": 0.23703095383195105
+  },
+  "limits": [
+    "Effective closed-loop response, conditional on fixed vendor dynamics and input reconstruction; not unique physical gains.",
+    "No force, payload mass, independent end-effector pose or independent base motion is observed in these telemetry arrays.",
+    "Fixed-base unloaded fixture; selected intervals can still contain unobserved contacts.",
+    "Command snapshots at about 30 Hz do not establish exact receipt time or interpolation semantics.",
+    "Only three training episodes; bootstrap reflects this validation set, not all possible tasks.",
+    "Opening-only identification does not validate left-side or object-constrained closing response."
+  ],
+  "hardware_calibrated": false,
+  "historical_fit_sources": {
+    "scripts/identify_sophia_response.py": "7bb08597ecf62a9ccab2a6919cc26fc12a18d6cbdb3a6aa116ce0ab3e5de1a90",
+    "scripts/replay_sophia_dataset_arm.py": "321be2227ab476cf640ad7f08ee06d60a7894ec9fa6ab1c92ba19cb1be9e4655",
+    "robot/yor_mujoco.py": "b3d4ed1924f68052849e4f7ceea410203077d6b916619123350fd249514cf71a",
+    "robot/yor-description/sophia.mjcf": "2cd95aaad766e60a7766e366632eacfe2ddc989a999207efb54f13a39f1a4c8f",
+    "robot/yor-description/sophia.json": "49f0c3778e5075a167592e1b89ea2182b6d6ee14d8cb4b380014068458ae1f32",
+    "output/asset-review/dataset-system-identification/runtime-reference/episode_000000.npz": "94b9eb06364891986e77e12cb2bf5b7deac0e3ac4d5089de07d89ff9cd6cef60",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000000.npz": "b87f453b73ec8cfdb2e85493d1089803d686025d219b8a95d80e9ecaf3fdb4dd",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000002.npz": "fd23fc5c414e301490e0070988a02a29493e4a2c2a5c22d8fa563b0eac1e8cc8",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000004.npz": "b8343e6af0ca0a67387f7c0db48846cd7558254a08ede4e668d9e7168a5d2bbe",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000001.npz": "104238dcf2270baaaad55fef33ef7b38e0e061c523110ca8edca537468bed756",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000003.npz": "afe72237515392cb19410cd97d36bed7a3c58bb0ae4f5b38077394522620fcda",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000005.npz": "dd787ca0b0e6c43c63472b8c10e0eb60803a99c00823fc1ecff533ea27ca6b3e",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000006.npz": "769bc6b747fe9f8081734435f76799068911d7822d8e72d1348ddf267fc72bbc",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000007.npz": "e14315b6bc22fabe11870f569f32b45d4a12579b5483c40288f8578befbc9fe7",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000008.npz": "c4f163299f41e291fc233b64d11833183dbaf0abe9152875f937aeece0459e5a",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000009.npz": "ed885c1e7915ffa9b4308fd0ac80ac61f5315b50033d263bd79766adfe925e3e",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000010.npz": "f650bf20b1f8fe1796de8af57a528b1895c069d7e495bf3c168d1b7b563e60d0",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000011.npz": "234e64773bcd9b89e04606c7d876ca225f96e406113af648b88cc3b9459c2fc4",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000012.npz": "b556e91c079c11d19ad94e813bc5de7aa3135ddec746162974a313c6fefe88a9",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000013.npz": "da168d051ab2e8ba4f18cfb5eab420be017f4c56f304dc8e270e0e031e0e18cf",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000014.npz": "be155a8a13ad79577e4e2a3278a7488f3c78ad47d8e7a6875c4ba265cd7ccfc5",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000015.npz": "bb42783d7e97fecd5f3da661552d2f3407db7e994503d375dd488c234862ce2a",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000016.npz": "8e40aa736bfe74468817d8deb9f70c175faf491d8fdc57bde24d3e6c6bfd7cfb",
+    "output/asset-review/hf-sanity-check/native-replay/episode_000017.npz": "3a0ccbb3a2a6b5faa34979ff629fafe9d9a6fc20576378fde6a1a664914e2f9e"
+  },
+  "source_snapshots_before_adoption": {
+    "scripts/identify_sophia_response.py": "output/asset-review/dataset-system-identification/fit-sources/scripts/identify_sophia_response.py",
+    "scripts/replay_sophia_dataset_arm.py": "output/asset-review/dataset-system-identification/fit-sources/scripts/replay_sophia_dataset_arm.py",
+    "robot/yor_mujoco.py": "output/asset-review/dataset-system-identification/fit-sources/robot/yor_mujoco.py",
+    "robot/yor-description/sophia.mjcf": "output/asset-review/dataset-system-identification/fit-sources/robot/yor-description/sophia.mjcf",
+    "robot/yor-description/sophia.json": "output/asset-review/dataset-system-identification/fit-sources/robot/yor-description/sophia.json"
+  },
+  "evidence_sha256": {
+    "output/asset-review/dataset-system-identification/plan.json": "23f306cd0007de21ffbe8d790b2913c7399b29cf22baed3ba7cfc5592d9f5836",
+    "output/asset-review/dataset-system-identification/summary.json": "9d7c03ef683a20698bee2a8e97821f4ad293525e359983696eefd8161f602094",
+    "output/asset-review/dataset-system-identification/adoption.json": "71313051c925f4f8e6820400e3fe97a26206584e7781e5c9a61589cb61844601",
+    "output/asset-review/dataset-system-identification/adopted-validation/summary.json": "3f8f8acf6340e3075e98f6feea1651d59c9a73eba4eb923c95dbadfe9274b0d0"
+  }
+}

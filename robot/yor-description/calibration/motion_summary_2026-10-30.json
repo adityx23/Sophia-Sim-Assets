@@ -1,0 +1,1044 @@
+{
+  "run": {
+    "started": "2026-10-30T13:14:26",
+    "hz": 50.0,
+    "static_start": {
+      "lift_status": {
+        "homed": true,
+        "ref": "bottom_hard_stop",
+        "homing": false,
+        "home_error": null
+      },
+      "neck_limits": {
+        "pan": [
+          -125.53846153846153,
+          125.53846153846153
+        ],
+        "tilt": [
+          -72.52747252747253,
+          72.52747252747253
+        ]
+      },
+      "neck_position": {
+        "pan": 0.5274725274725275,
+        "tilt": -15.472527472527473
+      }
+    },
+    "stopped": "2026-10-30T13:17:05",
+    "static_end": {
+      "lift_status": {
+        "homed": true,
+        "ref": "bottom_hard_stop",
+        "homing": false,
+        "home_error": null
+      },
+      "neck_limits": {
+        "pan": [
+          -125.53846153846153,
+          125.53846153846153
+        ],
+        "tilt": [
+          -72.52747252747253,
+          72.52747252747253
+        ]
+      },
+      "neck_position": {
+        "pan": 4.21978021978022,
+        "tilt": -20.13186813186813
+      }
+    },
+    "rpc_errors": {},
+    "samples": 7941,
+    "duration_s": 159.38,
+    "sample_hz_mean": 49.8,
+    "sample_dt_p95_s": 0.0203
+  },
+  "calibration": {
+    "measurements_table": [
+      {
+        "Part": "Lift",
+        "Measurement": "Stroke (bottom stop -> top stop)",
+        "Measured": "encoder",
+        "mm": "672.6",
+        "Model / software value": "sim ctrlrange 416 (`yor-full.mjcf:61`)",
+        "Diff": "+256.6",
+        "Date": "2026-10-23"
+      },
+      {
+        "Part": "Lift",
+        "Measurement": "Floor -> shoulder joint center, lift fully down",
+        "Measured": "32 in",
+        "mm": "812.8",
+        "Model / software value": "~672 (sim, lowered)",
+        "Diff": "+140.8",
+        "Date": "2026-10-29"
+      },
+      {
+        "Part": "Lift",
+        "Measurement": "Floor -> shoulder joint center, lift fully up",
+        "Measured": "54 in",
+        "mm": "1371.6",
+        "Model / software value": "-",
+        "Diff": "-",
+        "Date": "2026-10-29"
+      },
+      {
+        "Part": "Lift",
+        "Measurement": "Stroke from tape (up - down)",
+        "Measured": "22 in",
+        "mm": "558.8",
+        "Model / software value": "encoder 672.6 (`robot/config.py:43`)",
+        "Diff": "-113.8",
+        "Date": "2026-10-29"
+      },
+      {
+        "Part": "Shoulder brackets",
+        "Measurement": "Distance between arm mounting-flange centers",
+        "Measured": "9.5 in",
+        "mm": "241.3",
+        "Model / software value": "250.0 (arm bases at y = +/-0.125, `yor-full.mjcf:194,258`)",
+        "Diff": "-8.7",
+        "Date": "2026-10-29"
+      },
+      {
+        "Part": "Grippers",
+        "Measurement": "Inside jaw gap, fully open",
+        "Measured": "4 in",
+        "mm": "101.6",
+        "Model / software value": "70 stroke (`robot/arm/can_gripper.py:8`)",
+        "Diff": "+31.6",
+        "Date": "2026-10-29"
+      },
+      {
+        "Part": "Grippers",
+        "Measurement": "Inside jaw gap, fully closed",
+        "Measured": "0 in",
+        "mm": "0.0",
+        "Model / software value": "0",
+        "Diff": "0",
+        "Date": "2026-10-29"
+      },
+      {
+        "Part": "Neck",
+        "Measurement": "Pan range (servo calibration)",
+        "Measured": "servo",
+        "mm": "+/-125.5 deg",
+        "Model / software value": "`robot/neck/neck_calibration.json`",
+        "Diff": "-",
+        "Date": "2026-10-29"
+      },
+      {
+        "Part": "Neck",
+        "Measurement": "Tilt range (servo calibration)",
+        "Measured": "servo",
+        "mm": "+/-72.5 deg",
+        "Model / software value": "`robot/neck/neck_calibration.json`",
+        "Diff": "-",
+        "Date": "2026-10-29"
+      }
+    ],
+    "lift_config": {
+      "LIFT_MIN_M": 0.0,
+      "LIFT_MAX_M": 0.66,
+      "LIFT_TRAVEL_M": 0.6726,
+      "LIFT_HOME_M": 0.648,
+      "LIFT_UP_RATE_MPS": 0.0265,
+      "LIFT_DOWN_RATE_MPS": 0.0308,
+      "BASE_VEL_CMD_TIMEOUT": 0.3
+    },
+    "gripper": {
+      "sources": [
+        "robot/arm/can_gripper.py",
+        "robot/arm/arm.py (CanGripper construction)",
+        "notes/robot_measurements.md"
+      ],
+      "raw_zero": "AgileX AgxGripper zero-point calibration (CAN 0x159 set_zero) done on both units, so raw width 0 = fully closed on both; no per-side inversion (CanGripper(inverted=False))",
+      "feedback": "CAN 0x2A8 bytes 0-3: int32 big-endian jaw width in um; opening = width_m / stroke_m, clipped to [0, 1]",
+      "per_side": {
+        "left": {
+          "inverted": false,
+          "close_overtravel": 0.1,
+          "open_overtravel": 0.1
+        },
+        "right": {
+          "inverted": false,
+          "close_overtravel": 0.1,
+          "open_overtravel": 0.1
+        }
+      },
+      "stroke_m": 0.07,
+      "effort": 0.4,
+      "effort_full_scale_Nm": 5.0,
+      "effort_Nm": 2.0,
+      "feedback_stale_s": 0.25,
+      "measured_jaw_gap_mm": {
+        "Inside jaw gap, fully open": 101.6,
+        "Inside jaw gap, fully closed": 0.0
+      },
+      "per_position_table": null,
+      "per_position_note": "No raw-feedback vs jaw-gap table at intermediate positions exists yet; only the fully open/closed gaps were measured (2026-10-29). Add pairs with `g <side> <gap>` markers; they appear under gripper.marker_pairs.",
+      "marker_pairs": [],
+      "live_at_start": {
+        "left": {
+          "opening": 1.0,
+          "opening_cmd": 1.0,
+          "error": null
+        },
+        "right": {
+          "opening": 1.0,
+          "opening_cmd": 1.0,
+          "error": null
+        }
+      }
+    },
+    "neck_calibration": {
+      "model": "sts3215",
+      "motors": {
+        "pan": {
+          "id": 7,
+          "drive_mode": 0,
+          "homing_offset": 1763,
+          "range_min": 600,
+          "range_max": 3456
+        },
+        "tilt": {
+          "id": 8,
+          "drive_mode": 0,
+          "homing_offset": -1411,
+          "range_min": 1427,
+          "range_max": 3077
+        }
+      },
+      "home_deg": {
+        "pan": 2.02,
+        "tilt": -3.25
+      }
+    }
+  },
+  "markers": [],
+  "lift": {
+    "runs": [
+      {
+        "dir": "down",
+        "t_start": 1793380522.601,
+        "cmd_duration_s": 0.1,
+        "h_start_m": 0.6736,
+        "h_at_stop_cmd_m": 0.6714,
+        "h_final_m": 0.67,
+        "onset_lag_s": 0.1,
+        "rate_mps": null,
+        "coast_after_stop_m": -0.0014,
+        "settle_after_stop_s": 0.02,
+        "hit_hard_stop": false
+      },
+      {
+        "dir": "down",
+        "t_start": 1793380523.264,
+        "cmd_duration_s": 0.141,
+        "h_start_m": 0.67,
+        "h_at_stop_cmd_m": 0.6662,
+        "h_final_m": 0.6652,
+        "onset_lag_s": 0.081,
+        "rate_mps": null,
+        "coast_after_stop_m": -0.001,
+        "settle_after_stop_s": 0.02,
+        "hit_hard_stop": false
+      },
+      {
+        "dir": "up",
+        "t_start": 1793380523.886,
+        "cmd_duration_s": 0.221,
+        "h_start_m": 0.6652,
+        "h_at_stop_cmd_m": 0.6706,
+        "h_final_m": 0.6716,
+        "onset_lag_s": 0.1,
+        "rate_mps": null,
+        "coast_after_stop_m": 0.001,
+        "settle_after_stop_s": 0.02,
+        "hit_hard_stop": false
+      },
+      {
+        "dir": "down",
+        "t_start": 1793380524.247,
+        "cmd_duration_s": 0.241,
+        "h_start_m": 0.6716,
+        "h_at_stop_cmd_m": 0.665,
+        "h_final_m": 0.6638,
+        "onset_lag_s": 0.1,
+        "rate_mps": null,
+        "coast_after_stop_m": -0.0012,
+        "settle_after_stop_s": 0.021,
+        "hit_hard_stop": false
+      },
+      {
+        "dir": "up",
+        "t_start": 1793380524.608,
+        "cmd_duration_s": 0.281,
+        "h_start_m": 0.6638,
+        "h_at_stop_cmd_m": 0.6712,
+        "h_final_m": 0.672,
+        "onset_lag_s": 0.08,
+        "rate_mps": 0.02669,
+        "coast_after_stop_m": 0.0008,
+        "settle_after_stop_s": 0.02,
+        "hit_hard_stop": false
+      },
+      {
+        "dir": "down",
+        "t_start": 1793380525.11,
+        "cmd_duration_s": 10.177,
+        "h_start_m": 0.672,
+        "h_at_stop_cmd_m": 0.3587,
+        "h_final_m": null,
+        "onset_lag_s": 0.08,
+        "rate_mps": -0.0308,
+        "coast_after_stop_m": null,
+        "settle_after_stop_s": null,
+        "hit_hard_stop": false
+      },
+      {
+        "dir": "up",
+        "t_start": 1793380535.308,
+        "cmd_duration_s": 12.444,
+        "h_start_m": 0.3581,
+        "h_at_stop_cmd_m": 0.6744,
+        "h_final_m": 0.6744,
+        "onset_lag_s": 0.14,
+        "rate_mps": 0.02649,
+        "coast_after_stop_m": 0.0,
+        "settle_after_stop_s": 0.02,
+        "hit_hard_stop": true
+      }
+    ],
+    "height_min_m": 0.3577,
+    "height_max_m": 0.6744,
+    "travel_seen_m": 0.3167,
+    "homed_flags_seen": [
+      "True"
+    ],
+    "mean_up_rate_mps": 0.02649,
+    "mean_down_rate_mps": 0.0308,
+    "tape_pairs": []
+  },
+  "neck": {
+    "pan": {
+      "measured_min_deg": -82.99,
+      "measured_max_deg": 89.67,
+      "moves": [
+        {
+          "t_start": 1793380479.721,
+          "cmd_from_deg": 0.29,
+          "cmd_to_deg": 0.53,
+          "cmd_duration_s": 0.02,
+          "cmd_rate_dps": 12.04,
+          "meas_rate_dps": null,
+          "tracking_lag_s": -0.02,
+          "overshoot_deg": 0.09,
+          "settle_after_cmd_end_s": 0.02,
+          "final_error_deg": 0.09
+        },
+        {
+          "t_start": 1793380495.361,
+          "cmd_from_deg": 0.53,
+          "cmd_to_deg": -83.47,
+          "cmd_duration_s": 1.405,
+          "cmd_rate_dps": -59.8,
+          "meas_rate_dps": -57.44,
+          "tracking_lag_s": 0.14,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.221,
+          "final_error_deg": 0.66
+        },
+        {
+          "t_start": 1793380497.067,
+          "cmd_from_deg": -83.47,
+          "cmd_to_deg": 70.53,
+          "cmd_duration_s": 2.57,
+          "cmd_rate_dps": 59.91,
+          "meas_rate_dps": 58.91,
+          "tracking_lag_s": 0.14,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.221,
+          "final_error_deg": -0.55
+        },
+        {
+          "t_start": 1793380500.501,
+          "cmd_from_deg": 70.53,
+          "cmd_to_deg": -7.47,
+          "cmd_duration_s": 2.207,
+          "cmd_rate_dps": -35.34,
+          "meas_rate_dps": -38.8,
+          "tracking_lag_s": 0.12,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.201,
+          "final_error_deg": 0.7
+        },
+        {
+          "t_start": 1793380502.989,
+          "cmd_from_deg": -7.47,
+          "cmd_to_deg": 4.53,
+          "cmd_duration_s": 0.221,
+          "cmd_rate_dps": 54.37,
+          "meas_rate_dps": 24.73,
+          "tracking_lag_s": 0.1,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.181,
+          "final_error_deg": -0.4
+        }
+      ]
+    },
+    "tilt": {
+      "measured_min_deg": -68.66,
+      "measured_max_deg": 68.04,
+      "moves": [
+        {
+          "t_start": 1793380479.721,
+          "cmd_from_deg": -15.99,
+          "cmd_to_deg": -69.47,
+          "cmd_duration_s": 1.107,
+          "cmd_rate_dps": -48.33,
+          "meas_rate_dps": -42.92,
+          "tracking_lag_s": 0.142,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.241,
+          "final_error_deg": 0.81
+        },
+        {
+          "t_start": 1793380481.831,
+          "cmd_from_deg": -69.47,
+          "cmd_to_deg": 68.53,
+          "cmd_duration_s": 2.31,
+          "cmd_rate_dps": 59.73,
+          "meas_rate_dps": 58.91,
+          "tracking_lag_s": 0.122,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.201,
+          "final_error_deg": -0.48
+        },
+        {
+          "t_start": 1793380484.462,
+          "cmd_from_deg": 68.53,
+          "cmd_to_deg": -61.47,
+          "cmd_duration_s": 2.168,
+          "cmd_rate_dps": -59.96,
+          "meas_rate_dps": -58.92,
+          "tracking_lag_s": 0.12,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.201,
+          "final_error_deg": 0.29
+        },
+        {
+          "t_start": 1793380487.292,
+          "cmd_from_deg": -61.47,
+          "cmd_to_deg": -68.47,
+          "cmd_duration_s": 0.12,
+          "cmd_rate_dps": -58.11,
+          "meas_rate_dps": null,
+          "tracking_lag_s": 0.1,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.181,
+          "final_error_deg": 0.78
+        },
+        {
+          "t_start": 1793380488.015,
+          "cmd_from_deg": -68.47,
+          "cmd_to_deg": 66.53,
+          "cmd_duration_s": 2.269,
+          "cmd_rate_dps": 59.5,
+          "meas_rate_dps": 58.65,
+          "tracking_lag_s": 0.12,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.201,
+          "final_error_deg": -0.59
+        },
+        {
+          "t_start": 1793380490.625,
+          "cmd_from_deg": 66.53,
+          "cmd_to_deg": -16.47,
+          "cmd_duration_s": 1.385,
+          "cmd_rate_dps": -59.94,
+          "meas_rate_dps": -57.59,
+          "tracking_lag_s": 0.1,
+          "overshoot_deg": 0.05,
+          "settle_after_cmd_end_s": 0.201,
+          "final_error_deg": 0.03
+        },
+        {
+          "t_start": 1793380553.089,
+          "cmd_from_deg": -16.47,
+          "cmd_to_deg": -25.47,
+          "cmd_duration_s": 0.161,
+          "cmd_rate_dps": -56.06,
+          "meas_rate_dps": null,
+          "tracking_lag_s": 0.12,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.161,
+          "final_error_deg": 0.24
+        },
+        {
+          "t_start": 1793380553.932,
+          "cmd_from_deg": -25.47,
+          "cmd_to_deg": -19.47,
+          "cmd_duration_s": 0.12,
+          "cmd_rate_dps": 49.81,
+          "meas_rate_dps": null,
+          "tracking_lag_s": 0.12,
+          "overshoot_deg": 0.0,
+          "settle_after_cmd_end_s": 0.161,
+          "final_error_deg": -0.66
+        }
+      ]
+    }
+  },
+  "base": {
+    "segments": [
+      {
+        "t_start": 1793380492.611,
+        "duration_s": 2.789,
+        "axis": "wz_radps",
+        "peak_cmd": -1.3738,
+        "peak_cmd_all": [
+          0.0,
+          0.0,
+          -1.3738
+        ],
+        "rise_63pct_s": null,
+        "lag_s": 0.16,
+        "gain_enc_over_cmd": 0.339,
+        "fit_rms": 0.1764,
+        "cross_axis_max": 0.0114,
+        "stop_time_s": 0.0,
+        "stop_distance": 0.0,
+        "enc_integrated_disp_body": [
+          -0.0012,
+          -0.0003,
+          -0.208
+        ],
+        "zed_displacement": null
+      },
+      {
+        "t_start": 1793380506.502,
+        "duration_s": 1.164,
+        "axis": "vx_mps",
+        "peak_cmd": 0.4926,
+        "peak_cmd_all": [
+          0.4926,
+          0.0,
+          0.0
+        ],
+        "rise_63pct_s": null,
+        "lag_s": 0.22,
+        "gain_enc_over_cmd": 0.488,
+        "fit_rms": 0.0201,
+        "cross_axis_max": 0.1477,
+        "stop_time_s": 0.0,
+        "stop_distance": 0.0,
+        "enc_integrated_disp_body": [
+          0.1584,
+          -0.0021,
+          0.051
+        ],
+        "zed_displacement": null
+      },
+      {
+        "t_start": 1793380507.886,
+        "duration_s": 14.394,
+        "axis": "wz_radps",
+        "peak_cmd": 1.57,
+        "peak_cmd_all": [
+          -0.4945,
+          0.0,
+          1.57
+        ],
+        "rise_63pct_s": null,
+        "lag_s": 0.26,
+        "gain_enc_over_cmd": 0.429,
+        "fit_rms": 0.3688,
+        "cross_axis_max": 0.2615,
+        "stop_time_s": 0.0,
+        "stop_distance": 0.0,
+        "enc_integrated_disp_body": [
+          -0.0213,
+          0.0014,
+          1.1227
+        ],
+        "zed_displacement": null
+      },
+      {
+        "t_start": 1793380554.855,
+        "duration_s": 8.49,
+        "axis": "wz_radps",
+        "peak_cmd": -1.4722,
+        "peak_cmd_all": [
+          -0.339,
+          0.4615,
+          -1.4722
+        ],
+        "rise_63pct_s": null,
+        "lag_s": 0.16,
+        "gain_enc_over_cmd": 0.428,
+        "fit_rms": 0.0623,
+        "cross_axis_max": 0.1615,
+        "stop_time_s": 0.0,
+        "stop_distance": 0.0,
+        "enc_integrated_disp_body": [
+          -0.0107,
+          0.0176,
+          0.0194
+        ],
+        "zed_displacement": null
+      }
+    ]
+  },
+  "arms": {
+    "left": {
+      "joints_start": [
+        1.835,
+        1.382,
+        -1.732,
+        1.501,
+        -0.111,
+        -0.096,
+        0.09
+      ],
+      "joints_end": [
+        1.835,
+        1.382,
+        -1.732,
+        1.501,
+        -0.111,
+        -0.096,
+        0.089
+      ],
+      "joints_min": [
+        1.831,
+        1.379,
+        -1.734,
+        1.501,
+        -0.111,
+        -0.096,
+        0.089
+      ],
+      "joints_max": [
+        1.839,
+        1.385,
+        -1.729,
+        1.502,
+        -0.111,
+        -0.096,
+        0.09
+      ],
+      "ee_wxyz_xyz_start": [
+        0.43582045220057575,
+        0.4463307187320036,
+        0.5869695992216729,
+        -0.5160582453070659,
+        0.2116880203027872,
+        0.15986914246941808,
+        0.2912794674449683
+      ],
+      "ee_wxyz_xyz_end": [
+        0.43556236808798626,
+        0.44603717755829253,
+        0.587192691652502,
+        -0.5162760914581533,
+        0.21168068815978805,
+        0.15987158820883018,
+        0.29124738532594746
+      ],
+      "gripper_opening_range": [
+        1.0,
+        1.0
+      ],
+      "gripper_errors_seen": []
+    },
+    "right": {
+      "joints_start": [
+        -1.841,
+        1.334,
+        1.738,
+        1.509,
+        0.0,
+        0.1,
+        0.103
+      ],
+      "joints_end": [
+        -1.842,
+        1.334,
+        1.738,
+        1.509,
+        0.0,
+        0.1,
+        0.103
+      ],
+      "joints_min": [
+        -1.844,
+        1.333,
+        1.738,
+        1.509,
+        0.0,
+        0.1,
+        0.103
+      ],
+      "joints_max": [
+        -1.838,
+        1.336,
+        1.739,
+        1.509,
+        0.0,
+        0.1,
+        0.103
+      ],
+      "ee_wxyz_xyz_start": [
+        -0.49074057028682466,
+        -0.3872559008624799,
+        -0.48083906209108185,
+        0.6148173357096564,
+        0.21147703852435817,
+        -0.5946032321612122,
+        0.2980073620237993
+      ],
+      "ee_wxyz_xyz_end": [
+        -0.49050007931247575,
+        -0.38694842854683803,
+        -0.4810843844320319,
+        0.6150108949402774,
+        0.21110324707758027,
+        -0.5946032314039681,
+        0.2978009107782381
+      ],
+      "gripper_opening_range": [
+        1.0,
+        1.0
+      ],
+      "gripper_errors_seen": []
+    }
+  },
+  "not_covered": [
+    "grasp/slip performance (needs arm + gripper trials)",
+    "clearances other than what you noted with markers"
+  ],
+  "base_reconstruction": {
+    "source_run": "teleop_data/sim_validation/2026-10-30--13-14-26",
+    "replicated_module": {
+      "index": 2,
+      "position": "third drive motor (RR in MODULE_ORDER)",
+      "reason": "drive_vel read 0.0 for the whole run while the other three reached ~0.52"
+    },
+    "method": "Base command run through Base's s-curve (a_max 1.9/1.9/6.5, 250 Hz); each working module's physical wheel velocity = |measured drive speed| along its commanded direction (independent of the unlogged 0/pi flip state); body velocity fitted from modules 0,1,3; module 2 = that fit's wheel velocity at module 2.",
+    "reproduces_logged_enc_vel_max_abs_err": [
+      0.0681,
+      0.0529,
+      0.3984
+    ],
+    "rigid_body_residual_3_modules_median": {
+      "ik_geometry": 0.0175,
+      "base_C_geometry": 0.8958,
+      "note": "fraction of wheel velocity a rigid-body fit can't explain; lower = matches the hardware"
+    },
+    "fk_mismatch": "Base.C (forward kinematics) has rotation x-terms [+W,-W,-W,+W]; the IK commands [-W,+W,+W,-W] (ROT_DIAG_SWAP_PERM applied). For pure rotation Base.C reads wz x -0.316. enc_vel here uses the IK geometry.",
+    "fields": {
+      "state.enc_vel": "replicated module 2 + IK-consistent FK (used by the base analysis)",
+      "state.enc_vel_replicated_old_fk": "replicated module 2, Base.C as on the robot",
+      "state.enc_vel_original": "as logged",
+      "enc.drive_vel[2]": "replicated magnitude (raw units); flip sign unknown",
+      "enc.drive_vel_original": "as logged"
+    },
+    "segments_by_variant": {
+      "enc_vel_original": [
+        {
+          "t_start": 1793380492.611,
+          "duration_s": 2.789,
+          "axis": "wz_radps",
+          "peak_cmd": -1.3738,
+          "peak_cmd_all": [
+            0.0,
+            0.0,
+            -1.3738
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.14,
+          "gain_enc_over_cmd": -0.115,
+          "fit_rms": 0.0107,
+          "cross_axis_max": 0.0307,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0015,
+            -0.0013,
+            0.0038
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380506.502,
+          "duration_s": 1.164,
+          "axis": "vx_mps",
+          "peak_cmd": 0.4926,
+          "peak_cmd_all": [
+            0.4926,
+            0.0,
+            0.0
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.22,
+          "gain_enc_over_cmd": 0.361,
+          "fit_rms": 0.0153,
+          "cross_axis_max": 0.2372,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            0.1169,
+            0.0,
+            0.1172
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380507.886,
+          "duration_s": 14.394,
+          "axis": "wz_radps",
+          "peak_cmd": 1.57,
+          "peak_cmd_all": [
+            -0.4945,
+            0.0,
+            1.57
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.2,
+          "gain_enc_over_cmd": -0.123,
+          "fit_rms": 0.0634,
+          "cross_axis_max": 0.1962,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.028,
+            0.0072,
+            -0.1006
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380554.855,
+          "duration_s": 8.49,
+          "axis": "wz_radps",
+          "peak_cmd": -1.4722,
+          "peak_cmd_all": [
+            -0.339,
+            0.4615,
+            -1.4722
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.18,
+          "gain_enc_over_cmd": -0.104,
+          "fit_rms": 0.0369,
+          "cross_axis_max": 0.121,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0076,
+            0.012,
+            -0.024
+          ],
+          "zed_displacement": null
+        }
+      ],
+      "enc_vel_replicated_old_fk": [
+        {
+          "t_start": 1793380492.611,
+          "duration_s": 2.789,
+          "axis": "wz_radps",
+          "peak_cmd": -1.3738,
+          "peak_cmd_all": [
+            0.0,
+            0.0,
+            -1.3738
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.16,
+          "gain_enc_over_cmd": -0.107,
+          "fit_rms": 0.0553,
+          "cross_axis_max": 0.0114,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0012,
+            -0.0003,
+            0.0669
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380506.502,
+          "duration_s": 1.164,
+          "axis": "vx_mps",
+          "peak_cmd": 0.4926,
+          "peak_cmd_all": [
+            0.4926,
+            0.0,
+            0.0
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.22,
+          "gain_enc_over_cmd": 0.488,
+          "fit_rms": 0.0201,
+          "cross_axis_max": 0.114,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            0.1584,
+            -0.0021,
+            -0.0394
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380507.886,
+          "duration_s": 14.394,
+          "axis": "wz_radps",
+          "peak_cmd": 1.57,
+          "peak_cmd_all": [
+            -0.4945,
+            0.0,
+            1.57
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.26,
+          "gain_enc_over_cmd": -0.137,
+          "fit_rms": 0.1181,
+          "cross_axis_max": 0.2615,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0213,
+            0.0014,
+            -0.3807
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380554.855,
+          "duration_s": 8.49,
+          "axis": "wz_radps",
+          "peak_cmd": -1.4722,
+          "peak_cmd_all": [
+            -0.339,
+            0.4615,
+            -1.4722
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.16,
+          "gain_enc_over_cmd": -0.136,
+          "fit_rms": 0.0209,
+          "cross_axis_max": 0.1615,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0107,
+            0.0176,
+            -0.0261
+          ],
+          "zed_displacement": null
+        }
+      ],
+      "enc_vel": [
+        {
+          "t_start": 1793380492.611,
+          "duration_s": 2.789,
+          "axis": "wz_radps",
+          "peak_cmd": -1.3738,
+          "peak_cmd_all": [
+            0.0,
+            0.0,
+            -1.3738
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.16,
+          "gain_enc_over_cmd": 0.339,
+          "fit_rms": 0.1764,
+          "cross_axis_max": 0.0114,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0012,
+            -0.0003,
+            -0.208
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380506.502,
+          "duration_s": 1.164,
+          "axis": "vx_mps",
+          "peak_cmd": 0.4926,
+          "peak_cmd_all": [
+            0.4926,
+            0.0,
+            0.0
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.22,
+          "gain_enc_over_cmd": 0.488,
+          "fit_rms": 0.0201,
+          "cross_axis_max": 0.1477,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            0.1584,
+            -0.0021,
+            0.051
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380507.886,
+          "duration_s": 14.394,
+          "axis": "wz_radps",
+          "peak_cmd": 1.57,
+          "peak_cmd_all": [
+            -0.4945,
+            0.0,
+            1.57
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.26,
+          "gain_enc_over_cmd": 0.429,
+          "fit_rms": 0.3688,
+          "cross_axis_max": 0.2615,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0213,
+            0.0014,
+            1.1227
+          ],
+          "zed_displacement": null
+        },
+        {
+          "t_start": 1793380554.855,
+          "duration_s": 8.49,
+          "axis": "wz_radps",
+          "peak_cmd": -1.4722,
+          "peak_cmd_all": [
+            -0.339,
+            0.4615,
+            -1.4722
+          ],
+          "rise_63pct_s": null,
+          "lag_s": 0.16,
+          "gain_enc_over_cmd": 0.428,
+          "fit_rms": 0.0623,
+          "cross_axis_max": 0.1615,
+          "stop_time_s": 0.0,
+          "stop_distance": 0.0,
+          "enc_integrated_disp_body": [
+            -0.0107,
+            0.0176,
+            0.0194
+          ],
+          "zed_displacement": null
+        }
+      ]
+    }
+  }
+}

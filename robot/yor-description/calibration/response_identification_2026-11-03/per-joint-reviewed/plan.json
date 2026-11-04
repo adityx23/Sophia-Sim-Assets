@@ -1,0 +1,47 @@
+{
+  "training_episodes": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "development_episodes": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "final_test": "Episode 15; contiguous engaged/commanded, stationary-base intervals >=3s, initialized separately; exclude first second and closed/grasp intervals as before.",
+  "parameters": "Seven left kp and seven left kv; right unchanged.",
+  "bounds": {
+    "kp": [
+      100,
+      1500
+    ],
+    "kv": [
+      2,
+      80
+    ]
+  },
+  "log_prior": {
+    "kp": 500,
+    "kv": 20,
+    "residual_weight_rad": 0.002
+  },
+  "interpolation_duration_s": 0.06666666666666667,
+  "gate": "Both development and final check: pooled RMSE <=0.9 baseline, every joint <=1.1 baseline, at least 75% intervals improve. Optimizer converges without an active bound. Effective gains only, not physical motor constants.",
+  "source_sha256": {
+    "scripts/identify_sophia_joint_gains.py": "66b422a64f6ead84e04b065d71205d5e4e38eecaedd0786e95954fa04da97cd8",
+    "scripts/identify_sophia_capture.py": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+    "robot/yor-description/sophia.json": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+    "robot/yor-description/sophia.mjcf": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+    "robot/yor-description/calibration/teleop_2026-11-02/MANIFEST.json": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554"
+  }
+}

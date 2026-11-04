@@ -1,0 +1,253 @@
+{
+  "method": "Training-only rigid base-frame XY fit to stereo line intersections; confirmed dimensions fixed.",
+  "frame_translation_chassis_m": [
+    0.1628805306040458,
+    0.044997090661677966,
+    0.0
+  ],
+  "measured_dimensions_m": {
+    "base_frame_width_m": 0.4318,
+    "base_frame_depth_m": 0.1905,
+    "base_frame_height_m": 0.2032,
+    "base_frame_floor_clearance_m": 0.0635
+  },
+  "requires_arm_reference_sha256": "1b5fe28cb8a33110d60026f869402ce7c1a09d8bc7f51c5765633b7adcee33df",
+  "requires_spinal_assembly_sha256": "2d482ab76b757b18ced4d81cef330fedcecf80d846018017bd4bc60848d431ea",
+  "evidence_sha256": "abf77b63a273216152ef371ea4fffe2669020075c451274a15f93a3db713d97a",
+  "metrics": {
+    "train": {
+      "n": 6,
+      "episodes": [
+        0,
+        3
+      ],
+      "before": {
+        "rmse_m": 0.18101630102215902,
+        "rmse_px": 172.07971725454848,
+        "max_m": 0.19978644933373904
+      },
+      "geometry_only": {
+        "rmse_m": 0.06485983163592914,
+        "rmse_px": 12.236868385505044,
+        "max_m": 0.10622776576493446
+      },
+      "aligned": {
+        "rmse_m": 0.007772125270246217,
+        "rmse_px": 3.049453080066737,
+        "max_m": 0.00888275027367035
+      }
+    },
+    "validation": {
+      "n": 9,
+      "episodes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "before": {
+        "rmse_m": 0.1826152043025349,
+        "rmse_px": 174.60071563121966,
+        "max_m": 0.19918335791843683
+      },
+      "geometry_only": {
+        "rmse_m": 0.0717001526057265,
+        "rmse_px": 16.700719070615527,
+        "max_m": 0.10513949491089972
+      },
+      "aligned": {
+        "rmse_m": 0.0117325098612719,
+        "rmse_px": 8.70615483113525,
+        "max_m": 0.015875573441064765
+      }
+    }
+  },
+  "accessories": {
+    "estop_plate_center_chassis_xy_m": [
+      0.04,
+      -0.115
+    ],
+    "estop_plate_world_z_m": 0.25,
+    "antenna_body_chassis_y_m": 0.049,
+    "antenna_rods_world_chassis_xy_m": [
+      [
+        [
+          0.083,
+          0.057,
+          0.48
+        ],
+        [
+          0.258,
+          0.067,
+          0.48
+        ]
+      ],
+      [
+        [
+          0.083,
+          0.03,
+          0.465
+        ],
+        [
+          0.24,
+          -0.05,
+          0.465
+        ]
+      ]
+    ],
+    "board_center_chassis_xy_world_z_m": [
+      0.191,
+      0.141,
+      0.241
+    ],
+    "board_half_size_m": [
+      0.026,
+      0.027,
+      0.002
+    ],
+    "finned_module_center_chassis_xy_world_z_m": [
+      0.117,
+      0.172,
+      0.213
+    ],
+    "finned_module_half_size_m": [
+      0.025,
+      0.035,
+      0.015
+    ],
+    "uncertainty_m": 0.02,
+    "basis": "Stereo-reviewed ep0/frame930 antenna and board, ep1/frame855 blue plate; hidden faces and thickness are photo estimates. Antenna rods have aperture ambiguity; do not use as independent metric validation."
+  },
+  "replay_alignment": {
+    "scope": "Pi-Atlas October26 native recordings only; exact file hash required. Effective historical torso height alignment, not a live encoder calibration.",
+    "fit_offsets_m": [
+      -0.036130786085292896,
+      -0.09914432041868332
+    ],
+    "episodes": {
+      "0": {
+        "native_sha256": "b87f453b73ec8cfdb2e85493d1089803d686025d219b8a95d80e9ecaf3fdb4dd",
+        "lift_extension_offset_m": -0.036130786085292896,
+        "raw_lift_m": 0.59153,
+        "status": "training_setting"
+      },
+      "1": {
+        "native_sha256": "104238dcf2270baaaad55fef33ef7b38e0e061c523110ca8edca537468bed756",
+        "lift_extension_offset_m": -0.036130786085292896,
+        "raw_lift_m": 0.59153,
+        "status": "held_out_base_landmarks"
+      },
+      "2": {
+        "native_sha256": "fd23fc5c414e301490e0070988a02a29493e4a2c2a5c22d8fa563b0eac1e8cc8",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "held_out_base_landmarks"
+      },
+      "3": {
+        "native_sha256": "afe72237515392cb19410cd97d36bed7a3c58bb0ae4f5b38077394522620fcda",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "training_setting"
+      },
+      "4": {
+        "native_sha256": "b8343e6af0ca0a67387f7c0db48846cd7558254a08ede4e668d9e7168a5d2bbe",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "5": {
+        "native_sha256": "dd787ca0b0e6c43c63472b8c10e0eb60803a99c00823fc1ecff533ea27ca6b3e",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "6": {
+        "native_sha256": "769bc6b747fe9f8081734435f76799068911d7822d8e72d1348ddf267fc72bbc",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "7": {
+        "native_sha256": "e14315b6bc22fabe11870f569f32b45d4a12579b5483c40288f8578befbc9fe7",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "8": {
+        "native_sha256": "c4f163299f41e291fc233b64d11833183dbaf0abe9152875f937aeece0459e5a",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "9": {
+        "native_sha256": "ed885c1e7915ffa9b4308fd0ac80ac61f5315b50033d263bd79766adfe925e3e",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "10": {
+        "native_sha256": "f650bf20b1f8fe1796de8af57a528b1895c069d7e495bf3c168d1b7b563e60d0",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "11": {
+        "native_sha256": "234e64773bcd9b89e04606c7d876ca225f96e406113af648b88cc3b9459c2fc4",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "12": {
+        "native_sha256": "b556e91c079c11d19ad94e813bc5de7aa3135ddec746162974a313c6fefe88a9",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "13": {
+        "native_sha256": "da168d051ab2e8ba4f18cfb5eab420be017f4c56f304dc8e270e0e031e0e18cf",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "14": {
+        "native_sha256": "be155a8a13ad79577e4e2a3278a7488f3c78ad47d8e7a6875c4ba265cd7ccfc5",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "15": {
+        "native_sha256": "bb42783d7e97fecd5f3da661552d2f3407db7e994503d375dd488c234862ce2a",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "16": {
+        "native_sha256": "8e40aa736bfe74468817d8deb9f70c175faf491d8fdc57bde24d3e6c6bfd7cfb",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      },
+      "17": {
+        "native_sha256": "3a0ccbb3a2a6b5faa34979ff629fafe9d9a6fc20576378fde6a1a664914e2f9e",
+        "lift_extension_offset_m": -0.09914432041868332,
+        "raw_lift_m": 0.65579,
+        "status": "same_static_recording_setting_unvalidated"
+      }
+    }
+  },
+  "locked": [
+    "neck CAD axes",
+    "camera pose and intrinsics",
+    "arm roots",
+    "wheel/module poses",
+    "live lift mapping",
+    "hardware Home",
+    "source assembly masses"
+  ],
+  "limitations": [
+    "Only three training frames and five accepted held-out frames; not an untouched final test set.",
+    "Static lift readings cannot identify encoder scale, speed or the cause of historical height offsets.",
+    "About 10mm residual rail-plane roll/edge uncertainty remains; no camera or chassis tilt fitted.",
+    "Electronics, rail section, hidden structure and antenna thickness remain approximations."
+  ]
+}

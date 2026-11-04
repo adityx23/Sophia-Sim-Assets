@@ -1,0 +1,24 @@
+{
+  "endpoint": "tcp://192.168.123.55:5558",
+  "topics": [
+    "teleop/episode",
+    "episode/signal",
+    "teleop/episode_result"
+  ],
+  "started_unix_ns": 1793650395251685444,
+  "pid": 3475459,
+  "duration_limit_s": 18000.0,
+  "mode": "ZMQ SUB only",
+  "baseline_sha256": {
+    "robot/yor-description/sophia.json": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+    "robot/yor-description/sophia.mjcf": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+    "robot/yor-description/scene-sophia.mjcf": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+    "robot/yor-description/sophia-ik.mjcf": "85c35eb3bc0cee0c24a25972f796a33c33857eaeb76da90a03447c9447fb307f",
+    "robot/yor_mujoco.py": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+    "scripts/listen_sophia_episodes.py": "f26917c4ba2484efe132913eb996e2b77bfd6202ba52c1c90139a6fe0fb43a29"
+  },
+  "wire_format": "multipart [UTF-8 topic, JSON object]",
+  "clock_note": "Publisher timestamp is preserved. Receiver times do not establish one-way latency.",
+  "feedback_note": "Command fallback and missing sensors are not measurements.",
+  "capture_note": "PUB/SUB may drop frames. Keep the Pi episode recorder as the authoritative copy."
+}

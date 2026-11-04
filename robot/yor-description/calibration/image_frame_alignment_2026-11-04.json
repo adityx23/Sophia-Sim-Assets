@@ -1,0 +1,117 @@
+{
+  "method": "Full supplied neck CAD plus training-only effective arm/neck reference alignment; no hardware changes.",
+  "requires_spinal_assembly_sha256": "2d482ab76b757b18ced4d81cef330fedcecf80d846018017bd4bc60848d431ea",
+  "geometric_zero_hardware_deg": [
+    1.642962976676157,
+    -16.25897619417872
+  ],
+  "right_mount_rotvec_parent_deg": [
+    -4.59993491941224,
+    -1.230640208248834,
+    3.329219821333245
+  ],
+  "right_reference_q": [
+    -1.7486394054566408,
+    1.4962402088661586,
+    1.6144299695853512,
+    0.39270359357925355,
+    0.02872666061169187,
+    -0.004910940407520049,
+    -0.19611558939602097
+  ],
+  "hardware_home_deg": [
+    2.02,
+    -3.25
+  ],
+  "labels_sha256": "9016f766c8c632edccdd532061161202e31f852b23a9f8de82ffcc1a19475756",
+  "validation_scores": {
+    "episode_0": {
+      "left": {
+        "n": 6,
+        "rmse_px": 7.33826707220429
+      },
+      "right": {
+        "n": 3,
+        "rmse_px": 3.0279154188410673
+      }
+    },
+    "episode_1": {
+      "left": {
+        "n": 7,
+        "rmse_px": 11.843445410045698
+      },
+      "right": {
+        "n": 3,
+        "rmse_px": 12.728616396584407
+      }
+    },
+    "episode_17": {
+      "left": {
+        "n": 3,
+        "rmse_px": 5.5118383191881986
+      },
+      "right": {
+        "n": 2,
+        "rmse_px": 5.489621020903071
+      }
+    },
+    "episode_3": {
+      "left": {
+        "n": 5,
+        "rmse_px": 15.185556756682312
+      },
+      "right": {
+        "n": 2,
+        "rmse_px": 15.969339273110188
+      }
+    },
+    "episode_8": {
+      "left": {
+        "n": 2,
+        "rmse_px": 16.916953999542258
+      },
+      "right": {
+        "n": 2,
+        "rmse_px": 18.71337683300025
+      }
+    },
+    "train": {
+      "left": {
+        "n": 11,
+        "rmse_px": 9.864200647142974
+      },
+      "right": {
+        "n": 7,
+        "rmse_px": 4.176999568636443
+      }
+    }
+  },
+  "stereo_point_validation_scores": {
+    "episode_0": {
+      "n": 3,
+      "rmse_m": 0.00512645052875748
+    },
+    "episode_1": {
+      "n": 3,
+      "rmse_m": 0.009777182515146459
+    },
+    "episode_17": {
+      "n": 2,
+      "rmse_m": 0.005727333902617123
+    },
+    "episode_3": {
+      "n": 2,
+      "rmse_m": 0.010284298281239083
+    },
+    "episode_8": {
+      "n": 2,
+      "rmse_m": 0.011521960570607082
+    },
+    "train": {
+      "n": 7,
+      "rmse_m": 0.02124680242809054
+    }
+  },
+  "reference_ee_error_m": 4.124285169634649e-11,
+  "scope": "Development validation on five episodes, observed tilt about30..46deg; effective arm reference is not measured mechanical mounting. Broad-workspace accuracy and dynamics remain separate."
+}

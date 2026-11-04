@@ -1,0 +1,24 @@
+[PASS] pinned vendor inertias and expected total mass: {'mass_kg': 42.0053061, 'expected_mass_kg': 42.00530610000001, 'max_vendor_inertial_error': 9.71445146547012e-17}
+[PASS] measured base frame envelope and floor clearance: {'visual': {'size_xyz_m': [0.1905000000000001, 0.4318000000000002, 0.20319999960000007], 'floor_to_bottom_m': 0.06349999999999999, 'floor_to_top_m': 0.26669999960000007}, 'collision': {'size_xyz_m': [0.1905000000000001, 0.4318000000000002, 0.20319999960000007], 'floor_to_bottom_m': 0.06349999999999999, 'floor_to_top_m': 0.26669999960000007}, 'excludes_wheel_module_and_accessory_overhangs': True}
+[PASS] measured rectangular lower and upper pillar sections: {'section_xy_m': {'fixed_column': [0.05080000000000002, 0.08890000000000003], 'fixed_column_collision': [0.05080000000000002, 0.08890000000000003], 'upper_column': [0.0508, 0.07619999999999999], 'upper_column_collision': [0.0508, 0.07619999999999999]}, 'middle_section_still_estimated': True}
+[PASS] original arm kinematics relative to each flange preserved: {'position_errors_m': [0.0, 1.5266613793412012e-16]}
+[PASS] Sophia physics and companion IK mounts agree: {'max_position_error_m': 2.968157246751187e-09, 'max_rotation_matrix_error': 3.2051036911448028e-09}
+[PASS] measured arm flange spacing: {'spacing_m': 0.24130000000000001}
+[PASS] neck limits and home match recorded calibration: {'api_limits_deg': [[-125.53846181211779, 125.53846163901324], [-72.52747252399277, 72.52747244453545]], 'home_deg': [2.02, -3.25]}
+[PASS] protocol stroke retained separately from physical jaw gap: {'protocol_stroke_m': 0.07}
+[PASS] measured closed gap at collision surfaces: {'measured_gap_m': 0.0, 'mesh_gaps_m': [-1.7896178483638555e-07, -1.78961784906469e-07]}
+[PASS] measured open gap at collision surfaces: {'measured_gap_m': 0.1016, 'mesh_gaps_m': [0.10159982103592986, 0.10159982103592999]}
+[PASS] home: no initial penetration: {'contacts': 4}
+[PASS] home: rests on four wheels: {'ground_bodies': ['MK4_Colson_Hub_4_X_1_5', 'MK4_Colson_Hub_4_X_1_5_2', 'MK4_Colson_Hub_4_X_1_5_3', 'MK4_Colson_Hub_4_X_1_5_4'], 'drift_m': 0.0005319043701191987, 'warnings': [0, 0, 0, 0, 0, 0, 0]}
+[PASS] reference: no initial penetration: {'contacts': 4}
+[PASS] reference: rests on four wheels: {'ground_bodies': ['MK4_Colson_Hub_4_X_1_5', 'MK4_Colson_Hub_4_X_1_5_2', 'MK4_Colson_Hub_4_X_1_5_3', 'MK4_Colson_Hub_4_X_1_5_4'], 'drift_m': 0.0005334673161457469, 'warnings': [0, 0, 0, 0, 0, 0, 0]}
+[PASS] lowered: settled shoulder heights match tape: {'measured_height_m': 0.8128, 'settled_heights_m': [0.8123084203480752, 0.8123088462933883]}
+[PASS] raised: settled shoulder heights match tape: {'measured_height_m': 1.3716, 'settled_heights_m': [1.3695870101537246, 1.3695874362357443]}
+[PASS] estimated column stages stay overlapped over measured travel: {'min_overlap_m': 0.05060000000000009, 'physical_stage_lengths_still_unmeasured': True}
+[PASS] upper pillar stays attached to shoulder plate through full lift travel: {'max_attachment_gap_m': 1.1102230246251565e-16, 'visual_and_collision_envelopes_match': True, 'lift_positions_checked': 9}
+[PASS] lift joint travel uses tape endpoints: {'modeled_travel_m': 0.5588, 'encoder_reading_m': 0.6726}
+[PASS] lift full stroke and two-stage coupling: {'height_errors_m': [0.0004343891391785057, 0.0019557638433733704, 0.0019557414622803915], 'max_stage_coupling_error_m': 0.00016043683920474727}
+[PASS] jaws closed: {'finger_positions_m': {'left_a': 2.6556933960277105e-05, 'left_b': -1.11037878413627e-05, 'right_a': -2.090802270745366e-05, 'right_b': 5.001552421958369e-05}}
+[PASS] jaws open: {'finger_positions_m': {'left_a': 0.05081110502769848, 'left_b': 0.05077344629150672, 'right_a': 0.050749987008091274, 'right_b': 0.050820909572357895}}
+[PASS] left: hold 25 g object with both fingers: {'object_to_grasp_center_m': 0.00032150674143071743, 'contacts': ['left_gripper_finger_a', 'left_gripper_finger_b']}
+[PASS] right: hold 25 g object with both fingers: {'object_to_grasp_center_m': 0.00033008669284471503, 'contacts': ['right_gripper_finger_a', 'right_gripper_finger_b']}

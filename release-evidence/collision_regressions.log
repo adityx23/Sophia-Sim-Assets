@@ -1,0 +1,23 @@
+test_bimanual_cartesian_rejection_does_not_move_either_goal (__main__.SophiaCollisionTests.test_bimanual_cartesian_rejection_does_not_move_either_goal) ... ok
+test_clear_neck_extremes_remain_available (__main__.SophiaCollisionTests.test_clear_neck_extremes_remain_available) ... ok
+test_gripper_opening_rejected_at_constructed_rail_clearance (__main__.SophiaCollisionTests.test_gripper_opening_rejected_at_constructed_rail_clearance) ... ok
+test_guard_does_not_change_physics_margins (__main__.SophiaCollisionTests.test_guard_does_not_change_physics_margins) ... ok
+test_hanging_path_executes_at_clearance_height (__main__.SophiaCollisionTests.test_hanging_path_executes_at_clearance_height) ... ok
+test_housing_components_preserve_source_triangles_and_world_vertices (__main__.SophiaCollisionTests.test_housing_components_preserve_source_triangles_and_world_vertices) ... ok
+test_hull_bridge_removed_but_submargin_gap_still_rejected (__main__.SophiaCollisionTests.test_hull_bridge_removed_but_submargin_gap_still_rejected) ... ok
+test_joint_limits_and_nonfinite_targets_rejected (__main__.SophiaCollisionTests.test_joint_limits_and_nonfinite_targets_rejected) ... ok
+test_lift_descent_rejects_collision_between_clear_endpoints (__main__.SophiaCollisionTests.test_lift_descent_rejects_collision_between_clear_endpoints) ... ok
+test_lift_stop_cancels_blocking_request_without_restart (__main__.SophiaCollisionTests.test_lift_stop_cancels_blocking_request_without_restart) ... ok
+test_low_lift_hanging_paths_rejected_atomically (__main__.SophiaCollisionTests.test_low_lift_hanging_paths_rejected_atomically) ... ok
+test_neck_source_alignment_preserved (__main__.SophiaCollisionTests.test_neck_source_alignment_preserved) ... ok
+test_pending_arm_target_blocks_lift_descent (__main__.SophiaCollisionTests.test_pending_arm_target_blocks_lift_descent) ... ok
+test_pending_lift_descent_blocks_arm_target (__main__.SophiaCollisionTests.test_pending_lift_descent_blocks_arm_target) ... ok
+test_reference_sequence_from_lowered_lift (__main__.SophiaCollisionTests.test_reference_sequence_from_lowered_lift) ... ok
+test_reference_sequence_yields_to_a_new_arm_command (__main__.SophiaCollisionTests.test_reference_sequence_yields_to_a_new_arm_command) ... ok
+test_reviewed_neck_clearance_replaces_legacy_hull_collision (__main__.SophiaCollisionTests.test_reviewed_neck_clearance_replaces_legacy_hull_collision) ... ok
+test_runtime_guard_stops_bypassed_target_before_contact (__main__.SophiaCollisionTests.test_runtime_guard_stops_bypassed_target_before_contact) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 26.863s
+
+OK

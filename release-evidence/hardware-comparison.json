@@ -1,0 +1,168 @@
+{
+  "source_sha256": {
+    "robot/yor-description/calibration/motion_summary_2026-10-30.json": "6ba38e77f396889b1e96163aa72f9296fe86d49402647523ebed9b51b0fd493f",
+    "robot/yor-description/calibration/camera_intrinsics_2026-10-30.json": "d05b06874439686818dec0977e293862bb79e38939ec440c9ab94c2a2a3a4b47",
+    "robot/yor-description/sophia.mjcf": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+    "robot/yor-description/compare_sophia_hardware.py": "e57f06f7fd157683a64df4f452f58d2bc7e67bbce3aff9a705f823f117e07154"
+  },
+  "simulation_configuration_modified": false,
+  "hardware_calibrated": false,
+  "source_samples": 7941,
+  "source_duration_s": 159.38,
+  "lift": {
+    "simulation_command_speed_mps_up_down": [
+      0.0220080464,
+      0.0255888195
+    ],
+    "assumed_encoder_mapping": {
+      "encoder_lower_m": 0.0018,
+      "encoder_upper_m": 0.6744,
+      "physical_extension_per_encoder_m": 0.8308058281296461,
+      "basis": "Assume 672.6 mm encoder travel spans the measured 558.8 mm physical stroke; anchor upper endpoint at the 674.4 mm hard-stop reading in the supplied summary. Lower endpoint 1.8 mm is inferred, not measured."
+    },
+    "trials": [
+      {
+        "direction": "up",
+        "sim_physical_rate_mps": 0.022008042731154785,
+        "hardware_reported_encoder_rate_mps": 0.02649,
+        "assumed_physical_rate_mps": 0.022008046387154326,
+        "direct_physical_scale_comparison_valid": false
+      },
+      {
+        "direction": "down",
+        "sim_physical_rate_mps": -0.02558881489235496,
+        "hardware_reported_encoder_rate_mps": 0.0308,
+        "assumed_physical_rate_mps": 0.0255888195063931,
+        "direct_physical_scale_comparison_valid": false
+      }
+    ],
+    "physical_tape_pairs": 0,
+    "finding": "Simulation rates use the user-authorized assumed affine encoder mapping. Physical travel remains measured; the inferred mapping is not independently calibrated."
+  },
+  "neck": {
+    "simulation_rate_limit_deg_s": [
+      57.29577951308232,
+      114.59155902616465
+    ],
+    "rate_limit_axis_order": [
+      "pan",
+      "tilt"
+    ],
+    "trials": [
+      {
+        "axis": "pan",
+        "hardware_move_start": 1793380495.361,
+        "from_deg": 0.53,
+        "to_deg": -83.47,
+        "duration_s": 1.405,
+        "hardware_measured_rate_dps": -57.44,
+        "sim_reconstructed_ramp_rate_dps": -57.25800013567761,
+        "hardware_reported_tracking_lag_s": 0.14,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.1036302556239315,
+        "sim_final_error_after_half_second_deg": 0.15050246686175228
+      },
+      {
+        "axis": "pan",
+        "hardware_move_start": 1793380497.067,
+        "from_deg": -83.47,
+        "to_deg": 70.53,
+        "duration_s": 2.57,
+        "hardware_measured_rate_dps": 58.91,
+        "sim_reconstructed_ramp_rate_dps": 57.295340241770546,
+        "hardware_reported_tracking_lag_s": 0.14,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.13052055645922708,
+        "sim_final_error_after_half_second_deg": -0.1661093676247276
+      },
+      {
+        "axis": "pan",
+        "hardware_move_start": 1793380500.501,
+        "from_deg": 70.53,
+        "to_deg": -7.47,
+        "duration_s": 2.207,
+        "hardware_measured_rate_dps": -38.8,
+        "sim_reconstructed_ramp_rate_dps": -35.341073145293514,
+        "hardware_reported_tracking_lag_s": 0.12,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.07921506630632386,
+        "sim_final_error_after_half_second_deg": 0.12831341186587597
+      },
+      {
+        "axis": "tilt",
+        "hardware_move_start": 1793380479.721,
+        "from_deg": -15.99,
+        "to_deg": -69.47,
+        "duration_s": 1.107,
+        "hardware_measured_rate_dps": -42.92,
+        "sim_reconstructed_ramp_rate_dps": -48.33946284955653,
+        "hardware_reported_tracking_lag_s": 0.142,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.07576795936275929,
+        "sim_final_error_after_half_second_deg": -0.05031926442627821
+      },
+      {
+        "axis": "tilt",
+        "hardware_move_start": 1793380481.831,
+        "from_deg": -69.47,
+        "to_deg": 68.53,
+        "duration_s": 2.31,
+        "hardware_measured_rate_dps": 58.91,
+        "sim_reconstructed_ramp_rate_dps": 59.94080011503453,
+        "hardware_reported_tracking_lag_s": 0.122,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.0777237351871833,
+        "sim_final_error_after_half_second_deg": 0.06151010275846147
+      },
+      {
+        "axis": "tilt",
+        "hardware_move_start": 1793380484.462,
+        "from_deg": 68.53,
+        "to_deg": -61.47,
+        "duration_s": 2.168,
+        "hardware_measured_rate_dps": -58.92,
+        "sim_reconstructed_ramp_rate_dps": -60.15378962583526,
+        "hardware_reported_tracking_lag_s": 0.12,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.07860079075743234,
+        "sim_final_error_after_half_second_deg": -0.033061452054433005
+      },
+      {
+        "axis": "tilt",
+        "hardware_move_start": 1793380488.015,
+        "from_deg": -68.47,
+        "to_deg": 66.53,
+        "duration_s": 2.269,
+        "hardware_measured_rate_dps": 58.65,
+        "sim_reconstructed_ramp_rate_dps": 59.69735356433019,
+        "hardware_reported_tracking_lag_s": 0.12,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.07776074571297087,
+        "sim_final_error_after_half_second_deg": 0.05978757470666096
+      },
+      {
+        "axis": "tilt",
+        "hardware_move_start": 1793380490.625,
+        "from_deg": 66.53,
+        "to_deg": -16.47,
+        "duration_s": 1.385,
+        "hardware_measured_rate_dps": -57.59,
+        "sim_reconstructed_ramp_rate_dps": -60.04098883084596,
+        "hardware_reported_tracking_lag_s": 0.1,
+        "sim_mid_ramp_error_equivalent_lag_s": 0.07960256523315122,
+        "sim_final_error_after_half_second_deg": 0.09934960902020862
+      }
+    ],
+    "method": "Independent single-axis linear-ramp reconstructions, other axis at sim home; mid-ramp slope by least squares. Reported hardware lag estimator is unknown, so sim equivalent lag is diagnostic, not the same metric.",
+    "raw_trace_replay": false,
+    "finding": "Use raw commands and feedback on a shared clock for latency/response fitting. Do not infer camera mounting orientation or change joint limits from motion extrema."
+  },
+  "base": {
+    "status": "not_fit",
+    "reason": "Third-wheel feedback was reconstructed and the report flags an IK/FK mismatch; no independent ground displacement is present.",
+    "reported_reconstruction": {
+      "index": 2,
+      "position": "third drive motor (RR in MODULE_ORDER)",
+      "reason": "drive_vel read 0.0 for the whole run while the other three reached ~0.52"
+    },
+    "reported_fk_mismatch": "Base.C (forward kinematics) has rotation x-terms [+W,-W,-W,+W]; the IK commands [-W,+W,+W,-W] (ROT_DIAG_SWAP_PERM applied). For pure rotation Base.C reads wz x -0.316. enc_vel here uses the IK geometry."
+  },
+  "grippers": {
+    "physical_gap_feedback_pairs": 0,
+    "raw_closed_zero_reported": "AgileX AgxGripper zero-point calibration (CAN 0x159 set_zero) done on both units, so raw width 0 = fully closed on both; no per-side inversion (CanGripper(inverted=False))",
+    "status": "Intermediate gap mapping and grasp/slip response remain unmeasured."
+  }
+}

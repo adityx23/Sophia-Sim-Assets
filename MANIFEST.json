@@ -1,0 +1,2525 @@
+{
+  "format_version": 1,
+  "release": {
+    "version": "1.0.0",
+    "id": "sophia-sim-v1.0.0-2026-11-04",
+    "status": "finalized_simulation_baseline",
+    "scope": "Frozen local baseline for simulation training, real-to-sim measured-trajectory replay, and staged sim-to-real evaluation. Includes reviewed neck/arm frames, stereo-aligned base and upper-side wrist cameras. Hardware-calibrated dynamics and real policy transfer are not certified by simulation checks."
+  },
+  "hardware_calibrated": false,
+  "entry_model": "robot/yor-description/scene-sophia.mjcf",
+  "files": {
+    "LICENSE": {
+      "sha256": "c5614f2265aac587e11c35e1a8e4d585e6eeef24725f5ffb12de0e8e332d19b2",
+      "bytes": 1102
+    },
+    "README.md": {
+      "sha256": "1c35db2b819f37484b837871882a94aa7b0f73190ab94f8a1cd3d4ec6164d2bc",
+      "bytes": 2475
+    },
+    "docs/SOPHIA_LIVE_FOLLOW.md": {
+      "sha256": "6178b3e4af537732571974e917482690c826fe3f10c5b54ab0e106275a667618",
+      "bytes": 18574
+    },
+    "docs/SOPHIA_OFFLINE_TOOLS.md": {
+      "sha256": "1cc19a01c25a1f47cddc510b88e9c81b739c13beac511804759b6a42546b6286",
+      "bytes": 59358
+    },
+    "docs/SOPHIA_REPLAY.md": {
+      "sha256": "cd182432a663a4835cd8ed2e76857f5ea32aeb49d70738b18a3c031af2d0bf24",
+      "bytes": 11419
+    },
+    "docs/SOPHIA_SIM_ASSETS.md": {
+      "sha256": "b0e5563427d08f1a7e3e8e111b7ce852a72adeb712b54a60ba73dbc7494600f0",
+      "bytes": 54196
+    },
+    "docs/SOPHIA_TRAINING.md": {
+      "sha256": "878ad4e71c6bec1c9adb3bbe85e7d73f8379fc1968c214a8c37990ac8fd865ad",
+      "bytes": 9889
+    },
+    "release-evidence/acceptance.json": {
+      "sha256": "e5754b4592986889ea8407ec4ffae2c7166512275af06cd8a82a781113d940e9",
+      "bytes": 28903
+    },
+    "release-evidence/asset-audit.json": {
+      "sha256": "a0e3cd9807769d2a6cf4d7826d3aa80cae20688a47dc10e623282a2d827ae57e",
+      "bytes": 38698
+    },
+    "release-evidence/asset_audit.log": {
+      "sha256": "802696b216f472bb1407f9d0f4a6d8c9ec4d9b82b2d4e9716563248a7ea778fb",
+      "bytes": 1081
+    },
+    "release-evidence/asset_validation.log": {
+      "sha256": "839b99b4c592f0b7742d04c50f093d8637df3492e8ec1f0ee2e36607952af983",
+      "bytes": 4097
+    },
+    "release-evidence/calibrated_frames.log": {
+      "sha256": "fe2e4c8819120066c0341cd3aef11a50bb137e593d545b3ded941cc193653d2f",
+      "bytes": 113
+    },
+    "release-evidence/calibration-evidence/base-calibration-acceptance.json": {
+      "sha256": "ae49bf51e11e09be45a1db90cc3592d91b7d5037483d46559625de920d13e5f2",
+      "bytes": 3389
+    },
+    "release-evidence/calibration-evidence/base-calibration-completion.json": {
+      "sha256": "29dee121ab04d5dfa64eda9af0dc78be34fe0dc01bbfd237aeb6caf87b8eb233",
+      "bytes": 3397
+    },
+    "release-evidence/calibration-evidence/full-neck-cad-calibration-acceptance.json": {
+      "sha256": "c443bcd2782bac9ccfdf80109ffeb4e426d24489bbed34d9c5e9d3159120a1b8",
+      "bytes": 24222
+    },
+    "release-evidence/calibration-evidence/full-neck-cad-calibration-canonical-verification.json": {
+      "sha256": "82d9c8ed0d7d8a15ea15bac5444d6a7dff9b7a3bf4727c1d4f3073b3789887b1",
+      "bytes": 510
+    },
+    "release-evidence/calibration-evidence/wrist-camera-above-review.json": {
+      "sha256": "0d140bec49a60fac61faa6fb7c6c10bd58000974aeb715a3f4cfa06bd411474e",
+      "bytes": 2017
+    },
+    "release-evidence/calibration-evidence/wrist-camera-above-video.json": {
+      "sha256": "2ead3372996cc3be8fc8e615a7a428b93cba5734641b7d7d4bc23e09a00689f3",
+      "bytes": 656
+    },
+    "release-evidence/calibration_tools.log": {
+      "sha256": "dc22a2cd4777ece90758803bb0ac1bbdc3d5ddcd8a80ce9424f8c693372cf932",
+      "bytes": 2021
+    },
+    "release-evidence/capture_identification.log": {
+      "sha256": "23f2235d1c17a6b04c2851f838c360f864a9759827bc8d368496cb25c36b6a9a",
+      "bytes": 102
+    },
+    "release-evidence/capture_import.log": {
+      "sha256": "71f385628efaeed61b8ca36819a695a12058846f3539952fa581e781da33250f",
+      "bytes": 102
+    },
+    "release-evidence/collision-shapes/shape-review.json": {
+      "sha256": "8841e43727f1ebd37471d4a76150f044535cf5b4dc7aeaecc1eb0ef938feb314",
+      "bytes": 87138
+    },
+    "release-evidence/collision_regressions.log": {
+      "sha256": "de3bcf5fb70bfec56ca1051f9259095f6a265ea404ef742e5551396ed2b0685a",
+      "bytes": 2656
+    },
+    "release-evidence/collision_shape_review.log": {
+      "sha256": "612c3d34686bf91186434a33bbe7c6b866df37c5d4cad731843b1477f3a30ccf",
+      "bytes": 351
+    },
+    "release-evidence/controller_legacy.log": {
+      "sha256": "1bd7104f09a964f76a81f8ad480723e48860dddc708f7d283ff3b92aadc4700e",
+      "bytes": 836
+    },
+    "release-evidence/controller_sophia.log": {
+      "sha256": "fc986d55cfbf21a672c8a54314419a448b90c01fff726cd06560837aeaaaf154",
+      "bytes": 831
+    },
+    "release-evidence/episode_listener.log": {
+      "sha256": "76e2dbcb5d5223d00fe152cc638d7823da7784f23ef13462506e2405907b97cc",
+      "bytes": 206
+    },
+    "release-evidence/extended-evaluation.json": {
+      "sha256": "2a3dd2dc8db5bf18cc97ec8837f463d8dac967d81cad9b3dc6ecfca4cc2e05be",
+      "bytes": 8096
+    },
+    "release-evidence/extended_evaluation.log": {
+      "sha256": "b146467e8cb959d2fb65f835275e0fe50bdd1d84302658d0f91ab9bf95909241",
+      "bytes": 4816
+    },
+    "release-evidence/hardware-comparison.json": {
+      "sha256": "230b1c5f2a7abe0c988275dfa017e45e22c36067f8370d3c7f746abb92c1327d",
+      "bytes": 7279
+    },
+    "release-evidence/hardware_summary_comparison.log": {
+      "sha256": "080632db3caa325d13b9e8152a3155674bd2deb469f5acca3b05084604a35e66",
+      "bytes": 169
+    },
+    "release-evidence/mobile-manipulation/task-report.json": {
+      "sha256": "8741964f4e0d1a2ba944f00097c305f5a1a7773dfe8f71d3089224349e8ffd07",
+      "bytes": 12143
+    },
+    "release-evidence/mobile_manipulation.log": {
+      "sha256": "c9a77f2ab0a76a00c895c03e9610a69738d4f41ecb0d462f9a827f6a204a48da",
+      "bytes": 5476
+    },
+    "release-evidence/mount-frames/mount-review.json": {
+      "sha256": "5931a72df712947b532de0279c228f76bed69d8ce6e24070c407f1b6044efaf6",
+      "bytes": 21033
+    },
+    "release-evidence/mount_frame_review.log": {
+      "sha256": "e9ffb19be4b703d2a63dd5963206421de7016d2759f6efe5991191a4f8c08c0a",
+      "bytes": 160
+    },
+    "release-evidence/policy_contract.log": {
+      "sha256": "40ca486838d221c325895202ea121c5971fc2f6911a6dac3a4c81e3511c0952a",
+      "bytes": 106
+    },
+    "release-evidence/rebuild.log": {
+      "sha256": "166543427974d43e1c8abfa52309a579dddae102f80bbf01d1c3dc7c1872c843",
+      "bytes": 100
+    },
+    "release-evidence/release_profile_and_cameras.log": {
+      "sha256": "1d723b88cb556bd6d1d0169e53dd816d9e2d2782e46a062f868c9cdfd42c00a5",
+      "bytes": 465
+    },
+    "release-evidence/stereo_video.log": {
+      "sha256": "bab0fad9da28e0aac7b467441c533d287d7363432e0f7399115cd195bff9926b",
+      "bytes": 917
+    },
+    "release-evidence/training-task/policy-contract.json": {
+      "sha256": "0a7bcb6880ac4385710e7482a53ed1a7cffa3d63d611916817e5e7767015d285",
+      "bytes": 1442
+    },
+    "release-evidence/training-task/task-validation.json": {
+      "sha256": "247661950bbd593a6ae4c97442686194c2d3583896069759a362e46bfecbba04",
+      "bytes": 4049
+    },
+    "release-evidence/training_environment.log": {
+      "sha256": "72908678ec91eeca84b46bd5c30bec049889e21732f4ab0fb9adb33105503fde",
+      "bytes": 107
+    },
+    "release-evidence/training_task_oracle.log": {
+      "sha256": "30fdb52a9cd802d653b1dd21bac418d13ce75cc75874ef84b6147c4cd012024c",
+      "bytes": 87
+    },
+    "release-evidence/validation.json": {
+      "sha256": "1321bf09df9cad54dd4e665d7d11071637d53755bf0bdb53de08c45383b97dde",
+      "bytes": 26130
+    },
+    "requirements-sophia-live.in": {
+      "sha256": "56e5821d7a17ad6aa9fd5bf6b20a0936d115c32ed5197db5ab927e6c49434400",
+      "bytes": 88
+    },
+    "requirements-sophia-live.txt": {
+      "sha256": "09052910dcf29cc029ef0cb6b3a93fdc244139233cd7ea4b73ddbbac39bc9eb3",
+      "bytes": 178004
+    },
+    "requirements-sophia-replay.in": {
+      "sha256": "af97ee0145233bf83022fb12b26bbf57f33762d9876ea4078beefb65cc803d21",
+      "bytes": 167
+    },
+    "requirements-sophia-replay.txt": {
+      "sha256": "6d16489b2eaf81b33eba18064e163092f3e26d7d6b0dba7315daa2f2f18379a5",
+      "bytes": 100607
+    },
+    "requirements-sophia-training.in": {
+      "sha256": "36641775103214ff8140b132ba01937dbf618ba3c446849bc40772c0b93678f1",
+      "bytes": 154
+    },
+    "requirements-sophia-training.txt": {
+      "sha256": "9384b2bf3b31702a136d701b0284d8b23df6c8798bd24feec5d18980e332eba1",
+      "bytes": 70116
+    },
+    "requirements-sophia.in": {
+      "sha256": "6f79d3812361a1a0d5418fd6da08220a93c250ff39a7376b8e4a0beccf732f08",
+      "bytes": 306
+    },
+    "requirements-sophia.txt": {
+      "sha256": "87bb49d429cf44771d7cc51ad404fdfcf6dd8bb8fe8212df14cd5b5c56260e84",
+      "bytes": 68555
+    },
+    "robot/arm/can_gripper.py": {
+      "sha256": "af404d53b40d2db6329f8b1f84cdba31a5649bd33b32231c315fed72d56a0935",
+      "bytes": 6632
+    },
+    "robot/arm/ik_solver.py": {
+      "sha256": "293235b604926af816648ca59447fafc3755a059b6b0a49f35d522c86d5f376d",
+      "bytes": 8223
+    },
+    "robot/arm/mujoco/assets/gripper_base.stl": {
+      "sha256": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+      "bytes": 649484
+    },
+    "robot/arm/mujoco/assets/link7.stl": {
+      "sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+      "bytes": 104384
+    },
+    "robot/arm/mujoco/assets/link8.stl": {
+      "sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+      "bytes": 104384
+    },
+    "robot/arm/urdf/assets/gripper_base.stl": {
+      "sha256": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+      "bytes": 649484
+    },
+    "robot/arm/urdf/assets/link7.stl": {
+      "sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+      "bytes": 104384
+    },
+    "robot/arm/urdf/assets/link8.stl": {
+      "sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+      "bytes": 104384
+    },
+    "robot/neck/neck_calibration.json": {
+      "sha256": "121bb45a4ce9547b11c8d7b6fe44a598daaee36b712f2c9cb8c30c4a99e2609c",
+      "bytes": 372
+    },
+    "robot/sim_camera.py": {
+      "sha256": "48098287753c914002683eb28e33f88a5cb8c88e8b219a4592aba938c5c7b4a3",
+      "bytes": 8611
+    },
+    "robot/sim_collision.py": {
+      "sha256": "648406bdff48aa7f711e6376488b12e5cfd7999bc65eea2ad7bc51a95f58816a",
+      "bytes": 8023
+    },
+    "robot/sophia_calibration.py": {
+      "sha256": "fef733bd6aa3b0174e3a4a3edef0f8becc986093a30e698e4a9c05a698bcf1db",
+      "bytes": 26761
+    },
+    "robot/sophia_env.py": {
+      "sha256": "1ef6b616c80438c5fc8ba9993e4badd88e337d22081db71e61478d1f6ec3ff6d",
+      "bytes": 19492
+    },
+    "robot/sophia_live.py": {
+      "sha256": "8216324bfc884308ed2f26a3cad5b166ac00e8665983523b5ca91af171501d7a",
+      "bytes": 30922
+    },
+    "robot/sophia_live_agent.py": {
+      "sha256": "193300ec5275689d8a5f1f08661a0549920c8509a1ea2075c416c168f81a19b6",
+      "bytes": 19062
+    },
+    "robot/sophia_live_common.py": {
+      "sha256": "1b2eb0fa9764a0aeaf304e196c8736aad9951850fa1efc2211f37f7cb40b78b0",
+      "bytes": 5722
+    },
+    "robot/sophia_live_video.py": {
+      "sha256": "42e2076cb5c8652c6ca139e2df61e2a50e2ce0665e21f24c7cde1b905d9e1946",
+      "bytes": 4058
+    },
+    "robot/sophia_policy.py": {
+      "sha256": "129b8c4112f24ffad45dcea33a9cb2c9df4b7b78c37cf2d62163790a1df224cf",
+      "bytes": 8514
+    },
+    "robot/sophia_profile.py": {
+      "sha256": "a4bf17756142b10b617975c4d11c46c07c8a4c845d0fb06e13e0503ff50827a3",
+      "bytes": 1648
+    },
+    "robot/sophia_recording_alignment.py": {
+      "sha256": "a17dabce6bab65ba5d992cddde9c39df702d8ddc21d1f0fde740914eb9f722a7",
+      "bytes": 1646
+    },
+    "robot/sophia_replay.py": {
+      "sha256": "44dbdd406e45e1fa53d690f40ce0274ada78e9e06c63f552e7979f1e4433cfab",
+      "bytes": 17142
+    },
+    "robot/sophia_replay_compare.py": {
+      "sha256": "e85279a559bdff233459df1054a96cdf1258695f3a26c58252b058c0f731cf18",
+      "bytes": 18486
+    },
+    "robot/sophia_replay_io.py": {
+      "sha256": "e28f4d60fcbb54c82cc4443d4016eab4238ba6b735ea784d883317062b80c497",
+      "bytes": 8152
+    },
+    "robot/teleop/joystick.py": {
+      "sha256": "fac0c2c672483b62499434453b577f3f067c32f08aa81a9ddc8051a0bceaf018",
+      "bytes": 9211
+    },
+    "robot/test_sophia_base_alignment.py": {
+      "sha256": "a29e8afb7716aaf3b9a7320e82d882e307fac05a25255064e730a5598e1fd8ab",
+      "bytes": 5098
+    },
+    "robot/test_sophia_calibration.py": {
+      "sha256": "c7c865c4233f9f2aa18ad11e3f344dac58f067542c2285664d153a8e89495839",
+      "bytes": 11446
+    },
+    "robot/test_sophia_capture_import.py": {
+      "sha256": "369b56adb43b621347514fd75cc3a4944333939f5793a35d302259fe844e4905",
+      "bytes": 6153
+    },
+    "robot/test_sophia_collision.py": {
+      "sha256": "e7b52368545bc1f8e099e4db058c474fc9dd0305fc88ee3bd8d934bcb9bfc85d",
+      "bytes": 15251
+    },
+    "robot/test_sophia_env.py": {
+      "sha256": "7751fb713acdada313537eb822e8f3df252afc7742c102d3a91bdd728888a339",
+      "bytes": 6239
+    },
+    "robot/test_sophia_episode_listener.py": {
+      "sha256": "7d3b8f6dc896366670d5fe1b304e9cf3ce29511555aab160764a7a6513f3bba5",
+      "bytes": 7414
+    },
+    "robot/test_sophia_full_frames.py": {
+      "sha256": "1fc4c077cc96906ad9520cb1d64117d9fc1c939e2cd2081bf23ba614cc5a7d4b",
+      "bytes": 5424
+    },
+    "robot/test_sophia_head_alignment.py": {
+      "sha256": "a3a582079ffd51712e576df47983cfbaf8bb775f67a50dc4e5dee348652ced7e",
+      "bytes": 5013
+    },
+    "robot/test_sophia_identification.py": {
+      "sha256": "672da22cab0efd74e88ee1985d62b28c3096efd8ab12bbd577dcb8fbe5c6f130",
+      "bytes": 5398
+    },
+    "robot/test_sophia_live.py": {
+      "sha256": "bc2e841be3c045284bd49841789e81d34e62bc4a57caaef34ac83c16e1237ee1",
+      "bytes": 44272
+    },
+    "robot/test_sophia_neck_reference.py": {
+      "sha256": "ff760559ac1d1fd762f370a088afce53bfb24393ee26e0d0d01fe0ae2c6e636e",
+      "bytes": 4020
+    },
+    "robot/test_sophia_policy.py": {
+      "sha256": "7aa30bda23b67a81eff73e337ee3ea31fc8388363d17ac4f27c750bded4928c9",
+      "bytes": 5850
+    },
+    "robot/test_sophia_release.py": {
+      "sha256": "78d500d76e747ed7308564ef50410ebe782969f6f77c2a3ccc7eb058cdb257eb",
+      "bytes": 7158
+    },
+    "robot/test_sophia_replay.py": {
+      "sha256": "06c2cbd587ae6e2340696e16705bc59518f8c6aa59e310d65c312d2b98b60b59",
+      "bytes": 14129
+    },
+    "robot/test_sophia_video.py": {
+      "sha256": "b9661791a6ceead5a74e71c74a6763c5367f110507e1ae0407f9b59854e1b2b1",
+      "bytes": 7162
+    },
+    "robot/test_yor_mujoco.py": {
+      "sha256": "12508ffa74f30832a04ceb05ef3cca0f89a55070628ae4d4eb7cc998c9a8ae41",
+      "bytes": 5187
+    },
+    "robot/yor-description/arm-upright.mjcf": {
+      "sha256": "484dfec466d4ad1dc717c98939f6cc7546f4fe1c579bc2becb29ab836864c2f7",
+      "bytes": 29714
+    },
+    "robot/yor-description/assets_nero/Lift_Middle.stl": {
+      "sha256": "73e3958957ad462ec5de2ea3a665bac0e262b6524a5bf192d15a7e158c2738bb",
+      "bytes": 1684
+    },
+    "robot/yor-description/assets_nero/Lift_Top.stl": {
+      "sha256": "dbb7bf0e6f59b82fd77ae815c883dac00329f2772eccac3806b3d04ce1cb20a3",
+      "bytes": 1178484
+    },
+    "robot/yor-description/assets_nero/Link1.STL": {
+      "sha256": "0e38bf33ce41f04d7e70e471768c00fa144ba4016a878b9a6d8303c319736e09",
+      "bytes": 1130084
+    },
+    "robot/yor-description/assets_nero/Link2.STL": {
+      "sha256": "fc9eb85db9fbd351c9f6e119f5fed33c6f0dd3bc3b11698a0f96aaeb2d36c721",
+      "bytes": 1802534
+    },
+    "robot/yor-description/assets_nero/Link3.STL": {
+      "sha256": "44c70f731ad5067d608ebebc9e59f3c231988f992dfac6cb01ee7a6bb4b053f1",
+      "bytes": 1947484
+    },
+    "robot/yor-description/assets_nero/Link4.STL": {
+      "sha256": "47242e9b5d8b06c912261756f24dddb1e7f54ac6e718232a25889115298b966d",
+      "bytes": 1814784
+    },
+    "robot/yor-description/assets_nero/Link5.STL": {
+      "sha256": "dc497f5a9bab2d0d314250134d4ec86617abea7205d122db41b765acdb86ae7e",
+      "bytes": 1810084
+    },
+    "robot/yor-description/assets_nero/Link6.STL": {
+      "sha256": "66417d30596e33c890f4f141781023bd3ea15709a502e7f59b30f6676f556022",
+      "bytes": 758284
+    },
+    "robot/yor-description/assets_nero/Link7.STL": {
+      "sha256": "70a2f415358f9e46088673c92bfe78ca5b1072dd73b7ea24464ba3ebb4c3e647",
+      "bytes": 149384
+    },
+    "robot/yor-description/assets_nero/MK4_Colson_Hub_4_X_1_5.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/assets_nero/MK4_Colson_Hub_4_X_1_5_2.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/assets_nero/MK4_Colson_Hub_4_X_1_5_3.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/assets_nero/MK4_Colson_Hub_4_X_1_5_4.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/assets_nero/Part_2.stl": {
+      "sha256": "fdb18badfdbcd74d7e232f7a6db9cf5ebebff3dbe9cbec91e30731ffa8f794c6",
+      "bytes": 65784
+    },
+    "robot/yor-description/assets_nero/Part_2_2.stl": {
+      "sha256": "43c2be7cfeceabdc0fce2c7dae0e9f78a9641eae74cbe63c1bc05cb336743ed1",
+      "bytes": 65784
+    },
+    "robot/yor-description/assets_nero/Part_2_3.stl": {
+      "sha256": "fdb18badfdbcd74d7e232f7a6db9cf5ebebff3dbe9cbec91e30731ffa8f794c6",
+      "bytes": 65784
+    },
+    "robot/yor-description/assets_nero/Part_2_4.stl": {
+      "sha256": "fdb18badfdbcd74d7e232f7a6db9cf5ebebff3dbe9cbec91e30731ffa8f794c6",
+      "bytes": 65784
+    },
+    "robot/yor-description/assets_nero/base_link.STL": {
+      "sha256": "540462fb56e52091daa3cd1ad3acc3c19a43f120b2f11bae5a69b32b08c738b6",
+      "bytes": 807284
+    },
+    "robot/yor-description/assets_nero/base_profile_short.stl": {
+      "sha256": "0b7f6c6817992487ba47598ffb8dd5f29a19e7fd35937d111cc16e62644ca40b",
+      "bytes": 1972884
+    },
+    "robot/yor-description/assets_nero/coney_base.stl": {
+      "sha256": "f3929b1dd85e156d5d6ae3117fbaa374fd1d4b10f88daf934cccaae2e18f6929",
+      "bytes": 93484
+    },
+    "robot/yor-description/assets_nero/coney_head.stl": {
+      "sha256": "d00b81f53bc8ee99145819fc9f6df7f8fa7e39721a170a69a5b115c2a302b3a2",
+      "bytes": 285384
+    },
+    "robot/yor-description/assets_nero/dae/base_link.dae": {
+      "sha256": "a369d27a339834e4f59cd2b16065d62a37cb8e1bdd503e150787149e998f03f6",
+      "bytes": 1101428
+    },
+    "robot/yor-description/assets_nero/dae/link1.dae": {
+      "sha256": "8aafc23509ce76d9c6fdcf8ef49931a8def1b5bfd1f974cbe677031334da9404",
+      "bytes": 1611774
+    },
+    "robot/yor-description/assets_nero/dae/link2.dae": {
+      "sha256": "00b3eb4a91c8efd95f3c161ee5318b66cb3e2fa55dac5c139077cdd67463c2ac",
+      "bytes": 24698201
+    },
+    "robot/yor-description/assets_nero/dae/link3.dae": {
+      "sha256": "cd3f0f08ce02aa36bddc0c89efa7d040b927e589e1816da1fd14417511d2b7bc",
+      "bytes": 2916994
+    },
+    "robot/yor-description/assets_nero/dae/link4.dae": {
+      "sha256": "ea607e157c173ca81d0982a24f2fdd7e98c695d94e0055b58028ce36b09b8708",
+      "bytes": 8077485
+    },
+    "robot/yor-description/assets_nero/dae/link5.dae": {
+      "sha256": "7733ac4afd30e38360e7a7e833b0ed6192d6fd20c99062b636a236f06b8bfb97",
+      "bytes": 2775278
+    },
+    "robot/yor-description/assets_nero/dae/link6.dae": {
+      "sha256": "260e1808d888da15e7e4e417a3ab0340f2223a5ed4b37e330278862096ed6f85",
+      "bytes": 1202101
+    },
+    "robot/yor-description/assets_nero/dae/link7.dae": {
+      "sha256": "8c2498c59bcf574386cbd7e01fd5d81ff2483e26ae2f0e919deec62a04bce77d",
+      "bytes": 230712
+    },
+    "robot/yor-description/assets_nero/gripper.STL": {
+      "sha256": "0e3ee1b32fbf5e6be25abb3578a2ed105235b0f5df1ddd10c474636b6605a2b0",
+      "bytes": 665184
+    },
+    "robot/yor-description/assets_nero/gripper_base.stl": {
+      "sha256": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+      "bytes": 649484
+    },
+    "robot/yor-description/assets_nero/gripper_body.stl": {
+      "sha256": "3b6682ff65cf448441c542fa922af5990bd14f7cbfd7e942971d280eed81c28c",
+      "bytes": 1867184
+    },
+    "robot/yor-description/assets_nero/gripper_link7.stl": {
+      "sha256": "475a7d8db056524d7659fadf5a2c307d62791047b6214d733dfc7846ed1c613d",
+      "bytes": 104384
+    },
+    "robot/yor-description/assets_nero/head/topbase1_cut.stl": {
+      "sha256": "67f45578bbc99716448e9dab8c5da0ea31c5d796a5b982007ad7041604b67faa",
+      "bytes": 198884
+    },
+    "robot/yor-description/assets_nero/head/topbase2.stl": {
+      "sha256": "75dc4dfa5bd5a6c6a298a65e30ea0e47266396efdd6988b69038f0776d73412f",
+      "bytes": 83284
+    },
+    "robot/yor-description/assets_nero/head/tophead1.stl": {
+      "sha256": "58bc96d669bad340b4adaf96313cf09065fb23aa66ef93b681d69e9512e060be",
+      "bytes": 115384
+    },
+    "robot/yor-description/assets_nero/head/tophead4.stl": {
+      "sha256": "4542382140c584faf142a57e6b92d60fd77bacf21c64f1a82cdaef6e0aca5be8",
+      "bytes": 119284
+    },
+    "robot/yor-description/assets_nero/head/tophead5.stl": {
+      "sha256": "78692afc9b5378ff26479c16a160869aeb67ba66f79767f4b29bfa0dd3021f18",
+      "bytes": 70084
+    },
+    "robot/yor-description/assets_nero/iphone.stl": {
+      "sha256": "6d7f9f1df55227fb047aee10bd16d5fc3c03431543262a613516c539d699a59f",
+      "bytes": 363384
+    },
+    "robot/yor-description/assets_nero/left_gripper/DC15_A01_CASE_B_DUMMY.stl": {
+      "sha256": "f2b8e152490bcee79edb2b5a1f4d2289822f0f288b38a61868146f22950337ca",
+      "bytes": 213384
+    },
+    "robot/yor-description/assets_nero/left_gripper/DC15_A01_CASE_F_DUMMY.stl": {
+      "sha256": "8f2dbedc4f5c5ff7785e074a209a32ba44c9d54afa7ec0e4af3d8026bc2b3441",
+      "bytes": 223184
+    },
+    "robot/yor-description/assets_nero/left_gripper/DC15_A01_CASE_M_DUMMY.stl": {
+      "sha256": "41a32a87c851a88deb9c1d0b1b5ea1b718ac111e3a1187649c1530201f4bc98a",
+      "bytes": 137384
+    },
+    "robot/yor-description/assets_nero/left_gripper/DC15_A01_HORN_DUMMY.stl": {
+      "sha256": "037fb17587a7ec14fbbf156d2d98ceb1e774398ffb7d79d73ad0a7cdf7b839c0",
+      "bytes": 317884
+    },
+    "robot/yor-description/assets_nero/left_gripper/DC15_A01_HORN_IDLE2_DUMMY.stl": {
+      "sha256": "7662d55d2217be4e5f0ede8c3e9ac7660d0704b4e6cd70d796a526a3ac51a1ba",
+      "bytes": 218284
+    },
+    "robot/yor-description/assets_nero/left_gripper/DC15_A01_IDLE_CAP_DUMMY.stl": {
+      "sha256": "61ee0385be5de69ff22c92b26b98584f2be97fa141a5a7d1d683d33136aeab3e",
+      "bytes": 151684
+    },
+    "robot/yor-description/assets_nero/left_gripper/DC15_A01_LED_CAP2_DUMMY.stl": {
+      "sha256": "e7edc59228ab67f1ba17517d0944a6e93cbc7b3cbc95cc106900614f467d1475",
+      "bytes": 1684
+    },
+    "robot/yor-description/assets_nero/left_gripper/L_Btm_First_motor_bracket.stl": {
+      "sha256": "50320f41d4c214408a2f4917826768e34eafdeac268cbc066a5a816d6dc22270",
+      "bytes": 131684
+    },
+    "robot/yor-description/assets_nero/left_gripper/L_Camera_Mount.stl": {
+      "sha256": "26e3dea2249a19c9f4b4a97baaed5a4cfac05bf752088b255b7e546b4cbe2f6e",
+      "bytes": 382684
+    },
+    "robot/yor-description/assets_nero/left_gripper/L_First_Joint_Btm.stl": {
+      "sha256": "4190c0393450c5b9f75dc4b633d684af2db3d50ec8c0eddc9d6526a5b8d8ef69",
+      "bytes": 332384
+    },
+    "robot/yor-description/assets_nero/left_gripper/L_First_Joint_Top.stl": {
+      "sha256": "b2b6b2a55d9348c74c4797f07d985ab165bd1e49ee1c8c16e91d1cf5cf36e5a1",
+      "bytes": 202084
+    },
+    "robot/yor-description/assets_nero/left_gripper/L_Gripper.stl": {
+      "sha256": "094e84b5dcad56e9af63b35710dd3e3bea3695ea803a3c30609f317eeb371100",
+      "bytes": 373284
+    },
+    "robot/yor-description/assets_nero/left_gripper/L_Second_Joint.stl": {
+      "sha256": "71482703e1bee0325faa4ef75105d680adfaf6ac29d2e536627b2c773c473eaf",
+      "bytes": 289384
+    },
+    "robot/yor-description/assets_nero/left_gripper/L_Thumb___FTS_Adapter.stl": {
+      "sha256": "4f0c58bbdc108aad7a4d0ff10e2d7f39221e78c5b3c5fb8991024fb8a2d81694",
+      "bytes": 1286184
+    },
+    "robot/yor-description/assets_nero/left_gripper/Magnet_holder.stl": {
+      "sha256": "2e66a43cad3fcfaa9e17bd745ea6bacc296afdcd2ac10f7d1fdc7983bf77461e",
+      "bytes": 216384
+    },
+    "robot/yor-description/assets_nero/left_gripper/Part_1.stl": {
+      "sha256": "5fa1baf9eb072573fd77650739ce95a6b737117cf7aa0e9028a106c36de7629f",
+      "bytes": 179384
+    },
+    "robot/yor-description/assets_nero/left_gripper/Part_1_1.stl": {
+      "sha256": "5065712a5fecd72dae3131e7d02c9c02c19ca4ee8bb22020714f7651c4e50995",
+      "bytes": 416584
+    },
+    "robot/yor-description/assets_nero/left_gripper/Part_1_2.stl": {
+      "sha256": "67c2737511d1ddd5021eafb0be53b3c79b4c7ad4b25c2e033737004528bc053c",
+      "bytes": 241284
+    },
+    "robot/yor-description/assets_nero/left_gripper/Part_2.stl": {
+      "sha256": "54499dbcd6728a6f82898fd73dc2bc50604be76e55a0a1beb3c1d6419531047a",
+      "bytes": 1026984
+    },
+    "robot/yor-description/assets_nero/left_gripper/Part_23.stl": {
+      "sha256": "6d203c4e99f9ae93154061941ae2006e9b687c945804e61cd6aaf0e75790914d",
+      "bytes": 350284
+    },
+    "robot/yor-description/assets_nero/link8.stl": {
+      "sha256": "3f88d534a85e28a33ef7d2061adacbd1d25214aa9325f9e464aad0f9e4b74606",
+      "bytes": 104384
+    },
+    "robot/yor-description/assets_nero/right_gripper/DC15_A01_CASE_B_DUMMY.stl": {
+      "sha256": "f2b8e152490bcee79edb2b5a1f4d2289822f0f288b38a61868146f22950337ca",
+      "bytes": 213384
+    },
+    "robot/yor-description/assets_nero/right_gripper/DC15_A01_CASE_F_DUMMY.stl": {
+      "sha256": "8f2dbedc4f5c5ff7785e074a209a32ba44c9d54afa7ec0e4af3d8026bc2b3441",
+      "bytes": 223184
+    },
+    "robot/yor-description/assets_nero/right_gripper/DC15_A01_CASE_M_DUMMY.stl": {
+      "sha256": "41a32a87c851a88deb9c1d0b1b5ea1b718ac111e3a1187649c1530201f4bc98a",
+      "bytes": 137384
+    },
+    "robot/yor-description/assets_nero/right_gripper/DC15_A01_HORN_DUMMY.stl": {
+      "sha256": "037fb17587a7ec14fbbf156d2d98ceb1e774398ffb7d79d73ad0a7cdf7b839c0",
+      "bytes": 317884
+    },
+    "robot/yor-description/assets_nero/right_gripper/DC15_A01_HORN_IDLE2_DUMMY.stl": {
+      "sha256": "7662d55d2217be4e5f0ede8c3e9ac7660d0704b4e6cd70d796a526a3ac51a1ba",
+      "bytes": 218284
+    },
+    "robot/yor-description/assets_nero/right_gripper/DC15_A01_IDLE_CAP_DUMMY.stl": {
+      "sha256": "61ee0385be5de69ff22c92b26b98584f2be97fa141a5a7d1d683d33136aeab3e",
+      "bytes": 151684
+    },
+    "robot/yor-description/assets_nero/right_gripper/DC15_A01_LED_CAP2_DUMMY.stl": {
+      "sha256": "e7edc59228ab67f1ba17517d0944a6e93cbc7b3cbc95cc106900614f467d1475",
+      "bytes": 1684
+    },
+    "robot/yor-description/assets_nero/right_gripper/Magnet_holder.stl": {
+      "sha256": "2e66a43cad3fcfaa9e17bd745ea6bacc296afdcd2ac10f7d1fdc7983bf77461e",
+      "bytes": 216384
+    },
+    "robot/yor-description/assets_nero/right_gripper/Part_1.stl": {
+      "sha256": "67c2737511d1ddd5021eafb0be53b3c79b4c7ad4b25c2e033737004528bc053c",
+      "bytes": 241284
+    },
+    "robot/yor-description/assets_nero/right_gripper/Part_12.stl": {
+      "sha256": "66d42f888e15cde4fd8a998045de728a19329c31df5359db952a52283d7b53d9",
+      "bytes": 350384
+    },
+    "robot/yor-description/assets_nero/right_gripper/Part_1_1.stl": {
+      "sha256": "5fa1baf9eb072573fd77650739ce95a6b737117cf7aa0e9028a106c36de7629f",
+      "bytes": 179384
+    },
+    "robot/yor-description/assets_nero/right_gripper/Part_1_2.stl": {
+      "sha256": "5065712a5fecd72dae3131e7d02c9c02c19ca4ee8bb22020714f7651c4e50995",
+      "bytes": 416584
+    },
+    "robot/yor-description/assets_nero/right_gripper/Part_2.stl": {
+      "sha256": "54499dbcd6728a6f82898fd73dc2bc50604be76e55a0a1beb3c1d6419531047a",
+      "bytes": 1026984
+    },
+    "robot/yor-description/assets_nero/right_gripper/R_Bottom_First_Joint_Motor_Mount.stl": {
+      "sha256": "e27ca4fa9830a9eff8b9c9dd2735127876f6467f0974b2fa2749ecff37073cff",
+      "bytes": 130184
+    },
+    "robot/yor-description/assets_nero/right_gripper/R_Camera_Mount.stl": {
+      "sha256": "71e51d1941d8459701243cd9358c3e5f35097d3e6c4920b3f159031a1d24fd54",
+      "bytes": 382684
+    },
+    "robot/yor-description/assets_nero/right_gripper/R_First_Joint_Btm.stl": {
+      "sha256": "e86e96a082584654434f25cf9660f32f9864e1099a4d906b90492a56406ac7ac",
+      "bytes": 333784
+    },
+    "robot/yor-description/assets_nero/right_gripper/R_First_Joint_Top.stl": {
+      "sha256": "353d82452579eebede16579cbdc81f635c28e2271a2db15edc6769d959ef67b3",
+      "bytes": 201784
+    },
+    "robot/yor-description/assets_nero/right_gripper/R_Second_Joint.stl": {
+      "sha256": "431da816e858acaf5e248245f9475b5fce5d4c12edda8f15ff5f4111e8c872de",
+      "bytes": 289484
+    },
+    "robot/yor-description/assets_nero/right_gripper/R_Soft_Gripper.stl": {
+      "sha256": "a234a9fd8cb62006306ebbd2f04f380888c3bdacd8d660fcfa305052c81bcc6a",
+      "bytes": 373784
+    },
+    "robot/yor-description/assets_nero/right_gripper/R_Wrench_Sensor_Adapter_Plate.stl": {
+      "sha256": "404b2a0c265249586f6f66729562e684b39d10d47a2f5d7080ffe8666e945e66",
+      "bytes": 1284984
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_base_link_0.stl": {
+      "sha256": "4ccad84075732c0db41a33d3aa05ca3b0bbf47fec7ebc1625e5403915cb5820c",
+      "bytes": 807284
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link1_0.stl": {
+      "sha256": "2827eb3da30a467ac36019a34bb38ed5f3e030490bd10f93005511cdda2f8a1e",
+      "bytes": 1130084
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link2_0.stl": {
+      "sha256": "87462e076e759070e591a02244a35f569b329d792571932617f57f64bd01fe80",
+      "bytes": 138134
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link2_1.stl": {
+      "sha256": "09445e2ec81703672ec041f40ce0c5033f187baf4eb57f60a082a483afd1e64d",
+      "bytes": 1664484
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link2_2.stl": {
+      "sha256": "b6ef2e7c6040fbad6f337d117951d93addada3d9b5e3eef5945a2919d58e19d0",
+      "bytes": 135284
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link2_3.stl": {
+      "sha256": "971979b27bffeac83cdc8a186491a6a17296d3fc83588143651634e6a99518cd",
+      "bytes": 2230284
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link3_0.stl": {
+      "sha256": "136b2f295fab5ae85362f950b3deab3b3b4eeb0cc7823b1f12c1c46376e58cb5",
+      "bytes": 1947484
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_0.stl": {
+      "sha256": "2cec85b9b9c962879739afe42d5e10f68485a59293195b6a69d5029d3d23f783",
+      "bytes": 1820984
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_1.stl": {
+      "sha256": "088baf75b0911528d03c967a3e6f8198c86184d9a61eb69cca80a92b495d80f2",
+      "bytes": 9384
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_10.stl": {
+      "sha256": "97631bade6b62257fafcecca49a7a16f7508f122b1606f3ce51c1a7885afd65f",
+      "bytes": 5984
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_11.stl": {
+      "sha256": "d095881fe04ea2eef4eb84444be20bdd752cc6ad30aa4bbdd89ba111333dc5fa",
+      "bytes": 3184
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_2.stl": {
+      "sha256": "e1a118f190c15d3b74a172471df969029d3c28a446049e8789555b228723ab97",
+      "bytes": 38484
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_3.stl": {
+      "sha256": "1d4c3b844c47e355f0aefcfb8c6c23f1312ce6edacb4431e1f8d881f8aacc74d",
+      "bytes": 56984
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_4.stl": {
+      "sha256": "87e01c096b77ed3dd9f204a1d452d98bae8a2fd5b24e46f2c2d28f0587f417d5",
+      "bytes": 5984
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_5.stl": {
+      "sha256": "4ec6cc08530c7af407b261bf0155989b29271039f8121f235405a3f7863a9498",
+      "bytes": 3184
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_6.stl": {
+      "sha256": "ad37e790ba200ac8cf7933529d9c8afbbfc886933adb717bf5664d2750a11bb1",
+      "bytes": 6284
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_7.stl": {
+      "sha256": "7af62bc5a3385b716dcd6af7ac60c3e75f4fc90f9661b3b79760311ffc17d1f5",
+      "bytes": 9384
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_8.stl": {
+      "sha256": "e7c4582808c53749109840de1528eb8f49faab76497551a4393a072782732c9f",
+      "bytes": 38484
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link4_9.stl": {
+      "sha256": "7c0f90b2568a62bcaea6184f4536ba0a67e61796d1356487b798f742c651d088",
+      "bytes": 56984
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link5_0.stl": {
+      "sha256": "6e838d13fde7ed36906e1371fc8161e93ade5006e9d96f4585cdf6dc88cc9cb7",
+      "bytes": 74184
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link5_1.stl": {
+      "sha256": "37566715367792e3a452724fd5626e29c235ed73866f7dcf2789d1a9068343b2",
+      "bytes": 1598184
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link5_2.stl": {
+      "sha256": "66198e7de86b9a8eba6718343dde1d0a843851a99c81799235e4b5a083ce6b79",
+      "bytes": 137884
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link6_0.stl": {
+      "sha256": "9cf2784ca68b65bbf78a7caddaad6e70ba50a9344bb658144023ff37040d63ad",
+      "bytes": 758284
+    },
+    "robot/yor-description/assets_nero/sophia/sophia_link7_0.stl": {
+      "sha256": "8287c0baff89e20252d6b01dbc3ca79cdd3df93a360e7b651517a104e711f530",
+      "bytes": 149384
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_fixed_adapter.stl": {
+      "sha256": "af7bb91466bb8a0f224ea1b91c15a8b3ebd4a34df6f7f446b15e48a4c28db5df",
+      "bytes": 152984
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_neck_lattice.stl": {
+      "sha256": "92a7f1fbdec57b1876aa9514cd71c556e1eba35c495c4a570d935f5706a3b238",
+      "bytes": 649234
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_pan_bracket.stl": {
+      "sha256": "d88dad274f91a6b04ed3c62885a87e16badc13ced9d0072995e29c51aa89c157",
+      "bytes": 531484
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_pan_servo.stl": {
+      "sha256": "27da39dd12ba6b22ba451eda6938c1adc3cc6ada829f8b03584d3387418165e3",
+      "bytes": 539234
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_pan_servo_support.stl": {
+      "sha256": "bd2d5ce5c6047f3edd886db62afbdf270a4e9e4af42e8557170d2e387d874b0e",
+      "bytes": 446584
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_tilt_bearing.stl": {
+      "sha256": "3a4598d5abec5b4730482542295e139a6ee8b871209257f940bbb41cebaf5e1d",
+      "bytes": 91334
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_tilt_bracket.stl": {
+      "sha256": "52ca236a9a677eccb23a2a573a91a6cf12c464d8b0c139ec345846e5c546815d",
+      "bytes": 152684
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_tilt_servo.stl": {
+      "sha256": "7c29b291e0ec3cc2cbdd7e129ea467e8e6d373e1b497ba99b82620e970721c8a",
+      "bytes": 346934
+    },
+    "robot/yor-description/assets_nero/sophia/spinal_zed_camera.stl": {
+      "sha256": "74ccc3949ef19c267f175c9f3974fd5b4b9bb7d4ba4d8d06eb7d7655f3866658",
+      "bytes": 3702584
+    },
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_0.stl": {
+      "sha256": "48b445a81115cc92cf8498a02378c82913a37e50016f181e2d519c70ffe4633c",
+      "bytes": 378384
+    },
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_1.stl": {
+      "sha256": "ddfc34bf357e351e42245549e080ce6bca878f0fa1e5f501386a19cd97c59427",
+      "bytes": 77284
+    },
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_2.stl": {
+      "sha256": "da24cdc70f2f4fa210ac4d302604cdff61c87e590f2d2fd20c8baebccfd1bafa",
+      "bytes": 96584
+    },
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_3.stl": {
+      "sha256": "1ee65dfc6597888f3a635f82e595db647f740a37c11907f7b81c1ec582f4d2b6",
+      "bytes": 26684
+    },
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_4.stl": {
+      "sha256": "325c7b5d1c191ec7236be32148938696f233a560a39a9dd75784f27e7c530210",
+      "bytes": 70884
+    },
+    "robot/yor-description/assets_nero/stand_v1.dae": {
+      "sha256": "7a13dbc922bfa489d3f8c505e27cabb2266b172739b10a5daf430f72c44642b6",
+      "bytes": 1016509
+    },
+    "robot/yor-description/assets_nero/stand_v2.STL": {
+      "sha256": "ddef9ff5daab9f549c1901daefd0e601abb731b4eb49d9c9fb10e2a78d0af4c3",
+      "bytes": 315384
+    },
+    "robot/yor-description/assets_nero/stand_v2.dae": {
+      "sha256": "b0d3cb33c8497460be6379ff470643861015d80576d28ff10f5a3268845ad044",
+      "bytes": 448314
+    },
+    "robot/yor-description/assets_nero/torso_link.stl": {
+      "sha256": "61e95ff10e6debfa3519852fbb24b4fd2cedde9ed63a413a20acaff802288add",
+      "bytes": 885084
+    },
+    "robot/yor-description/audit_sophia.py": {
+      "sha256": "2eb356b189b33d3901242627d252616ab52436e73f13c1709ebb12665b5a9aa7",
+      "bytes": 13875
+    },
+    "robot/yor-description/build_sophia.py": {
+      "sha256": "af1fdabe99ed12b9617a22d68074cb80a9976318fe5b4af491319d03a0d6957c",
+      "bytes": 35125
+    },
+    "robot/yor-description/calibration/base_alignment_2026-11-04.json": {
+      "sha256": "a8961c0c4b742f39f2adceb8f58065e403385bc4f0f9da019b79a9d180d499e5",
+      "bytes": 8499
+    },
+    "robot/yor-description/calibration/camera_intrinsics_2026-10-30.json": {
+      "sha256": "d05b06874439686818dec0977e293862bb79e38939ec440c9ab94c2a2a3a4b47",
+      "bytes": 4920
+    },
+    "robot/yor-description/calibration/collision_shape_review_2026-10-31.json": {
+      "sha256": "f3222de6eca8a2e79cdd3e2d949bb4b4c1e68fb1859c746d9af9a5714623f7ab",
+      "bytes": 8062
+    },
+    "robot/yor-description/calibration/head_alignment_2026-11-03.json": {
+      "sha256": "6f6ac588e81fa3d539cf089fc7500d4c72ff4557794067b424303aea0ba9a05b",
+      "bytes": 10290
+    },
+    "robot/yor-description/calibration/head_camera_labels_2026-11-04.json": {
+      "sha256": "9016f766c8c632edccdd532061161202e31f852b23a9f8de82ffcc1a19475756",
+      "bytes": 10871
+    },
+    "robot/yor-description/calibration/image_frame_alignment_2026-11-04.json": {
+      "sha256": "1b5fe28cb8a33110d60026f869402ce7c1a09d8bc7f51c5765633b7adcee33df",
+      "bytes": 2639
+    },
+    "robot/yor-description/calibration/live_home_start_2026-11-03.json": {
+      "sha256": "86c63d6e69ab74beebedd4dcef5ca4fa643c3ffaf8573e2bf0e5242fd171f502",
+      "bytes": 2016
+    },
+    "robot/yor-description/calibration/motion_summary_2026-10-30.json": {
+      "sha256": "6ba38e77f396889b1e96163aa72f9296fe86d49402647523ebed9b51b0fd493f",
+      "bytes": 27693
+    },
+    "robot/yor-description/calibration/mount_frame_review_2026-10-31.json": {
+      "sha256": "59197c70256d8ed87467d0c9fd506bd31aae04c061da73bb231128577886ddf8",
+      "bytes": 21236
+    },
+    "robot/yor-description/calibration/neck_response_2026-10-26.json": {
+      "sha256": "e75b8eae8d91f4a172a442c7f069abc429f519621f1691145b0e6cce7d6882bd",
+      "bytes": 2885
+    },
+    "robot/yor-description/calibration/pillar_attachment_2026-11-03.json": {
+      "sha256": "8cd557ef9cdc9f55707838e9b59aa82bfbe0f69b5a042f2f9d525470079a1ba7",
+      "bytes": 1870
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03.json": {
+      "sha256": "cf02cd95a9e392baf24de7d27b7f21c70aec2ac0b5c3d70546fc6b28ea793918",
+      "bytes": 17597
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/MANIFEST.json": {
+      "sha256": "2892aaeaf897ce8855c06098111e604070a93ba494aa6bd9bf800979f8d919fc",
+      "bytes": 31277
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/acceptance.json": {
+      "sha256": "9485159282f7f50c7d0fc2979221a187860f45cf7b71317a4d5684321b4e759e",
+      "bytes": 22466
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000005.npz": {
+      "sha256": "fcece33a018c8450a86c5e8fb9a25fd2309fe7a8d11adf6dc7ed42c49376ff35",
+      "bytes": 86825
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000006.npz": {
+      "sha256": "b6e961aa4379beeb2c6f2bc5e5dd28df7c48f9d6198e5b04cee13f512f2003df",
+      "bytes": 22654
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000007.npz": {
+      "sha256": "ccd081b94a46e1ae5269cd2b909ed78e3822c581df5e08efaa83dae57f4a272c",
+      "bytes": 29907
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000008.npz": {
+      "sha256": "87bc13a276c8d81f8fa5793b7c3de007b18e393dd53f98b9ed44debce040db36",
+      "bytes": 27166
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000009.npz": {
+      "sha256": "832aa24bb7f990319a27d6daf8ec58b7c28f26962fce04e4977b3827e1b7c05b",
+      "bytes": 191038
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000010.npz": {
+      "sha256": "744acdec5606686c50d683a886d05bfbcb41c1ecd354d59fe9e96de4b23af32d",
+      "bytes": 36889
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000011.npz": {
+      "sha256": "b762e9f44a2e0a8456288bc71f9507245e24b65844fabd456e107fd5064e0917",
+      "bytes": 14558
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000012.npz": {
+      "sha256": "d8757295de0e0febc77884038994e2be799857299e65fbfd293de712e9ac2946",
+      "bytes": 8480
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000013.npz": {
+      "sha256": "40cd4c57954205addd8b7b68cc3896dbf5a556b9f30a01b27df83b06fca3b120",
+      "bytes": 135396
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/baseline/episode_000014.npz": {
+      "sha256": "93c3e0f526fcf1a595210faa0c6981a1906e3f1163667f3b419e185320f097ba",
+      "bytes": 62505
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000005.npz": {
+      "sha256": "529e1109b4bedda9586d7ec0b198f0209709d8018a872aa130492cf19f61ba32",
+      "bytes": 86819
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000006.npz": {
+      "sha256": "ee91ea2ee6786af2a1d7d53cd6ccffb8fbe46d94ce4e8402912cb34643b33a14",
+      "bytes": 22634
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000007.npz": {
+      "sha256": "2c9e87c161cede081c58f11b6ccb51fdea3c59948ad7da4120f21795941607ec",
+      "bytes": 29955
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000008.npz": {
+      "sha256": "1361499f332b0e58d7a9f7e2a41a6a0433de5d2383d4a33dff6b419f052d5535",
+      "bytes": 27120
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000009.npz": {
+      "sha256": "a224ed352685f63f869bae55ed96aceec1b90dc6ec48d22cf5bfdf159575c1bb",
+      "bytes": 191260
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000010.npz": {
+      "sha256": "177e860883a6db4b89c170c90cfec84e778ce31add0074118d00bae77b8a8214",
+      "bytes": 36851
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000011.npz": {
+      "sha256": "b8f43609a4cccfa0228f85e0d1ec5b212e04e48b4b537a2433a85cbc10cc24ac",
+      "bytes": 14592
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000012.npz": {
+      "sha256": "72ea74ae763d4bdcf6dcf65c57a727c39b3ad6df2e872d12958d28180457624a",
+      "bytes": 8488
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000013.npz": {
+      "sha256": "e0ee1530a410557f8fe89ec3e62f52eaee2bc84478b5a4d221a7608f3b6523aa",
+      "bytes": 135417
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/candidate/episode_000014.npz": {
+      "sha256": "07213d4174e636c9ea9b63a219e1a29bf6642f7c347a851b5d1ff9bc2d115f59",
+      "bytes": 62388
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/fit-sources/MANIFEST.json": {
+      "sha256": "30f75d8ff624cb2c5f35ada81a781f25f63316b2b38971b45138acc3c6f33731",
+      "bytes": 667
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/fit-sources/robot/yor-description/calibration/teleop_2026-11-02/MANIFEST.json": {
+      "sha256": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554",
+      "bytes": 15628
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/fit-sources/robot/yor-description/sophia.json": {
+      "sha256": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+      "bytes": 13431
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/fit-sources/robot/yor-description/sophia.mjcf": {
+      "sha256": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+      "bytes": 118474
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/fit-sources/robot/yor_mujoco.py": {
+      "sha256": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+      "bytes": 50830
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/fit-sources/scripts/identify_sophia_capture.py": {
+      "sha256": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+      "bytes": 21142
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/fit-sources/scripts/replay_sophia_dataset_arm.py": {
+      "sha256": "c3fea45a84cae2933a30c02e87119c9d6644f901a75aea0f96385fc02e0f8ed8",
+      "bytes": 9075
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/plan.json": {
+      "sha256": "af63cf179b0801eb8300c37e8014643c9a105c6b573f1d295ac36fe0ff6dddfe",
+      "bytes": 2050
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/arm-reviewed/summary.json": {
+      "sha256": "f9617a5990120b7aabfae8b6dbcd211f75c17465398014034fe2ef0e29c5ac5f",
+      "bytes": 10734
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000021.npz": {
+      "sha256": "ca31977b82681a706bab8d988fc3aab964ca25cbe2d5b425439b209609315bb6",
+      "bytes": 23007
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000022.npz": {
+      "sha256": "a0aa2e0e26f0cb574ada4b770c0a475048d82a19d89a33f35413ca82cf12564b",
+      "bytes": 37616
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000023.npz": {
+      "sha256": "7207ea992d4ce205652c5bd2f235ae548958ebdffe2bf80430d7a372321de60d",
+      "bytes": 51373
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000024.npz": {
+      "sha256": "4ea9709cc018c2f21a7888d52edb3a000d5d8aa95cf659bc96ad88e791004929",
+      "bytes": 18462
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000025.npz": {
+      "sha256": "c654320a0659db5e506da31284d4b5b63f35ddc9b557e8501ee25b9aa27ffbc0",
+      "bytes": 70966
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000026.npz": {
+      "sha256": "35f1e788c8bab89635543e72d696f3e6403a0d5cef1569b83d8622f8a2a6d115",
+      "bytes": 33140
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000027.npz": {
+      "sha256": "624759067308ee3cdec62ec959d0478ebe5a8c62e79faf5c534fdb9b7f86c296",
+      "bytes": 34826
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000028.npz": {
+      "sha256": "c410141ac3c08227896f36f8f2f05b7ea243148c673f418704874bde92e26197",
+      "bytes": 50017
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000029.npz": {
+      "sha256": "0ccf4336fc7fe1d7b4656046d2e79282c060ec0536ff6f7af9eecb7974b3a540",
+      "bytes": 19160
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000030.npz": {
+      "sha256": "f219a83d3c21750945c23d35cc0a39703c737e49d95642784232fcf8e4862025",
+      "bytes": 54096
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000031.npz": {
+      "sha256": "7022b990860868602234893f330d4fd660a6a17566943d69f57589165de60be5",
+      "bytes": 25221
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000032.npz": {
+      "sha256": "700c005936f4c8e242114d010998275f34bdbbddd5c89caad1686e8d46538bd3",
+      "bytes": 31194
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000033.npz": {
+      "sha256": "02438c25282f5d8adefbe2ee6cd803c030a993e0f2055ff16be32dfa8b8d860b",
+      "bytes": 49803
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000034.npz": {
+      "sha256": "29ec3436589cd80463fd0b8aca85493677924599de09bde00f631cd13d8a75e1",
+      "bytes": 15533
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000035.npz": {
+      "sha256": "051b696bd31dbc43af1dc48a29f16ebf3fc464d0afdaa138f6de7cc7682fdf77",
+      "bytes": 44091
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000036.npz": {
+      "sha256": "8b256e022348f60bdaa640a67e842336f2ae75589a4e30b3f4998001348cc2fb",
+      "bytes": 25862
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000037.npz": {
+      "sha256": "5b54c0e2ff686183b2a51d1c9e6d9fb93f1571c0b02f7dc313edb1e91644c367",
+      "bytes": 32690
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000038.npz": {
+      "sha256": "540b1cebe9038fdd4aae2a5c8eb06dc02cd55c912d402d12833887363c74e3f5",
+      "bytes": 45807
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000039.npz": {
+      "sha256": "6fae743196fb9009e4622760c46a02a48bbd598d4eb6931047fee71aa54c441e",
+      "bytes": 10312
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000040.npz": {
+      "sha256": "7c63f6bbb907aca96456da0678676b92f6fbcbbe00e530662a57ce47e8a8d190",
+      "bytes": 38039
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000041.npz": {
+      "sha256": "6d1b559d4afbc94ca02c7a055a0ec643851c5d2c9475aa8834f7d326a2b77248",
+      "bytes": 32210
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000042.npz": {
+      "sha256": "da7dcb6b37a97c18cc854d248e0a566be0ffd7a55978c2e286f135d368bb7e7e",
+      "bytes": 5807
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000043.npz": {
+      "sha256": "045f8952cd979ff3a557e7dcd9ab319f2a47de8142f3d59f2004349e7ca198a6",
+      "bytes": 2102
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000044.npz": {
+      "sha256": "090c7eac8c5c76abf78c988fa01f7afff6870b3d329bcab41d2ea466eb6f86e3",
+      "bytes": 3512
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000045.npz": {
+      "sha256": "89ce062770c75f10ce93e32ceadc5b982de49d5cdbd809b6de107b1f40978b32",
+      "bytes": 2832
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000046.npz": {
+      "sha256": "f4ac179bf569333f38b53a42064808e2575b2b6d557fc7b865de5f4e92bbfc83",
+      "bytes": 2345
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000047.npz": {
+      "sha256": "67ff5478824a8a0dd34ed770a3ed351b24a060da76080e41d8ba7b5254ff1fd8",
+      "bytes": 3751
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000048.npz": {
+      "sha256": "fdf74cd9bbcc0add60d69630b9ea6e63dd1c3128333b072e2840ee03d03dff36",
+      "bytes": 2082
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000049.npz": {
+      "sha256": "196e2914784898a4b9a50cdf73f5081c74c81fc232fe5da8bcd45c887838e413",
+      "bytes": 14561
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000050.npz": {
+      "sha256": "cc7788b15375a6d03dbed224a14d9fe11058658a35d02d0876e718431c8bb97a",
+      "bytes": 36069
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000051.npz": {
+      "sha256": "6c09177945ab9b88811b01602ce17381fd5e86b005d09dcd012e2346ae2fd479",
+      "bytes": 13107
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000052.npz": {
+      "sha256": "d03275077b93076224532607b828c754c267007b3063e22f708e180c9e15530d",
+      "bytes": 45107
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000053.npz": {
+      "sha256": "ffc3aa073ea8f9e66e3b13185b01826df1d1fba9e45729b606fb89357d10450c",
+      "bytes": 28030
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000054.npz": {
+      "sha256": "59edbef4b668c91203d04990ca087a02c44235d5538f60f5bf82a8e094c89277",
+      "bytes": 15425
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000055.npz": {
+      "sha256": "aafb3677012a084863c046a411bc725e2c4575afb251bebc1f85a19f4a5cb156",
+      "bytes": 36737
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000056.npz": {
+      "sha256": "6d46fc0c1efb593f668ab6de44899d206f6784a6fd0cf4d04bd49851d8ff1ebe",
+      "bytes": 14639
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000057.npz": {
+      "sha256": "e08e6e22d6ecf5ac1a511c49681867e32264eeae17eabee27f53e97dfd874a10",
+      "bytes": 60058
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000058.npz": {
+      "sha256": "4b2f3a280d9dea5c8eba66933437552ed528df6cb83cb8339d05e0a7d9f194fb",
+      "bytes": 31582
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000059.npz": {
+      "sha256": "450f4584152b1e676af2815fe33f4fee6ab60ecc9004b9b0c12db8891f0b284a",
+      "bytes": 13438
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000060.npz": {
+      "sha256": "b4287e4d197fc9de795789cdfb8be316f63d65b710747bd5a8c7e22fcabed4bd",
+      "bytes": 39300
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000061.npz": {
+      "sha256": "fc7bbf3ca8c642835d6f7cd2156bfb4dd79348be428c19885cdc46689ed09c45",
+      "bytes": 11635
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000062.npz": {
+      "sha256": "197601cb105c96fa9784ea6060821397f4edb88a21de01a6b3830682eb51232d",
+      "bytes": 50343
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000063.npz": {
+      "sha256": "0dcf9da004ea09fa7a504af9f20f30a7ccfb7bbea29a96f0d6464e4b187d7854",
+      "bytes": 26384
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000064.npz": {
+      "sha256": "ab34d8a5498778c46b951ee1f74ee6e1064e5b488c7d511fade093861bf7dace",
+      "bytes": 12101
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000065.npz": {
+      "sha256": "a827c952972da256220a69efc11f71252bc37aee976ade76acb0e5c23620cf4e",
+      "bytes": 36171
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000066.npz": {
+      "sha256": "d2b206b4333f347a90a6cfa2a7a4db59c41e9531c8a21eea73a14efee151b83c",
+      "bytes": 10740
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000067.npz": {
+      "sha256": "60364d6ce7d6256b09110af51aac4568144212c693b0680e88a1ab6ee585a24d",
+      "bytes": 48375
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000068.npz": {
+      "sha256": "49805c2c55f402c53cfe6f6c2c3169e327fb7bff2c78ea0edf798d07f74f2bdf",
+      "bytes": 30947
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000069.npz": {
+      "sha256": "056bf2f9bab99d871be07a18cd9dbaa7574d0538e1cd0a0c7273a7d2491804f4",
+      "bytes": 12498
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000070.npz": {
+      "sha256": "c9ff8f64a771f603d42bbb5501e0cc3f5b52c8435a47410501ce85a15a3d229b",
+      "bytes": 46996
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000071.npz": {
+      "sha256": "e9d1225c469b04d1621e83333ef9904b2e51ebda725005e1688417d6881e896f",
+      "bytes": 13928
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000072.npz": {
+      "sha256": "318b866e6cdc3966506723a06cfddb23a0197091e69221bddf206e33916ea790",
+      "bytes": 42845
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000073.npz": {
+      "sha256": "d6df8fe841b5a07304d247ddaeb8fbdbf2c2814036c06f7132e9ed1bcb9581eb",
+      "bytes": 32130
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/baseline/episode_000074.npz": {
+      "sha256": "77bdfbe181e15a4feafbde038aeffdd15c85fff6e5b8cbbdf7faf41cf586ee2e",
+      "bytes": 3101
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000021.npz": {
+      "sha256": "f6609cf5a3a704bb044d33a738246e7765c77da110b7c20b89fd07a9b9920fd9",
+      "bytes": 23013
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000022.npz": {
+      "sha256": "1f911c230da255f5b43bbddd1593076e5245716362ef8af7cb448a19bfd5c185",
+      "bytes": 37625
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000023.npz": {
+      "sha256": "6ab9dfe6aa571017228efbbeb2a4ba3c46d187188ae5695ed9cad4cc28938d16",
+      "bytes": 51372
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000024.npz": {
+      "sha256": "ec1de1837b458e3005e9c6843ccb93650076fa22e5327ec27ce1e5af7f891fb0",
+      "bytes": 18462
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000025.npz": {
+      "sha256": "7856f388302f3c4686469b0172916b9e4f51cbe0925e7de73f7212b944a37d50",
+      "bytes": 70924
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000026.npz": {
+      "sha256": "2f63ccdf4d41f45421ecb90f1f601baf8ad198a977185f5436d90cada15304c6",
+      "bytes": 33161
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000027.npz": {
+      "sha256": "f07ed22b0c26b670e68e3667c9572de2675c8717bdcb92c01412e90b6d96e7ef",
+      "bytes": 34841
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000028.npz": {
+      "sha256": "e802aeef44b551fd0582d82461e21a2df0079db89182056e59e46688e92ad537",
+      "bytes": 50064
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000029.npz": {
+      "sha256": "cdc75eddcb072d07d663dcbaa1b6f5b45c24678e2ad0715f68653b0689f50778",
+      "bytes": 19151
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000030.npz": {
+      "sha256": "76743d8c3fc558c04f693f8d3d1acf1b7ef3db5e730e79702b913cb27c8839ad",
+      "bytes": 54123
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000031.npz": {
+      "sha256": "c89f0dd3f0ffb1290e75867747a1d8393ac899a32beb6f0817c2704fa0252169",
+      "bytes": 25233
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000032.npz": {
+      "sha256": "b7847c632152e7268f4ab20c5be4c0f14d9865f5ab96d28f1570c010115e6b93",
+      "bytes": 31175
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000033.npz": {
+      "sha256": "a89b30657b0a5a5e7423e04a7d1e5056dba16c74f42d3251bde4f51a665c8694",
+      "bytes": 49809
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000034.npz": {
+      "sha256": "f97e16878dc3cfbb728b1fa1e41509b69ba0c33bbbb4f81128128b21607450ac",
+      "bytes": 15507
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000035.npz": {
+      "sha256": "17176b63c9444da5c447cfb654aa8273a997d9058a21ca15d62b1da03c786b41",
+      "bytes": 44104
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000036.npz": {
+      "sha256": "04156b1945a8616307e55cde191d8f53b652d11e52f4d12650031a5f9f53f81f",
+      "bytes": 25861
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000037.npz": {
+      "sha256": "5284388170de07a9c22ef5c7996fe7dbe148ad937bb338792947093d9f0263b5",
+      "bytes": 32690
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000038.npz": {
+      "sha256": "240bf0c2659aa293234904174614fd4329dfc6c59a75f7ac173cdd50a69f8cad",
+      "bytes": 45807
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000039.npz": {
+      "sha256": "b0433c416d69d18005eaaaf14a99b5debd11ddc589a4ac76e43024b6f3ef2cd7",
+      "bytes": 10314
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000040.npz": {
+      "sha256": "6fd1d51ff9b04b2b6af7b081582e8cc2ae27392d5ced267df1947ed59d492d98",
+      "bytes": 38019
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000041.npz": {
+      "sha256": "24018c5df3bc6b54075b19225808e13b12c11d07d9ce921a7d35e889a6c4c0b6",
+      "bytes": 32286
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000042.npz": {
+      "sha256": "32bb4442d9e38582026ddff6001e8d76acda923b873719070ca203d13e2615c7",
+      "bytes": 5812
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000043.npz": {
+      "sha256": "719b1429751f79688861ee5f109b358370001ffa4ae163f87cf1e9472e684b27",
+      "bytes": 2104
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000044.npz": {
+      "sha256": "bc681aeced18e7114895f8811050dffe5d4939d193783ffd6194136671b10505",
+      "bytes": 3517
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000045.npz": {
+      "sha256": "e7c3053871993480fa2924f1cf2bfa60a1ae3e56b17a5aa441faa5f24986270c",
+      "bytes": 2835
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000046.npz": {
+      "sha256": "71c9fece4a23ee91a1f5542fae389e04d5d625e5ef5a2ade67460016113031cb",
+      "bytes": 2349
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000047.npz": {
+      "sha256": "fa28e84448b6bc424f51fa6af1a659b219189e13e2f7129b030146ec3f1df69b",
+      "bytes": 3753
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000048.npz": {
+      "sha256": "22ad8eb1868dfc0ce1b5bfa97062514c024008a1aace2e1ed8d8c2d782fde2fb",
+      "bytes": 2080
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000049.npz": {
+      "sha256": "cb0f559fd0360c44a9b175f13f730b80692fea66b1d46fadcafd5d9e3c030dc9",
+      "bytes": 14547
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000050.npz": {
+      "sha256": "829b6713cc3259e86abce756012301b0be8301e619e3f001e053b53eb611fab6",
+      "bytes": 36087
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000051.npz": {
+      "sha256": "69a91f4dd16a3d76a5ea92d1ce160b0c807a3f64dcb02a290fb275a18990f283",
+      "bytes": 13126
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000052.npz": {
+      "sha256": "e9ba9223c874c7a105c352f157115899ba24dae05e2fdfa19b203aa01fd5cc7f",
+      "bytes": 45118
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000053.npz": {
+      "sha256": "b465fe4922a6a39e0c5e839c354cb307de05dec53ba7573cc372384814cd1d8e",
+      "bytes": 28068
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000054.npz": {
+      "sha256": "4f0e84e9d7b4f396d2fd1732d40e52e39b16efcc44e4ab0b2cca53f0fc1d2bbc",
+      "bytes": 15412
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000055.npz": {
+      "sha256": "0903a052838ac4aeb28fdff8cca8b8f78f49ec317af336cf22f72ce455628671",
+      "bytes": 36705
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000056.npz": {
+      "sha256": "db4c8c36afdccba4a4395e38674b47035992ac2dcfa70cc6e34910d602d6adc8",
+      "bytes": 14656
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000057.npz": {
+      "sha256": "603cf4064398bffd5e2d07fcba9943380d85bd03352150788831fe2edddf6ceb",
+      "bytes": 60033
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000058.npz": {
+      "sha256": "439558b4f98a61cb9d02eabaf6fef3c4dbf1d6f0d5586b7ffe0ba2304e5a5c5f",
+      "bytes": 31600
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000059.npz": {
+      "sha256": "b69e574dc7b48fd5cd86ad13ac742ce0d6d3b530bcf341fde389d4ee30944110",
+      "bytes": 13452
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000060.npz": {
+      "sha256": "29149d52f9eccad0c70bc0bd188a2aaf900b08ab494723a42b688f57fdb9c7ea",
+      "bytes": 39303
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000061.npz": {
+      "sha256": "34d1c673221381bbff5a9cc9c66d7f7eae1d49fcb4bc1e6124c923d168f33bef",
+      "bytes": 11637
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000062.npz": {
+      "sha256": "98a8804272019206fa9a77ae813b8c8ffa63be2a18db1c36541786eb872418b8",
+      "bytes": 50363
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000063.npz": {
+      "sha256": "ab83d7a6bfd0b9187c3d3ec92f30ed115585f13f7279ea150a6ae1ad35fe4457",
+      "bytes": 26385
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000064.npz": {
+      "sha256": "970a736f628bb16e6ce94259d915f47da091e2ba4766794644475ff2d1a1c43c",
+      "bytes": 12110
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000065.npz": {
+      "sha256": "fdaf05238bb19e64dd645a1b05879e90cd71148384852be2ceaf13ee9cda56dd",
+      "bytes": 36174
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000066.npz": {
+      "sha256": "1f0c6be35e92fc2a1b618b66f5616e04a4485c7e83b4587382e4a7cd64439030",
+      "bytes": 10753
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000067.npz": {
+      "sha256": "3bf042fcc07a02d90163ce14abde7c93cbce2e05b305738618c33bbefa7a2398",
+      "bytes": 48365
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000068.npz": {
+      "sha256": "f62d0c4febfb7ea9ef61237bff035cad8ef6f9e783427d06d6a7145dbe1eab1f",
+      "bytes": 30946
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000069.npz": {
+      "sha256": "e00f64521ec8282e5091f7aa83947d16c82cbe6db65d2407f27dc164fa88bca5",
+      "bytes": 12505
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000070.npz": {
+      "sha256": "fefe2d69165783c0a833efd292b904327730e0cec72e5ca6298a43e4cd552f1f",
+      "bytes": 47002
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000071.npz": {
+      "sha256": "3eea5b97f6dbcc7693862fb3139ec2d7172a6f604eb155dfd5f8affb3d569a1a",
+      "bytes": 13935
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000072.npz": {
+      "sha256": "6be081d2141971931d00b850df3e93e7373936782db49a4c7ae2b1f02675fbbd",
+      "bytes": 42835
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000073.npz": {
+      "sha256": "703f867f4b3313bf9abd2bf5facb6c4ff7f8170aaf63216559dddd9c97e0978e",
+      "bytes": 32114
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/candidate/episode_000074.npz": {
+      "sha256": "b5780d184cb4c1ec5da754abf001c8b1523fd12a8eb5c856c6fb68a9018b61eb",
+      "bytes": 3097
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/fit-sources/MANIFEST.json": {
+      "sha256": "30f75d8ff624cb2c5f35ada81a781f25f63316b2b38971b45138acc3c6f33731",
+      "bytes": 667
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/fit-sources/robot/yor-description/calibration/teleop_2026-11-02/MANIFEST.json": {
+      "sha256": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554",
+      "bytes": 15628
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/fit-sources/robot/yor-description/sophia.json": {
+      "sha256": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+      "bytes": 13431
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/fit-sources/robot/yor-description/sophia.mjcf": {
+      "sha256": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+      "bytes": 118474
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/fit-sources/robot/yor_mujoco.py": {
+      "sha256": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+      "bytes": 50830
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/fit-sources/scripts/identify_sophia_capture.py": {
+      "sha256": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+      "bytes": 21142
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/fit-sources/scripts/replay_sophia_dataset_arm.py": {
+      "sha256": "c3fea45a84cae2933a30c02e87119c9d6644f901a75aea0f96385fc02e0f8ed8",
+      "bytes": 9075
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/plan.json": {
+      "sha256": "4c290106b8e6482f0c11f8e5a247353473d18b96f934a52a5ae5708a8a241c57",
+      "bytes": 2051
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/neck-final/summary.json": {
+      "sha256": "599bdeb8aa75bea3ea20b88563984ea2c874ea24190299c3d075961788870915",
+      "bytes": 17454
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000005.npz": {
+      "sha256": "fcece33a018c8450a86c5e8fb9a25fd2309fe7a8d11adf6dc7ed42c49376ff35",
+      "bytes": 86825
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000006.npz": {
+      "sha256": "b6e961aa4379beeb2c6f2bc5e5dd28df7c48f9d6198e5b04cee13f512f2003df",
+      "bytes": 22654
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000007.npz": {
+      "sha256": "ccd081b94a46e1ae5269cd2b909ed78e3822c581df5e08efaa83dae57f4a272c",
+      "bytes": 29907
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000008.npz": {
+      "sha256": "87bc13a276c8d81f8fa5793b7c3de007b18e393dd53f98b9ed44debce040db36",
+      "bytes": 27166
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000009.npz": {
+      "sha256": "832aa24bb7f990319a27d6daf8ec58b7c28f26962fce04e4977b3827e1b7c05b",
+      "bytes": 191038
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000010.npz": {
+      "sha256": "744acdec5606686c50d683a886d05bfbcb41c1ecd354d59fe9e96de4b23af32d",
+      "bytes": 36889
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000011.npz": {
+      "sha256": "b762e9f44a2e0a8456288bc71f9507245e24b65844fabd456e107fd5064e0917",
+      "bytes": 14558
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000012.npz": {
+      "sha256": "d8757295de0e0febc77884038994e2be799857299e65fbfd293de712e9ac2946",
+      "bytes": 8480
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000013.npz": {
+      "sha256": "40cd4c57954205addd8b7b68cc3896dbf5a556b9f30a01b27df83b06fca3b120",
+      "bytes": 135396
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/baseline/episode_000014.npz": {
+      "sha256": "93c3e0f526fcf1a595210faa0c6981a1906e3f1163667f3b419e185320f097ba",
+      "bytes": 62505
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000005.npz": {
+      "sha256": "48e1a5a9f432b1aec0e8eb421e1f36760afa2cc7fd5129c4c608d9dd3ceaca7e",
+      "bytes": 86695
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000006.npz": {
+      "sha256": "4d5ce964169071f8bfde1d1dcf49fefcb7391debdbd6407c0fdc034659a88ff9",
+      "bytes": 22663
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000007.npz": {
+      "sha256": "5a149dff67530158e3611dace024e0e52a7e5340da3b1cd999a9020f129a00c3",
+      "bytes": 29961
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000008.npz": {
+      "sha256": "8204bc6f511b9e2666adb8a0a587d15c70bb30f13008508a45fd840d082a4d35",
+      "bytes": 27237
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000009.npz": {
+      "sha256": "2f87ccf01766fd7f770f041e3ae757b65112584f7d6ce8b5faa02d3ac7163151",
+      "bytes": 191107
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000010.npz": {
+      "sha256": "542aebb7c66eeb5150aaa00f1a87375e26479e5ddf5a567ca3ccfffd66b6f9cc",
+      "bytes": 36868
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000011.npz": {
+      "sha256": "4f8fc68534b27eece8c1da2bce981b99359ca360eef7da75e8ea3c019030bcaa",
+      "bytes": 14586
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000012.npz": {
+      "sha256": "5e22ae60e4aca325830aaedfcfffcd41acd5a56d1b6739bdf4bfda0331a0b177",
+      "bytes": 8470
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000013.npz": {
+      "sha256": "21c0ac3bf3d42f0310cc9ac014acb506805c3a5cd9c12c926b8623d71874bea6",
+      "bytes": 135608
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/development/candidate/episode_000014.npz": {
+      "sha256": "e4c0e6c67399eb66e07234806ab634eaf78dfce4d1096954d3fa381d8911cf78",
+      "bytes": 62385
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/final/baseline/episode_001500.npz": {
+      "sha256": "f222e6db71e109d0349673ef8ac2b1fde00665f8cdf5fac1a1ec64526e544579",
+      "bytes": 67596
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/final/baseline/episode_001501.npz": {
+      "sha256": "7c80f53e4fbf618006e414d82b2c33ce854e1eb1903128ac937f526e3d5f7393",
+      "bytes": 44470
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/final/candidate/episode_001500.npz": {
+      "sha256": "fc69bb7c123cbc1a415abed8a300f1eaaee1b85012387dae87819c876d29d4de",
+      "bytes": 67570
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/final/candidate/episode_001501.npz": {
+      "sha256": "26047c24ba155554191d954a7448ea174945cab81ce3e5798f4973a881244f77",
+      "bytes": 44291
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/MANIFEST.json": {
+      "sha256": "f2ed6aa06f9095d56b3c0c495cb1b39fcf88d81ce8bd5c8e9b5fbbf9a92de2f1",
+      "bytes": 779
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/robot/yor-description/calibration/teleop_2026-11-02/MANIFEST.json": {
+      "sha256": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554",
+      "bytes": 15628
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/robot/yor-description/sophia.json": {
+      "sha256": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+      "bytes": 13431
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/robot/yor-description/sophia.mjcf": {
+      "sha256": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+      "bytes": 118474
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/robot/yor_mujoco.py": {
+      "sha256": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+      "bytes": 50830
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/scripts/identify_sophia_capture.py": {
+      "sha256": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+      "bytes": 21142
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/scripts/identify_sophia_joint_gains.py": {
+      "sha256": "66b422a64f6ead84e04b065d71205d5e4e38eecaedd0786e95954fa04da97cd8",
+      "bytes": 7450
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/fit-sources/scripts/replay_sophia_dataset_arm.py": {
+      "sha256": "c3fea45a84cae2933a30c02e87119c9d6644f901a75aea0f96385fc02e0f8ed8",
+      "bytes": 9075
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/plan.json": {
+      "sha256": "a48ff09eb3dc22e1e64abcc7778a870e26e026d71e818b310ee0f5182f7898da",
+      "bytes": 1490
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/per-joint-reviewed/summary.json": {
+      "sha256": "4213cde3949205d0f811899eda042bfb733b7f418c6c732cee51dd787cbc3816",
+      "bytes": 13666
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/provenance.json": {
+      "sha256": "bd5a960afa49f3634511cf2b3a68aab0b8e46da77b911c3d50972c5566c1b63d",
+      "bytes": 1374
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/robot/arm/arm.py": {
+      "sha256": "1d3867d4e89e8a68edaa90595be9812f160c55c655c7efce1f667412cd570a11",
+      "bytes": 26792
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/robot/arm/can_gripper.py": {
+      "sha256": "bf99f8d893da2b12dd61790765b80b437934db773469b4dd50f64a6c63b33e57",
+      "bytes": 10144
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/robot/base.py": {
+      "sha256": "5b743fdf4c626025df6f1c481d8633627df008b367400ae104d20651c67743e5",
+      "bytes": 18716
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/robot/neck/neck.py": {
+      "sha256": "c5f7c83e9a3120b100806b6ba28989a0888981341d14df53b73a2e3d33cc0dd8",
+      "bytes": 6562
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/robot/teleop/vr_teleop.py": {
+      "sha256": "3245a7ff38e61ecaeb7f7619229cc4233beac8f660c4b58d929971d53404bcd4",
+      "bytes": 31098
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/robot/yor.py": {
+      "sha256": "4d17751949a2fb7ecefdacd361ef3648969dd440213b37c8be3c4553732a9ef7",
+      "bytes": 32725
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/vr-teleop/server/cycles.py": {
+      "sha256": "2f00031bbc4eaf14871001cb627ebd9d207f48dfc3b462b2247a7439a37e46f5",
+      "bytes": 7163
+    },
+    "robot/yor-description/calibration/response_identification_2026-11-03/pi-source/vr-teleop/server/yor_bridge.py": {
+      "sha256": "9c8e332f6dd555aada6ad3a6f4c4b96e0b1027e1bc6ddb595747f82687219044",
+      "bytes": 63342
+    },
+    "robot/yor-description/calibration/response_release_2026-10-30.json": {
+      "sha256": "85df4338bb0c52913f6b01f04220d47a0883d031f34d7a4d780e93ab9b598aae",
+      "bytes": 5847
+    },
+    "robot/yor-description/calibration/response_sysid_2026-10-31.json": {
+      "sha256": "6e9e599e18edcf8283b61e330a32aad1ede26d55699693abd6b373e4ad3587ae",
+      "bytes": 10146
+    },
+    "robot/yor-description/calibration/spinal_assembly_2026-11-04.json": {
+      "sha256": "2d482ab76b757b18ced4d81cef330fedcecf80d846018017bd4bc60848d431ea",
+      "bytes": 6934
+    },
+    "robot/yor-description/calibration/spinal_neck_geometry_2026-11-04.json": {
+      "sha256": "fe9b9115ce95de834f163aecf7ced5b6c405940ddc22324e523eeab700fc4435",
+      "bytes": 1472
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/MANIFEST.json": {
+      "sha256": "3738ceff7330f7285f1f198458362b48eb5c5245f64ba4a352b9b6d515913554",
+      "bytes": 15628
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/README.md": {
+      "sha256": "c1fe367af9245aba797f0227d7d327eecb3e043733fec330a377a0a4a6281583",
+      "bytes": 755
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/episode-events.jsonl": {
+      "sha256": "b717b637995ac9200b8778cae86e80f8abe7a43a1974fd94d15b87440b425872",
+      "bytes": 71828
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000000.npz": {
+      "sha256": "8687cae6c49066f06b1e0c2ca71385a8cc37cb937ab87cf26ac6f38cde9271fe",
+      "bytes": 168874
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000001.npz": {
+      "sha256": "b9eb494aeb45a79bab95c0770f7d0f124e9ffcb47b435d466c9d14b26129cb84",
+      "bytes": 320578
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000002.npz": {
+      "sha256": "79d3afad57764d6e7aae4647d5c6adf208a200bfb01481c4bb007f05b34ba394",
+      "bytes": 39313
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000003.npz": {
+      "sha256": "bc8ea35de18bc744f6945095d731433962fc6c8b7d3636980e4869e9ebe1a6e2",
+      "bytes": 114095
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000004.npz": {
+      "sha256": "9aec6a4280438974bd383d39c897c7db76be7dc994bc6e842794672e8f88a1e1",
+      "bytes": 16713
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000005.npz": {
+      "sha256": "b09664090ae5b3f74a8313395ba6301d42b456ccbf332a115f91923fe47b00c7",
+      "bytes": 154115
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000006.npz": {
+      "sha256": "4196864d3b291ee249e7e272117d57cde0e1f85dcdb4495d86f46dcbe85bdb11",
+      "bytes": 47024
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000007.npz": {
+      "sha256": "72dc8170c364c745fb08d9c636262b8f4b655b885fd9196e1f776662e2d3a0d9",
+      "bytes": 59670
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000008.npz": {
+      "sha256": "5310ca41662e6cff3918863acdf1b9a96b78e145ec1a6d9f7794727aca230014",
+      "bytes": 52650
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000009.npz": {
+      "sha256": "110726d6cc4171fa2aee3976dcef9add056bebfe9085c14238ae928c454a0527",
+      "bytes": 315885
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000010.npz": {
+      "sha256": "8fd0908826082566f450a6191d314e096ece61c5f1effbc354534ebf25b60fb5",
+      "bytes": 71702
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000011.npz": {
+      "sha256": "7ce2a254fbe1066848cfda93b7ec4755394dd4ef70424507af47f62c9523fb26",
+      "bytes": 29213
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000012.npz": {
+      "sha256": "13415b7d2b5880ef1692469bd0f8501f8017f6cc1a513174cced49cbdf060289",
+      "bytes": 21064
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000013.npz": {
+      "sha256": "12bb78182e420c983017a0ed51e24026d6396ab64ece5545d6099cf6afc5e2fa",
+      "bytes": 232391
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000014.npz": {
+      "sha256": "b8411e831f6bfdf8f08c740b0835e45164bab3aaf8a15de10d4c8a088db3fa74",
+      "bytes": 106332
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000015.npz": {
+      "sha256": "27312b909854c0ae161b7669ec47d9033e2d5708cd9885c7195f0abf96c357c7",
+      "bytes": 1040192
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000016.npz": {
+      "sha256": "b2340ee398bf2721903044899eaa865241ef53980beaae37b3e76711c047ae0e",
+      "bytes": 28539
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000017.npz": {
+      "sha256": "d67a00c6a41ec58709ba3c5f8859e0b7cf1bfbfddabd2846f6ad6d91cfa2a22f",
+      "bytes": 76622
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000018.npz": {
+      "sha256": "9b48bf27709fa2f6fc8a13a1403d78433a5a137b6b0b475604ee8da45e0dee76",
+      "bytes": 117886
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000019.npz": {
+      "sha256": "149c8e53462c0e2c27f6bbd4fe287f3eca3f1ac7f58b89ba6501e78d7f924adf",
+      "bytes": 46530
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000020.npz": {
+      "sha256": "bddc9390424717598c69f4e5d27781d09baa0c71787abe9fb2c6ff15f5807c2a",
+      "bytes": 111152
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000021.npz": {
+      "sha256": "3b9cac3517bcfac3541b827fbbede8cb96fcfcd6a7bdddac8d05667f2838874a",
+      "bytes": 49652
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000022.npz": {
+      "sha256": "5f2c66a8867c7c32eebd6df52b0fc323356f8a601e0f0ac423b557b656308956",
+      "bytes": 76122
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000023.npz": {
+      "sha256": "b029a88f440ce037e6b363331dd7bce8e62b77f4930378ddcdc9550cc817eea9",
+      "bytes": 105922
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000024.npz": {
+      "sha256": "e8ed9260d2ff15d7ad7efe76f82aaa48b3e63ddefd6dc247f4c3e9e66adeff47",
+      "bytes": 46496
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000025.npz": {
+      "sha256": "849bf6eab68e90cf7c2c4b046f18f3d49489e2b9d33ac1ce131999e2c8c13e78",
+      "bytes": 144509
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000026.npz": {
+      "sha256": "7b205473e7a5da022841d310df916f78e023a5e06915971be17e4e89463ed733",
+      "bytes": 69957
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000027.npz": {
+      "sha256": "9170103d0c726e1c5d75734219658e7efea28bb30dac5c018126cca73071696e",
+      "bytes": 77964
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000028.npz": {
+      "sha256": "7f47e4612276a73dac9f64ad7305f1d2f0dc10cd1197aa34082cc24a017e8556",
+      "bytes": 102961
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000029.npz": {
+      "sha256": "4c33a52ec520cef28518627dd8d66025da38f03a0e8930d9fb2dc61c6e7b423c",
+      "bytes": 43885
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000030.npz": {
+      "sha256": "c249cd8d33f2bbecf93805d400a7381f92b70f9ffeee192c4279c24fb2decd76",
+      "bytes": 113175
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000031.npz": {
+      "sha256": "d7d8f9c17f9ac5668c54752ac421fa0fd184c24c1057224046ca6772440c9a96",
+      "bytes": 50895
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000032.npz": {
+      "sha256": "3b301126e85d11a1b2e1c3ecda803ffb103c639b4ba63aa83904ef230dfc4a0b",
+      "bytes": 67443
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000033.npz": {
+      "sha256": "1277e4472305ac332834a59e516f44629cf1ad96c589c7cf87fdf1bd9d254de3",
+      "bytes": 108416
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000034.npz": {
+      "sha256": "095e6076a0d1879b6814486d36492a31f9b98f692c2d7ebdaf5c19caf3e0c46e",
+      "bytes": 38098
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000035.npz": {
+      "sha256": "773fce6803ad0f0363615c437f419ec73e1831f196695706dd347daeca9db90a",
+      "bytes": 101040
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000036.npz": {
+      "sha256": "3acda9d4b762f1c0cae3d99c166c00dac8fdf757d406b6fa0f1c614e5447dbd4",
+      "bytes": 57505
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000037.npz": {
+      "sha256": "85a51fe72af6132f6c6bfddfcb965a4da521c1745f5666cd875f86c777b93ddc",
+      "bytes": 70378
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000038.npz": {
+      "sha256": "5a69df0eccbc41069b132eae7d0f29866ea5a66a1011cfd9c1c130653d3503fe",
+      "bytes": 105753
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000039.npz": {
+      "sha256": "736ba46a6aa79635baf3e808a084fdce9c141a8959b13d83f618ccb9373bbca2",
+      "bytes": 28729
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000040.npz": {
+      "sha256": "a66b285ca6f1bcbec797a456a9ee804f66803398699f98de327422bb754d2cc7",
+      "bytes": 88243
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000041.npz": {
+      "sha256": "7ccde5a946ec765830ca864230c192593640b7bf2eda7118d2d075c3888bfca7",
+      "bytes": 62157
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000042.npz": {
+      "sha256": "ea43909adcb4b9d1d744de43bc86ca17c1f860091336c1a2554f08c9c6d355e5",
+      "bytes": 15551
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000043.npz": {
+      "sha256": "590d5983809999c1028ff8f5232d2796c85311990f4062d50997ed318f8265eb",
+      "bytes": 10343
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000044.npz": {
+      "sha256": "8604051d54c40403c6159f84335dad014acc9572eccf6574c144bc0e97f5ca91",
+      "bytes": 12012
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000045.npz": {
+      "sha256": "b5f4a0c94205e52f73169b4cd7c05010ddf0ebf114c4998121a96a7e0630d033",
+      "bytes": 11089
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000046.npz": {
+      "sha256": "a3c927c44e763c79359f647f177a7e4a1c63d3e4ef11bf00649234549f4a6653",
+      "bytes": 10460
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000047.npz": {
+      "sha256": "7aa262aae7755d7f5c166b044ad212c6d7b0da7055684c24b4f19e1f9bc22e05",
+      "bytes": 12191
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000048.npz": {
+      "sha256": "978c72d65976143d8f8f6cfd7fa5d8fd4028f6426d2d22551fbffe42e80084e2",
+      "bytes": 10231
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000049.npz": {
+      "sha256": "0496358aef537a270b9cc93cff7bf881d9c3158a786fe1f4a86671be46330781",
+      "bytes": 34442
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000050.npz": {
+      "sha256": "f793e5ca27d1782524bb1b204f5a0ca2cb9cbb7e0e32802eb14700ac5715a2b3",
+      "bytes": 81374
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000051.npz": {
+      "sha256": "77528fbecfebbf3bc44f704f3ba5fb8c778a4567562d1f7d33f502a2eefaca55",
+      "bytes": 36926
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000052.npz": {
+      "sha256": "41cbb9ccd8abed35348a6fc75986d3cf3fc9ca0ee3c0cf9681145f7e97d90d2c",
+      "bytes": 93808
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000053.npz": {
+      "sha256": "7f5b9cd54a1c80ba222eb8a5857d2e0781ebff40c5f772da83a3f168769c6705",
+      "bytes": 62798
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000054.npz": {
+      "sha256": "cbe7c4873aa9ff6068d400480b5f17c48098b5fc5ab3956ec3aa57ab333b9ff4",
+      "bytes": 38035
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000055.npz": {
+      "sha256": "b3ab51406347270c0ac481ab70261ef3ee70d5c035e941d048700b41923abef1",
+      "bytes": 83360
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000056.npz": {
+      "sha256": "9929acfa1d3412ab3faa4df80d3c73dfd8a960186d768a6f155fbd549abd0f2a",
+      "bytes": 38331
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000057.npz": {
+      "sha256": "35e5af1999043b6e560cde1928f1056804b983fb8444ca1fa52d816fb627403d",
+      "bytes": 155531
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000058.npz": {
+      "sha256": "140af3261fe6ce4839275bde2fe4f3e5b24c99b350c20c250ba2212875daa4b9",
+      "bytes": 67960
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000059.npz": {
+      "sha256": "2a603058ee56c8ad4b7f4964daca63ce882ca7120c18736209552d3b89808709",
+      "bytes": 32006
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000060.npz": {
+      "sha256": "53d4f4a0d3fd607349acbf164af990244cc1147f18c20ae15ba6db13f4d86ace",
+      "bytes": 81276
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000061.npz": {
+      "sha256": "259ec573fbaf55bead88b0fbc9d73239cf20f6daa17c5e3758fbd6eece8b3304",
+      "bytes": 30402
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000062.npz": {
+      "sha256": "b0c26a188977b14695809847d963d734041ad5372fece827fe9534853c30b4f2",
+      "bytes": 104608
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000063.npz": {
+      "sha256": "f47611a35bf80eae3afa6133dd66b6c67be408696d83b4538759f47ff87c901d",
+      "bytes": 56741
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000064.npz": {
+      "sha256": "c05a4fed57eefdcd82a450a4380a00e45d2198011e6c9f3abcc5ff24a654861a",
+      "bytes": 30592
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000065.npz": {
+      "sha256": "6c30c08ec091a6188fd7d126afce69387dfccf0419b6a6773a318b500b779ce0",
+      "bytes": 77254
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000066.npz": {
+      "sha256": "c3381f15a848d35e6f20c3ac733b99183859b7945f62b5052cb1197a52b6feb3",
+      "bytes": 30615
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000067.npz": {
+      "sha256": "7a940665ef4c46ca2563a3f4951998d2e5b725c333ee1e78adf9c5bb0f697233",
+      "bytes": 98761
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000068.npz": {
+      "sha256": "e5f754cab7c69bc110e31da6e4ef1b4a2e7984509f8669df1f77eb033ec7d929",
+      "bytes": 69657
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000069.npz": {
+      "sha256": "89d8ad09021945c44a287e2d4da926813160e8f09bbc5f5b909a420bd5f10812",
+      "bytes": 32018
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000070.npz": {
+      "sha256": "61d087c6fc11d30c79147c6a377c0995019fe4b219528d6aa737ab04280a1c8a",
+      "bytes": 102895
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000071.npz": {
+      "sha256": "a2005815780d3d1ea6597092ee51763862f8bdaeb1d75fc9b17b5a704f551a01",
+      "bytes": 36131
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000072.npz": {
+      "sha256": "9443405453664bda366bca82e80140b00cc80f1a548f8fb1636ff2371ea8d057",
+      "bytes": 85842
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000073.npz": {
+      "sha256": "33c2468df894e37cf61d9040d81d399de049e5c893fe7512a66eadac91110e12",
+      "bytes": 73740
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/native-replay/episode_000074.npz": {
+      "sha256": "742158c21a3078b06f9ab2caed1210acf9302311d99ea76b81bbe7de26de906a",
+      "bytes": 11159
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/capture-audit-2026-11-02--17-47-51.json": {
+      "sha256": "d4edbe092edbfeb2ef98488bc4b56d0ef449c057dbefdb5950383166f7f8d5bd",
+      "bytes": 3228
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/frames.jsonl.gz": {
+      "sha256": "547b26b3b4bfb12422851827b96b47abe5acaa51ce95262045a766ab3dbdc3a0",
+      "bytes": 9156573
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/handoff.json": {
+      "sha256": "9e90231fd86f3c333eabceaa1d686c42a54acf2055da3b2b55bb2ecc52666976",
+      "bytes": 426
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/metadata.json": {
+      "sha256": "b1808e36a2bcfa6f831f1b7b4cc8a24b04851550e7f0de31a1147739fc488f12",
+      "bytes": 1272
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/packets.jsonl.gz": {
+      "sha256": "0d514f48aae00fa0bcf7503552191353b9e78446e18433af2a271c9be00ef7f0",
+      "bytes": 18137193
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/sim-baseline/robot/yor-description/scene-sophia.mjcf": {
+      "sha256": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+      "bytes": 747
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/sim-baseline/robot/yor-description/sophia-ik.mjcf": {
+      "sha256": "85c35eb3bc0cee0c24a25972f796a33c33857eaeb76da90a03447c9447fb307f",
+      "bytes": 15872
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/sim-baseline/robot/yor-description/sophia.json": {
+      "sha256": "d91eb485d6a50fa170e6e7c36bda6909b8dc23f5e4f154b433f25a7d1bc50f5b",
+      "bytes": 13431
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/sim-baseline/robot/yor-description/sophia.mjcf": {
+      "sha256": "55ea40d52595a4e43e673bf55bd78af2f6bc663f749320e9e772b33a72372fbe",
+      "bytes": 118474
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/sim-baseline/robot/yor_mujoco.py": {
+      "sha256": "36bb3d1b6b8a2a47d74be933c04363eedb79a0057dac7b61d73462d4cef4537c",
+      "bytes": 50830
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/sim-baseline/scripts/listen_sophia_episodes.py": {
+      "sha256": "f26917c4ba2484efe132913eb996e2b77bfd6202ba52c1c90139a6fe0fb43a29",
+      "bytes": 13197
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/status.json": {
+      "sha256": "2199401715640e2bd731f1a7491ebddb67de9ac24ed687751be0d75162beeb1f",
+      "bytes": 84044
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/source/summary.json": {
+      "sha256": "2199401715640e2bd731f1a7491ebddb67de9ac24ed687751be0d75162beeb1f",
+      "bytes": 84044
+    },
+    "robot/yor-description/calibration/teleop_2026-11-02/summary.json": {
+      "sha256": "21d3c9f94306e6b6fc55cd0966738f3f2b7e5c7f190124e02ea2edad8ea9dd46",
+      "bytes": 714481
+    },
+    "robot/yor-description/calibration/teleop_capture_2026-11-02.json": {
+      "sha256": "bc9ed571e449709a9a8a21027a70f29f65f08df076dea04286b05489015ded02",
+      "bytes": 2254
+    },
+    "robot/yor-description/compare_sophia_hardware.py": {
+      "sha256": "e57f06f7fd157683a64df4f452f58d2bc7e67bbce3aff9a705f823f117e07154",
+      "bytes": 8196
+    },
+    "robot/yor-description/evaluate_sophia.py": {
+      "sha256": "af68fe2dca439ce8ec0c71312c332c07d2a70c67af17a21a37cb0e5db8374d58",
+      "bytes": 13805
+    },
+    "robot/yor-description/make_agx_variant.py": {
+      "sha256": "466a32a0ccf5570fe9e6d3176208d40c496b2f442db94821e65f5076de77fb07",
+      "bytes": 6252
+    },
+    "robot/yor-description/meshes/Lift_Middle.stl": {
+      "sha256": "73e3958957ad462ec5de2ea3a665bac0e262b6524a5bf192d15a7e158c2738bb",
+      "bytes": 1684
+    },
+    "robot/yor-description/meshes/Lift_Top.stl": {
+      "sha256": "dbb7bf0e6f59b82fd77ae815c883dac00329f2772eccac3806b3d04ce1cb20a3",
+      "bytes": 1178484
+    },
+    "robot/yor-description/meshes/MK4_Colson_Hub_4_X_1_5.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/meshes/MK4_Colson_Hub_4_X_1_5_2.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/meshes/MK4_Colson_Hub_4_X_1_5_3.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/meshes/MK4_Colson_Hub_4_X_1_5_4.stl": {
+      "sha256": "e8ba1a780af977c9a8111b95cf65eb96268e952c18337129847765e92d3a174b",
+      "bytes": 390334
+    },
+    "robot/yor-description/meshes/Part_2.stl": {
+      "sha256": "fdb18badfdbcd74d7e232f7a6db9cf5ebebff3dbe9cbec91e30731ffa8f794c6",
+      "bytes": 65784
+    },
+    "robot/yor-description/meshes/Part_2_2.stl": {
+      "sha256": "43c2be7cfeceabdc0fce2c7dae0e9f78a9641eae74cbe63c1bc05cb336743ed1",
+      "bytes": 65784
+    },
+    "robot/yor-description/meshes/Part_2_3.stl": {
+      "sha256": "fdb18badfdbcd74d7e232f7a6db9cf5ebebff3dbe9cbec91e30731ffa8f794c6",
+      "bytes": 65784
+    },
+    "robot/yor-description/meshes/Part_2_4.stl": {
+      "sha256": "fdb18badfdbcd74d7e232f7a6db9cf5ebebff3dbe9cbec91e30731ffa8f794c6",
+      "bytes": 65784
+    },
+    "robot/yor-description/meshes/base_profile_short.stl": {
+      "sha256": "0b7f6c6817992487ba47598ffb8dd5f29a19e7fd35937d111cc16e62644ca40b",
+      "bytes": 1972884
+    },
+    "robot/yor-description/meshes/piper/gripper_base.stl": {
+      "sha256": "2895bfa6f1eef2d0ad2cb9dfdedd5f6c760ec07388bcde2b4d1e412e1189c9cb",
+      "bytes": 649484
+    },
+    "robot/yor-description/meshes/piper/gripper_body.stl": {
+      "sha256": "3b6682ff65cf448441c542fa922af5990bd14f7cbfd7e942971d280eed81c28c",
+      "bytes": 1867184
+    },
+    "robot/yor-description/meshes/piper/iphone.stl": {
+      "sha256": "6d7f9f1df55227fb047aee10bd16d5fc3c03431543262a613516c539d699a59f",
+      "bytes": 363384
+    },
+    "robot/yor-description/meshes/piper/link0.stl": {
+      "sha256": "fd4a3d6d0266205fe3f725f048645be66592c23564db22e08b0807d5569b2c64",
+      "bytes": 607384
+    },
+    "robot/yor-description/meshes/piper/link1.stl": {
+      "sha256": "9ee6e1d67c0241f42a0dbaf5c676d19230375ed078ee1943bb8c4c37ab303d14",
+      "bytes": 447784
+    },
+    "robot/yor-description/meshes/piper/link2.stl": {
+      "sha256": "0d37675b699b643f2e15348de99aed535fac10dc5f09a79b8e4b0acfaf4e0378",
+      "bytes": 3658384
+    },
+    "robot/yor-description/meshes/piper/link3.stl": {
+      "sha256": "e8ae51f17c0c7f6d67b753922e2cc269f5e8372a65734f859231639a64fe8fad",
+      "bytes": 1845784
+    },
+    "robot/yor-description/meshes/piper/link4.stl": {
+      "sha256": "efa33022976218f246f736a6133494b5d0e5486e8b50b52900c42f285ae85558",
+      "bytes": 877984
+    },
+    "robot/yor-description/meshes/piper/link5.stl": {
+      "sha256": "a1c69d1c7f6f8c60e2c82331c0f444725200ed4053d3e5ec23aa82cb5db5b29f",
+      "bytes": 833684
+    },
+    "robot/yor-description/meshes/piper/link6.stl": {
+      "sha256": "88374973bc3bd9e7389b5853cd6e555af9731c30b658b1ee6f85be34a126cb92",
+      "bytes": 58884
+    },
+    "robot/yor-description/nero-welded-base-and-lift.mjcf": {
+      "sha256": "f017a6f87b269a35f73a74626945ff5b5419a9b94b9a249d436ddec5f1191c1b",
+      "bytes": 19804
+    },
+    "robot/yor-description/robot.mjcf": {
+      "sha256": "144741496349160081b876579dda17112e94e818d5c5d477dec4a7c5829a09f0",
+      "bytes": 28413
+    },
+    "robot/yor-description/scene-full-agx.mjcf": {
+      "sha256": "647e58123063dbcd8265ac1d14470ac322cd03f5fd40d901ac089ec1af527053",
+      "bytes": 893
+    },
+    "robot/yor-description/scene-full.mjcf": {
+      "sha256": "df638f32e16c83317f84e7302dc321d311153a885ed0699a7712d2549126d593",
+      "bytes": 885
+    },
+    "robot/yor-description/scene-sophia.mjcf": {
+      "sha256": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+      "bytes": 747
+    },
+    "robot/yor-description/scene.mjcf": {
+      "sha256": "b60263e21f1a69cb996fcc65b0921a393e55fd6a09a1bd6e6ff42a127dd1ff79",
+      "bytes": 886
+    },
+    "robot/yor-description/sophia-ik.mjcf": {
+      "sha256": "53968309ee9ffea5d5ed304e3feb7baccf82ca77723b61814e713b3c8a1a18d3",
+      "bytes": 15940
+    },
+    "robot/yor-description/sophia.json": {
+      "sha256": "82d0445a604bdc6bd64c52f1283c2c300ac22f6862c78e50000d83a769e8ecba",
+      "bytes": 19290
+    },
+    "robot/yor-description/sophia.mjcf": {
+      "sha256": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+      "bytes": 114567
+    },
+    "robot/yor-description/sophia_collision_geometry.py": {
+      "sha256": "dab3101c664ef71ce2ce83065474ea01eaf2fdb1b0fd17565119a3d340d69fb4",
+      "bytes": 3733
+    },
+    "robot/yor-description/sophia_sources.py": {
+      "sha256": "d40a7790524e49fc804b9572b242a5e55d628ea0b29c4283a5f3a80c8c80114b",
+      "bytes": 22722
+    },
+    "robot/yor-description/urdf/nero_left_arm.urdf": {
+      "sha256": "fe591944bbfc4b9c8c7c6593a9416b7596b64d23c5ed41f43d47e482b3015916",
+      "bytes": 11175
+    },
+    "robot/yor-description/urdf/nero_right_arm.urdf": {
+      "sha256": "fe58345b1b23fb42a3087e408bc288b2e8e184b43ed1a38150965058a0093635",
+      "bytes": 10393
+    },
+    "robot/yor-description/validate_sophia.py": {
+      "sha256": "d9a0079ec7c88a00ddb70db631473ca0d05ce4e50ae39fd558531b50b827227d",
+      "bytes": 18829
+    },
+    "robot/yor-description/vendor/agx_arm_urdf/LICENSE": {
+      "sha256": "247944c63de1573653722ba784f96123da267105b7b48577e0c8826a24b809f6",
+      "bytes": 1065
+    },
+    "robot/yor-description/vendor/agx_arm_urdf/agx_gripper/urdf/agx_gripper_description.urdf": {
+      "sha256": "e8ca1a5dad852e4afc88a56430b3f9a005b719c1c4fe648203b2bee0cff3b4c5",
+      "bytes": 3758
+    },
+    "robot/yor-description/vendor/agx_arm_urdf/nero/urdf/nero_description.urdf": {
+      "sha256": "40a01570071775a1c76acc4aa047f3db8d0c2e9daa7b1cabd750c62a90975477",
+      "bytes": 9071
+    },
+    "robot/yor-description/vendor/agx_arm_urdf/nero/urdf/nero_with_gripper_description.xacro": {
+      "sha256": "f9593d1abed73b6d9566427cb0a2e70d24d907bfacc8407f9be980a7cf806af4",
+      "bytes": 4296
+    },
+    "robot/yor-description/vendor/agx_arm_urdf/provenance.json": {
+      "sha256": "7d5a2e5691dd22e3e83d50357ba30c66b7d597b5de9424be2f3affb7b1b2cbc0",
+      "bytes": 2444
+    },
+    "robot/yor-description/yor-full-agx.mjcf": {
+      "sha256": "ffba3d58ab1fc4f2e7fa45bcedd4b511ac6df55a9db7e2aae346b5cfe044d798",
+      "bytes": 41485
+    },
+    "robot/yor-description/yor-full.mjcf": {
+      "sha256": "d5e05b9a470c7ab41ad2b339f12d94e0ba8c9bfe436b1d05c0862df34abbed03",
+      "bytes": 56395
+    },
+    "robot/yor_mujoco.py": {
+      "sha256": "8f347084b9d30905bd6c714b30ba84e24deb4e309dc50b53c42d910dd06e247e",
+      "bytes": 51451
+    },
+    "scripts/analyze_sophia_live.py": {
+      "sha256": "c61c71078fc286d9478fd917d12efe15564dc15b4c69ee71b62b669678c4df79",
+      "bytes": 6324
+    },
+    "scripts/audit_sophia_arm_frames.py": {
+      "sha256": "9fd55a68d7eefb95fe0f15416102a71bf3dec52de8520007accd685d4889bc47",
+      "bytes": 14237
+    },
+    "scripts/audit_sophia_dataset.py": {
+      "sha256": "1719830c7096e229582bae2b5cec6708dcd197ab3f27ca9439a2a6e57b876410",
+      "bytes": 8664
+    },
+    "scripts/audit_sophia_neck_recording.py": {
+      "sha256": "246d838f8b03c210616dfd5f061344fb78cd5232ab38bd6ae0c04836fed4e798",
+      "bytes": 6863
+    },
+    "scripts/calibrate_sophia_base.py": {
+      "sha256": "5f40f2398e6c8f99056aafe7c0494d9d3c3c3b38d45720502fe2aaacfd7c5c4e",
+      "bytes": 10371
+    },
+    "scripts/calibrate_sophia_head.py": {
+      "sha256": "0ae1829fc89d5f554915443b651fc1d8fa132be175c182ec2adc6f5dd450299a",
+      "bytes": 21292
+    },
+    "scripts/check_sophia.py": {
+      "sha256": "d37a05cd3916c58edae0f432b910a4eef343cfca9e114f4c66c0deb706863270",
+      "bytes": 11061
+    },
+    "scripts/check_sophia_base.py": {
+      "sha256": "491914ab74b445d58a40ef1ec3db6e62f9038500f2d58c002c0a6ca11cb6e25e",
+      "bytes": 16471
+    },
+    "scripts/check_sophia_head_calibration.py": {
+      "sha256": "ffe10cb82388abc61b855d1cae72beec0614e417afeb645ee85e9a59a521b4ab",
+      "bytes": 17303
+    },
+    "scripts/check_sophia_live.py": {
+      "sha256": "6dd001d4bbb50bd12eb2a1969c871db5c01121ac3b05d531a47fdb62ed9c0c71",
+      "bytes": 6152
+    },
+    "scripts/check_sophia_replay.py": {
+      "sha256": "592b635e726a18ccca9d871f95b77a1f38ee6566dc50973db6d3602b8185b59a",
+      "bytes": 7642
+    },
+    "scripts/diagnose_sophia_neck_reference.py": {
+      "sha256": "274874771a40a9fb92154999ab6acf0d367efea16f5d66ce9377d42d53328ec0",
+      "bytes": 9349
+    },
+    "scripts/extract_sophia_spinal_assembly.py": {
+      "sha256": "3d77a2719018b5f4847dff33982e6df156ccbba5643756d4966225b1b4fc918b",
+      "bytes": 6941
+    },
+    "scripts/extract_sophia_spinal_neck.py": {
+      "sha256": "841c5251fd305b247623c331b20bd892bff6691b5b7aa0910fedc57e4a443a00",
+      "bytes": 3985
+    },
+    "scripts/fit_sophia_base.py": {
+      "sha256": "affe969a5bf1191ce8c082abda0ad293ed1fbd30bac5b28516468eb2378045c0",
+      "bytes": 8144
+    },
+    "scripts/fit_sophia_head_camera.py": {
+      "sha256": "e33e5de48b96f4bedd76699dfa8ace11f08467a95c42a09d56f6699a8a6af34c",
+      "bytes": 28607
+    },
+    "scripts/identify_sophia_capture.py": {
+      "sha256": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+      "bytes": 21142
+    },
+    "scripts/identify_sophia_joint_gains.py": {
+      "sha256": "66b422a64f6ead84e04b065d71205d5e4e38eecaedd0786e95954fa04da97cd8",
+      "bytes": 7450
+    },
+    "scripts/identify_sophia_response.py": {
+      "sha256": "7bb08597ecf62a9ccab2a6919cc26fc12a18d6cbdb3a6aa116ce0ab3e5de1a90",
+      "bytes": 20482
+    },
+    "scripts/import_sophia_capture.py": {
+      "sha256": "036537b799b1f620ca714329d1d2b0a2f2b6cb9987f1b90fbc8990b1e44e6e19",
+      "bytes": 15175
+    },
+    "scripts/listen_sophia_episodes.py": {
+      "sha256": "f26917c4ba2484efe132913eb996e2b77bfd6202ba52c1c90139a6fe0fb43a29",
+      "bytes": 13197
+    },
+    "scripts/live_sophia_teleop.py": {
+      "sha256": "b5a99d2a1a77e9758b4cc49bbbb4286013d19c27feef3f3d12d553f55b7223b3",
+      "bytes": 9613
+    },
+    "scripts/package_sophia.py": {
+      "sha256": "04e264f19794f28b99eb6db5e3398585a363a0713d55d458f49acd76aaa24f01",
+      "bytes": 9062
+    },
+    "scripts/prepare_sophia_head_calibration.py": {
+      "sha256": "695e40fce310475e03aa348469fbae7038f6fb948ddd9e7bc31cd06f4888d90c",
+      "bytes": 2524
+    },
+    "scripts/render_continuous_teleop.py": {
+      "sha256": "8f3acfab5f1b466b60c6d03356048431c7d68a7f91f86be1f2629e5a69a77567",
+      "bytes": 13700
+    },
+    "scripts/render_sophia_cameras.py": {
+      "sha256": "890e8295fad5e47629cbf2757d573ff9a68fe5a20126156adf08e6d4bf08e45e",
+      "bytes": 1857
+    },
+    "scripts/render_sophia_demo.py": {
+      "sha256": "f441a286a82539d5e452fc19ccc13cff10be974b279aeb9b512285157e467db8",
+      "bytes": 27190
+    },
+    "scripts/replay_sophia_dataset_arm.py": {
+      "sha256": "c3fea45a84cae2933a30c02e87119c9d6644f901a75aea0f96385fc02e0f8ed8",
+      "bytes": 9075
+    },
+    "scripts/replay_sophia_dataset_neck.py": {
+      "sha256": "d2d1292d0726e4c12eb4f77fec7d7155f27ee667743d102753bc0022e53d6251",
+      "bytes": 6654
+    },
+    "scripts/review_sophia_collisions.py": {
+      "sha256": "e5d91fc99d15a4871484ad18a7f8fb9386f23a392cfedd3b4e3ede855651617c",
+      "bytes": 15772
+    },
+    "scripts/review_sophia_mounts.py": {
+      "sha256": "20c7cc8096e3eb63d19fe06d6fa44ccd9ce12c76a30150d150ace3826f91dbfa",
+      "bytes": 11544
+    },
+    "scripts/run_sophia_full_frame_calibration.py": {
+      "sha256": "f9f1f0b6ca81e1f99394a5cee74805d8ce0c63c83718948e99afeb8b7533063e",
+      "bytes": 5344
+    },
+    "scripts/run_sophia_head_calibration.sh": {
+      "sha256": "061dd5a4c52dc32493ce899bb6798a681eee95ddafb9ff297727774728855e9a",
+      "bytes": 512
+    },
+    "scripts/run_sophia_live.sh": {
+      "sha256": "1ccec115a9ee86ff4c512898a2187befbe4aad91ae92a39f72150e4c887a4143",
+      "bytes": 776
+    },
+    "scripts/run_sophia_pick_place.py": {
+      "sha256": "e5b01b1c102061d600baf511089de14bcc19e00130513de8ff75b5e7a0f019a2",
+      "bytes": 6127
+    },
+    "scripts/sophia_replay.py": {
+      "sha256": "b3f46d567c43932826a532e0a3597ebe700ddd828abf3e407c8efc5ef96504bc",
+      "bytes": 4531
+    },
+    "scripts/verify_sophia_bundle.py": {
+      "sha256": "c594015e41ca868a471674419e5db4e05ca398a03bcb398905fd8ae4476aa1eb",
+      "bytes": 3642
+    },
+    "vr-teleop/AGENTS.md": {
+      "sha256": "d130ed0dd87f2434b72d907226a512dd461bc0a516baab43f3475257342bcad9",
+      "bytes": 7229
+    },
+    "vr-teleop/README.md": {
+      "sha256": "ac9b622c8fabefc9c8a28d05a40377b154e6ed561887615f0a6ed78e1237508d",
+      "bytes": 6910
+    },
+    "vr-teleop/camera_config.sim.json": {
+      "sha256": "47ad462e48fe8167ef9d1e5bce0d7ef3a3f31fd47d22545d61287a99b3fa151a",
+      "bytes": 111
+    },
+    "vr-teleop/docs/EPISODE_FORMAT.md": {
+      "sha256": "e3a3cfe6c54bd2579f111a6879c1d484645bc08cb46a6304c837b60202ae4a43",
+      "bytes": 10452
+    },
+    "vr-teleop/docs/ORIN_CYCLES.md": {
+      "sha256": "a726d7bf785c38394f503e4305df6347edd14fb92aadc94aca89430563c23c0a",
+      "bytes": 4465
+    },
+    "vr-teleop/docs/ORIN_VIDEO_SERVER.md": {
+      "sha256": "4cce58eb8190032f4f2ea336adafbaf1ead1872abcba9a021ceed8d64a4a2063",
+      "bytes": 10599
+    },
+    "vr-teleop/docs/YOR_RPC_INTERFACE.md": {
+      "sha256": "9423f58c7bc3a0baa6d1cf581873e2402f0046628223ae22e7623623d976016c",
+      "bytes": 6162
+    },
+    "vr-teleop/requirements.txt": {
+      "sha256": "5228f62340def462103fe65fac5ac52daa6637cfc3ddabc9002fa7f851a38d0f",
+      "bytes": 35
+    },
+    "vr-teleop/server/cameras.py": {
+      "sha256": "bd73752e99189c9979bc36cf399108c8327780d1f44661e4020dcd821b4dde66",
+      "bytes": 14651
+    },
+    "vr-teleop/server/cycles.py": {
+      "sha256": "2f00031bbc4eaf14871001cb627ebd9d207f48dfc3b462b2247a7439a37e46f5",
+      "bytes": 7163
+    },
+    "vr-teleop/server/episode_store.py": {
+      "sha256": "bc0204660cc968effd0ad274af5da0bd5ba978489f81e6974e848f00f920797b",
+      "bytes": 6952
+    },
+    "vr-teleop/server/gen_cert.py": {
+      "sha256": "ce20a7eeccd40905284729177b9fa98c66f30e1e17f79de39c59875df29ccc35",
+      "bytes": 2786
+    },
+    "vr-teleop/server/lift_retarget.py": {
+      "sha256": "dfd2b55dcdb2906ff626a708d4962f264043ef4821a9264b71bfc06252d408a3",
+      "bytes": 4653
+    },
+    "vr-teleop/server/quat.py": {
+      "sha256": "424e1b1e04c530b7cc065cfc47e2d4416e031e13be7635ee18efeb63bae1688c",
+      "bytes": 4549
+    },
+    "vr-teleop/server/server.py": {
+      "sha256": "e3150fe1f7c54a59053df4a0862a49dda49e6a9b5ae27292ed29000b0d480221",
+      "bytes": 9035
+    },
+    "vr-teleop/server/teleop.py": {
+      "sha256": "8c4aac0a731e4a6658876d2c2c41c302aa7a7044aa5c44a22d5fbbfd271024ee",
+      "bytes": 18486
+    },
+    "vr-teleop/server/whole_body.py": {
+      "sha256": "56aa5de5f99765b0440b8de84333a9c863fb1d7a11d1cdd9b9ceddc13019b162",
+      "bytes": 24033
+    },
+    "vr-teleop/server/yor_bridge.py": {
+      "sha256": "e7afbae39dfdfec773ae08ab109c6a96291ccd53de04e0936cd34951f0536c58",
+      "bytes": 63650
+    },
+    "vr-teleop/static/index.html": {
+      "sha256": "9ab9e96f8589b9bfd2e19b225583c13f89ccf1c54cfc7aae8adf33dee4d2c71e",
+      "bytes": 1145
+    },
+    "vr-teleop/static/latest_frame.mjs": {
+      "sha256": "81aaa6136094336bae4b0d02e75df5269a05a6fd94f2267fdd221c2b90d34bfb",
+      "bytes": 1127
+    },
+    "vr-teleop/static/main.js": {
+      "sha256": "7206b503ce2a1d4bc5a38458ac7def20573f4712792e72a832ee4656deeff688",
+      "bytes": 36376
+    },
+    "vr-teleop/static/monitor.html": {
+      "sha256": "04ce5044b5abb56d2f996318e6aff07787dabcbf7bbfaabf3c5cecd69a1377cc",
+      "bytes": 5672
+    },
+    "vr-teleop/static/monitor.js": {
+      "sha256": "a7eec6d4a73613281cb41efc5810a370876c31ded65d18a4c25ac16e0d404160",
+      "bytes": 12223
+    },
+    "vr-teleop/tests/test_cycles.py": {
+      "sha256": "05cd0ef51e256b7125844b5f73227842e92db2e4c40f7d851b214c3a9d3b3ca3",
+      "bytes": 7833
+    },
+    "vr-teleop/tests/test_whole_body.py": {
+      "sha256": "c6e08de8acd2ef489fc8f0c472e0f9b92d80d64b986b1875cb4747c8bf91937d",
+      "bytes": 24371
+    },
+    "RELEASE.json": {
+      "sha256": "58b65cd9b4e1a52eae1011aa99b61eb49873a29eadf73e812396cafdc5c5f719",
+      "bytes": 3839
+    },
+    ".gitignore": {
+      "sha256": "460080514cda895e4e901b40a0e16c7811108bbda84ca8a5355470cdd77ff5e9",
+      "bytes": 74
+    }
+  },
+  "publication": {
+    "repository": "adityx23/Sophia-Sim-Assets",
+    "standalone_archive_sha256": "0b9be52531a381883d85ffe6cfc62a8691c42044f8d533f4f0a7237900503ba1"
+  }
+}

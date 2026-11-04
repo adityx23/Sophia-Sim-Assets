@@ -1,0 +1,4 @@
+-r requirements-sophia-replay.in
+-c requirements-sophia-replay.txt
+aiohttp
+cryptography

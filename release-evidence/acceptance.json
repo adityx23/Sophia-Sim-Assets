@@ -1,0 +1,571 @@
+{
+  "completed_at_utc": "2026-11-04T20:24:15.905813+00:00",
+  "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+  "python_executable": "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+  "system_site_packages_inherited": false,
+  "simulation_checks_passed": true,
+  "hardware_calibrated": false,
+  "training_checks_enabled": true,
+  "release_status": "finalized_simulation_baseline",
+  "remaining_required_work": [],
+  "hardware_review_findings": [
+    {
+      "code": "gripper_provenance",
+      "severity": "accepted_assumption",
+      "detail": "Both finger meshes exactly match the pinned official AgileX stock-gripper meshes. The housing differs from the current vendor housing. Existing-asset frame review retains the supplied stock assembly; installed revision and physical mount precision remain accepted assumptions.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Compare the installed housing and adapter against the model; the user-confirmed Nero identity and finger source are already established."
+    },
+    {
+      "code": "unreferenced_gripper_mesh",
+      "severity": "accepted_assumption",
+      "detail": "gripper.STL has no established assembly transform or unit declaration; it is not substituted into the model.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Identify the part and its local mounting frame before any substitution."
+    },
+    {
+      "code": "gripper_mount",
+      "severity": "accepted_assumption",
+      "detail": "The simulated palm is 12 mm along end-effector +Y; the configured grasp site is 132 mm along that axis. Existing-asset reconciliation confirms inheritance from the stock assembly, with unchanged hardware confirmed by the user. These remain accepted mounting estimates rather than measured extrinsics.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Check adapter seating/orientation and flange-to-grasp distance on the installed assembly."
+    },
+    {
+      "code": "unmeasured_mass_distribution",
+      "severity": "accepted_assumption",
+      "detail": "Arm and finger inertials now use verified vendor CAD data. Chassis, lift, housing/accessory mass distribution, friction and actuator response still need physical validation; the complete robot has not been weighed.",
+      "blocks_simulation_release": false,
+      "disposition": "Retain supplied model under user-authorized approximation; unused meshes remain excluded.",
+      "optional_hardware_validation": "Weigh assemblies and record motion/grasp response before dynamics calibration.",
+      "total_model_mass_kg": 42.0053061,
+      "arm_totals": {
+        "left": {
+          "arm_base_and_links_kg": 4.581212700000001,
+          "end_effector_adapter_kg": 0.05,
+          "gripper_assembly_kg": 0.5
+        },
+        "right": {
+          "arm_base_and_links_kg": 4.581212700000001,
+          "end_effector_adapter_kg": 0.05,
+          "gripper_assembly_kg": 0.5
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "asset_audit",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 0.366,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/yor-description/audit_sophia.py",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance"
+      ],
+      "log": "asset_audit.log"
+    },
+    {
+      "name": "asset_validation",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 1.266,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/yor-description/validate_sophia.py",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance",
+        "--render"
+      ],
+      "log": "asset_validation.log"
+    },
+    {
+      "name": "calibrated_frames",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 1.717,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "-m",
+        "unittest",
+        "robot.test_sophia_full_frames",
+        "robot.test_sophia_head_alignment",
+        "robot.test_sophia_neck_reference",
+        "robot.test_sophia_base_alignment"
+      ],
+      "log": "calibrated_frames.log"
+    },
+    {
+      "name": "calibration_tools",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 0.465,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_calibration.py"
+      ],
+      "log": "calibration_tools.log"
+    },
+    {
+      "name": "capture_identification",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 1.366,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_identification.py"
+      ],
+      "log": "capture_identification.log"
+    },
+    {
+      "name": "capture_import",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 0.114,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_capture_import.py"
+      ],
+      "log": "capture_import.log"
+    },
+    {
+      "name": "collision_regressions",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 27.25,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_collision.py"
+      ],
+      "log": "collision_regressions.log"
+    },
+    {
+      "name": "collision_shape_review",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 2.017,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "scripts/review_sophia_collisions.py",
+        "--expect-reviewed-geometry",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance/collision-shapes"
+      ],
+      "log": "collision_shape_review.log"
+    },
+    {
+      "name": "controller_legacy",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 33.49,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_yor_mujoco.py",
+        "--gripper",
+        "agx"
+      ],
+      "log": "controller_legacy.log"
+    },
+    {
+      "name": "controller_sophia",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 34.878,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_yor_mujoco.py",
+        "--model",
+        "robot/yor-description/scene-sophia.mjcf"
+      ],
+      "log": "controller_sophia.log"
+    },
+    {
+      "name": "episode_listener",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 3.319,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_episode_listener.py"
+      ],
+      "log": "episode_listener.log"
+    },
+    {
+      "name": "extended_evaluation",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 4.019,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/yor-description/evaluate_sophia.py",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance"
+      ],
+      "log": "extended_evaluation.log"
+    },
+    {
+      "name": "generated_files_reproducible",
+      "passed": true,
+      "checked_files": 41,
+      "changed_files": []
+    },
+    {
+      "name": "hardware_summary_comparison",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 11.18,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/yor-description/compare_sophia_hardware.py",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance"
+      ],
+      "log": "hardware_summary_comparison.log"
+    },
+    {
+      "name": "locked_dependencies",
+      "passed": true,
+      "packages": {
+        "absl-py": {
+          "expected": "2.5.1",
+          "actual": "2.5.1"
+        },
+        "cloudpickle": {
+          "expected": "3.1.2",
+          "actual": "3.1.2"
+        },
+        "commlink": {
+          "expected": "0.4.2",
+          "actual": "0.4.2"
+        },
+        "daqp": {
+          "expected": "0.10.3",
+          "actual": "0.10.3"
+        },
+        "etils": {
+          "expected": "1.14.0",
+          "actual": "1.14.0"
+        },
+        "farama-notifications": {
+          "expected": "0.0.6",
+          "actual": "0.0.6"
+        },
+        "fsspec": {
+          "expected": "2026.9.0",
+          "actual": "2026.9.0"
+        },
+        "glfw": {
+          "expected": "2.11.0",
+          "actual": "2.11.0"
+        },
+        "gymnasium": {
+          "expected": "1.4.0",
+          "actual": "1.4.0"
+        },
+        "loop-rate-limiters": {
+          "expected": "1.2.0",
+          "actual": "1.2.0"
+        },
+        "lz4": {
+          "expected": "4.4.5",
+          "actual": "4.4.5"
+        },
+        "mink": {
+          "expected": "1.3.0",
+          "actual": "1.3.0"
+        },
+        "mujoco": {
+          "expected": "3.17.0",
+          "actual": "3.17.0"
+        },
+        "numpy": {
+          "expected": "2.4.6",
+          "actual": "2.4.6"
+        },
+        "opencv-python-headless": {
+          "expected": "4.14.0.94",
+          "actual": "4.14.0.94"
+        },
+        "pillow": {
+          "expected": "12.3.0",
+          "actual": "12.3.0"
+        },
+        "pyopengl": {
+          "expected": "3.1.10",
+          "actual": "3.1.10"
+        },
+        "pyzmq": {
+          "expected": "27.2.0",
+          "actual": "27.2.0"
+        },
+        "qpsolvers": {
+          "expected": "4.13.0",
+          "actual": "4.13.0"
+        },
+        "scipy": {
+          "expected": "1.17.1",
+          "actual": "1.17.1"
+        },
+        "typing-extensions": {
+          "expected": "4.16.0",
+          "actual": "4.16.0"
+        },
+        "websockets": {
+          "expected": "17.3",
+          "actual": "17.3"
+        },
+        "zipp": {
+          "expected": "4.1.2",
+          "actual": "4.1.2"
+        },
+        "zstandard": {
+          "expected": "0.25.0",
+          "actual": "0.25.0"
+        }
+      }
+    },
+    {
+      "name": "mobile_manipulation",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 45.327,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "scripts/render_sophia_demo.py",
+        "--simulate-only",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance/mobile-manipulation"
+      ],
+      "log": "mobile_manipulation.log"
+    },
+    {
+      "name": "mount_frame_review",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 0.565,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "scripts/review_sophia_mounts.py",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance/mount-frames"
+      ],
+      "log": "mount_frame_review.log"
+    },
+    {
+      "name": "policy_contract",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 0.114,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_policy.py"
+      ],
+      "log": "policy_contract.log"
+    },
+    {
+      "name": "rebuild",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 0.915,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/yor-description/build_sophia.py"
+      ],
+      "log": "rebuild.log"
+    },
+    {
+      "name": "release_profile_and_cameras",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 1.366,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_release.py"
+      ],
+      "log": "release_profile_and_cameras.log"
+    },
+    {
+      "name": "stereo_video",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 2.818,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_video.py"
+      ],
+      "log": "stereo_video.log"
+    },
+    {
+      "name": "training_environment",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 6.874,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "robot/test_sophia_env.py"
+      ],
+      "log": "training_environment.log"
+    },
+    {
+      "name": "training_task_oracle",
+      "passed": true,
+      "exit_code": 0,
+      "error": null,
+      "elapsed_s": 43.12,
+      "command": [
+        "/home/lairlab/projects/pi-atlas/sim/YOR/.venv-sophia/bin/python",
+        "scripts/run_sophia_pick_place.py",
+        "--episodes",
+        "3",
+        "--rgb-observations",
+        "--output",
+        "/home/lairlab/projects/pi-atlas/sim/YOR/output/releases/sophia-sim-v1.0.0-2026-11-04/acceptance/training-task"
+      ],
+      "log": "training_task_oracle.log"
+    }
+  ],
+  "source_sha256": {
+    "requirements-sophia.txt": "87bb49d429cf44771d7cc51ad404fdfcf6dd8bb8fe8212df14cd5b5c56260e84",
+    "requirements-sophia-training.txt": "9384b2bf3b31702a136d701b0284d8b23df6c8798bd24feec5d18980e332eba1",
+    "robot/yor-description/sophia.mjcf": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
+    "robot/yor-description/scene-sophia.mjcf": "023d4003ff478275366538bac5574fc2ab3c5fe9696e20c89d11b896729b19f2",
+    "robot/yor-description/sophia-ik.mjcf": "53968309ee9ffea5d5ed304e3feb7baccf82ca77723b61814e713b3c8a1a18d3",
+    "robot/yor-description/assets_nero/sophia/sophia_base_link_0.stl": "4ccad84075732c0db41a33d3aa05ca3b0bbf47fec7ebc1625e5403915cb5820c",
+    "robot/yor-description/assets_nero/sophia/sophia_link1_0.stl": "2827eb3da30a467ac36019a34bb38ed5f3e030490bd10f93005511cdda2f8a1e",
+    "robot/yor-description/assets_nero/sophia/sophia_link2_0.stl": "87462e076e759070e591a02244a35f569b329d792571932617f57f64bd01fe80",
+    "robot/yor-description/assets_nero/sophia/sophia_link2_1.stl": "09445e2ec81703672ec041f40ce0c5033f187baf4eb57f60a082a483afd1e64d",
+    "robot/yor-description/assets_nero/sophia/sophia_link2_2.stl": "b6ef2e7c6040fbad6f337d117951d93addada3d9b5e3eef5945a2919d58e19d0",
+    "robot/yor-description/assets_nero/sophia/sophia_link2_3.stl": "971979b27bffeac83cdc8a186491a6a17296d3fc83588143651634e6a99518cd",
+    "robot/yor-description/assets_nero/sophia/sophia_link3_0.stl": "136b2f295fab5ae85362f950b3deab3b3b4eeb0cc7823b1f12c1c46376e58cb5",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_0.stl": "2cec85b9b9c962879739afe42d5e10f68485a59293195b6a69d5029d3d23f783",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_1.stl": "088baf75b0911528d03c967a3e6f8198c86184d9a61eb69cca80a92b495d80f2",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_10.stl": "97631bade6b62257fafcecca49a7a16f7508f122b1606f3ce51c1a7885afd65f",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_11.stl": "d095881fe04ea2eef4eb84444be20bdd752cc6ad30aa4bbdd89ba111333dc5fa",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_2.stl": "e1a118f190c15d3b74a172471df969029d3c28a446049e8789555b228723ab97",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_3.stl": "1d4c3b844c47e355f0aefcfb8c6c23f1312ce6edacb4431e1f8d881f8aacc74d",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_4.stl": "87e01c096b77ed3dd9f204a1d452d98bae8a2fd5b24e46f2c2d28f0587f417d5",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_5.stl": "4ec6cc08530c7af407b261bf0155989b29271039f8121f235405a3f7863a9498",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_6.stl": "ad37e790ba200ac8cf7933529d9c8afbbfc886933adb717bf5664d2750a11bb1",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_7.stl": "7af62bc5a3385b716dcd6af7ac60c3e75f4fc90f9661b3b79760311ffc17d1f5",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_8.stl": "e7c4582808c53749109840de1528eb8f49faab76497551a4393a072782732c9f",
+    "robot/yor-description/assets_nero/sophia/sophia_link4_9.stl": "7c0f90b2568a62bcaea6184f4536ba0a67e61796d1356487b798f742c651d088",
+    "robot/yor-description/assets_nero/sophia/sophia_link5_0.stl": "6e838d13fde7ed36906e1371fc8161e93ade5006e9d96f4585cdf6dc88cc9cb7",
+    "robot/yor-description/assets_nero/sophia/sophia_link5_1.stl": "37566715367792e3a452724fd5626e29c235ed73866f7dcf2789d1a9068343b2",
+    "robot/yor-description/assets_nero/sophia/sophia_link5_2.stl": "66198e7de86b9a8eba6718343dde1d0a843851a99c81799235e4b5a083ce6b79",
+    "robot/yor-description/assets_nero/sophia/sophia_link6_0.stl": "9cf2784ca68b65bbf78a7caddaad6e70ba50a9344bb658144023ff37040d63ad",
+    "robot/yor-description/assets_nero/sophia/sophia_link7_0.stl": "8287c0baff89e20252d6b01dbc3ca79cdd3df93a360e7b651517a104e711f530",
+    "robot/yor-description/assets_nero/sophia/spinal_fixed_adapter.stl": "af7bb91466bb8a0f224ea1b91c15a8b3ebd4a34df6f7f446b15e48a4c28db5df",
+    "robot/yor-description/assets_nero/sophia/spinal_neck_lattice.stl": "92a7f1fbdec57b1876aa9514cd71c556e1eba35c495c4a570d935f5706a3b238",
+    "robot/yor-description/assets_nero/sophia/spinal_pan_bracket.stl": "d88dad274f91a6b04ed3c62885a87e16badc13ced9d0072995e29c51aa89c157",
+    "robot/yor-description/assets_nero/sophia/spinal_pan_servo.stl": "27da39dd12ba6b22ba451eda6938c1adc3cc6ada829f8b03584d3387418165e3",
+    "robot/yor-description/assets_nero/sophia/spinal_pan_servo_support.stl": "bd2d5ce5c6047f3edd886db62afbdf270a4e9e4af42e8557170d2e387d874b0e",
+    "robot/yor-description/assets_nero/sophia/spinal_tilt_bearing.stl": "3a4598d5abec5b4730482542295e139a6ee8b871209257f940bbb41cebaf5e1d",
+    "robot/yor-description/assets_nero/sophia/spinal_tilt_bracket.stl": "52ca236a9a677eccb23a2a573a91a6cf12c464d8b0c139ec345846e5c546815d",
+    "robot/yor-description/assets_nero/sophia/spinal_tilt_servo.stl": "7c29b291e0ec3cc2cbdd7e129ea467e8e6d373e1b497ba99b82620e970721c8a",
+    "robot/yor-description/assets_nero/sophia/spinal_zed_camera.stl": "74ccc3949ef19c267f175c9f3974fd5b4b9bb7d4ba4d8d06eb7d7655f3866658",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_0.stl": "48b445a81115cc92cf8498a02378c82913a37e50016f181e2d519c70ffe4633c",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_1.stl": "ddfc34bf357e351e42245549e080ce6bca878f0fa1e5f501386a19cd97c59427",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_2.stl": "da24cdc70f2f4fa210ac4d302604cdff61c87e590f2d2fd20c8baebccfd1bafa",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_3.stl": "1ee65dfc6597888f3a635f82e595db647f740a37c11907f7b81c1ec582f4d2b6",
+    "robot/yor-description/assets_nero/sophia_collision/sophia_gripper_housing_4.stl": "325c7b5d1c191ec7236be32148938696f233a560a39a9dd75784f27e7c530210",
+    "robot/sophia_calibration.py": "fef733bd6aa3b0174e3a4a3edef0f8becc986093a30e698e4a9c05a698bcf1db",
+    "robot/sophia_env.py": "1ef6b616c80438c5fc8ba9993e4badd88e337d22081db71e61478d1f6ec3ff6d",
+    "robot/sophia_live.py": "8216324bfc884308ed2f26a3cad5b166ac00e8665983523b5ca91af171501d7a",
+    "robot/sophia_live_agent.py": "193300ec5275689d8a5f1f08661a0549920c8509a1ea2075c416c168f81a19b6",
+    "robot/sophia_live_common.py": "1b2eb0fa9764a0aeaf304e196c8736aad9951850fa1efc2211f37f7cb40b78b0",
+    "robot/sophia_live_video.py": "42e2076cb5c8652c6ca139e2df61e2a50e2ce0665e21f24c7cde1b905d9e1946",
+    "robot/sophia_policy.py": "129b8c4112f24ffad45dcea33a9cb2c9df4b7b78c37cf2d62163790a1df224cf",
+    "robot/sophia_profile.py": "a4bf17756142b10b617975c4d11c46c07c8a4c845d0fb06e13e0503ff50827a3",
+    "robot/sophia_recording_alignment.py": "a17dabce6bab65ba5d992cddde9c39df702d8ddc21d1f0fde740914eb9f722a7",
+    "robot/sophia_replay.py": "44dbdd406e45e1fa53d690f40ce0274ada78e9e06c63f552e7979f1e4433cfab",
+    "robot/sophia_replay_compare.py": "e85279a559bdff233459df1054a96cdf1258695f3a26c58252b058c0f731cf18",
+    "robot/sophia_replay_io.py": "e28f4d60fcbb54c82cc4443d4016eab4238ba6b735ea784d883317062b80c497",
+    "robot/test_sophia_base_alignment.py": "a29e8afb7716aaf3b9a7320e82d882e307fac05a25255064e730a5598e1fd8ab",
+    "robot/test_sophia_calibration.py": "c7c865c4233f9f2aa18ad11e3f344dac58f067542c2285664d153a8e89495839",
+    "robot/test_sophia_capture_import.py": "369b56adb43b621347514fd75cc3a4944333939f5793a35d302259fe844e4905",
+    "robot/test_sophia_collision.py": "e7b52368545bc1f8e099e4db058c474fc9dd0305fc88ee3bd8d934bcb9bfc85d",
+    "robot/test_sophia_env.py": "7751fb713acdada313537eb822e8f3df252afc7742c102d3a91bdd728888a339",
+    "robot/test_sophia_episode_listener.py": "7d3b8f6dc896366670d5fe1b304e9cf3ce29511555aab160764a7a6513f3bba5",
+    "robot/test_sophia_full_frames.py": "1fc4c077cc96906ad9520cb1d64117d9fc1c939e2cd2081bf23ba614cc5a7d4b",
+    "robot/test_sophia_head_alignment.py": "a3a582079ffd51712e576df47983cfbaf8bb775f67a50dc4e5dee348652ced7e",
+    "robot/test_sophia_identification.py": "672da22cab0efd74e88ee1985d62b28c3096efd8ab12bbd577dcb8fbe5c6f130",
+    "robot/test_sophia_live.py": "bc2e841be3c045284bd49841789e81d34e62bc4a57caaef34ac83c16e1237ee1",
+    "robot/test_sophia_neck_reference.py": "ff760559ac1d1fd762f370a088afce53bfb24393ee26e0d0d01fe0ae2c6e636e",
+    "robot/test_sophia_policy.py": "7aa30bda23b67a81eff73e337ee3ea31fc8388363d17ac4f27c750bded4928c9",
+    "robot/test_sophia_release.py": "78d500d76e747ed7308564ef50410ebe782969f6f77c2a3ccc7eb058cdb257eb",
+    "robot/test_sophia_replay.py": "06c2cbd587ae6e2340696e16705bc59518f8c6aa59e310d65c312d2b98b60b59",
+    "robot/test_sophia_video.py": "b9661791a6ceead5a74e71c74a6763c5367f110507e1ae0407f9b59854e1b2b1",
+    "robot/yor_mujoco.py": "8f347084b9d30905bd6c714b30ba84e24deb4e309dc50b53c42d910dd06e247e",
+    "robot/sim_collision.py": "648406bdff48aa7f711e6376488b12e5cfd7999bc65eea2ad7bc51a95f58816a",
+    "robot/sim_camera.py": "48098287753c914002683eb28e33f88a5cb8c88e8b219a4592aba938c5c7b4a3",
+    "robot/yor-description/sophia_sources.py": "d40a7790524e49fc804b9572b242a5e55d628ea0b29c4283a5f3a80c8c80114b",
+    "robot/yor-description/sophia_collision_geometry.py": "dab3101c664ef71ce2ce83065474ea01eaf2fdb1b0fd17565119a3d340d69fb4",
+    "robot/yor-description/compare_sophia_hardware.py": "e57f06f7fd157683a64df4f452f58d2bc7e67bbce3aff9a705f823f117e07154",
+    "scripts/render_sophia_demo.py": "f441a286a82539d5e452fc19ccc13cff10be974b279aeb9b512285157e467db8",
+    "scripts/audit_sophia_dataset.py": "1719830c7096e229582bae2b5cec6708dcd197ab3f27ca9439a2a6e57b876410",
+    "scripts/replay_sophia_dataset_neck.py": "d2d1292d0726e4c12eb4f77fec7d7155f27ee667743d102753bc0022e53d6251",
+    "scripts/replay_sophia_dataset_arm.py": "c3fea45a84cae2933a30c02e87119c9d6644f901a75aea0f96385fc02e0f8ed8",
+    "scripts/render_sophia_cameras.py": "890e8295fad5e47629cbf2757d573ff9a68fe5a20126156adf08e6d4bf08e45e",
+    "scripts/review_sophia_collisions.py": "e5d91fc99d15a4871484ad18a7f8fb9386f23a392cfedd3b4e3ede855651617c",
+    "scripts/review_sophia_mounts.py": "20c7cc8096e3eb63d19fe06d6fa44ccd9ce12c76a30150d150ace3826f91dbfa",
+    "scripts/identify_sophia_response.py": "7bb08597ecf62a9ccab2a6919cc26fc12a18d6cbdb3a6aa116ce0ab3e5de1a90",
+    "scripts/listen_sophia_episodes.py": "f26917c4ba2484efe132913eb996e2b77bfd6202ba52c1c90139a6fe0fb43a29",
+    "scripts/import_sophia_capture.py": "036537b799b1f620ca714329d1d2b0a2f2b6cb9987f1b90fbc8990b1e44e6e19",
+    "scripts/identify_sophia_capture.py": "fc75976bfe50fcc6190ef7f19cf96a7a612eefa466952f074666dea09321d5ee",
+    "scripts/identify_sophia_joint_gains.py": "66b422a64f6ead84e04b065d71205d5e4e38eecaedd0786e95954fa04da97cd8",
+    "scripts/run_sophia_pick_place.py": "e5b01b1c102061d600baf511089de14bcc19e00130513de8ff75b5e7a0f019a2",
+    "robot/yor-description/calibration/base_alignment_2026-11-04.json": "a8961c0c4b742f39f2adceb8f58065e403385bc4f0f9da019b79a9d180d499e5",
+    "robot/yor-description/calibration/camera_intrinsics_2026-10-30.json": "d05b06874439686818dec0977e293862bb79e38939ec440c9ab94c2a2a3a4b47",
+    "robot/yor-description/calibration/collision_shape_review_2026-10-31.json": "f3222de6eca8a2e79cdd3e2d949bb4b4c1e68fb1859c746d9af9a5714623f7ab",
+    "robot/yor-description/calibration/head_alignment_2026-11-03.json": "6f6ac588e81fa3d539cf089fc7500d4c72ff4557794067b424303aea0ba9a05b",
+    "robot/yor-description/calibration/head_camera_labels_2026-11-04.json": "9016f766c8c632edccdd532061161202e31f852b23a9f8de82ffcc1a19475756",
+    "robot/yor-description/calibration/image_frame_alignment_2026-11-04.json": "1b5fe28cb8a33110d60026f869402ce7c1a09d8bc7f51c5765633b7adcee33df",
+    "robot/yor-description/calibration/live_home_start_2026-11-03.json": "86c63d6e69ab74beebedd4dcef5ca4fa643c3ffaf8573e2bf0e5242fd171f502",
+    "robot/yor-description/calibration/motion_summary_2026-10-30.json": "6ba38e77f396889b1e96163aa72f9296fe86d49402647523ebed9b51b0fd493f",
+    "robot/yor-description/calibration/mount_frame_review_2026-10-31.json": "59197c70256d8ed87467d0c9fd506bd31aae04c061da73bb231128577886ddf8",
+    "robot/yor-description/calibration/neck_response_2026-10-26.json": "e75b8eae8d91f4a172a442c7f069abc429f519621f1691145b0e6cce7d6882bd",
+    "robot/yor-description/calibration/pillar_attachment_2026-11-03.json": "8cd557ef9cdc9f55707838e9b59aa82bfbe0f69b5a042f2f9d525470079a1ba7",
+    "robot/yor-description/calibration/response_identification_2026-11-03.json": "cf02cd95a9e392baf24de7d27b7f21c70aec2ac0b5c3d70546fc6b28ea793918",
+    "robot/yor-description/calibration/response_release_2026-10-30.json": "85df4338bb0c52913f6b01f04220d47a0883d031f34d7a4d780e93ab9b598aae",
+    "robot/yor-description/calibration/response_sysid_2026-10-31.json": "6e9e599e18edcf8283b61e330a32aad1ede26d55699693abd6b373e4ad3587ae",
+    "robot/yor-description/calibration/spinal_assembly_2026-11-04.json": "2d482ab76b757b18ced4d81cef330fedcecf80d846018017bd4bc60848d431ea",
+    "robot/yor-description/calibration/spinal_neck_geometry_2026-11-04.json": "fe9b9115ce95de834f163aecf7ced5b6c405940ddc22324e523eeab700fc4435",
+    "robot/yor-description/calibration/teleop_capture_2026-11-02.json": "bc9ed571e449709a9a8a21027a70f29f65f08df076dea04286b05489015ded02",
+    "robot/yor-description/vendor/agx_arm_urdf/LICENSE": "247944c63de1573653722ba784f96123da267105b7b48577e0c8826a24b809f6",
+    "robot/yor-description/vendor/agx_arm_urdf/agx_gripper/urdf/agx_gripper_description.urdf": "e8ca1a5dad852e4afc88a56430b3f9a005b719c1c4fe648203b2bee0cff3b4c5",
+    "robot/yor-description/vendor/agx_arm_urdf/nero/urdf/nero_description.urdf": "40a01570071775a1c76acc4aa047f3db8d0c2e9daa7b1cabd750c62a90975477",
+    "robot/yor-description/vendor/agx_arm_urdf/nero/urdf/nero_with_gripper_description.xacro": "f9593d1abed73b6d9566427cb0a2e70d24d907bfacc8407f9be980a7cf806af4",
+    "robot/yor-description/vendor/agx_arm_urdf/provenance.json": "7d5a2e5691dd22e3e83d50357ba30c66b7d597b5de9424be2f3affb7b1b2cbc0",
+    "robot/yor-description/sophia.json": "82d0445a604bdc6bd64c52f1283c2c300ac22f6862c78e50000d83a769e8ecba",
+    "robot/yor-description/audit_sophia.py": "2eb356b189b33d3901242627d252616ab52436e73f13c1709ebb12665b5a9aa7",
+    "robot/yor-description/build_sophia.py": "af1fdabe99ed12b9617a22d68074cb80a9976318fe5b4af491319d03a0d6957c",
+    "robot/yor-description/validate_sophia.py": "d9a0079ec7c88a00ddb70db631473ca0d05ce4e50ae39fd558531b50b827227d",
+    "robot/yor-description/evaluate_sophia.py": "af68fe2dca439ce8ec0c71312c332c07d2a70c67af17a21a37cb0e5db8374d58",
+    "robot/test_yor_mujoco.py": "12508ffa74f30832a04ceb05ef3cca0f89a55070628ae4d4eb7cc998c9a8ae41",
+    "scripts/check_sophia.py": "d37a05cd3916c58edae0f432b910a4eef343cfca9e114f4c66c0deb706863270"
+  }
+}

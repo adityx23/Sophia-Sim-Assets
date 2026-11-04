@@ -1,0 +1,17 @@
+[PASS] left arm forward 5 cm moved [ 0.0454 -0.0016 -0.008 ]
+[PASS] left arm home after forward err 0.0001 m
+[PASS] left arm up 5 cm moved [-0.0023 -0.0009  0.0429]
+[PASS] left arm home after up err 0.0001 m
+[PASS] right arm forward 5 cm moved [ 0.0473  0.0014 -0.0038]
+[PASS] right arm home after forward err 0.0000 m
+[PASS] right arm up 5 cm moved [-0.0013  0.0009  0.0469]
+[PASS] right arm home after up err 0.0000 m
+[PASS] left gripper close/open closed 0.00 open 1.00
+[PASS] right gripper close/open closed 0.00 open 1.00
+[PASS] lift up then down 0.298 -> 0.320 -> 0.293 m
+[PASS] neck pan 30 / tilt 15 pan 29.9 tilt 15.0
+[PASS] base forward moved [dx dy dtheta] = [ 0.39 -0.    0.  ]
+[PASS] base left moved [dx dy dtheta] = [-0.011  0.361 -0.002]
+[PASS] base turn left moved [dx dy dtheta] = [0.002 0.001 0.683]
+
+15/15 passed

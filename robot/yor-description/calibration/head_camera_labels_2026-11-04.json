@@ -1,0 +1,598 @@
+{
+  "method": "Manually reviewed distal finger tip face centres in native 1920x1080 ZED images. Pair midpoints reduce jaw-gap sensitivity. Object-occluded finger pairs excluded. New labels reviewed before fitting; episodes3/8/17 never enter estimation.",
+  "uncertainty_px": {
+    "existing_ep0_ep1": 6,
+    "new_validation_ep3_ep8_ep17": 14
+  },
+  "episodes": {
+    "0": {
+      "3": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            648,
+            638
+          ],
+          "left_b": [
+            532,
+            636
+          ],
+          "right_a": [
+            1530,
+            550
+          ],
+          "right_b": [
+            1416,
+            572
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            481,
+            637
+          ],
+          "left_b": [
+            364,
+            635
+          ]
+        }
+      },
+      "5": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            632,
+            708
+          ],
+          "left_b": [
+            512,
+            708
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            462,
+            708
+          ],
+          "left_b": [
+            342,
+            707
+          ]
+        }
+      },
+      "31": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            664,
+            614
+          ],
+          "left_b": [
+            546,
+            608
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            497,
+            613
+          ],
+          "left_b": [
+            379,
+            607
+          ]
+        }
+      },
+      "32": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            664,
+            622
+          ],
+          "left_b": [
+            546,
+            618
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            498,
+            622
+          ],
+          "left_b": [
+            379,
+            617
+          ]
+        }
+      },
+      "42": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            620,
+            786
+          ],
+          "left_b": [
+            494,
+            788
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            448,
+            785
+          ],
+          "left_b": [
+            321,
+            787
+          ]
+        }
+      },
+      "43": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            630,
+            692
+          ],
+          "left_b": [
+            510,
+            694
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            461,
+            692
+          ],
+          "left_b": [
+            340,
+            693
+          ]
+        }
+      },
+      "44": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            640,
+            692
+          ],
+          "left_b": [
+            520,
+            690
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            471,
+            692
+          ],
+          "left_b": [
+            351,
+            689
+          ]
+        }
+      },
+      "45": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            636,
+            746
+          ],
+          "left_b": [
+            512,
+            746
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            466,
+            745
+          ],
+          "left_b": [
+            341,
+            745
+          ]
+        }
+      },
+      "46": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            636,
+            756
+          ],
+          "left_b": [
+            512,
+            754
+          ],
+          "right_a": [
+            1184,
+            634
+          ],
+          "right_b": [
+            1098,
+            692
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            466,
+            756
+          ],
+          "left_b": [
+            341,
+            753
+          ]
+        }
+      },
+      "48": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            616,
+            832
+          ],
+          "left_b": [
+            494,
+            830
+          ],
+          "right_a": [
+            1652,
+            736
+          ],
+          "right_b": [
+            1530,
+            742
+          ]
+        }
+      },
+      "50": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            630,
+            798
+          ],
+          "left_b": [
+            508,
+            800
+          ],
+          "right_a": [
+            1256,
+            676
+          ],
+          "right_b": [
+            1180,
+            770
+          ]
+        }
+      },
+      "52": {
+        "split": "train",
+        "pixels": {
+          "left_a": [
+            642,
+            776
+          ],
+          "left_b": [
+            520,
+            774
+          ]
+        }
+      },
+      "54": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            610,
+            848
+          ],
+          "left_b": [
+            488,
+            848
+          ]
+        }
+      }
+    },
+    "1": {
+      "2": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            626,
+            688
+          ],
+          "left_b": [
+            508,
+            692
+          ]
+        }
+      },
+      "46": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            592,
+            730
+          ],
+          "left_b": [
+            468,
+            740
+          ]
+        }
+      },
+      "48": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            604,
+            756
+          ],
+          "left_b": [
+            466,
+            766
+          ]
+        }
+      },
+      "54": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            564,
+            900
+          ],
+          "left_b": [
+            436,
+            912
+          ]
+        }
+      },
+      "56": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            574,
+            972
+          ],
+          "left_b": [
+            442,
+            984
+          ],
+          "right_a": [
+            1556,
+            820
+          ],
+          "right_b": [
+            1434,
+            850
+          ]
+        }
+      },
+      "58": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            582,
+            950
+          ],
+          "left_b": [
+            450,
+            964
+          ]
+        }
+      },
+      "62": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            590,
+            894
+          ],
+          "left_b": [
+            460,
+            902
+          ]
+        }
+      }
+    },
+    "3": {
+      "3": {
+        "split": "validation",
+        "pixels": {
+          "right_a": [
+            1658,
+            674
+          ],
+          "right_b": [
+            1538,
+            672
+          ]
+        }
+      },
+      "39": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            609,
+            872
+          ],
+          "left_b": [
+            484,
+            875
+          ]
+        }
+      },
+      "45": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            669,
+            916
+          ],
+          "left_b": [
+            551,
+            907
+          ]
+        }
+      },
+      "57": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            668,
+            789
+          ],
+          "left_b": [
+            553,
+            780
+          ],
+          "right_a": [
+            1593,
+            816
+          ],
+          "right_b": [
+            1463,
+            833
+          ]
+        }
+      }
+    },
+    "8": {
+      "3": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            589,
+            885
+          ],
+          "left_b": [
+            450,
+            892
+          ]
+        },
+        "reviewed_right_pixels": {
+          "left_a": [
+            414,
+            884
+          ],
+          "left_b": [
+            271,
+            891
+          ]
+        },
+        "review_note": "Native-resolution stereo review corrected a coarse right-finger-tip annotation; no simulation projection used."
+      },
+      "39": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            685,
+            801
+          ],
+          "left_b": [
+            571,
+            788
+          ]
+        }
+      }
+    },
+    "17": {
+      "3": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            610,
+            880
+          ],
+          "left_b": [
+            485,
+            879
+          ]
+        }
+      },
+      "45": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            607,
+            881
+          ],
+          "left_b": [
+            474,
+            892
+          ]
+        }
+      },
+      "63": {
+        "split": "validation",
+        "pixels": {
+          "left_a": [
+            665,
+            786
+          ],
+          "left_b": [
+            548,
+            779
+          ]
+        }
+      }
+    }
+  },
+  "stereo_review": {
+    "method": "Human visual review of right-eye finger tip correspondence closeups; resolves repeated-finger ambiguity independently of simulated geometry. Frames 50 and 52 excluded from manual endorsement because old correspondences were visibly displaced.",
+    "source_sha256": "d35a38cc0aa452566519b19db625907b1020e56585c43f492fc05bd46d651980",
+    "training_frames": [
+      3,
+      31,
+      42,
+      43,
+      45,
+      46
+    ],
+    "holdout_frames": [
+      5,
+      32,
+      44
+    ]
+  },
+  "independent_wrist_features": {
+    "method": "Manually estimated wrist-joint centre and gripper proximal collar centre in real images; not used in fitting. Surface/axis-centre ambiguity means these are diagnostic checks, not precision metrology.",
+    "uncertainty_px": 20,
+    "frames": {
+      "3": {
+        "right_arm_link6": [
+          1597,
+          802
+        ],
+        "right_gripper_base": [
+          1545,
+          741
+        ]
+      },
+      "46": {
+        "right_arm_link6": [
+          1303,
+          831
+        ],
+        "right_gripper_base": [
+          1245,
+          784
+        ]
+      },
+      "48": {
+        "right_arm_link6": [
+          1745,
+          1004
+        ],
+        "right_gripper_base": [
+          1664,
+          933
+        ]
+      }
+    }
+  }
+}
