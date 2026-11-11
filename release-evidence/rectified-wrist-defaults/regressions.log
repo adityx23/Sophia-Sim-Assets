@@ -1,0 +1,8 @@
+................[YORMujoco] ZED stereo 320x240/eye @ 10 fps on inproc://sophia-stereo-8023b3021417497a9ede1d7ba53691f6
+[YORMujoco] ZED stereo 320x180/eye @ 10 fps on inproc://sophia-stereo-e218d21558bd4cbcb7c5ebbfc077017a
+[YORMujoco] ZED stereo 320x180/eye @ 10 fps on ipc:///tmp/tmpo79g702z/stereo
+.
+----------------------------------------------------------------------
+Ran 17 tests in 11.433s
+
+OK

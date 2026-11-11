@@ -70,8 +70,9 @@ def camera_intrinsics(
 class SophiaCameraRenderer:
     """Four calibrated RGB/depth views; caller owns the physics/render lock.
 
-    Wrist extrinsics are accepted photo estimates. Raw wrist output uses measured
-    OpenCV distortion. Head output is already rectified. A wider internal frustum
+    Wrist extrinsics are accepted photo estimates. Output defaults to flat,
+    rectified views. Opt-in raw wrist output uses measured OpenCV distortion.
+    Head output is already rectified. A wider internal frustum
     is remapped to each requested lens, including unequal fx/fy and pixel centers.
     The temporary render frustum is restored before returning.
     """
@@ -108,10 +109,12 @@ class SophiaCameraRenderer:
                 [0, 0, 1.0],
             ]
         )
-        distortion = np.array(profile["distortion"] if raw else [0.0] * 5)
+        distortion = np.array(profile["distortion"], dtype=float)
+        if not raw:
+            distortion = np.zeros_like(distortion)
         return k, distortion
 
-    def render(self, data, name, *, raw=True):
+    def render(self, data, name, *, raw=False):
         import cv2
 
         k, distortion = self.profile(name, raw)

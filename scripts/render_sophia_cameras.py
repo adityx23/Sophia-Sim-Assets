@@ -11,7 +11,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from robot.sim_camera import SophiaCameraRenderer
+from robot.sim_camera import SophiaCameraRenderer  # noqa: E402
 
 
 def main():
@@ -22,13 +22,23 @@ def main():
     )
     parser.add_argument("--width", type=int, default=640)
     parser.add_argument("--height", type=int, default=360)
-    parser.add_argument("--pinhole", action="store_true",
-                        help="Export undistorted pinhole views instead of raw wrist lens distortion")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument(
+        "--pinhole",
+        dest="raw",
+        action="store_false",
+        help="Export flat rectified views (default; retained for compatibility)",
+    )
+    mode.add_argument(
+        "--raw-distorted",
+        dest="raw",
+        action="store_true",
+        help="Apply measured wrist lens distortion, including invalid edge masks",
+    )
+    parser.set_defaults(raw=False)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=True)
-    m = mujoco.MjModel.from_xml_path(
-        str(ROOT / "robot/yor-description/scene-sophia.mjcf")
-    )
+    m = mujoco.MjModel.from_xml_path(str(ROOT / "robot/yor-description/scene-sophia.mjcf"))
     d = mujoco.MjData(m)
     mujoco.mj_resetDataKeyframe(m, d, m.key(args.pose).id)
     mujoco.mj_forward(m, d)
@@ -36,18 +46,14 @@ def main():
     metadata = {}
     try:
         for name in camera.names:
-            rgb, depth, valid, meta = camera.render(d, name, raw=not args.pinhole)
+            rgb, depth, valid, meta = camera.render(d, name, raw=args.raw)
             Image.fromarray(rgb).save(args.output / f"{name}.png")
-            np.savez_compressed(
-                args.output / f"{name}-depth.npz", depth_m=depth, valid=valid
-            )
+            np.savez_compressed(args.output / f"{name}-depth.npz", depth_m=depth, valid=valid)
             metadata[name] = meta
     finally:
         camera.close()
     (args.output / "cameras.json").write_text(json.dumps(metadata, indent=2) + "\n")
-    print(
-        f"Wrote four synchronized views, depth maps, masks and metadata to {args.output}"
-    )
+    print(f"Wrote four synchronized views, depth maps, masks and metadata to {args.output}")
 
 
 if __name__ == "__main__":

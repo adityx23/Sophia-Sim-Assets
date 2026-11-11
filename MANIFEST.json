@@ -1,21 +1,29 @@
 {
   "format_version": 1,
   "release": {
-    "version": "1.0.0",
-    "id": "sophia-sim-v1.0.0-2026-11-04",
-    "status": "finalized_simulation_baseline",
+    "version": "1.0.1-dev",
+    "id": "sophia-sim-v1.0.1-dev-2026-11-11",
+    "status": "development_rectified_camera_default",
     "scope": "Frozen local baseline for simulation training, real-to-sim measured-trajectory replay, and staged sim-to-real evaluation. Includes reviewed neck/arm frames, stereo-aligned base and upper-side wrist cameras. Hardware-calibrated dynamics and real policy transfer are not certified by simulation checks."
   },
   "hardware_calibrated": false,
   "entry_model": "robot/yor-description/scene-sophia.mjcf",
   "files": {
+    ".gitignore": {
+      "sha256": "460080514cda895e4e901b40a0e16c7811108bbda84ca8a5355470cdd77ff5e9",
+      "bytes": 74
+    },
     "LICENSE": {
       "sha256": "c5614f2265aac587e11c35e1a8e4d585e6eeef24725f5ffb12de0e8e332d19b2",
       "bytes": 1102
     },
     "README.md": {
-      "sha256": "1c35db2b819f37484b837871882a94aa7b0f73190ab94f8a1cd3d4ec6164d2bc",
-      "bytes": 2475
+      "sha256": "476031b0c4218ad9808842fc02e25d732c6157e3d4e1c5d3ea8fa345f902e0fa",
+      "bytes": 3925
+    },
+    "RELEASE.json": {
+      "sha256": "58b65cd9b4e1a52eae1011aa99b61eb49873a29eadf73e812396cafdc5c5f719",
+      "bytes": 3839
     },
     "docs/SOPHIA_LIVE_FOLLOW.md": {
       "sha256": "6178b3e4af537732571974e917482690c826fe3f10c5b54ab0e106275a667618",
@@ -30,12 +38,16 @@
       "bytes": 11419
     },
     "docs/SOPHIA_SIM_ASSETS.md": {
-      "sha256": "b0e5563427d08f1a7e3e8e111b7ce852a72adeb712b54a60ba73dbc7494600f0",
-      "bytes": 54196
+      "sha256": "a9ee9955c180d2a9ef5cd9f83db61d3402eca6721524a89d119c0cc028a9c412",
+      "bytes": 55517
     },
     "docs/SOPHIA_TRAINING.md": {
-      "sha256": "878ad4e71c6bec1c9adb3bbe85e7d73f8379fc1968c214a8c37990ac8fd865ad",
+      "sha256": "3ba57a4b08636348e94d2423b379a7a1c78786c16b2943c5f0c15f4d729616cf",
       "bytes": 9889
+    },
+    "docs/images/wrist-raw-vs-flat.jpg": {
+      "sha256": "c06b043f82112bab526ae1fe27964f029f0bfac0de5025fbbf3b60313f4ff81f",
+      "bytes": 40543
     },
     "release-evidence/acceptance.json": {
       "sha256": "e5754b4592986889ea8407ec4ffae2c7166512275af06cd8a82a781113d940e9",
@@ -157,6 +169,18 @@
       "sha256": "166543427974d43e1c8abfa52309a579dddae102f80bbf01d1c3dc7c1872c843",
       "bytes": 100
     },
+    "release-evidence/rectified-wrist-defaults/comparison.json": {
+      "sha256": "b72b51cbd951949e965ecae9762cf41bd9610a7613b8c08d021bb2ae9a2a3bb2",
+      "bytes": 900
+    },
+    "release-evidence/rectified-wrist-defaults/completion.json": {
+      "sha256": "643f53e9b38291251f2542a7588f442fc02e62b8d3860cb2d9e579924dfb91f6",
+      "bytes": 1318
+    },
+    "release-evidence/rectified-wrist-defaults/regressions.log": {
+      "sha256": "1209f4d623687ea6b88da30b8818b4c14feb09a2921b49c74bcf896369fc63bd",
+      "bytes": 400
+    },
     "release-evidence/release_profile_and_cameras.log": {
       "sha256": "1d723b88cb556bd6d1d0169e53dd816d9e2d2782e46a062f868c9cdfd42c00a5",
       "bytes": 465
@@ -254,8 +278,8 @@
       "bytes": 372
     },
     "robot/sim_camera.py": {
-      "sha256": "48098287753c914002683eb28e33f88a5cb8c88e8b219a4592aba938c5c7b4a3",
-      "bytes": 8611
+      "sha256": "ce2c0dd0330d262bd0e7a49dccbf1a1e5e9adf1f3187fde203a750f9b1042394",
+      "bytes": 8727
     },
     "robot/sim_collision.py": {
       "sha256": "648406bdff48aa7f711e6376488b12e5cfd7999bc65eea2ad7bc51a95f58816a",
@@ -362,8 +386,8 @@
       "bytes": 5850
     },
     "robot/test_sophia_release.py": {
-      "sha256": "78d500d76e747ed7308564ef50410ebe782969f6f77c2a3ccc7eb058cdb257eb",
-      "bytes": 7158
+      "sha256": "a819d94fc1624f1c49f3aa1e3f7566d40f4d218c314d58ae20723f99081bdd14",
+      "bytes": 8398
     },
     "robot/test_sophia_replay.py": {
       "sha256": "06c2cbd587ae6e2340696e16705bc59518f8c6aa59e310d65c312d2b98b60b59",
@@ -2202,8 +2226,8 @@
       "bytes": 15940
     },
     "robot/yor-description/sophia.json": {
-      "sha256": "82d0445a604bdc6bd64c52f1283c2c300ac22f6862c78e50000d83a769e8ecba",
-      "bytes": 19290
+      "sha256": "f269b76fe35d0f2427aae8f1196ec9086978b47f9abaf0a41b125ba61d2921d4",
+      "bytes": 19353
     },
     "robot/yor-description/sophia.mjcf": {
       "sha256": "e24ece43b4920ca2a727b737c8f16fa956bf4ccc38d613cd5cda6191df97a9ae",
@@ -2362,8 +2386,8 @@
       "bytes": 13700
     },
     "scripts/render_sophia_cameras.py": {
-      "sha256": "890e8295fad5e47629cbf2757d573ff9a68fe5a20126156adf08e6d4bf08e45e",
-      "bytes": 1857
+      "sha256": "4f8c3e2db2b6b61ba5b380a7a9f7dee244a5dadd4f3cb1f3d05242629974c8e8",
+      "bytes": 2099
     },
     "scripts/render_sophia_demo.py": {
       "sha256": "f441a286a82539d5e452fc19ccc13cff10be974b279aeb9b512285157e467db8",
@@ -2508,18 +2532,12 @@
     "vr-teleop/tests/test_whole_body.py": {
       "sha256": "c6e08de8acd2ef489fc8f0c472e0f9b92d80d64b986b1875cb4747c8bf91937d",
       "bytes": 24371
-    },
-    "RELEASE.json": {
-      "sha256": "58b65cd9b4e1a52eae1011aa99b61eb49873a29eadf73e812396cafdc5c5f719",
-      "bytes": 3839
-    },
-    ".gitignore": {
-      "sha256": "460080514cda895e4e901b40a0e16c7811108bbda84ca8a5355470cdd77ff5e9",
-      "bytes": 74
     }
   },
   "publication": {
     "repository": "adityx23/Sophia-Sim-Assets",
-    "standalone_archive_sha256": "0b9be52531a381883d85ffe6cfc62a8691c42044f8d533f4f0a7237900503ba1"
+    "standalone_archive_sha256": "0b9be52531a381883d85ffe6cfc62a8691c42044f8d533f4f0a7237900503ba1",
+    "source_revision_note": "Flat rectified wrist output defaults on main; original v1.0.0 release archive/tag unchanged.",
+    "targeted_validation": "release-evidence/rectified-wrist-defaults/regressions.log"
   }
 }

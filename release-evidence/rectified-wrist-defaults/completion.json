@@ -1,0 +1,56 @@
+{
+  "status": "local_development_change_verified",
+  "version": "1.0.1-dev",
+  "default": "pinhole_rectified",
+  "raw_distorted_mode_available": true,
+  "full_valid_rectangle_both_wrists": true,
+  "regression_tests_passed": 17,
+  "published_v1_0_0_unchanged": true,
+  "comparison_image": "wrist-raw-vs-flat.jpg",
+  "metrics": {
+    "left_raw": {
+      "image_model": "opencv_distorted",
+      "valid_pixel_fraction": 0.9854730902777777,
+      "distortion": [
+        -0.44037641693131346,
+        0.21900105983690518,
+        -0.0004414989717650776,
+        -0.0005994606277914692,
+        -0.05767237553935196
+      ]
+    },
+    "left_flat": {
+      "image_model": "pinhole_rectified",
+      "valid_pixel_fraction": 1.0,
+      "distortion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "right_raw": {
+      "image_model": "opencv_distorted",
+      "valid_pixel_fraction": 0.9088107638888889,
+      "distortion": [
+        -0.5403124928596907,
+        0.5991280702566784,
+        -0.002185543162373002,
+        0.002894020788779386,
+        -0.569615597602652
+      ]
+    },
+    "right_flat": {
+      "image_model": "pinhole_rectified",
+      "valid_pixel_fraction": 1.0,
+      "distortion": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

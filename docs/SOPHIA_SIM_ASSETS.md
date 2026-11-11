@@ -1,5 +1,28 @@
 # Sophia simulation assets
 
+## Working revision v1.0.1-dev — flat wrist output, November 11
+
+The local working revision defaults to flat, rectified wrist images in
+`SophiaCameraRenderer.render` and the Gymnasium observation pipeline. Measured
+camera intrinsics and mounting transforms are retained; output distortion is
+zero and the full rectangular image is valid. Explicit `raw=True` retains the
+calibrated distorted view and its invalid edge mask for recorded-data matching.
+The head ZED views remain rectified. No physical camera mount or collision
+geometry changes are involved.
+
+`render_sophia_cameras.py` now defaults to flat output; `--pinhole` remains a
+compatible explicit option and `--raw-distorted` enables the previous distorted
+output. Users of the frozen v1.0.0 release can already obtain flat views using
+`--pinhole` or `camera.render(data, name, raw=False)` without updating assets.
+For policies trained on rectified images, undistort the real wrist inputs using
+the corresponding calibrated K/distortion and the same output K/resolution.
+Raw and rectified observations should not be mixed without that preprocessing.
+
+The published v1.0.0 archive and tag remain unchanged. The GitHub `main` branch
+now tracks this `1.0.1-dev` revision with flat wrist images by default; it is not
+a replacement of the original tagged release.
+
+
 ## Finalized baseline: v1.0.0 — November 4, 2026
 
 The accepted Sophia assets are frozen as `sophia-sim-v1.0.0-2026-11-04`.

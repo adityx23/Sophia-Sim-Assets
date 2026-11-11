@@ -80,6 +80,29 @@ class ReleaseTests(unittest.TestCase):
         finally:
             sim.stop()
 
+    def test_default_wrist_output_is_flat_with_no_invalid_border(self):
+        model = mujoco.MjModel.from_xml_path(str(HERE / "scene-sophia.mjcf"))
+        data = mujoco.MjData(model)
+        mujoco.mj_resetDataKeyframe(model, data, model.key("home").id)
+        mujoco.mj_forward(model, data)
+        original = model.cam_intrinsic.copy()
+        camera = SophiaCameraRenderer(model, 640, 360)
+        try:
+            for name in ("left_wrist", "right_wrist"):
+                with self.subTest(camera=name):
+                    rgb, depth, valid, meta = camera.render(data, name)
+                    self.assertEqual(rgb.shape, (360, 640, 3))
+                    self.assertEqual(meta["image_model"], "pinhole_rectified")
+                    self.assertTrue(valid.all())
+                    self.assertTrue(np.isfinite(depth).all())
+                    self.assertFalse(np.any(meta["distortion"]))
+                    np.testing.assert_array_equal(model.cam_intrinsic, original)
+                    _, _, _, raw = camera.render(data, name, raw=True)
+                    self.assertEqual(raw["image_model"], "opencv_distorted")
+                    self.assertTrue(np.any(raw["distortion"]))
+        finally:
+            camera.close()
+
     def test_four_camera_projection_depth_and_mounts(self):
         scene = ET.parse(HERE / "scene-sophia.mjcf").getroot()
         scene.find("include").set("file", str(HERE / "sophia.mjcf"))

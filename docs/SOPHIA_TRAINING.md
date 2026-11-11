@@ -88,7 +88,7 @@ closed/open convention. Hardware scripts and driver behavior are unchanged.
 | `proprio` | `(15,)`, float32 | Measured joint angles in radians [0:7], measured normalized gripper opening [7], previous dispatched joint targets [8:15] |
 | `gripper_valid` | `(1,)`, int8 | Whether the gripper observation is measured and valid |
 | `head_rgb` | `(90,160,3)`, uint8 | Rectified head ZED left view, RGB |
-| `wrist_rgb` | `(90,160,3)`, uint8 | Left wrist view with the supplied lens distortion, RGB |
+| `wrist_rgb` | `(90,160,3)`, uint8 | Left wrist view rectified to a flat pinhole image, RGB |
 
 `SophiaPolicyAdapter.observe(packet, images)` consumes the existing telemetry
 keys `left_joints` and `left_gripper`, and image keys `head_zed_left` and
